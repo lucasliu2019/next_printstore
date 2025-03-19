@@ -7,14 +7,14 @@ export default function Home() {
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.cards}>
-          <div className={styles.card}>
+          {/* <div className={styles.card}>
             <h2>3D Printers</h2>
             <p>Find the right 3D printer for your needs.</p>
           </div>
           <div className={styles.card}>
             <h2>3D Printing Materials</h2>
             <p>Explore a variety of 3D printing materials.</p>
-          </div>
+          </div> */}
           <div className={styles.card}>
             <h2>3D Printing Services</h2>
             <p>Get your 3D models printed by professionals.</p>

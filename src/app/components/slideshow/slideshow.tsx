@@ -15,7 +15,7 @@ const data = [
   },
   {
     src: "/baby_alpha3.png",
-    text: "A charming 3D sculpture of a baby sitting on a chair, capturing innocence and curiosity in a timeless design.",
+    text: "A charming 3D sculpture of a baby sitting on a chair, capturing innocence and curiosity.",
   },
 ];
 
