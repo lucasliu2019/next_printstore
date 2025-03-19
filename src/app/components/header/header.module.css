@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    .top_bar{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        background-color: rgb(8, 5, 34);
+
+        a{
+            padding: 4px 8px;
+            color: #333;
+        }
+    }
+
+    
+
+    ul {
+        display: flex;
+        list-style: none;
+
+        li {
+            margin: 0 10px;
+
+            a {
+                text-decoration: none;
+                color: #333;
+
+                &:hover {
+                    color: #ff6f61;
+                }
+            }
+        }
+    }
+}
