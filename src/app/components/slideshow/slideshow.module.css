@@ -10,7 +10,7 @@
 
 .mySlides {
   display: none; /* Hide all slides by default */
-  position: relative; /* This prevents the image from shrinking */
+  position: absolute; /* This prevents the image from shrinking */
   top: 0;
   left: 0;
   width: 100%;

@@ -150,6 +150,11 @@ a.secondary {
   gap: 20px;
 }
 
+.slide{
+  width: 100%;
+  height: auto;
+}
+
 .card {
   background-color: rgb(94, 118, 254);
   padding: 20px;
