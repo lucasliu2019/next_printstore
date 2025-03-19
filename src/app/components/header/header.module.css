@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: flex-end;
     gap:15px;
-    background-color: rgb(8, 5, 34);
+    background-color: #04192f;
     color: rgb(112, 120, 142);
 
     font-size: small;
@@ -34,7 +34,7 @@
 
 .bot_bar_wrapper{
     width: 100%;
-    background-color: #274b6e;
+    background-color: #000d1a;
 }
 
 .bot_bar{
@@ -43,7 +43,7 @@
     align-items: center;
     max-width: 1200px;
     margin: auto;
-    background-color: #274b6e;
+    /* background-color: #274b6e; */
     padding: 10px 0;
 }
 
