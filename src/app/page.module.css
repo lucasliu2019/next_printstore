@@ -14,7 +14,6 @@
   padding: 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
-  background-color: #1a1a1a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -152,7 +151,7 @@ a.secondary {
 }
 
 .card {
-  background-color: rgb(16, 24, 69);
+  background-color: rgb(16, 30, 110);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
