@@ -19,14 +19,14 @@ export default function Home() {
             <h2>3D Printing Services</h2>
             <p>Get your 3D models printed by professionals.</p>
           </div>
+        </div>
 
-          <div className={styles.card}>
-            <h2>3D Figures</h2>
-            <div className={styles.slide}>
-              <Slideshow />
-            </div>
-            <p>Create your memory with 3D Figures.</p>
+        <div className={styles.slideshow}>
+          <h2>3D Figures</h2>
+          <div className={styles.slide}>
+            <Slideshow />
           </div>
+          <p>Create your memory with 3D Figures.</p>
         </div>
       </main>
     </div>

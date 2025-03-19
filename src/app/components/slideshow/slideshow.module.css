@@ -1,11 +1,16 @@
 .slideshow_container {
+  text-align: center; /* Optional: Center-align the text */
   position: relative;
-  max-width: 100%;
   margin: auto;
   overflow: hidden;
-  height: 330px; /* Set a fixed height for the slideshow */
+  /* Set a fixed height for the slideshow */
+  aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio */
   width: 100%;
-  max-width: 800px; /* Adjust max-width as needed */
+  max-width: 1200px;
+  /* Adjust max-width as needed */
+  /* max-width: 800px;  */
+  background-color: rgb(44, 44, 44);
+  border-radius: 10px;
 }
 
 .mySlides {
@@ -33,7 +38,7 @@
 .imageWrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the container while maintaining aspect ratio */
+  object-fit: contain; /* Ensure the image covers the container while maintaining aspect ratio */
 }
 
 .numbertext {
@@ -52,7 +57,7 @@
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 0;
   width: 100%;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
