@@ -110,3 +110,10 @@
 .dot.active {
   background-color: #bbb;
 }
+
+/* Responsive design */
+@media screen and (max-width: 600px) {
+  .text {
+    font-size: 8px;
+  }
+}
