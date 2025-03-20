@@ -34,10 +34,15 @@
 }
 
 .card {
-  background-color: rgb(94, 118, 254);
+  background-color: rgba(8, 8, 8, 0.26);
+  box-shadow: 
+  inset 4px 4px 10px 0 rgba(169, 175, 255, 0.37),
+  4px 4px 10px 0 rgba(5, 5, 5, 0.657);
+  backdrop-filter: blur( 3.5px );
+  -webkit-backdrop-filter: blur( 3.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
 
   display: flex;
