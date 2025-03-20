@@ -150,7 +150,7 @@
         transform: translateY(-20px); /* Slide up effect */
         flex-direction: column;
         position: absolute;
-        top: 108px; /* Adjust based on your header height */
+        top: 130px; /* Adjust based on your header height */
         left: 0;
         width: 100%;
         background-color: #04192f;

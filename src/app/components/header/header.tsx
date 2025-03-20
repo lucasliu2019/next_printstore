@@ -5,9 +5,33 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { TbHexagon3D } from "react-icons/tb";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import useRouter
+import { useState, useEffect } from "react";
 import styles from "./header.module.css";
 const Header = () => {
   const pathname = usePathname(); // Get the current route
+
+  const [menuOpen, setMenuOpen] = useState(false); // State to track if the menu is open
+  const [isSmallScreen, setIsSmallScreen] = useState(false); // State to track screen size
+
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    handleResize(); // Check screen size on mount
+    window.addEventListener("resize", handleResize); // Listen for resize events
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Cleanup on unmount
+    };
+  }, []);
+
+  const handleLinkClick = () => {
+    if (isSmallScreen) {
+      setMenuOpen(false); // Close the menu only on small screens
+    }
+  };
 
   return (
     <header className={styles.header}>
@@ -33,6 +57,8 @@ const Header = () => {
             type="checkbox"
             id="menu-toggle"
             className={styles.menu_toggle}
+            checked={menuOpen}
+            onChange={() => setMenuOpen(!menuOpen)} // Toggle menu state
           />
           <label htmlFor="menu-toggle" className={styles.hamburger}>
             <span></span>
@@ -48,6 +74,7 @@ const Header = () => {
                     pathname === "/" ? styles.active : ""
                   }`}
                   href="/"
+                  onClick={handleLinkClick} // Close menu on link click
                 >
                   Home
                 </Link>
@@ -58,6 +85,7 @@ const Header = () => {
                     pathname === "/products" ? styles.active : ""
                   }`}
                   href="/products"
+                  onClick={handleLinkClick} // Close menu on link click
                 >
                   Products
                 </Link>
@@ -68,6 +96,7 @@ const Header = () => {
                     pathname === "/about" ? styles.active : ""
                   }`}
                   href="/about"
+                  onClick={handleLinkClick} // Close menu on link click
                 >
                   About
                 </Link>
@@ -78,6 +107,7 @@ const Header = () => {
                     pathname === "/contact" ? styles.active : ""
                   }`}
                   href="/contact"
+                  onClick={handleLinkClick} // Close menu on link click
                 >
                   Contact
                 </Link>
