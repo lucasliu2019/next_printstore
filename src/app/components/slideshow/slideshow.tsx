@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import styles from "./slideshow.module.css";
 
@@ -21,6 +21,17 @@ const data = [
 
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false); // State to track modal visibility
+  const [modalImage, setModalImage] = useState(""); // State to track the image in the modal
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % data.length); // Loop through slides
+    }, 5000); // Change slide every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % data.length);
@@ -34,6 +45,17 @@ const Slideshow = () => {
     setCurrentSlide(index);
   };
 
+
+  // Image Click
+  const handleSlideClick = (src: string) => {
+    setModalImage(src); // Set the clicked image as the modal image
+    setIsModalOpen(true); // Open the modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close the modal
+  };
+
   return (
     <div>
       <div className={styles.slideshow_container}>
@@ -43,6 +65,7 @@ const Slideshow = () => {
               index === currentSlide ? styles.active : ""
             }`}
             key={index}
+            onClick={() => handleSlideClick(item.src)} // Open modal on click
           >
             <div className={styles.numbertext}>
               {index + 1} / {data.length}
@@ -51,9 +74,8 @@ const Slideshow = () => {
               <Image
                 src={item.src}
                 alt={item.text}
-                layout="responsive"
-                width={100}
-                height={100}
+                fill
+                style={{ objectFit: "contain", cursor: "pointer" }}
               />
             </div>
             <div className={styles.text}>{item.text}</div>
@@ -66,6 +88,20 @@ const Slideshow = () => {
         <a className={styles.next} onClick={nextSlide}>
           ❯
         </a>
+
+            {/* Modal for Large Picture View */}
+            {isModalOpen && (
+              <div className={styles.modal} onClick={closeModal}>
+                <div className={styles.modal_content}>
+                  <Image
+                    src={modalImage}
+                    alt="Large View"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              </div>
+            )}
       </div>
       <br />
       <div className={styles.nav_dots}>

@@ -9,7 +9,7 @@
   max-width: 1200px;
   /* Adjust max-width as needed */
   /* max-width: 800px;  */
-  background-color: rgb(44, 44, 44);
+  background-color: rgba(44, 44, 44, 0.566);
   border-radius: 10px;
 }
 
@@ -21,7 +21,14 @@
   width: 100%;
   height: 100%; /* Ensure the slides fill the container */
   opacity: 0; /* Start with invisible slides */
-  transition: opacity 1.5s ease-in-out; /* Smooth fade transition */
+  animation: crossfade 12s infinite;
+}
+
+@keyframes crossfade {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .active {
@@ -109,6 +116,36 @@
 
 .dot.active {
   background-color: #bbb;
+}
+
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+  cursor: pointer; /* Close modal on click */
+}
+
+.modal_content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the image maintains its aspect ratio */
+  background-color: #000; /* Optional: Add a background color for the modal content */
+}
+
+.modal_content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Ensure the image maintains its aspect ratio */
 }
 
 /* Responsive design */

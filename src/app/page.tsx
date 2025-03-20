@@ -17,7 +17,7 @@ export default function Home() {
             <p>Explore a variety of 3D printing materials.</p>
           </div> */}
           <div className={styles.card}>
-            <h2>3D Scan &  Scan</h2>
+            <h2>3D Print &  Scan</h2>
             <Image
               src="/car_alpha.png" // Replace with your image path
               alt="3D Car"
@@ -29,7 +29,7 @@ export default function Home() {
           </div>
 
           <div className={styles.card}>
-            <h2>3D Scan &  Scan</h2>
+            <h2>3D Print &  Scan</h2>
             <Image
               src="/couple_alpha.png" // Replace with your image path
               alt="3D Car"
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
 
           <div className={styles.card}>
-            <h2>3D Scan &  Scan</h2>
+            <h2>3D Print &  Scan</h2>
             <Image
               src="/Girl_alpha.png" // Replace with your image path
               alt="3D Car"
