@@ -91,6 +91,10 @@
 
 /* Media query for small screens (max-width: 768px) */
 @media (max-width: 700px) {
+    .top_bar{
+        justify-content: space-between;
+    }
+
     .bot_bar {
       flex-direction: column; /* Stack the navigation vertically */
       padding: 10px;
