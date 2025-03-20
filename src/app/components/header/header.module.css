@@ -181,7 +181,7 @@
 
     .nav_list {
         flex-direction: column; /* Stack navigation links vertically */
-        align-items: center;
+        align-items: stretch; /* Ensure children take full width */
         width: 100%; /* Make the nav list take full width */
     }
 
@@ -191,9 +191,13 @@
 
   
     .nav_link {
-      padding: 10px; /* Slightly larger padding for better usability */
-      font-size: 14px; /* Adjust font size for smaller screens */
-    }
+        display: block; /* Make links take up full width */
+        font-size: 14px; /* Adjust font size for smaller screens */
+        width: 100%; /* Full width for links */
+        padding: 10px 15px; /* Adjust padding for better touch targets */
+        text-align: center; /* Center-align the text */
+        box-sizing: border-box; /* Include padding in the width calculation */
+      }
   }
 
 
