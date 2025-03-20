@@ -7,15 +7,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import useRouter
 import styles from "./header.module.css";
 const Header = () => {
-    const pathname = usePathname(); // Get the current route
+  const pathname = usePathname(); // Get the current route
 
   return (
     <header className={styles.header}>
       <div className={styles.top_bar}>
-        <a className="top_bar_link">
+        <a className={styles.top_bar_link}>
           <FaEnvelope /> info@3dprintstore.com
         </a>
-        <a className="top_bar_link">
+        <a className={styles.top_bar_link}>
           <FaPhoneAlt /> 204-000-0000
         </a>
       </div>
@@ -25,13 +25,25 @@ const Header = () => {
       <div className={styles.bot_bar_wrapper}>
         <div className={styles.bot_bar}>
           <div className={styles.logo}>
-            <TbHexagon3D /> 
+            <TbHexagon3D />
             <span>3D Print</span>
           </div>
-          <nav>
+
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            className={styles.menu_toggle}
+          />
+          <label htmlFor="menu-toggle" className={styles.hamburger}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <nav className={styles.nav}>
             <ul className={styles.nav_list}>
               <li className={styles.nav_item}>
-              <Link
+                <Link
                   className={`${styles.nav_link} ${
                     pathname === "/" ? styles.active : ""
                   }`}
@@ -41,7 +53,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className={styles.nav_item}>
-              <Link
+                <Link
                   className={`${styles.nav_link} ${
                     pathname === "/products" ? styles.active : ""
                   }`}
@@ -51,7 +63,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className={styles.nav_item}>
-              <Link
+                <Link
                   className={`${styles.nav_link} ${
                     pathname === "/about" ? styles.active : ""
                   }`}
@@ -61,7 +73,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className={styles.nav_item}>
-              <Link
+                <Link
                   className={`${styles.nav_link} ${
                     pathname === "/contact" ? styles.active : ""
                   }`}

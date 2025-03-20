@@ -28,6 +28,8 @@
 .cards{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center; /* Horizontally center the cards */
+  align-items: center; /* Vertically center the cards */
   gap: 20px;
 }
 
