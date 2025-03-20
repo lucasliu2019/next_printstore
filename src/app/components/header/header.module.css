@@ -73,6 +73,7 @@
     padding: 5px 15px;
     text-decoration: none;
     color: #94aedd;
+    border-radius: 5px;
 }
 
 
@@ -85,6 +86,47 @@
     background-color: rgba(34, 53, 162, 0.886);
     color: #ffffffc8;
     font-weight: bold;
+
+}
+
+/* Media query for small screens (max-width: 768px) */
+@media (max-width: 700px) {
+    .bot_bar {
+      flex-direction: column; /* Stack the navigation vertically */
+      padding: 10px;
+    }
+  
+    .nav_item {
+      margin: 5px 0; /* Add spacing between items */
+    }
+  
+    .nav_link {
+      display: block; /* Make links take up full width */
+      width: 100%; /* Full width for links */
+      padding: 10px 15px; /* Adjust padding for better touch targets */
+      text-align: left; /* Align text to the left */
+    }
+  }
+  
+  /* Media query for extra small screens (max-width: 480px) */
+  @media (max-width: 480px) {
+
+    .nav_list {
+        flex-direction: column; /* Stack navigation links vertically */
+        align-items: center;
+        width: 100%; /* Make the nav list take full width */
+        padding: 0;
+    }
+
+    .bot_bar {
+      padding: 5px;
+    }
+
+  
+    .nav_link {
+      padding: 10px; /* Slightly larger padding for better usability */
+      font-size: 14px; /* Adjust font size for smaller screens */
+    }
   }
 
 /* .nav_link {
