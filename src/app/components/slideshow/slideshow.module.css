@@ -150,6 +150,16 @@
   object-fit: contain; /* Ensure the image maintains its aspect ratio */
 }
 
+.modal_text {
+  width: 100%;
+  text-align: center;
+  color: #ffffffbe;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.6); /* Add a semi-transparent background */
+  padding: 10px;
+  box-sizing: border-box; /* Include padding in the width calculation */
+}
+
 /* Responsive design */
 @media screen and (max-width: 600px) {
   .text {

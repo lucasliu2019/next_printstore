@@ -22,7 +22,7 @@ const data = [
 const Slideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false); // State to track modal visibility
-  const [modalImage, setModalImage] = useState(""); // State to track the image in the modal
+  const [modalItem, setModalItem] = useState<SlideItem | null>(null); // State to track the item in the modal
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,7 +31,6 @@ const Slideshow = () => {
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
-
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % data.length);
@@ -45,10 +44,14 @@ const Slideshow = () => {
     setCurrentSlide(index);
   };
 
-
   // Image Click
-  const handleSlideClick = (src: string) => {
-    setModalImage(src); // Set the clicked image as the modal image
+  interface SlideItem {
+    src: string;
+    text: string;
+  }
+
+  const handleSlideClick = (item: SlideItem) => {
+    setModalItem(item); // Set the clicked item as the modal item
     setIsModalOpen(true); // Open the modal
   };
 
@@ -65,7 +68,7 @@ const Slideshow = () => {
               index === currentSlide ? styles.active : ""
             }`}
             key={index}
-            onClick={() => handleSlideClick(item.src)} // Open modal on click
+            onClick={() => handleSlideClick(item)} // Open modal on click
           >
             <div className={styles.numbertext}>
               {index + 1} / {data.length}
@@ -89,19 +92,21 @@ const Slideshow = () => {
           ❯
         </a>
 
-            {/* Modal for Large Picture View */}
-            {isModalOpen && (
-              <div className={styles.modal} onClick={closeModal}>
-                <div className={styles.modal_content}>
-                  <Image
-                    src={modalImage}
-                    alt="Large View"
-                    fill
-                    style={{ objectFit: "contain" }}
-                  />
-                </div>
-              </div>
-            )}
+        {/* Modal for Large Picture View */}
+        {isModalOpen && modalItem && (
+          <div className={styles.modal} onClick={closeModal}>
+            <div className={styles.modal_content}>
+              <Image
+                src={modalItem.src}
+                alt={modalItem.text} // Use the text from the modal item
+                fill
+                style={{ objectFit: "contain" }}
+              />
+              <div className={styles.modal_text}>{modalItem.text}</div>{" "}
+              {/* Add text at the bottom */}
+            </div>
+          </div>
+        )}
       </div>
       <br />
       <div className={styles.nav_dots}>
