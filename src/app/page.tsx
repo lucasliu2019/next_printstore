@@ -1,6 +1,5 @@
 import styles from "./page.module.css";
 import Slideshow from "./components/slideshow/slideshow";
-import Image from "next/image"; // Import the Image component
 import Card from "./components/card/card";
 // import Slideshow from "@/components/slideshow/slideshow";
 
