@@ -13,13 +13,13 @@ const cardData = [
   {
     title: "3D Scan & Print",
     src: "/girl_alpha.png",
-    alt: "Couple Figure",
+    alt: "Girl Figure",
     description: "Get your 3D models printed by professionals.",
   },
   {
     title: "3D Scan & Print",
     src: "/model_gun_alpha.png",
-    alt: "Couple Figure",
+    alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
   },
 ];
