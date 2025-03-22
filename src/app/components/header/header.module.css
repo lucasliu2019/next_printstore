@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: flex-end;
     gap:15px;
-    background-color: #04192f;
+    background-color: #000811;
     color: rgb(112, 120, 142);
 
     font-size: small;
@@ -78,11 +78,11 @@
 
 .nav_link:hover {
     color: #fff;
-    background-color: rgb(34, 53, 162);
+    background-color: rgba(238, 255, 0, 0.676);
 }
 
 .active {
-    background-color: rgba(34, 53, 162, 0.886);
+    background-color: rgba(238, 255, 0, 0.331);
     color: #ffffffc8;
     font-weight: bold;
 
