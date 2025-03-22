@@ -1,56 +1,45 @@
 import styles from "./page.module.css";
 import Slideshow from "./components/slideshow/slideshow";
 import Image from "next/image"; // Import the Image component
+import Card from "./components/card/card";
 // import Slideshow from "@/components/slideshow/slideshow";
+
+const cardData = [
+  {
+    title: "3D Scan & Print",
+    src: "/couple_alpha.png",
+    alt: "Couple Figure",
+    description: "Get your 3D models printed by professionals.",
+  },
+  {
+    title: "3D Scan & Print",
+    src: "/girl_alpha.png",
+    alt: "Couple Figure",
+    description: "Get your 3D models printed by professionals.",
+  },
+  {
+    title: "3D Scan & Print",
+    src: "/model_gun_alpha.png",
+    alt: "Couple Figure",
+    description: "Get your 3D models printed by professionals.",
+  },
+];
 
 export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <div className={styles.cards}>
-          {/* <div className={styles.card}>
-            <h2>3D Printers</h2>
-            <p>Find the right 3D printer for your needs.</p>
-          </div>
-          <div className={styles.card}>
-            <h2>3D Printing Materials</h2>
-            <p>Explore a variety of 3D printing materials.</p>
-          </div> */}
-          <div className={styles.card}>
-            <h2>3D Print &  Scan</h2>
-            <Image
-              src="/car_alpha.png" // Replace with your image path
-              alt="3D Car"
-              width={300} // Set the width of the image
-              height={200} // Set the height of the image
-              className={styles.card_image} // Optional: Add a class for styling
+          {/* Map cardData to dynamically render Card components */}
+          {cardData.map((card, index) => (
+            <Card
+              key={index} // Use index as a unique key
+              title={card.title}
+              src={card.src}
+              alt={card.alt}
+              description={card.description}
             />
-            <p>Get your 3D models printed by professionals.</p>
-          </div>
-
-          <div className={styles.card}>
-            <h2>3D Print &  Scan</h2>
-            <Image
-              src="/couple_alpha.png" // Replace with your image path
-              alt="3D Car"
-              width={300} // Set the width of the image
-              height={200} // Set the height of the image
-              className={styles.card_image} // Optional: Add a class for styling
-            />
-            <p>Get your 3D models printed by professionals.</p>
-          </div>
-
-          <div className={styles.card}>
-            <h2>3D Print &  Scan</h2>
-            <Image
-              src="/Girl_alpha.png" // Replace with your image path
-              alt="3D Car"
-              width={300} // Set the width of the image
-              height={200} // Set the height of the image
-              className={styles.card_image} // Optional: Add a class for styling
-            />
-            <p>Get your 3D models printed by professionals.</p>
-          </div>
+          ))}
         </div>
 
         <div className={styles.slideshow}>

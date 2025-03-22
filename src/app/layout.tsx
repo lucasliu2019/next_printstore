@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import styles from "./layout.module.css";
+
+import Bubble from "./components/bubble/bubble";
+import Star from "./components/star/star";
 
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
@@ -29,15 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-
-        {/* Background Bubbles */}
-        <div className={styles.bubbles}>
-          <div className={styles.bubble}></div>
-          <div className={styles.bubble}></div>
-          <div className={styles.bubble}></div>
-          <div className={styles.bubble}></div>
-          <div className={styles.bubble}></div>
-        </div>
+          <Bubble />
+          <Star />
 
           <Header />
 
