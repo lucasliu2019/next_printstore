@@ -24,17 +24,18 @@
       gap: 30px;
   
       .button{
-        font-size: large;
-        background-color: rgba(40, 112, 170, 0.836);
-        border-radius: 10px;
-        padding: 5px 10px;
-        border: 1px solid wheat;
-        box-shadow: 4px 4px 10px 0 rgba(255, 255, 255, 0.292);
+        font-size: medium;
+        background-color: rgba(40, 112, 170, 0.292);
+        border-radius: 505;
+        padding: 10px 25px;
+        border: 1px solid rgba(255, 255, 255, 0.509);
+        box-shadow: 0px 0px 15px 0 rgba(0, 0, 0, 0.985);
       }
 
       .button:hover{
-        background-color: rgb(23, 135, 226);
-        transform: translateY(-3px);
+        background-color: rgba(23, 135, 226, 0.616);
+        transform: translateY(-2px);
+        box-shadow: 0px 0px 15px 0 rgba(255, 255, 255, 0.457);
       }
     }
   }
