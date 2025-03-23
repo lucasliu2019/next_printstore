@@ -1,7 +1,6 @@
 import styles from "./page.module.css";
 import Slideshow from "./components/slideshow/slideshow";
 import Card from "./components/card/card";
-import { title } from "process";
 // import Slideshow from "@/components/slideshow/slideshow";
 
 const cardData = [
