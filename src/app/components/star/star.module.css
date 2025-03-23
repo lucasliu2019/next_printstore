@@ -7,7 +7,17 @@
     height: 100%;
     overflow: hidden;
     z-index: -2; /* Ensure it stays behind all content */
-    background: linear-gradient(to bottom, #000218, #003d73); /* Dark gradient for sky */
+
+    /* background:  */
+    /* url("/background_sky.jpeg") no-repeat top center,  */
+    /* Top part is an image */
+    /* linear-gradient(to bottom, rgba(0, 0, 0, 0), #003d73);  */
+    /* Bottom part is a gradient */
+    /* background-size: cover, cover;  */
+    /* Ensure both the image and gradient cover the container */
+
+    /* Dark gradient for sky */
+    background: linear-gradient(to bottom, #000218, #003d73); 
   }
   
   /* Stars */
