@@ -33,7 +33,7 @@ export default function Home() {
           <h1 className={styles.mainheading}>Exceptional Quality, Redefined.</h1>
           <p className={styles.subheading}>We design and create high-quality 3D models with precision and expertise, ensuring every detail meets professional standards. Using top-tier materials, we deliver durable and visually stunning prints tailored to your needs.</p>
           <div className={styles.buttongroup}>
-            <button>Explore</button> <button>Contact</button>
+            <button className={styles.button}>Explore</button> <button className={styles.button}>Contact</button>
           </div>
           {/* <p className={styles.subheading}>Expertly Crafted 3D Models, Printed with Premium Materials. </p> */}
         </div>

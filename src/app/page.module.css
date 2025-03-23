@@ -65,7 +65,7 @@
     justify-content: center;
     gap: 30px;
 
-    button{
+    .button{
       font-size: large;
       background-color: rgba(40, 112, 170, 0.836);
       border-radius: 10px;
