@@ -1,7 +1,7 @@
 .card {
     background-color: rgba(115, 115, 115, 0.216);
     box-shadow: 
-    4px 4px 10px 0 rgba(5, 5, 5, 0.306);
+    0px 0px 25x 0 rgb(5, 5, 5);
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
     border: 1px solid rgba(255, 255, 255, 0.482);
@@ -23,6 +23,6 @@
 
     cursor: pointer;
     box-shadow: 
-    0px 0px 10px 0 rgba(160, 160, 160, 0.815);
+    0px 0px 15px 0 rgba(246, 255, 162, 0.543);
     transform: translateY(-2px);
   }
