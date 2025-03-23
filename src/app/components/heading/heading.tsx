@@ -1,8 +1,6 @@
 import styles from "./heading.module.css";
 
 export default function Heading() {
-  const stars = Array.from({ length: 10 }); // Generate 10 stars dynamically
-
   return (
     <div className={styles.title}>
     <h1 className={styles.mainheading}>Exceptional Quality, Redefined.</h1>
