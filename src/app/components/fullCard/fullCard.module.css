@@ -1,5 +1,6 @@
 .card {
     width: 100vw; /* Full width of the viewport */
+    min-height: 400px;
     margin: 0; /* Remove any default margins */
 
     background-color: rgba(115, 115, 115, 0.216);
@@ -14,8 +15,16 @@
   
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     text-align: center;
+  }
+
+  .text {
+    max-width: 50%;
+  }
+
+  .title{
+    font-size: 3rem;
   }
 
   .card:hover{

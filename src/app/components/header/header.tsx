@@ -2,7 +2,7 @@
 
 import { FaEnvelope } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
-import { TbHexagon3D } from "react-icons/tb";
+// import { TbHexagon3D } from "react-icons/tb";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import useRouter
 import { useState, useEffect } from "react";

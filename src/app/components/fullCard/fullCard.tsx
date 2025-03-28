@@ -14,8 +14,8 @@ const Card = ({title, src, alt, description}: {title:string, src:string, alt:str
       className={styles.card_image} // Optional: Add a class for styling
     />
     <div className={styles.text}>
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <h2 className={styles.title}>{title}</h2>
+      {/* <p>{description}</p> */}
     </div>
 
   </div>
