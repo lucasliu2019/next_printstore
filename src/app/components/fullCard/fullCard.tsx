@@ -9,6 +9,7 @@ const Card = ({
   alt,
   description,
   color,
+  customStyle,
 }: {
   title: string;
   subtitle: string;
@@ -17,6 +18,7 @@ const Card = ({
   alt: string;
   description: string;
   color: string;
+  customStyle?: React.CSSProperties; // Optional custom style prop
 }) => {
   return (
     <div

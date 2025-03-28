@@ -14,6 +14,7 @@ const cardData = [
     alt: "Couple Figure",
     description: "Get your 3D models printed by professionals.",
     color: "#FF5733", // Example color
+    customStyle: { border: "2px solid red", borderRadius: "20px" }, // Example custom style
   },
   {
     title: "3D Print",
@@ -23,6 +24,7 @@ const cardData = [
     alt: "Baby",
     description: "Get your 3D models printed by professionals.",
     color: "#33FF57", // Example color
+    customStyle: { border: "2px solid green", padding: "10px" }, // Another custom style
   },
   {
     title: "Photo",
@@ -32,6 +34,7 @@ const cardData = [
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
     color: "#3357FF", // Example color
+    customStyle: { border: "2px solid green", padding: "10px" }, // Another custom style
   },
   {
     title: "Web Development",
@@ -41,6 +44,7 @@ const cardData = [
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
     color: "#FF33A1", // Example color
+    customStyle: { border: "2px solid green", padding: "10px" }, // Another custom style
   },
 ];
 
@@ -63,6 +67,7 @@ export default function Home() {
               alt={card.alt}
               description={card.description}
               color={card.color} // Pass the color prop
+              customStyle={card.customStyle} // Pass custom styles
             />
           ))}
         </div>
