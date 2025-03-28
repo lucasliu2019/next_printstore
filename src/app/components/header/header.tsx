@@ -49,8 +49,8 @@ const Header = () => {
       <div className={styles.bot_bar_wrapper}>
         <div className={styles.bot_bar}>
           <div className={styles.logo}>
-            <TbHexagon3D />
-            <span>3D Print</span>
+            {/* <TbHexagon3D /> */}
+            <span>Valeri Brovko</span>
           </div>
 
           <input
