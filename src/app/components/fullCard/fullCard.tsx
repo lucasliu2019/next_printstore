@@ -25,6 +25,7 @@ const Card = ({
       className={styles.card}
       style={{
         background: `linear-gradient(to bottom, ${color}, black)`, // Linear gradient with black
+        ...customStyle, // Merge custom styles passed via props
       }}
     >
       <Image
