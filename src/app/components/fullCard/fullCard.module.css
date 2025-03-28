@@ -1,0 +1,30 @@
+.card {
+    width: 100vw; /* Full width of the viewport */
+    margin: 0; /* Remove any default margins */
+
+    background-color: rgba(115, 115, 115, 0.216);
+    box-shadow: 
+    0px 0px 35px 0 rgba(0, 0, 0, 0.855);
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border: 1px solid rgba(255, 255, 255, 0.482);
+    padding: 20px;
+    /* border-radius: 40px; */
+  
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .card:hover{
+    /* box-shadow: 
+    inset 4px 4px 10px 0 rgba(169, 175, 255, 0.37),
+    4px 4px 10px 0 rgba(0, 0, 0, 0.669); */
+
+    cursor: pointer;
+    box-shadow: 
+    0px 0px 15px 0 rgba(246, 255, 162, 0.543);
+    transform: translateY(-2px);
+  }

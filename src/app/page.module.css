@@ -25,9 +25,10 @@
   gap: 20px;
 }
 
-.cards{
+.fullCards{
   display: flex;
   flex-direction: column;
+  gap: 1px;
   /* flex-wrap: wrap; */
   justify-content: center; /* Horizontally center the cards */
   align-items: center; /* Vertically center the cards */

@@ -1,7 +1,7 @@
 import styles from "./page.module.css";
-import Slideshow from "./components/slideshow/slideshow";
-import Card from "./components/card/card";
-import Heading from "./components/heading/heading";
+// import Slideshow from "./components/slideshow/slideshow";
+import Card from "./components/fullCard/fullCard";
+// import Heading from "./components/heading/heading";
 // import Slideshow from "@/components/slideshow/slideshow";
 
 const cardData = [
@@ -12,13 +12,19 @@ const cardData = [
     description: "Get your 3D models printed by professionals.",
   },
   {
-    title: "3D Scan & Print",
+    title: "3D Print",
     src: "/girl_alpha.png",
-    alt: "Girl Figure",
+    alt: "Baby",
     description: "Get your 3D models printed by professionals.",
   },
   {
-    title: "3D Scan & Print",
+    title: "Photo Printing Publlishing",
+    src: "/model_gun_alpha.png",
+    alt: "Gun Figure",
+    description: "Get your 3D models printed by professionals.",
+  },
+  {
+    title: "Web Development Web Design",
     src: "/model_gun_alpha.png",
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
@@ -31,8 +37,8 @@ export default function Home() {
       <main className={styles.main}>
 
 
-        <h1>Our Services</h1>
-        <div className={styles.cards}>
+        {/* <h1>Our Services</h1> */}
+        <div className={styles.fullCards}>
           {/* Map cardData to dynamically render Card components */}
           {cardData.map((card, index) => (
             <Card
