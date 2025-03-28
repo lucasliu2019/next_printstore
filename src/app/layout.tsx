@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-import Bubble from "./components/bubble/bubble";
-import Star from "./components/star/star";
+// import Bubble from "./components/bubble/bubble";
+// import Star from "./components/star/star";
 
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
