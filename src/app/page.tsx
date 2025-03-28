@@ -61,7 +61,7 @@ export default function Home() {
               subsubtitle={card.subsubtitle}
               src={card.src}
               alt={card.alt}
-              // description={card.description}
+              description={card.description}
               color={card.color} // Pass the color prop
             />
           ))}

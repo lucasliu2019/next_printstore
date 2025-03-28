@@ -31,8 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-          <Bubble />
-          <Star />
+          {/* <Bubble />
+          <Star /> */}
 
           <Header />
 
