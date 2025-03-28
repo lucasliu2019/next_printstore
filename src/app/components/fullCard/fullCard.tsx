@@ -1,5 +1,6 @@
 import styles from "./fullCard.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const Card = ({
   title,
@@ -11,6 +12,7 @@ const Card = ({
   color,
   titleStyle,
   subtitleStyle,
+  route,
 }: {
   title: string;
   subtitle: string;
@@ -21,6 +23,7 @@ const Card = ({
   color: string;
   titleStyle?: React.CSSProperties; // Optional custom style prop
   subtitleStyle?: React.CSSProperties; // Optional custom style prop
+  route: string;
 }) => {
   return (
     <div
@@ -56,7 +59,10 @@ const Card = ({
         </h3>
         <h4 className={styles.subsubtitle}>{subsubtitle}</h4>
         <p className={styles.description}>{description}</p>
-        <div className={styles.button}>Learn More</div>
+        {/* Add Link to the button */}
+        <Link href={route} passHref>
+          <div className={styles.button}>Learn More</div>
+        </Link>
       </div>
     </div>
   );

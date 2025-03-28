@@ -1,11 +1,13 @@
 import styles from "./page.module.css";
 // import Slideshow from "./components/slideshow/slideshow";
 import Card from "./components/fullCard/fullCard";
+// import { BiFontColor } from "react-icons/bi";
 // import Heading from "./components/heading/heading";
 // import Slideshow from "@/components/slideshow/slideshow";
 
 const cardData = [
   {
+    route: "/print3d", // Route for this card
     title: "3D",
     subtitle: "Scan & Print",
     subsubtitle: "",
@@ -14,24 +16,20 @@ const cardData = [
     description: "Get your 3D models printed by professionals.",
     color: "linear-gradient(to bottom, rgba(52, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
     titleStyle: { 
-      // border: "2px solid red", 
-      borderRadius: "20px", 
       fontSize: "3rem", 
       fontWeight:"30000",
       textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
       // textAlign: "center", // Center-align the text
     },
     subtitleStyle: { 
-      // border: "2px solid red", 
-      borderRadius: "20px", 
-      fontSize: "3rem", 
+      fontSize: "2rem", 
       fontWeight:"30000",
       textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
       // textAlign: "center", // Center-align the text
-      border: "2px solid green", padding: "10px"
     },
   },
   {
+    route: "/baby3d", // Route for this card
     title: "3D Print",
     subtitle: "Baby",
     subsubtitle: "",
@@ -39,12 +37,20 @@ const cardData = [
     alt: "Baby",
     description: "Get your 3D models printed by professionals.",
     color: "linear-gradient(45deg, rgba(250,230,255,1) 0%, rgba(119,190,255,1) 100%)",
-    titleStyle: { border: "2px solid green", padding: "10px" 
+    titleStyle: { 
+      fontSize: "2rem", 
+      padding: "10px",
+      textShadow: "4px 4px 20px rgba(29, 31, 23, 0.6)", // Increased blur and opacity
     }, // Another custom style
-    subtitleStyle: { border: "2px solid green", padding: "10px" 
+    subtitleStyle: {
+      fontSize: "3rem", 
+      fontWeight: "bold",
+      color: "rgb(61, 128, 194)",
+      textShadow: "4px 4px 1px rgb(10, 30, 50)", // Increased blur and opacity
     }, // Another custom style
   },
   {
+    route: "/photo", // Route for this card
     title: "Photo",
     subtitle: "Printing",
     subsubtitle: "Publishing",
@@ -52,12 +58,15 @@ const cardData = [
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
     color: "linear-gradient(to bottom, rgba(52, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
-    titleStyle: { border: "2px solid green", padding: "10px" 
+    titleStyle: {
+
     }, // Another custom style
-    subtitleStyle: { border: "2px solid green", padding: "10px" 
+    subtitleStyle: {
+
     }, // Another custom style
   },
   {
+    route: "/web", // Route for this card
     title: "Web Development",
     subtitle: "Web Design",
     subsubtitle: "",
@@ -65,9 +74,11 @@ const cardData = [
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
     color: "linear-gradient(to bottom, rgba(0, 140, 255, 0.74), rgba(0, 0, 0, 0.74))",
-    titleStyle: { border: "2px solid green", padding: "10px" 
+    titleStyle: { 
+
     }, // Another custom style
-    subtitleStyle: { border: "2px solid green", padding: "10px" 
+    subtitleStyle: {
+
     }, // Another custom style
   },
 ];
@@ -93,6 +104,7 @@ export default function Home() {
               color={card.color} // Pass the color prop
               titleStyle={card.titleStyle} // Pass custom styles
               subtitleStyle={card.subtitleStyle} // Pass custom styles  
+              route={card.route}
             />
           ))}
         </div>

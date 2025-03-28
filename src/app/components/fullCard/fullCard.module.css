@@ -37,6 +37,7 @@
   flex-direction: column;
   justify-content: center; /* Center text vertically */
   align-items: flex-start; /* Align text to the left */
+  color: rgba(253, 255, 248, 0.855); /* Light gray color */
 }
 
 
@@ -48,13 +49,11 @@
 .subtitle {
   font-size: 1.8rem; /* Adjust font size for subtitle */
   margin-bottom: 5px; /* Add spacing below the subtitle */
-  color: #ddd; /* Light gray color */
 }
 
 .subsubtitle {
   font-size: 1.5rem; /* Adjust font size for subsubtitle */
   margin-bottom: 10px; /* Add spacing below the subsubtitle */
-  color: #bbb; /* Slightly darker gray */
 }
 
 .description {
