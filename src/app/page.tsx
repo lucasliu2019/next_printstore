@@ -29,7 +29,9 @@ export default function Home() {
   return (
     <div className={styles.page}>
       <main className={styles.main}>
-        <Heading/>
+
+
+        <h1>Our Services</h1>
         <div className={styles.cards}>
           {/* Map cardData to dynamically render Card components */}
           {cardData.map((card, index) => (
@@ -41,14 +43,6 @@ export default function Home() {
               description={card.description}
             />
           ))}
-        </div>
-
-        <div className={styles.slideshow}>
-          <h2>3D Figures</h2>
-          <div className={styles.slide}>
-            <Slideshow />
-          </div>
-          <p>Create your memory with 3D Figures.</p>
         </div>
       </main>
     </div>

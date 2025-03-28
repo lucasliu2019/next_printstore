@@ -17,7 +17,8 @@
     /* Ensure both the image and gradient cover the container */
 
     /* Dark gradient for sky */
-    background: linear-gradient(to bottom, #000218, #003d73); 
+    /* background: linear-gradient(to bottom, #000218, #003d73);  */
+    background: linear-gradient(to bottom, #000000, #1b2630); 
   }
   
   /* Stars */

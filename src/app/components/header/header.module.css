@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: flex-end;
     gap:15px;
-    background-color: #000811;
+    background-color: #000000;
     color: rgb(112, 120, 142);
 
     font-size: small;
@@ -37,7 +37,9 @@
 
 .bot_bar_wrapper{
     width: 100%;
-    background-color: #000d1a;
+    background-color: #21292d;
+    border-top: 1px solid #ffffff28;
+    border-bottom: 1px solid #ffffff23;
 }
 
 .bot_bar{
@@ -66,7 +68,7 @@
     padding: 0;
     display: flex;
     list-style: none;
-    gap: 10px;
+    gap: 5px;
 }
 
 .nav_link{
@@ -75,7 +77,7 @@
     /* font-size: 16px; */
     text-decoration: none;
     color: #94aedd;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 

@@ -1,0 +1,9 @@
+.slideshow{
+    width:100%;
+    text-align: center; /* Optional: Center-align the text */
+  }
+  
+  .slide{
+    width: 100%;
+    height: auto;
+  }
