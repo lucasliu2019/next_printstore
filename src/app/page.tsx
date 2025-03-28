@@ -1,7 +1,6 @@
 import styles from "./page.module.css";
 // import Slideshow from "./components/slideshow/slideshow";
 import Card from "./components/fullCard/fullCard";
-import { MdSubtitles } from "react-icons/md";
 // import Heading from "./components/heading/heading";
 // import Slideshow from "@/components/slideshow/slideshow";
 
