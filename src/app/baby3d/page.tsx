@@ -1,5 +1,5 @@
 import Heading from "../components/heading/heading";
-import Slideshow from "../components/slideshow/slideshow";
+// import Slideshow from "../components/slideshow/slideshow";
 import styles from "./page.module.css";
 
 export default function About() {
