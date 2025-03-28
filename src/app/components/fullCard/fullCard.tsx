@@ -1,7 +1,7 @@
 // import React from 'react';
 import styles from './fullCard.module.css';
 import Image from "next/image"; // Import the Image component
-const Card = ({title, src, alt, description}: {title:string, src:string, alt:string, description: string}) => {
+const Card = ({title, src, alt}: {title:string, src:string, alt:string, description: string}) => {
   return (
     <div className={styles.card}>
     <Image
@@ -15,7 +15,6 @@ const Card = ({title, src, alt, description}: {title:string, src:string, alt:str
     />
     <div className={styles.text}>
       <h2 className={styles.title}>{title}</h2>
-      {/* <p>{description}</p> */}
     </div>
 
   </div>
