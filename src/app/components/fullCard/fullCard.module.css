@@ -66,19 +66,18 @@
   margin-top: 20px;
   background-color: rgb(43, 43, 43);
   border: 1px solid rgb(144, 137, 122);
-  border-radius: 10px;
-  padding: 5px 10px;
+  border-radius: 20px;
+  padding: 5px 15px;
 }
 
 .button:hover{
   cursor: pointer;
   background-color: rgb(24, 24, 24);
-  border-radius: 10px;
   transform: translateY(-2px);
 }
 
 .card:hover {
-  cursor: pointer;
+  /* cursor: pointer; */
   box-shadow: 
     0px 0px 15px 0 rgba(246, 255, 162, 0.543);
   transform: translateY(-2px);

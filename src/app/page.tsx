@@ -12,8 +12,24 @@ const cardData = [
     src: "/couple_alpha.png",
     alt: "Couple Figure",
     description: "Get your 3D models printed by professionals.",
-    color: "#FF5733", // Example color
-    customStyle: { border: "2px solid red", borderRadius: "20px" }, // Example custom style
+    color: "linear-gradient(to bottom, rgba(52, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
+    titleStyle: { 
+      // border: "2px solid red", 
+      borderRadius: "20px", 
+      fontSize: "3rem", 
+      fontWeight:"30000",
+      textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
+      // textAlign: "center", // Center-align the text
+    },
+    subtitleStyle: { 
+      // border: "2px solid red", 
+      borderRadius: "20px", 
+      fontSize: "3rem", 
+      fontWeight:"30000",
+      textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
+      // textAlign: "center", // Center-align the text
+      border: "2px solid green", padding: "10px"
+    },
   },
   {
     title: "3D Print",
@@ -22,8 +38,11 @@ const cardData = [
     src: "/baby_alpha2.png",
     alt: "Baby",
     description: "Get your 3D models printed by professionals.",
-    color: "#33FF57", // Example color
-    customStyle: { border: "2px solid green", padding: "10px" }, // Another custom style
+    color: "linear-gradient(45deg, rgba(250,230,255,1) 0%, rgba(119,190,255,1) 100%)",
+    titleStyle: { border: "2px solid green", padding: "10px" 
+    }, // Another custom style
+    subtitleStyle: { border: "2px solid green", padding: "10px" 
+    }, // Another custom style
   },
   {
     title: "Photo",
@@ -32,8 +51,11 @@ const cardData = [
     src: "/model_gun_alpha.png",
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
-    color: "#3357FF", // Example color
-    customStyle: { border: "2px solid green", padding: "10px" }, // Another custom style
+    color: "linear-gradient(to bottom, rgba(52, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
+    titleStyle: { border: "2px solid green", padding: "10px" 
+    }, // Another custom style
+    subtitleStyle: { border: "2px solid green", padding: "10px" 
+    }, // Another custom style
   },
   {
     title: "Web Development",
@@ -42,8 +64,11 @@ const cardData = [
     src: "/model_gun_alpha.png",
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
-    color: "#FF33A1", // Example color
-    customStyle: { border: "2px solid green", padding: "10px" }, // Another custom style
+    color: "linear-gradient(to bottom, rgba(0, 140, 255, 0.74), rgba(0, 0, 0, 0.74))",
+    titleStyle: { border: "2px solid green", padding: "10px" 
+    }, // Another custom style
+    subtitleStyle: { border: "2px solid green", padding: "10px" 
+    }, // Another custom style
   },
 ];
 
@@ -66,7 +91,8 @@ export default function Home() {
               alt={card.alt}
               description={card.description}
               color={card.color} // Pass the color prop
-              customStyle={card.customStyle} // Pass custom styles
+              titleStyle={card.titleStyle} // Pass custom styles
+              subtitleStyle={card.subtitleStyle} // Pass custom styles  
             />
           ))}
         </div>

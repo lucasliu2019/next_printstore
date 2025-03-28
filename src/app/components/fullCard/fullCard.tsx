@@ -1,4 +1,4 @@
-import styles from './fullCard.module.css';
+import styles from "./fullCard.module.css";
 import Image from "next/image";
 
 const Card = ({
@@ -9,7 +9,8 @@ const Card = ({
   alt,
   description,
   color,
-  customStyle,
+  titleStyle,
+  subtitleStyle,
 }: {
   title: string;
   subtitle: string;
@@ -18,14 +19,15 @@ const Card = ({
   alt: string;
   description: string;
   color: string;
-  customStyle?: React.CSSProperties; // Optional custom style prop
+  titleStyle?: React.CSSProperties; // Optional custom style prop
+  subtitleStyle?: React.CSSProperties; // Optional custom style prop
 }) => {
   return (
     <div
       className={styles.card}
       style={{
-        background: `linear-gradient(to bottom, ${color}, black)`, // Linear gradient with black
-        ...customStyle, // Merge custom styles passed via props
+        // background: `linear-gradient(to bottom, ${color}, black)`,
+        background: `${color}`,
       }}
     >
       <Image
@@ -36,8 +38,22 @@ const Card = ({
         height={500}
       />
       <div className={styles.text}>
-        <h2 className={styles.title}>{title}</h2>
-        <h3 className={styles.subtitle}>{subtitle}</h3>
+        <h2
+          className={styles.title}
+          style={{
+            ...titleStyle, // Merge custom styles passed via props
+          }}
+        >
+          {title}
+        </h2>
+        <h3
+          className={styles.subtitle}
+          style={{
+            ...subtitleStyle, // Merge custom styles passed via props
+          }}
+        >
+          {subtitle}
+        </h3>
         <h4 className={styles.subsubtitle}>{subsubtitle}</h4>
         <p className={styles.description}>{description}</p>
         <div className={styles.button}>Learn More</div>
