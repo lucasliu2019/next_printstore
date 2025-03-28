@@ -26,7 +26,7 @@
 
 .card_image {
   width: 50%; /* Take up half the width of the card */
-  height: 50%; /* Take up half the height of the card */
+  height: 100%; /* Take up half the height of the card */
   object-fit: cover; /* Ensure the image scales proportionally and fills the container */
 }
 
@@ -44,10 +44,42 @@
   font-size: 2.5rem; /* Adjust font size */
   margin-bottom: 10px; /* Add spacing below the title */
 }
-/* 
-  .card:hover{
-    cursor: pointer;
-    box-shadow: 
+
+.subtitle {
+  font-size: 1.8rem; /* Adjust font size for subtitle */
+  margin-bottom: 5px; /* Add spacing below the subtitle */
+  color: #ddd; /* Light gray color */
+}
+
+.subsubtitle {
+  font-size: 1.5rem; /* Adjust font size for subsubtitle */
+  margin-bottom: 10px; /* Add spacing below the subsubtitle */
+  color: #bbb; /* Slightly darker gray */
+}
+
+.description {
+  font-size: 1.2rem; /* Adjust font size for the description */
+  line-height: 1.5; /* Improve readability */
+}
+
+.button{
+  margin-top: 20px;
+  background-color: rgb(43, 43, 43);
+  border: 1px solid rgb(144, 137, 122);
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.button:hover{
+  cursor: pointer;
+  background-color: rgb(24, 24, 24);
+  border-radius: 10px;
+  transform: translateY(-2px);
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 
     0px 0px 15px 0 rgba(246, 255, 162, 0.543);
-    transform: translateY(-2px);
-  } */
+  transform: translateY(-2px);
+}

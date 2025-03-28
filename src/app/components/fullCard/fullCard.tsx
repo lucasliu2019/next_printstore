@@ -37,6 +37,7 @@ const Card = ({
         <h3 className={styles.subtitle}>{subtitle}</h3>
         <h4 className={styles.subsubtitle}>{subsubtitle}</h4>
         <p className={styles.description}>{description}</p>
+        <div className={styles.button}>Learn More</div>
       </div>
     </div>
   );
