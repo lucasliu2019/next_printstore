@@ -9,31 +9,45 @@
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
     border: 1px solid rgba(255, 255, 255, 0.482);
-    padding: 20px;
-    /* border-radius: 40px; */
-  
-  
+    padding: 0; /* Remove padding to ensure proper alignment */
+    border-radius: 0; /* Remove border radius for a clean edge-to-edge look */
+
     display: flex;
+    flex-direction: row; /* Arrange image and text side by side */
     align-items: center;
-    justify-content: space-evenly;
-    text-align: center;
+    justify-content: center;
+
+    text-align: left; /* Align text to the left */
   }
 
   .text {
     max-width: 50%;
   }
 
-  .title{
-    font-size: 3rem;
-  }
+.card_image {
+  width: 50%; /* Take up half the width of the card */
+  height: 50%; /* Take up half the height of the card */
+  object-fit: cover; /* Ensure the image scales proportionally and fills the container */
+}
 
+.text {
+  width: 50%; /* Take up half the width of the card */
+  padding: 20px; /* Add spacing around the text */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center text vertically */
+  align-items: flex-start; /* Align text to the left */
+}
+
+
+.title {
+  font-size: 2.5rem; /* Adjust font size */
+  margin-bottom: 10px; /* Add spacing below the title */
+}
+/* 
   .card:hover{
-    /* box-shadow: 
-    inset 4px 4px 10px 0 rgba(169, 175, 255, 0.37),
-    4px 4px 10px 0 rgba(0, 0, 0, 0.669); */
-
     cursor: pointer;
     box-shadow: 
     0px 0px 15px 0 rgba(246, 255, 162, 0.543);
     transform: translateY(-2px);
-  }
+  } */
