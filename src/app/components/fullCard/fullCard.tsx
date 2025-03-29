@@ -19,7 +19,7 @@ const Card = ({
   subsubtitle: string;
   src: string;
   alt: string;
-  description: string;
+  description?: string;
   color: string;
   titleStyle?: React.CSSProperties; // Optional custom style prop
   subtitleStyle?: React.CSSProperties; // Optional custom style prop

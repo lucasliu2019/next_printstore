@@ -13,8 +13,8 @@ const cardData = [
     subsubtitle: "",
     src: "/couple_alpha.png",
     alt: "Couple Figure",
-    description: "Get your 3D models printed by professionals.",
-    color: "linear-gradient(to bottom, rgba(52, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
+    // description: "Get your 3D models printed by professionals.",
+    color: "linear-gradient(to bottom, rgba(28, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
     titleStyle: { 
       fontSize: "3rem", 
       fontWeight:"30000",
@@ -35,7 +35,7 @@ const cardData = [
     subsubtitle: "",
     src: "/baby_alpha2.png",
     alt: "Baby",
-    description: "Get your 3D models printed by professionals.",
+    // description: "Get your 3D models printed by professionals.",
     color: "linear-gradient(45deg, rgba(250,230,255,1) 0%, rgba(119,190,255,1) 100%)",
     titleStyle: { 
       fontSize: "2rem", 
@@ -46,7 +46,7 @@ const cardData = [
       fontSize: "3rem", 
       fontWeight: "bold",
       color: "rgb(61, 128, 194)",
-      textShadow: "4px 4px 1px rgb(10, 30, 50)", // Increased blur and opacity
+      textShadow: "4px 4px 1px rgb(10, 30, 50), 1px 1px 30px rgb(0, 0, 0)", // Increased blur and opacity
     }, // Another custom style
   },
   {
@@ -56,7 +56,7 @@ const cardData = [
     subsubtitle: "Publishing",
     src: "/model_gun_alpha.png",
     alt: "Gun Figure",
-    description: "Get your 3D models printed by professionals.",
+    // description: "Get your 3D models printed by professionals.",
     color: "linear-gradient(to bottom, rgba(52, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
     titleStyle: {
 

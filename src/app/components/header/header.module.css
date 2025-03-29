@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
 
-    box-shadow: 0px 5px 50px 0 rgba(255, 238, 128, 0.133);
+    /* box-shadow: 0px 5px 50px 0 rgba(255, 238, 128, 0.133); */
 }
 
 .top_bar{
@@ -37,9 +37,9 @@
 
 .bot_bar_wrapper{
     width: 100%;
-    background-color: #21292d;
-    border-top: 1px solid #ffffff28;
-    border-bottom: 1px solid #ffffff23;
+    /* background-color: #21292d; */
+    /* border-top: 1px solid #ffffff28; */
+    /* border-bottom: 1px solid #ffffff23; */
 }
 
 .bot_bar{
