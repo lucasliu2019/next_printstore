@@ -1,6 +1,9 @@
+"use client"
+
 import styles from "./fullCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 const Card = ({
   title,
@@ -25,6 +28,34 @@ const Card = ({
   subtitleStyle?: React.CSSProperties; // Optional custom style prop
   route: string;
 }) => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true); // Set visible when the element enters the viewport
+          } else {
+            setIsVisible(false); // Set invisible when the element leaves the viewport
+          }
+        });
+      },
+      { threshold: 0.7 } // Trigger when 10% of the element is visible
+    );
+
+    if (textRef.current) {
+      observer.observe(textRef.current);
+    }
+
+    return () => {
+      if (textRef.current) {
+        observer.unobserve(textRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div
       className={styles.card}
@@ -40,7 +71,10 @@ const Card = ({
         width={500}
         height={500}
       />
-      <div className={styles.text}>
+      <div
+        ref={textRef}
+        className={`${styles.text} ${isVisible ? styles.visible : ""}`}
+      >
         <h2
           className={styles.title}
           style={{

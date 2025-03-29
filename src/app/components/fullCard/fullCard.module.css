@@ -46,6 +46,15 @@
    /* Trigger animation based on viewport */
 /* animation-timeline: view(block 97% 5%); */
   /* animation-timeline: view(); */
+
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out; /* Smooth transition */
+}
+
+.text.visible {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Move to original position */
 }
 
 /* Keyframes for text animation */
@@ -106,6 +115,7 @@
 @media screen and (max-width: 700px) {
   .card {
     flex-direction: column; /* Switch to column layout */
+    padding-bottom: 20px;
   }
 
   .card_image {
