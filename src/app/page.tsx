@@ -11,18 +11,18 @@ const cardData = [
     title: "3D",
     subtitle: "Scan & Print",
     subsubtitle: "",
-    src: "/couple_alpha.png",
+    src: "/main_scan.png",
     alt: "Couple Figure",
     // description: "Get your 3D models printed by professionals.",
-    color: "linear-gradient(to bottom, rgba(28, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
+    color: "radial-gradient(circle at 15% 50%, rgba(160,160,200,1) 0%, rgba(50,50,86,1) 5%, rgba(4,5,14,1) 15%, rgba(7,9,20,1) 97%)",
     titleStyle: { 
-      fontSize: "3rem", 
+      fontSize: "3.5rem", 
       fontWeight:"30000",
       textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
       // textAlign: "center", // Center-align the text
     },
     subtitleStyle: { 
-      fontSize: "2rem", 
+      fontSize: "3rem", 
       fontWeight:"30000",
       textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
       // textAlign: "center", // Center-align the text
@@ -33,20 +33,21 @@ const cardData = [
     title: "3D Print",
     subtitle: "Baby",
     subsubtitle: "",
-    src: "/baby_alpha2.png",
+    src: "/main_baby.png",
     alt: "Baby",
     // description: "Get your 3D models printed by professionals.",
-    color: "linear-gradient(45deg, rgba(250,230,255,1) 0%, rgba(119,190,255,1) 100%)",
+    color: "linear-gradient(17deg, rgba(155,137,177,1) 0%, rgba(136,132,174,1) 12%, rgba(108,147,182,1) 53%, rgba(89,142,178,1) 100%)",
     titleStyle: { 
-      fontSize: "2rem", 
+      fontSize: "3rem", 
       padding: "10px",
-      textShadow: "4px 4px 20px rgba(29, 31, 23, 0.6)", // Increased blur and opacity
+      color: "rgb(200,200,200)",
+      textShadow: "4px 4px 1px rgb(105, 115, 136), 4px 4px 20px rgba(29, 31, 23, 0.6)", // Increased blur and opacity
     }, // Another custom style
     subtitleStyle: {
-      fontSize: "3rem", 
+      fontSize: "3.5rem", 
       fontWeight: "bold",
-      color: "rgb(61, 128, 194)",
-      textShadow: "4px 4px 1px rgb(10, 30, 50), 1px 1px 30px rgb(0, 0, 0)", // Increased blur and opacity
+      color: "rgb(58, 84, 146)",
+      textShadow: "4px 4px 1px rgb(7, 31, 62), 1px 1px 30px rgb(0, 0, 0)", // Increased blur and opacity
     }, // Another custom style
   },
   {
@@ -54,15 +55,15 @@ const cardData = [
     title: "Photo",
     subtitle: "Printing",
     subsubtitle: "Publishing",
-    src: "/model_gun_alpha.png",
+    src: "/main_photo.png",
     alt: "Gun Figure",
     // description: "Get your 3D models printed by professionals.",
-    color: "linear-gradient(to bottom, rgba(52, 17, 73, 0.74), rgba(0, 0, 0, 0.74))",
+    color: "radial-gradient(circle at 20% 50%, rgba(90,57,112,1) 0%, rgba(35,24,62,1) 20%, rgba(15,15,17,1) 100%)",
     titleStyle: {
-
+      fontSize: "3.5rem", 
     }, // Another custom style
     subtitleStyle: {
-
+      fontSize: "3rem", 
     }, // Another custom style
   },
   {
@@ -70,15 +71,15 @@ const cardData = [
     title: "Web Development",
     subtitle: "Web Design",
     subsubtitle: "",
-    src: "/model_gun_alpha.png",
+    src: "/main_web.png",
     alt: "Gun Figure",
     description: "Get your 3D models printed by professionals.",
-    color: "linear-gradient(to bottom, rgba(0, 140, 255, 0.74), rgba(0, 0, 0, 0.74))",
+    color: "linear-gradient(to bottom, rgba(0, 140, 255, 0.74), rgb(20, 53, 151))",
     titleStyle: { 
-
+      fontSize: "3rem", 
     }, // Another custom style
     subtitleStyle: {
-
+      fontSize: "2.5rem", 
     }, // Another custom style
   },
 ];
