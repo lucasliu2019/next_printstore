@@ -64,6 +64,7 @@ const Card = ({
         background: `${color}`,
       }}
     >
+      <div className={styles.card_image_wrapper}>
       <Image
         src={src}
         alt={alt}
@@ -71,6 +72,7 @@ const Card = ({
         width={500}
         height={500}
       />
+            </div>
       <div
         ref={textRef}
         className={`${styles.text} ${isVisible ? styles.visible : ""}`}
