@@ -1,3 +1,5 @@
+
+
 import styles from "./page.module.css";
 // import Slideshow from "./components/slideshow/slideshow";
 import Card from "./components/fullCard/fullCard";
@@ -73,7 +75,7 @@ const cardData = [
     subsubtitle: "",
     src: "/main_web.png",
     alt: "Gun Figure",
-    description: "Get your 3D models printed by professionals.",
+    // description: "Get your 3D models printed by professionals.",
     color: "linear-gradient(to bottom, rgba(0, 140, 255, 0.74), rgb(20, 53, 151))",
     titleStyle: { 
       fontSize: "3rem", 
@@ -101,7 +103,7 @@ export default function Home() {
               subsubtitle={card.subsubtitle}
               src={card.src}
               alt={card.alt}
-              description={card.description}
+              // description={card.description}
               color={card.color} // Pass the color prop
               titleStyle={card.titleStyle} // Pass custom styles
               subtitleStyle={card.subtitleStyle} // Pass custom styles  

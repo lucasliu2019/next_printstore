@@ -5,6 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
+
+import { Alfa_Slab_One } from 'next/font/google';
+const alfa_Slab_One = Alfa_Slab_One ({
+  weight: '400',
+  subsets: ['latin'],
+})
+
+
 const Card = ({
   title,
   subtitle,
@@ -78,7 +86,7 @@ const Card = ({
         className={`${styles.text} ${isVisible ? styles.visible : ""}`}
       >
         <h2
-          className={styles.title}
+          className={`${styles.title}, ${alfa_Slab_One.className}`}
           style={{
             ...titleStyle, // Merge custom styles passed via props
           }}
@@ -86,14 +94,14 @@ const Card = ({
           {title}
         </h2>
         <h3
-          className={styles.subtitle}
+          className={`${styles.subtitle} ${alfa_Slab_One.className}`}
           style={{
             ...subtitleStyle, // Merge custom styles passed via props
           }}
         >
           {subtitle}
         </h3>
-        <h4 className={styles.subsubtitle}>{subsubtitle}</h4>
+        <h4 className={`${styles.subsubtitle} ${alfa_Slab_One.className}`}>{subsubtitle}</h4>
         <p className={styles.description}>{description}</p>
         {/* Add Link to the button */}
         <Link href={route} passHref>

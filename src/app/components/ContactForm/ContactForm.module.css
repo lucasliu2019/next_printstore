@@ -1,0 +1,195 @@
+:root {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.contact{
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    background: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
+    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.587);
+    /* padding: 2rem; */
+
+    width: min(400px, 95%);
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: rgba(11, 73, 128, 0.3); */
+}
+
+.contact>.heading{
+    padding: 0 min(2em, 5%);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: rgb(99, 99, 99);
+    font-weight: bold;
+    
+    margin-top: min(2em,5%);
+    margin-bottom: 0;
+
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+    background: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.contact>form{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    row-gap: 10px;
+    padding: min(1.5em, 8%);
+}
+
+/* .contact>form>input[submit]{
+    transition: all 0.3s ease-in-out;
+} */
+
+.form_group{
+    display: flex;
+    flex-direction: column;
+    vertical-align: center;
+}
+
+.form_top_group, 
+.form_bottom_group{
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    justify-content: space-between;
+}
+
+.form_top_group>label{
+    font-size: 1rem;
+}
+
+  /* form-top-group error message */
+.error_message{
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    color: rgba(255, 154, 154, 0.8);
+    padding: 0;
+    margin: 0;
+}
+
+.contact input::placeholder,
+.contact textarea::placeholder {
+    color: rgba(73, 73, 73, 0.5); /* Change this color to your desired placeholder color */
+}
+
+.contact input, 
+.contact textarea
+{
+    color:azure;
+    width: 100%;
+    padding: clamp(0.8rem,1vw,1rem);
+    margin: min(0.1rem,5%) 0;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color:rgba(255,255,255,0.4);
+    border-bottom: 1px solid rgba(255, 0, 0, 0);
+}
+
+.contact textarea{
+    z-index: 0;
+    resize: none;
+}
+
+
+
+.contact input:-webkit-autofill,
+.contact input:-webkit-autofill:focus,
+.contact input:-webkit-autofill:active{
+    color:azure;
+    -webkit-text-fill-color: azure !important;
+}
+
+.error {
+    background-color:rgba(255, 199, 199, 0.4) !important;
+    border-bottom: 1px solid red !important;
+}
+
+.success {
+    border-bottom: 1px solid rgb(0, 163, 25) !important;
+}
+
+
+.sendMessage{
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    padding: 40px 10px;
+}
+
+.check_icon,
+.cross_icon {
+    position: absolute;
+    right: min(5px, 4%);
+
+}
+
+.check_icon {
+    color: green;
+}
+
+.cross_icon {
+    color: red;
+}
+
+
+
+.contact input:-webkit-autofill,
+.contact input:-webkit-autofill:hover,
+.contact input:-webkit-autofill:focus,
+.contact input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+
+.btn {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    background-color:rgba(255,255,255,0.4);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color:rgba(255, 255, 255, 0.64);
+}
+
+.loading {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+    margin-left: min(0.5em, 1vw);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
