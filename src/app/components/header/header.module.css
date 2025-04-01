@@ -181,6 +181,10 @@
       padding: 10px 15px; /* Adjust padding for better touch targets */
       text-align: left; /* Align text to the left */
     }
+
+    .dropdown_link{
+      font-size: 14px;
+    }
   }
   
   /* Media query for extra small screens (max-width: 480px) */
@@ -223,7 +227,7 @@
       .dropdown_item{
         text-align: center;
         width: 100%;
-        font-size: 15px; /* Adjust font size for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
       }
 
       /* Show the navigation menu when the checkbox is checked */
@@ -263,7 +267,6 @@
         width: 100%; /* Full width for links */
         padding: 10px 15px; /* Adjust padding for better touch targets */
         text-align: center; /* Center-align the text */
-        box-sizing: border-box; /* Include padding in the width calculation */
       }
   }
 
