@@ -13,6 +13,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false); // State to track if the menu is open
   const [isSmallScreen, setIsSmallScreen] = useState(false); // State to track screen size
 
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   // Check screen size on mount and resize
   useEffect(() => {
     const handleResize = () => {
@@ -27,10 +29,15 @@ const Header = () => {
     };
   }, []);
 
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   const handleLinkClick = () => {
     if (isSmallScreen) {
       setMenuOpen(false); // Close the menu only on small screens
     }
+    setIsDropdownOpen(false); // Close the dropdown when a link is clicked
   };
 
   return (
@@ -79,28 +86,55 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className={styles.nav_item}>
+              <li className={`${styles.nav_item} ${styles.dropdown}`}>
+          <Link
+            className={styles.nav_link}
+            onClick={handleDropdownToggle}
+            href=""
+          >
+            Services
+          </Link>
+          {isDropdownOpen && (
+            <ul className={styles.dropdown_menu}>
+              <li>
                 <Link
-                  className={`${styles.nav_link} ${
-                    pathname === "/services" ? styles.active : ""
-                  }`}
-                  href="/services"
-                  onClick={handleLinkClick} // Close menu on link click
+                  href="/print3d"
+                  className={styles.dropdown_link}
+                  onClick={handleLinkClick}
                 >
-                  Services
+                  3D Scan & Print
                 </Link>
               </li>
-              {/* <li className={styles.nav_item}>
+              <li>
                 <Link
-                  className={`${styles.nav_link} ${
-                    pathname === "/about" ? styles.active : ""
-                  }`}
-                  href="/about"
-                  onClick={handleLinkClick} // Close menu on link click
+                  href="/baby3d"
+                  className={styles.dropdown_link}
+                  onClick={handleLinkClick}
                 >
-                  About
+                  3D Print Baby
                 </Link>
-              </li> */}
+              </li>
+              <li>
+                <Link
+                  href="/photo"
+                  className={styles.dropdown_link}
+                  onClick={handleLinkClick}
+                >
+                  Photo Printing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/web"
+                  className={styles.dropdown_link}
+                  onClick={handleLinkClick}
+                >
+                  Web Design
+                </Link>
+              </li>
+            </ul>
+          )}
+        </li>
               <li className={styles.nav_item}>
                 <Link
                   className={`${styles.nav_link} ${
