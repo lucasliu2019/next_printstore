@@ -57,7 +57,7 @@ const Header = () => {
         <div className={styles.bot_bar}>
           <div className={styles.logo}>
             {/* <TbHexagon3D /> */}
-            <span>Valeri Brovko</span>
+            <span>Valerii Brovko</span>
           </div>
 
           <input
