@@ -5,7 +5,6 @@ import styles from "./page.module.css";
 export default function About() {
   return (
     <div className={styles.page}>
-        <div className={styles.slideshow}>
           <h2>Photo Printing Publishing</h2>
           <div className={styles.slide}>
           </div>
@@ -15,7 +14,6 @@ export default function About() {
           <li>Photo Printing – High-quality photo printing in various formats on premium photo paper. </li>
           <li>Calendar Printing – Personalized calendars (wall, desk, pocket-sized) for businesses and gifts.</li>
           </ul>
-        </div>
     </div>
   );
 }

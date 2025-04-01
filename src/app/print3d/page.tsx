@@ -5,7 +5,6 @@ import styles from "./page.module.css";
 export default function About() {
   return (
     <div className={styles.page}>
-        <div className={styles.slideshow}>
           <h2>3d Scanning and Printing</h2>
           <div className={styles.slide}>
           </div>
@@ -15,7 +14,6 @@ export default function About() {
           <li>Creating models based on sketches and drawing </li>
           <li>High-quality printing using plastic</li>
           </ul>
-        </div>
     </div>
   );
 }

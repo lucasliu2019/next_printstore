@@ -39,6 +39,8 @@
     max-width: 45vw;
     margin: auto;
     max-height: 380px; /* Maintain aspect ratio */
+
+    filter: drop-shadow(5px 20px 10px #000000d7);
   }
 
 .text {
