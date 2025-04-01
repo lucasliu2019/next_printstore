@@ -28,14 +28,14 @@ const Header = () => {
   }, []);
 
   const handleClickOutside = (event: MouseEvent) => {
-    console.log("Clicked outside");
+    // console.log("Clicked outside");
     if (
       menuRef.current &&
       !menuRef.current.contains(event.target as Node) &&
       (!dropdownRef.current || !dropdownRef.current.contains(event.target as Node)) &&
       (!hamburgerRef.current || !hamburgerRef.current.contains(event.target as Node)) // Ignore clicks on the hamburger menu
     ) {
-      console.log("Closing menus");
+      // console.log("Closing menus");
       setMenuOpen(false);
       setIsDropdownOpen(false);
     }
