@@ -96,7 +96,7 @@ const Header = () => {
           </Link>
           {isDropdownOpen && (
             <ul className={styles.dropdown_menu}>
-              <li>
+              <li className={styles.dropdown_item}>
                 <Link
                   href="/print3d"
                   className={styles.dropdown_link}
@@ -104,8 +104,8 @@ const Header = () => {
                 >
                   3D Scan & Print
                 </Link>
-              </li>
-              <li>
+              </li> 
+              <li className={styles.dropdown_item}>
                 <Link
                   href="/baby3d"
                   className={styles.dropdown_link}
@@ -114,7 +114,7 @@ const Header = () => {
                   3D Print Baby
                 </Link>
               </li>
-              <li>
+              <li className={styles.dropdown_item}>
                 <Link
                   href="/photo"
                   className={styles.dropdown_link}
@@ -123,7 +123,7 @@ const Header = () => {
                   Photo Printing
                 </Link>
               </li>
-              <li>
+              <li className={styles.dropdown_item}>
                 <Link
                   href="/web"
                   className={styles.dropdown_link}

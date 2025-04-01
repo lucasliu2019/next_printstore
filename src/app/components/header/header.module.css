@@ -139,17 +139,23 @@
 
     width: 200px; /* Set a fixed width */
   }
+
+  .dropdown_item{
+    width: 100%;
+  }
   
   .dropdown_link {
+    width: 100%;
     text-decoration: none;
     color: #94aedd;
     padding: 10px 15px;
     cursor: pointer;
+    display: block;
   }
   
   .dropdown_link:hover {
-    background-color: #f0f0f0;
-    color: #0070f3;
+    color: #fff;
+    background-color: rgba(37, 128, 255, 0.676);
   }
 
 /* Media query for small screens (max-width: 768px) */
