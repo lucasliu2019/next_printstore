@@ -1,17 +1,15 @@
-"use client"
+"use client";
 
 import styles from "./fullCard.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-
-import { Alfa_Slab_One } from 'next/font/google';
-const alfa_Slab_One = Alfa_Slab_One ({
-  weight: '400',
-  subsets: ['latin'],
-})
-
+import { Alfa_Slab_One } from "next/font/google";
+const alfa_Slab_One = Alfa_Slab_One({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 const Card = ({
   title,
@@ -23,17 +21,22 @@ const Card = ({
   color,
   titleStyle,
   subtitleStyle,
+  subsubtitleStyle,
+  imgStyle,
   route,
 }: {
   title: string;
-  subtitle: string;
-  subsubtitle: string;
+  subtitle?: string;
+  subsubtitle?: string;
   src: string;
   alt: string;
-  description?: string;
+  description?: string[];
   color: string;
   titleStyle?: React.CSSProperties; // Optional custom style prop
   subtitleStyle?: React.CSSProperties; // Optional custom style prop
+  subsubtitleStyle?: React.CSSProperties; // Optional custom style prop
+  descriptionStyle?: React.CSSProperties; // Optional custom style prop
+  imgStyle?:React.CSSProperties; // Optional custom style prop
   route: string;
 }) => {
   const textRef = useRef<HTMLDivElement>(null);
@@ -73,14 +76,17 @@ const Card = ({
       }}
     >
       <div className={styles.card_image_wrapper}>
-      <Image
-        src={src}
-        alt={alt}
-        className={styles.card_image}
-        width={500}
-        height={500}
-      />
-            </div>
+        <Image
+          src={src}
+          alt={alt}
+          className={styles.card_image}
+          width={500}
+          height={500}
+          style={{
+            ...imgStyle, // Merge custom styles passed via props
+          }}
+        />
+      </div>
       <div
         ref={textRef}
         className={`${styles.text} ${isVisible ? styles.visible : ""}`}
@@ -101,8 +107,21 @@ const Card = ({
         >
           {subtitle}
         </h3>
-        <h4 className={`${styles.subsubtitle} ${alfa_Slab_One.className}`}>{subsubtitle}</h4>
-        <p className={styles.description}>{description}</p>
+        <h4
+          className={`${styles.subsubtitle} ${alfa_Slab_One.className}`}
+          style={{
+            ...subsubtitleStyle, // Merge custom styles passed via props
+          }}
+        >
+          {subsubtitle}
+        </h4>
+
+        {description &&
+          description.map((desc, index) => (
+            <p key={index} className={styles.description}>
+              {desc}
+            </p>
+          ))}
         {/* Add Link to the button */}
         <Link href={route} passHref>
           <div className={styles.button}>Learn More</div>

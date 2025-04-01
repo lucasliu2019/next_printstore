@@ -15,8 +15,13 @@ const cardData = [
     subsubtitle: "",
     src: "/main_scan.png",
     alt: "Couple Figure",
-    // description: "Get your 3D models printed by professionals.",
-    color: "radial-gradient(circle at 15% 50%, rgba(160,160,200,1) 0%, rgba(50,50,86,1) 5%, rgba(4,5,14,1) 15%, rgba(7,9,20,1) 97%)",
+    description: [
+      "- Precise digital copy of project and people",
+      "- Creating models from sketches and drawing",
+      "- High-quality printing using plastic",
+    ],
+    // color: "radial-gradient(circle at 25% 50%, rgba(50,50,86,1) 5% 0%, rgba(50,50,86,1) 5%, rgba(4,5,14,1) 15%, rgba(7,9,20,1) 97%)",
+    color: "radial-gradient(circle at 25% 50%, rgba(4,5,14,1) 15%, rgba(7,9,20,1) 97%)",
     titleStyle: { 
       fontSize: "3.5rem", 
       fontWeight:"30000",
@@ -29,6 +34,9 @@ const cardData = [
       textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
       // textAlign: "center", // Center-align the text
     },
+    imgStyle: {
+      filter: "drop-shadow(10px 10px 20px rgb(41, 45, 74))"
+    }
   },
   {
     route: "/baby3d", // Route for this card
@@ -37,7 +45,12 @@ const cardData = [
     subsubtitle: "",
     src: "/main_baby.png",
     alt: "Baby",
-    // description: "Get your 3D models printed by professionals.",
+    description: [
+      "Unique service creating 3D sculptures of yuor baby",
+      "- Personal inscriptions",
+      "- Bespoke stands",
+      "- Exclusive packaging options avaliable",
+    ],
     color: "linear-gradient(17deg, rgba(155,137,177,1) 0%, rgba(136,132,174,1) 12%, rgba(108,147,182,1) 53%, rgba(89,142,178,1) 100%)",
     titleStyle: { 
       fontSize: "3rem", 
@@ -51,6 +64,9 @@ const cardData = [
       color: "rgb(58, 84, 146)",
       textShadow: "4px 4px 1px rgb(7, 31, 62), 1px 1px 30px rgb(0, 0, 0)", // Increased blur and opacity
     }, // Another custom style
+    imgStyle: {
+      filter: "drop-shadow(5px 20px 10pxrgba(0, 0, 0, 0.61))"
+    }
   },
   {
     route: "/photo", // Route for this card
@@ -59,7 +75,11 @@ const cardData = [
     subsubtitle: "Publishing",
     src: "/main_photo.png",
     alt: "Gun Figure",
-    // description: "Get your 3D models printed by professionals.",
+    description: [
+      "- Brochures, flyers, leaflets.",
+      "- Photo Printing on premium photo paper.",
+      "- Calendar Printing for businesses and gifts",
+    ],
     color: "radial-gradient(circle at 20% 50%, rgba(90,57,112,1) 0%, rgba(35,24,62,1) 20%, rgba(15,15,17,1) 100%)",
     titleStyle: {
       fontSize: "3.5rem", 
@@ -67,6 +87,12 @@ const cardData = [
     subtitleStyle: {
       fontSize: "3rem", 
     }, // Another custom style
+    subsubtitleStyle: {
+      fontSize: "2.5rem", 
+    }, // Another custom style
+    imgStyle: {
+      filter: "drop-shadow(5px 20px 10px #000000d7)"
+    }
   },
   {
     route: "/web", // Route for this card
@@ -75,7 +101,11 @@ const cardData = [
     subsubtitle: "",
     src: "/main_web.png",
     alt: "Gun Figure",
-    // description: "Get your 3D models printed by professionals.",
+    description: [
+      "- Precise digital copy of project and people",
+      "- Creating models from sketches and drawing",
+      "- High-quality printing using plastic",
+    ],
     color: "linear-gradient(to bottom, rgba(0, 140, 255, 0.74), rgb(20, 53, 151))",
     titleStyle: { 
       fontSize: "3rem", 
@@ -83,7 +113,11 @@ const cardData = [
     subtitleStyle: {
       fontSize: "2.5rem", 
     }, // Another custom style
+    imgStyle: {
+      filter: "drop-shadow(-25px 25px 10px #000000d7)"
+    }
   },
+  
 ];
 
 export default function Home() {
@@ -103,10 +137,12 @@ export default function Home() {
               subsubtitle={card.subsubtitle}
               src={card.src}
               alt={card.alt}
-              // description={card.description}
+              description={card.description}
               color={card.color} // Pass the color prop
               titleStyle={card.titleStyle} // Pass custom styles
               subtitleStyle={card.subtitleStyle} // Pass custom styles  
+              subsubtitleStyle={card.subsubtitleStyle} // Pass custom styles
+              imgStyle={card.imgStyle}
               route={card.route}
             />
           ))}

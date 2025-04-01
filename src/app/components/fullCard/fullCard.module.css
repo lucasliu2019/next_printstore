@@ -1,6 +1,6 @@
 .card {
     width: 100vw; /* Full width of the viewport */
-    min-height: 400px;
+    min-height: 500px;
     margin: 0; /* Remove any default margins */
 
     background-color: rgba(115, 115, 115, 0.216);
@@ -40,7 +40,7 @@
     margin: auto;
     max-height: 380px; /* Maintain aspect ratio */
 
-    filter: drop-shadow(5px 20px 10px #000000d7);
+    /* filter: drop-shadow(5px 20px 10px #000000d7); */
   }
 
 .text {
@@ -98,7 +98,7 @@
 }
 
 .description {
-  font-size: 1.2rem; /* Adjust font size for the description */
+  font-size: 1rem; /* Adjust font size for the description */
   line-height: 1.5; /* Improve readability */
 }
 
