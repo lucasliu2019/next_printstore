@@ -5,39 +5,49 @@ import { FaPhoneAlt } from "react-icons/fa";
 // import { TbHexagon3D } from "react-icons/tb";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import useRouter
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import styles from "./header.module.css";
 const Header = () => {
   const pathname = usePathname(); // Get the current route
 
   const [menuOpen, setMenuOpen] = useState(false); // State to track if the menu is open
-  const [isSmallScreen, setIsSmallScreen] = useState(false); // State to track screen size
-
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  // Check screen size on mount and resize
+  const dropdownRef = useRef<HTMLLIElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const hamburgerRef = useRef<HTMLLabelElement>(null); // Ref for the hamburger menu
+
+
+  // Close the menu when clicked!
+
   useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768); // Adjust breakpoint as needed
-    };
-
-    handleResize(); // Check screen size on mount
-    window.addEventListener("resize", handleResize); // Listen for resize events
-
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      window.removeEventListener("resize", handleResize); // Cleanup on unmount
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    console.log("Clicked outside");
+    if (
+      menuRef.current &&
+      !menuRef.current.contains(event.target as Node) &&
+      (!dropdownRef.current || !dropdownRef.current.contains(event.target as Node)) &&
+      (!hamburgerRef.current || !hamburgerRef.current.contains(event.target as Node)) // Ignore clicks on the hamburger menu
+    ) {
+      console.log("Closing menus");
+      setMenuOpen(false);
+      setIsDropdownOpen(false);
+    }
+  };
 
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
   const handleLinkClick = () => {
-    if (isSmallScreen) {
-      setMenuOpen(false); // Close the menu only on small screens
-    }
-    setIsDropdownOpen(false); // Close the dropdown when a link is clicked
+    setMenuOpen(false); // Close the hamburger menu
+    setIsDropdownOpen(false); // Close the dropdown menu
   };
 
   return (
@@ -65,15 +75,18 @@ const Header = () => {
             id="menu-toggle"
             className={styles.menu_toggle}
             checked={menuOpen}
-            onChange={() => setMenuOpen(!menuOpen)} // Toggle menu state
+            onChange={() => { 
+              setMenuOpen(!menuOpen);
+            }}
           />
-          <label htmlFor="menu-toggle" className={styles.hamburger}>
+          {/* Attach ref to the hamburger menu */}
+          <label htmlFor="menu-toggle" className={styles.hamburger} ref={hamburgerRef} > 
             <span></span>
             <span></span>
             <span></span>
           </label>
 
-          <nav className={styles.nav}>
+          <nav className={styles.nav} ref={menuRef}>
             <ul className={styles.nav_list}>
               <li className={styles.nav_item}>
                 <Link
@@ -86,55 +99,58 @@ const Header = () => {
                   Home
                 </Link>
               </li>
-              <li className={`${styles.nav_item} ${styles.dropdown}`}>
-          <Link
-            className={styles.nav_link}
-            onClick={handleDropdownToggle}
-            href=""
-          >
-            Services
-          </Link>
-          {isDropdownOpen && (
-            <ul className={styles.dropdown_menu}>
-              <li className={styles.dropdown_item}>
+              <li
+                className={`${styles.nav_item} ${styles.dropdown}`}
+                ref={dropdownRef}
+              >
                 <Link
-                  href="/print3d"
-                  className={styles.dropdown_link}
-                  onClick={handleLinkClick}
+                  className={styles.nav_link}
+                  onClick={handleDropdownToggle}
+                  href=""
                 >
-                  3D Scan & Print
+                  Services
                 </Link>
-              </li> 
-              <li className={styles.dropdown_item}>
-                <Link
-                  href="/baby3d"
-                  className={styles.dropdown_link}
-                  onClick={handleLinkClick}
-                >
-                  3D Print Baby
-                </Link>
+                {isDropdownOpen && (
+                  <ul className={styles.dropdown_menu}>
+                    <li className={styles.dropdown_item}>
+                      <Link
+                        href="/print3d"
+                        className={styles.dropdown_link}
+                        onClick={handleLinkClick}
+                      >
+                        3D Scan & Print
+                      </Link>
+                    </li>
+                    <li className={styles.dropdown_item}>
+                      <Link
+                        href="/baby3d"
+                        className={styles.dropdown_link}
+                        onClick={handleLinkClick}
+                      >
+                        3D Print Baby
+                      </Link>
+                    </li>
+                    <li className={styles.dropdown_item}>
+                      <Link
+                        href="/photo"
+                        className={styles.dropdown_link}
+                        onClick={handleLinkClick}
+                      >
+                        Photo Printing
+                      </Link>
+                    </li>
+                    <li className={styles.dropdown_item}>
+                      <Link
+                        href="/web"
+                        className={styles.dropdown_link}
+                        onClick={handleLinkClick}
+                      >
+                        Web Design
+                      </Link>
+                    </li>
+                  </ul>
+                )}
               </li>
-              <li className={styles.dropdown_item}>
-                <Link
-                  href="/photo"
-                  className={styles.dropdown_link}
-                  onClick={handleLinkClick}
-                >
-                  Photo Printing
-                </Link>
-              </li>
-              <li className={styles.dropdown_item}>
-                <Link
-                  href="/web"
-                  className={styles.dropdown_link}
-                  onClick={handleLinkClick}
-                >
-                  Web Design
-                </Link>
-              </li>
-            </ul>
-          )}
-        </li>
               <li className={styles.nav_item}>
                 <Link
                   className={`${styles.nav_link} ${
