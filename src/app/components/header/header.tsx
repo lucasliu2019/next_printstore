@@ -82,15 +82,15 @@ const Header = () => {
               <li className={styles.nav_item}>
                 <Link
                   className={`${styles.nav_link} ${
-                    pathname === "/products" ? styles.active : ""
+                    pathname === "/services" ? styles.active : ""
                   }`}
-                  href="/products"
+                  href="/services"
                   onClick={handleLinkClick} // Close menu on link click
                 >
-                  Products
+                  Services
                 </Link>
               </li>
-              <li className={styles.nav_item}>
+              {/* <li className={styles.nav_item}>
                 <Link
                   className={`${styles.nav_link} ${
                     pathname === "/about" ? styles.active : ""
@@ -100,7 +100,7 @@ const Header = () => {
                 >
                   About
                 </Link>
-              </li>
+              </li> */}
               <li className={styles.nav_item}>
                 <Link
                   className={`${styles.nav_link} ${
