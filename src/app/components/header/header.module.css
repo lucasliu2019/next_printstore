@@ -124,6 +124,7 @@
   
   .dropdown_menu {
     position: absolute;
+    margin-top: 1px;
     top: 100%; /* Position below the parent */
     left: 0;
     background-color: rgb(40, 40, 56);
@@ -203,6 +204,26 @@
         z-index: 1000;
         padding: 10px 10px;
         transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+      }
+
+      .dropdown{
+        width: 100%;
+        position: static;
+      }
+
+      .dropdown_menu{
+        border-radius: 0 0 10px 10px;
+        align-items: right;
+        width: 90%;
+        margin: auto;
+        position: static;
+        flex-direction: column;
+      }
+
+      .dropdown_item{
+        text-align: center;
+        width: 100%;
+        font-size: 15px; /* Adjust font size for smaller screens */
       }
 
       /* Show the navigation menu when the checkbox is checked */
