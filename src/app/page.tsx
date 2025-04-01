@@ -65,7 +65,7 @@ const cardData = [
       textShadow: "4px 4px 1px rgb(7, 31, 62), 1px 1px 30px rgb(0, 0, 0)", // Increased blur and opacity
     }, // Another custom style
     imgStyle: {
-      filter: "drop-shadow(5px 20px 10pxrgba(0, 0, 0, 0.61))"
+      filter: "drop-shadow(5px 20px 10px rgba(0, 0, 0, 0.61))"
     }
   },
   {
@@ -91,7 +91,7 @@ const cardData = [
       fontSize: "2.5rem", 
     }, // Another custom style
     imgStyle: {
-      filter: "drop-shadow(5px 20px 10px #000000d7)"
+      filter: "drop-shadow(5px 20px 10px  #000000d7)"
     }
   },
   {
@@ -114,7 +114,7 @@ const cardData = [
       fontSize: "2.5rem", 
     }, // Another custom style
     imgStyle: {
-      filter: "drop-shadow(-25px 25px 10px #000000d7)"
+      filter: "drop-shadow(-25px 25px 10px  #000000d7)"
     }
   },
   
