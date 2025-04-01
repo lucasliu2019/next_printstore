@@ -3,13 +3,12 @@
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 
-    background: rgba(255,255,255,0.4);
-    border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    /* background: rgba(255,255,255,0.4); */
 
-    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.587);
-    /* padding: 2rem; */
+    background-image: url("/mailbox.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    filter: drop-shadow(5px 20px 10px rgba(0, 0, 0, 0.61));
 
     width: clamp(400px, 95% ,600px);
     margin: 0 auto;
@@ -17,24 +16,9 @@
     /* background-color: rgba(11, 73, 128, 0.3); */
 }
 
-.contact>.heading{
-    padding: 0 min(2em, 5%);
-    font-size: clamp(1rem, 2vw, 1.5rem);
-    color: rgb(99, 99, 99);
-    font-weight: bold;
-    
-    margin-top: min(2em,5%);
-    margin-bottom: 0;
-
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-
-    background: rgba(255,255,255,0.4);
-    border: 1px solid rgba(255,255,255,0.2);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
 .contact>form{
+    margin: 200px 40px;
+
     display: flex;
     flex-direction: column;
     align-items: left;

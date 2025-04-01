@@ -115,7 +115,6 @@ const Contact = () => {
     return (
         <>
             <div className={styles.contact} >
-                <h2 className={styles.heading}><i className="fa-solid fa-phone"></i> Contact</h2>
                 {messageSend ? (
                     <p className={styles.sendMessage}>{successMessage}</p>
                 ) : (
