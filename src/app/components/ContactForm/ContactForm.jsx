@@ -86,7 +86,7 @@ const Contact = () => {
         if (isValid) {
             // console.log("Form Submitted", formValue);
             try {
-                const response = await fetch('https://api.wantedbot.com/mail', {
+                const response = await fetch("/api/contact", {
                 // const response = await fetch('http://localhost:8000/mail', {
                     method: 'POST',
                     headers: {
