@@ -54,7 +54,6 @@ const cardData = [
     color: "linear-gradient(17deg, rgba(155,137,177,1) 0%, rgba(136,132,174,1) 12%, rgba(108,147,182,1) 53%, rgba(89,142,178,1) 100%)",
     titleStyle: { 
       fontSize: "3rem", 
-      padding: "10px",
       color: "rgb(200,200,200)",
       textShadow: "4px 4px 1px rgb(105, 115, 136), 4px 4px 20px rgba(29, 31, 23, 0.6)", // Increased blur and opacity
     }, // Another custom style
