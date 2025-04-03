@@ -24,15 +24,19 @@ const cardData = [
     color: "radial-gradient(circle at 25% 50%, rgba(4,5,14,1) 15%, rgba(7,9,20,1) 97%)",
     titleStyle: { 
       fontSize: "3.5rem", 
-      fontWeight:"30000",
-      textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
+      fontWeight:"2000",
+      // textShadow: "4px 4px 20px rgba(187, 71, 255, 1)",
+
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155), 4px 4px 20px rgba(187, 71, 255, 1) ",
       // textAlign: "center", // Center-align the text
     },
     subtitleStyle: { 
       fontSize: "3rem", 
-      fontWeight:"30000",
-      textShadow: "4px 4px 20px rgba(187, 71, 255, 1)", // Increased blur and opacity
+      fontWeight:"2000",
+      // textShadow: "4px 4px 20px rgba(187, 71, 255, 1)",
       // textAlign: "center", // Center-align the text
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155), 4px 4px 20px rgba(187, 71, 255, 1) ", 
+
     },
     imgStyle: {
       filter: "drop-shadow(10px 10px 20px rgb(41, 45, 74))"
@@ -55,13 +59,13 @@ const cardData = [
     titleStyle: { 
       fontSize: "3rem", 
       color: "rgb(200,200,200)",
-      textShadow: "4px 4px 1px rgb(105, 115, 136), 4px 4px 20px rgba(29, 31, 23, 0.6)", // Increased blur and opacity
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155),4px 4px 1px rgb(131, 139, 155), 5px 5px 20px rgba(29, 31, 23, 0.6)", // Increased blur and opacity
     }, // Another custom style
     subtitleStyle: {
       fontSize: "3.5rem", 
       fontWeight: "bold",
       color: "rgb(58, 84, 146)",
-      textShadow: "4px 4px 1px rgb(7, 31, 62), 1px 1px 30px rgb(0, 0, 0)", // Increased blur and opacity
+      textShadow: "1px 1px 1px rgb(7, 31, 62), 2px 2px 1px rgb(7, 31, 62),3px 3px 1px rgb(7, 31, 62),4px 4px 1px rgb(7, 31, 62), 6px 6px 20px rgb(0, 0, 0)", // Increased blur and opacity
     }, // Another custom style
     imgStyle: {
       filter: "drop-shadow(5px 20px 10px rgba(0, 0, 0, 0.61))"
@@ -82,12 +86,15 @@ const cardData = [
     color: "radial-gradient(circle at 20% 50%, rgba(90,57,112,1) 0%, rgba(35,24,62,1) 20%, rgba(15,15,17,1) 100%)",
     titleStyle: {
       fontSize: "3.5rem", 
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155)", // Increased blur and opacity
     }, // Another custom style
     subtitleStyle: {
       fontSize: "3rem", 
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155) ", // Increased blur and opacity
     }, // Another custom style
     subsubtitleStyle: {
       fontSize: "2.5rem", 
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155)", // Increased blur and opacity
     }, // Another custom style
     imgStyle: {
       filter: "drop-shadow(5px 20px 10px  #000000d7)"
@@ -108,9 +115,11 @@ const cardData = [
     color: "linear-gradient(to bottom, rgba(0, 140, 255, 0.74), rgb(20, 53, 151))",
     titleStyle: { 
       fontSize: "3rem", 
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155)", // Increased blur and opacity
     }, // Another custom style
     subtitleStyle: {
       fontSize: "2.5rem", 
+      textShadow: "1px 1px 1px rgb(131, 139, 155), 2px 2px 1px rgb(131, 139, 155), 3px 3px 1px rgb(131, 139, 155)", // Increased blur and opacity
     }, // Another custom style
     imgStyle: {
       filter: "drop-shadow(-25px 25px 10px  #000000d7)"
