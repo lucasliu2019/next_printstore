@@ -45,7 +45,7 @@ export default function About() {
             type="text"
             value={week}
             onChange={(e) => setWeek(e.target.value)} // Update week state
-            maxLength={15} // Restrict name to 30 characters
+            maxLength={14} // Restrict name to 30 characters
           />
           <br />
           <label>DOB:</label>
