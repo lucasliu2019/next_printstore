@@ -16,7 +16,7 @@ const cardData = [
     src: "/main_scan.png",
     alt: "Couple Figure",
     description: [
-      "- Precise digital copy of project and people",
+      "- Precise digital copying of project and people",
       "- Creating models from sketches and drawing",
       "- High-quality printing using plastic",
     ],
@@ -50,7 +50,7 @@ const cardData = [
     src: "/main_baby.png",
     alt: "Baby",
     description: [
-      "Unique service creating 3D sculptures of yuor baby",
+      "Unique service creating 3D sculptures of your baby",
       "- Personal inscriptions",
       "- Bespoke stands",
       "- Exclusive packaging options avaliable",
