@@ -2,4 +2,119 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-self: center;
 }
+
+.card_image_wrapper{
+    height: 900px;
+    width: 434px;
+    margin: auto;
+    position: relative;
+  }
+
+.card_image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; /* Ensure the image fits within its container while maintaining aspect ratio */
+}
+
+.name_wrapper {
+    text-align: center;
+    transform: translate(-50%, -50%);
+    position: absolute; /* Position relative to the parent */
+    bottom: 145px; /* Position 10px from the bottom */
+    right: 40px; /* Position 10px from the left */
+
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transform-origin: center; /* Set the origin to the center of the div */
+    transform: rotate(-8deg); /* Rotate the text counterclockwise by 5 degrees */
+
+    width: 140px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* background-color: rgba(240, 248, 255, 0.458); */
+}
+
+.name{
+    color: white; /* Text color */
+    font-size: 13px;
+    text-shadow: 
+    -1px 1px 0px rgb(110, 110, 110),
+    -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(0, 0, 0),
+    -4px 4px 0px rgb(0, 0, 0),
+    -5px 5px 0px rgb(0, 0, 0),
+    -6px 6px 0px rgb(0, 0, 0);
+}
+
+
+  
+  .week_wrapper {
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    position: absolute; /* Position relative to the parent */
+    bottom: 80px; /* Position 10px from the top */
+    right: 25px; /* Position 10px from the right */
+
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
+    transform-origin: center; /* Set the origin to the center of the div */
+
+
+    /* background-color: rgba(240, 248, 255, 0.458); */
+    width: 335px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .week{
+    font-size: 40px;
+    font-weight: 30;
+    color: white;
+    text-shadow: 
+        -1px 1px 0px rgb(110, 110, 110),
+        -2px 2px 0px rgb(110, 110, 110),
+        -3px 3px 0px rgb(110, 110, 110),
+        -4px 4px 0px rgb(0, 0, 0),
+        -5px 5px 0px rgb(0, 0, 0),
+        -6px 6px 0px rgb(0, 0, 0),
+        -7px 7px 0px rgb(0, 0, 0),
+        -8px 8px 0px rgb(0, 0, 0);
+  }
+  
+  .dob_wrapper {
+    text-align: center;
+    transform: translate(-50%, -50%);
+
+    position: absolute; /* Position relative to the parent */
+    bottom: 35px; /* Position 10px from the top */
+    right: 10px; /* Position 10px from the right */
+
+    transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
+    transform-origin: center; /* Set the origin to the center of the div */
+
+    /* background-color: rgba(240, 248, 255, 0.458); */
+    width: 340px;
+    height: 30px;
+  }
+
+  .dob{
+    font-size: 25px;
+    font-weight: 30;
+    color: white;
+    text-shadow: 
+    -1px 1px 0px rgb(110, 110, 110),
+    -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(110, 110, 110),
+    -4px 4px 0px rgb(0, 0, 0),
+    -5px 5px 0px rgb(0, 0, 0),
+    -6px 6px 0px rgb(0, 0, 0),
+    -7px 7px 0px rgb(0, 0, 0);
+  }
