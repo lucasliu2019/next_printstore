@@ -22,7 +22,7 @@
   text-align: center;
   transform: translate(-50%, -50%);
   position: absolute; /* Position relative to the parent */
-  bottom: 148px; /* Position 10px from the bottom */
+  bottom: 150px; /* Position 10px from the bottom */
   right: 34px; /* Position 10px from the left */
 
   transform-origin: center; /* Set the origin to the center of the div */
