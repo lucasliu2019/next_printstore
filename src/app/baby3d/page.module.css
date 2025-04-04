@@ -93,7 +93,7 @@
     transform: translate(-50%, -50%);
 
     position: absolute; /* Position relative to the parent */
-    bottom: 38px; /* Position 10px from the top */
+    bottom: 41px; /* Position 10px from the top */
     right: 12px; /* Position 10px from the right */
 
     transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
@@ -143,7 +143,7 @@
       }
       
       .dob_wrapper {
-        bottom: 22px; /* Position 10px from the top */
+        bottom: 23px; /* Position 10px from the top */
         right: 7px; /* Position 10px from the right */
     
         width: 170px;
@@ -155,7 +155,7 @@
     }
 
     .week {
-        font-size: 13px; /* Adjust font size for smaller screens */
+        font-size: 20px; /* Adjust font size for smaller screens */
     }
 
     .dob {
