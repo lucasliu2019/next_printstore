@@ -312,7 +312,7 @@
     transform: translate(-50%, -50%);
   
     position: absolute; /* Position relative to the parent */
-    bottom: 42px; /* Position 10px from the top */
+    bottom: 43px; /* Position 10px from the top */
     right: 60px; /* Position 10px from the right */
   
     /* background-color: rgba(0, 0, 0, 0.5); */
