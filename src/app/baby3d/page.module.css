@@ -23,7 +23,7 @@
   transform: translate(-50%, -50%);
   position: absolute; /* Position relative to the parent */
   bottom: 150px; /* Position 10px from the bottom */
-  right: 34px; /* Position 10px from the left */
+  right: 32px; /* Position 10px from the left */
 
   transform-origin: center; /* Set the origin to the center of the div */
   transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
