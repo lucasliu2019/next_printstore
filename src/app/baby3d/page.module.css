@@ -25,7 +25,6 @@
     bottom: 145px; /* Position 10px from the bottom */
     right: 40px; /* Position 10px from the left */
 
-    /* background-color: rgba(0, 0, 0, 0.5); */
     transform-origin: center; /* Set the origin to the center of the div */
     transform: rotate(-8deg); /* Rotate the text counterclockwise by 5 degrees */
 
@@ -35,7 +34,7 @@
     align-items: center;
     justify-content: center;
 
-    /* background-color: rgba(240, 248, 255, 0.458); */
+    background-color: rgba(240, 248, 255, 0.458);
 }
 
 .name{
@@ -65,9 +64,9 @@
     transform-origin: center; /* Set the origin to the center of the div */
 
 
-    /* background-color: rgba(240, 248, 255, 0.458); */
-    width: 335px;
-    height: 40px;
+    background-color: rgba(240, 248, 255, 0.458);
+    width: 310px;
+    height: 50px;
 
     display: flex;
     align-items: center;
@@ -94,14 +93,14 @@
     transform: translate(-50%, -50%);
 
     position: absolute; /* Position relative to the parent */
-    bottom: 35px; /* Position 10px from the top */
-    right: 10px; /* Position 10px from the right */
+    bottom: 38px; /* Position 10px from the top */
+    right: 12px; /* Position 10px from the right */
 
     transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
     transform-origin: center; /* Set the origin to the center of the div */
 
-    /* background-color: rgba(240, 248, 255, 0.458); */
-    width: 340px;
+    background-color: rgba(240, 248, 255, 0.458);
+    width: 310px;
     height: 30px;
   }
 
@@ -118,3 +117,22 @@
     -6px 6px 0px rgb(0, 0, 0),
     -7px 7px 0px rgb(0, 0, 0);
   }
+
+
+  /* Media query for small screens */
+@media (max-width: 768px) {
+    .card_image_wrapper {
+        height: 500px; /* Reduce the height for small screens */
+        width: 250px; /* Reduce the width for small screens */
+    }
+
+    .card_image {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .name, .week, .dob {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+}

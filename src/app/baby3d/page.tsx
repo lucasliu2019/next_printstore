@@ -20,7 +20,7 @@ export default function About() {
         <li>Exclusive packaging options available</li>
         <div className={styles.card_image_wrapper}>
           <Image
-            src="/baby.png"
+            src="/baby1.png"
             alt="baby"
             className={styles.card_image}
             width={500}
@@ -29,6 +29,7 @@ export default function About() {
           <div className={styles.name_wrapper}><span className={styles.name}>{name}</span></div>
           <div className={styles.week_wrapper}><span className={styles.week}>{week}</span></div>
           <div className={styles.dob_wrapper}><span className={styles.dob}>{dob}</span></div>
+          <div></div>
         </div>
 
         <form>
