@@ -36,6 +36,8 @@ export default function About() {
           <div className={styles.dob_wrapper}>
             <span className={styles.dob}>{dob}</span>
           </div>
+          <div className={styles.bar}>
+          </div>
           <div
             className={styles.base_polygon_front}
             style={{ backgroundColor: baseColor }}

@@ -108,6 +108,26 @@
     z-index: 4;
 }
 
+.bar{
+    transform: translate(-50%, -50%);
+  
+    position: absolute; /* Position relative to the parent */
+    bottom: 73px; /* Position 10px from the top */
+    right: 105px; /* Position 10px from the right */
+  
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transform: rotate(-10.5deg); /* Rotate the text counterclockwise by 5 degrees */
+    transform-origin: center; /* Set the origin to the center of the div */
+  
+    background-color: rgb(240, 248, 255);
+    width: 129px;
+    height: 2px;
+    z-index: 4;
+    border-radius: 15px;
+
+    box-shadow: -1px 1px 1px black;
+}
+
 .base_polygon_front {
     position: absolute;
     bottom: var(--base-bottom);
@@ -152,13 +172,6 @@
     position: absolute;
     bottom: var(--base-bottom);
     left: var(--base-left);
-    
-/* 
-    53% 72%,
-    60% 73%,
-    57.5% 71% 
-    */
-
     /* background-color: rgba(255, 0, 0, 0.236); */
   width: 100%;
   aspect-ratio: 0.866;
@@ -267,9 +280,9 @@
     font-size: 6px; /* Adjust font size for smaller screens */
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
-    -2px 2px 0px rgb(110, 110, 110),
-    -3px 3px 0px rgb(0, 0, 0),
-    -4px 4px 0px rgb(0, 0, 0);
+    -2px 2px 1px rgb(110, 110, 110),
+    -3px 3px 1px rgb(0, 0, 0),
+    -4px 4px 1px rgb(0, 0, 0);
     z-index: 4;
   }
 
@@ -277,20 +290,41 @@
     font-size: 20px; /* Adjust font size for smaller screens */
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
-    -2px 2px 0px rgb(110, 110, 110),
-    -3px 3px 0px rgb(110, 110, 110),
-    -4px 4px 0px rgb(0, 0, 0),
-    -5px 5px 0px rgb(0, 0, 0),
-     -6px 6px 0px rgb(0, 0, 0),
+    -2px 2px 1px rgb(110, 110, 110),
+    -3px 3px 1px rgb(110, 110, 110),
+    -4px 4px 1px rgb(0, 0, 0),
+    -5px 5px 1px rgb(0, 0, 0),
+     -6px 6px 1px rgb(0, 0, 0),
   }
 
   .dob {
     font-size: 12px; /* Adjust font size for smaller screens */
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
-    -2px 2px 0px rgb(110, 110, 110),
-    -3px 3px 0px rgb(0, 0, 0),
-    -4px 4px 0px rgb(0, 0, 0);
+    -2px 2px 1px rgb(110, 110, 110),
+    -3px 3px 1px rgb(0, 0, 0),
+    -4px 4px 1px rgb(0, 0, 0);
     z-index: 4;
   }
+
+
+.bar{
+    transform: translate(-50%, -50%);
+  
+    position: absolute; /* Position relative to the parent */
+    bottom: 42px; /* Position 10px from the top */
+    right: 60px; /* Position 10px from the right */
+  
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    transform: rotate(-10.5deg); /* Rotate the text counterclockwise by 5 degrees */
+    transform-origin: center; /* Set the origin to the center of the div */
+  
+    background-color: rgba(240, 248, 255, 0.608);
+    width: 75px;
+    height: 1px;
+    z-index: 4;
+    border-radius: 15px;
+
+    box-shadow: -1px 1px 1px black;
+}
 }
