@@ -135,7 +135,7 @@
     }
 
     .week_wrapper {
-        bottom: 40px; /* Position 10px from the top */
+        bottom: 42px; /* Position 10px from the top */
         right: 13px; /* Position 10px from the right */
     
         width: 170px;
@@ -143,15 +143,22 @@
       }
       
       .dob_wrapper {
-        bottom: 20px; /* Position 10px from the top */
+        bottom: 22px; /* Position 10px from the top */
         right: 7px; /* Position 10px from the right */
     
         width: 170px;
         height: 25px;
       }
 
+    .name{
+        font-size: 6px; /* Adjust font size for smaller screens */
+    }
 
-    .name, .week, .dob {
+    .week {
+        font-size: 13px; /* Adjust font size for smaller screens */
+    }
+
+    .dob {
         font-size: 12px; /* Adjust font size for smaller screens */
     }
 }
