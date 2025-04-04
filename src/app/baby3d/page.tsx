@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
@@ -8,6 +8,7 @@ export default function About() {
   const [name, setName] = useState("Firstname Lastname");
   const [week, setWeek] = useState("20 weeks");
   const [dob, setDob] = useState("09.30.2025");
+  const [baseColor, setBaseColor] = useState("rgba(255, 0, 0, 0.236)"); // Default color for base_polygon
 
   return (
     <div className={styles.page}>
@@ -26,9 +27,19 @@ export default function About() {
             width={500}
             height={500}
           />
-          <div className={styles.name_wrapper}><span className={styles.name}>{name}</span></div>
-          <div className={styles.week_wrapper}><span className={styles.week}>{week}</span></div>
-          <div className={styles.dob_wrapper}><span className={styles.dob}>{dob}</span></div>
+          <div className={styles.name_wrapper}>
+            <span className={styles.name}>{name}</span>
+          </div>
+          <div className={styles.week_wrapper}>
+            <span className={styles.week}>{week}</span>
+          </div>
+          <div className={styles.dob_wrapper}>
+            <span className={styles.dob}>{dob}</span>
+          </div>
+          <div
+            className={styles.base_polygon}
+            style={{ backgroundColor: baseColor }}
+          ></div>
           <div></div>
         </div>
 
@@ -55,6 +66,13 @@ export default function About() {
             value={dob}
             onChange={(e) => setDob(e.target.value)} // Update dob state
             maxLength={20} // Restrict name to 30 characters
+          />
+
+          <label>Base Color:</label>
+          <input
+            type="color"
+            value={baseColor}
+            onChange={(e) => setBaseColor(e.target.value)} // Update base_polygon color
           />
         </form>
       </ul>

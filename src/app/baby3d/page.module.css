@@ -1,164 +1,174 @@
-.page{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-self: center;
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: center;
 }
 
-.card_image_wrapper{
-    height: 918;
-    width: 434px;
-    margin: auto;
-    position: relative;
-  }
+.card_image_wrapper {
+  height: 918;
+  width: 434px;
+  margin: auto;
+  position: relative;
+}
 
 .card_image {
-    height: 100%;
-    width: 100%;
-    object-fit: contain; /* Ensure the image fits within its container while maintaining aspect ratio */
+  height: 100%;
+  width: 100%;
+  object-fit: contain; /* Ensure the image fits within its container while maintaining aspect ratio */
 }
 
 .name_wrapper {
-    text-align: center;
-    transform: translate(-50%, -50%);
-    position: absolute; /* Position relative to the parent */
-    bottom: 148px; /* Position 10px from the bottom */
-    right: 38px; /* Position 10px from the left */
+  text-align: center;
+  transform: translate(-50%, -50%);
+  position: absolute; /* Position relative to the parent */
+  bottom: 148px; /* Position 10px from the bottom */
+  right: 38px; /* Position 10px from the left */
 
-    transform-origin: center; /* Set the origin to the center of the div */
-    transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
+  transform-origin: center; /* Set the origin to the center of the div */
+  transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
 
-    width: 140px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 140px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    /* background-color: rgba(240, 248, 255, 0.458); */
+  /* background-color: rgba(240, 248, 255, 0.458); */
+  z-index: 4;
 }
 
-.name{
-    color: white; /* Text color */
-    font-size: 13px;
-    text-shadow: 
-    -1px 1px 0px rgb(110, 110, 110),
-    -2px 2px 0px rgb(110, 110, 110),
-    -3px 3px 0px rgb(0, 0, 0),
-    -4px 4px 0px rgb(0, 0, 0),
-    -5px 5px 0px rgb(0, 0, 0),
-    -6px 6px 0px rgb(0, 0, 0);
+.name {
+  color: white; /* Text color */
+  font-size: 13px;
+  text-shadow: -1px 1px 0px rgb(110, 110, 110), -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0),
+    -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0);
+    z-index: 4;
 }
 
+.week_wrapper {
+  text-align: center;
+  transform: translate(-50%, -50%);
 
-  
-  .week_wrapper {
-    text-align: center;
-    transform: translate(-50%, -50%);
+  position: absolute; /* Position relative to the parent */
+  bottom: 80px; /* Position 10px from the top */
+  right: 25px; /* Position 10px from the right */
 
-    position: absolute; /* Position relative to the parent */
-    bottom: 80px; /* Position 10px from the top */
-    right: 25px; /* Position 10px from the right */
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
+  transform-origin: center; /* Set the origin to the center of the div */
 
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
-    transform-origin: center; /* Set the origin to the center of the div */
+  /* background-color: rgba(240, 248, 255, 0.458); */
+  width: 310px;
+  height: 50px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
 
-    /* background-color: rgba(240, 248, 255, 0.458); */
-    width: 310px;
-    height: 50px;
+.week {
+  font-size: 40px;
+  font-weight: 30;
+  color: white;
+  text-shadow: -1px 1px 0px rgb(110, 110, 110), -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(110, 110, 110), -4px 4px 0px rgb(0, 0, 0),
+    -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0),
+    -7px 7px 0px rgb(0, 0, 0), -8px 8px 0px rgb(0, 0, 0);
+    z-index: 4;
+}
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.dob_wrapper {
+  text-align: center;
+  transform: translate(-50%, -50%);
 
-  .week{
-    font-size: 40px;
-    font-weight: 30;
-    color: white;
-    text-shadow: 
-        -1px 1px 0px rgb(110, 110, 110),
-        -2px 2px 0px rgb(110, 110, 110),
-        -3px 3px 0px rgb(110, 110, 110),
-        -4px 4px 0px rgb(0, 0, 0),
-        -5px 5px 0px rgb(0, 0, 0),
-        -6px 6px 0px rgb(0, 0, 0),
-        -7px 7px 0px rgb(0, 0, 0),
-        -8px 8px 0px rgb(0, 0, 0);
-  }
-  
-  .dob_wrapper {
-    text-align: center;
-    transform: translate(-50%, -50%);
+  position: absolute; /* Position relative to the parent */
+  bottom: 41px; /* Position 10px from the top */
+  right: 12px; /* Position 10px from the right */
 
-    position: absolute; /* Position relative to the parent */
-    bottom: 41px; /* Position 10px from the top */
-    right: 12px; /* Position 10px from the right */
+  transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
+  transform-origin: center; /* Set the origin to the center of the div */
 
-    transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
-    transform-origin: center; /* Set the origin to the center of the div */
+  /* background-color: rgba(240, 248, 255, 0.458); */
+  width: 310px;
+  height: 30px;
+  z-index: 4;
+}
 
-    /* background-color: rgba(240, 248, 255, 0.458); */
-    width: 310px;
-    height: 30px;
-  }
-
-  .dob{
-    font-size: 25px;
-    font-weight: 30;
-    color: white;
-    text-shadow: 
-    -1px 1px 0px rgb(110, 110, 110),
-    -2px 2px 0px rgb(110, 110, 110),
-    -3px 3px 0px rgb(110, 110, 110),
-    -4px 4px 0px rgb(0, 0, 0),
-    -5px 5px 0px rgb(0, 0, 0),
-    -6px 6px 0px rgb(0, 0, 0),
+.dob {
+  font-size: 25px;
+  font-weight: 30;
+  color: white;
+  text-shadow: -1px 1px 0px rgb(110, 110, 110), -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(110, 110, 110), -4px 4px 0px rgb(0, 0, 0),
+    -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0),
     -7px 7px 0px rgb(0, 0, 0);
+    z-index: 4;
+}
+
+.base_polygon {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    /* background-color: rgba(255, 0, 0, 0.236); */
+  width: 100%;
+  aspect-ratio: 0.866;
+  clip-path: polygon(
+    22% 97%, 
+    23% 99%, 
+    99% 87%, 
+    91% 61.5%, 
+    57.5% 66%,
+    57.5% 71%,
+    16.5% 77%
+    );
+    z-index: 3;
+    opacity: 40%;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+  .card_image_wrapper {
+    height: 530px; /* Reduce the height for small screens */
+    width: 250px; /* Reduce the width for small screens */
   }
 
+  .name_wrapper {
+    bottom: 89px; /* Position 10px from the bottom */
+    right: 20px; /* Position 10px from the left */
 
-  /* Media query for small screens */
-@media (max-width: 768px) {
-    .card_image_wrapper {
-        height: 530px; /* Reduce the height for small screens */
-        width: 250px; /* Reduce the width for small screens */
-    }
+    width: 85px;
+    height: 15px;
+  }
 
-    .name_wrapper {
-        bottom: 89px; /* Position 10px from the bottom */
-        right: 20px; /* Position 10px from the left */
+  .week_wrapper {
+    bottom: 42px; /* Position 10px from the top */
+    right: 13px; /* Position 10px from the right */
 
-        width: 85px;
-        height: 15px;
-    }
+    width: 170px;
+    height: 40px;
+  }
 
-    .week_wrapper {
-        bottom: 42px; /* Position 10px from the top */
-        right: 13px; /* Position 10px from the right */
-    
-        width: 170px;
-        height: 40px;
-      }
-      
-      .dob_wrapper {
-        bottom: 23px; /* Position 10px from the top */
-        right: 7px; /* Position 10px from the right */
-    
-        width: 170px;
-        height: 25px;
-      }
+  .dob_wrapper {
+    bottom: 23px; /* Position 10px from the top */
+    right: 7px; /* Position 10px from the right */
 
-    .name{
-        font-size: 6px; /* Adjust font size for smaller screens */
-    }
+    width: 170px;
+    height: 25px;
+  }
 
-    .week {
-        font-size: 20px; /* Adjust font size for smaller screens */
-    }
+  .name {
+    font-size: 6px; /* Adjust font size for smaller screens */
+  }
 
-    .dob {
-        font-size: 12px; /* Adjust font size for smaller screens */
-    }
+  .week {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
+
+  .dob {
+    font-size: 12px; /* Adjust font size for smaller screens */
+  }
 }
