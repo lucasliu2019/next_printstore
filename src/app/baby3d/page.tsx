@@ -44,6 +44,7 @@ export default function About() {
         <li>Personal inscriptions </li>
         <li>Bespoke stands </li>
         <li>Exclusive packaging options available</li>
+      </ul>
         <div className={styles.card_image_wrapper}>
           <Image
             src="/baby2.png"
@@ -124,16 +125,16 @@ export default function About() {
                 className={styles.color_button}
                 style={{
                   backgroundColor: color.value,
-                  border: baseColor === color.value ? "2px solid black" : "none",
+                  border: baseColor === color.value ? "2px solid white" : "none",
                 }}
                 onClick={() => setBaseColor(color.value)} // Update base_polygon color
+                title={color.name} // Tooltip with the color name
               >
-                {color.name}
+                {/* {color.name} */}
               </button>
             ))}
           </div>
         </form>
-      </ul>
     </div>
   );
 }

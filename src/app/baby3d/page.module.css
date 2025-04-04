@@ -244,6 +244,30 @@
     filter: brightness(90%);
 }
 
+.color_selection {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+    margin-top: 10px;
+  }
+  
+  .color_button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make the buttons circular */
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: transform 0.2s ease;
+  }
+  
+  .color_button:hover {
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+  }
+  
+  .color_button:focus {
+    outline: 2px solid black; /* Add focus outline for accessibility */
+  }
+
 /* Media query for small screens */
 @media (max-width: 768px) {
 
