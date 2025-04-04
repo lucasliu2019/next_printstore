@@ -9,6 +9,7 @@ export default function About() {
   const [week, setWeek] = useState("20 weeks");
   const [dob, setDob] = useState("09.30.2025");
   const [baseColor, setBaseColor] = useState("rgba(255, 0, 0, 0.236)"); // Default color for base_polygon
+  const [colorName, setColorName] = useState("PLA Glow Variant Glow Green (15500)"); // Default color for base_polygon
 
   const colors = [
     { name: "PLA Glow Variant Glow Green (15500)", value: "rgb(155, 205, 199)" },
@@ -116,7 +117,7 @@ export default function About() {
           />
 
           <label>Base Color:</label>
-          <label>Base Color:</label>
+          <p>{colorName}</p>
           <div className={styles.color_selection}>
             {colors.map((color) => (
               <button
@@ -127,7 +128,7 @@ export default function About() {
                   backgroundColor: color.value,
                   border: baseColor === color.value ? "2px solid white" : "none",
                 }}
-                onClick={() => setBaseColor(color.value)} // Update base_polygon color
+                onClick={() => {setBaseColor(color.value); setColorName(color.name);} } // Update base_polygon color
                 title={color.name} // Tooltip with the color name
               >
                 {/* {color.name} */}
