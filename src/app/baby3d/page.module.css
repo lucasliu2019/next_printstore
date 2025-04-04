@@ -6,7 +6,7 @@
 }
 
 .card_image_wrapper{
-    height: 900px;
+    height: 918;
     width: 434px;
     margin: auto;
     position: relative;
@@ -22,7 +22,7 @@
     text-align: center;
     transform: translate(-50%, -50%);
     position: absolute; /* Position relative to the parent */
-    bottom: 145px; /* Position 10px from the bottom */
+    bottom: 148px; /* Position 10px from the bottom */
     right: 40px; /* Position 10px from the left */
 
     transform-origin: center; /* Set the origin to the center of the div */
@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
 
-    background-color: rgba(240, 248, 255, 0.458);
+    /* background-color: rgba(240, 248, 255, 0.458); */
 }
 
 .name{
@@ -64,7 +64,7 @@
     transform-origin: center; /* Set the origin to the center of the div */
 
 
-    background-color: rgba(240, 248, 255, 0.458);
+    /* background-color: rgba(240, 248, 255, 0.458); */
     width: 310px;
     height: 50px;
 
@@ -99,7 +99,7 @@
     transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
     transform-origin: center; /* Set the origin to the center of the div */
 
-    background-color: rgba(240, 248, 255, 0.458);
+    /* background-color: rgba(240, 248, 255, 0.458); */
     width: 310px;
     height: 30px;
   }
@@ -122,15 +122,34 @@
   /* Media query for small screens */
 @media (max-width: 768px) {
     .card_image_wrapper {
-        height: 500px; /* Reduce the height for small screens */
+        height: 530px; /* Reduce the height for small screens */
         width: 250px; /* Reduce the width for small screens */
     }
 
-    .card_image {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
+    .name_wrapper {
+        bottom: 89px; /* Position 10px from the bottom */
+        right: 21px; /* Position 10px from the left */
+
+        width: 85px;
+        height: 15px;
     }
+
+    .week_wrapper {
+        bottom: 40px; /* Position 10px from the top */
+        right: 13px; /* Position 10px from the right */
+    
+        width: 170px;
+        height: 40px;
+      }
+      
+      .dob_wrapper {
+        bottom: 20px; /* Position 10px from the top */
+        right: 7px; /* Position 10px from the right */
+    
+        width: 170px;
+        height: 25px;
+      }
+
 
     .name, .week, .dob {
         font-size: 12px; /* Adjust font size for smaller screens */
