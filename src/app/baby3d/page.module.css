@@ -1,3 +1,9 @@
+/* Define variables in the :root selector */
+:root {
+    --base-bottom: -2px;
+    --base-left: 4.5px;
+  }
+
 .page {
   display: flex;
   flex-direction: column;
@@ -23,7 +29,7 @@
   transform: translate(-50%, -50%);
   position: absolute; /* Position relative to the parent */
   bottom: 148px; /* Position 10px from the bottom */
-  right: 38px; /* Position 10px from the left */
+  right: 34px; /* Position 10px from the left */
 
   transform-origin: center; /* Set the origin to the center of the div */
   transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
@@ -53,7 +59,7 @@
 
   position: absolute; /* Position relative to the parent */
   bottom: 80px; /* Position 10px from the top */
-  right: 25px; /* Position 10px from the right */
+  right: 20px; /* Position 10px from the right */
 
   /* background-color: rgba(0, 0, 0, 0.5); */
   transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
@@ -86,7 +92,7 @@
 
   position: absolute; /* Position relative to the parent */
   bottom: 41px; /* Position 10px from the top */
-  right: 12px; /* Position 10px from the right */
+  right: 7px; /* Position 10px from the right */
 
   transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
   transform-origin: center; /* Set the origin to the center of the div */
@@ -110,8 +116,8 @@
 
 .base_polygon_front {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: var(--base-bottom);
+    left: var(--base-left);
     
     /* background-color: rgba(255, 0, 0, 0.236); */
   width: 100%;
@@ -131,8 +137,8 @@
 
 .base_polygon_side {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: var(--base-bottom);
+    left: var(--base-left);
     
     /* background-color: rgba(255, 0, 0, 0.236); */
   width: 100%;
@@ -150,9 +156,15 @@
 
 .base_polygon_top {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: var(--base-bottom);
+    left: var(--base-left);
     
+/* 
+    53% 72%,
+    60% 73%,
+    57.5% 71% 
+    */
+
     /* background-color: rgba(255, 0, 0, 0.236); */
   width: 100%;
   aspect-ratio: 0.866;
@@ -161,7 +173,7 @@
     17% 77%,
     19.5% 79%,
     60% 73%,
-    58% 71%
+    57.5% 71% 
     );
     z-index: 3;
     filter: brightness(90%);
@@ -169,8 +181,8 @@
 
 .base_polygon_topL {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: var(--base-bottom);
+    left: var(--base-left);
     
     /* background-color: rgba(255, 0, 0, 0.236); */
   width: 100%;
@@ -188,8 +200,8 @@
 
 .base_polygon_topS {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: var(--base-bottom);
+    left: var(--base-left);
     
     /* background-color: rgba(255, 0, 0, 0.236); */
   width: 100%;
@@ -200,13 +212,13 @@
     57.5% 71%
     );
     z-index: 3;
-    filter: brightness(60%);
+    filter: brightness(50%);
 }
 
 .base_polygon_topT {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: var(--base-bottom);
+    left: var(--base-left);
     
     /* background-color: rgba(255, 0, 0, 0.236); */
   width: 100%;
@@ -227,6 +239,12 @@
 
 /* Media query for small screens */
 @media (max-width: 768px) {
+
+    :root {
+        --base-bottom: 0px;
+        --base-left: 3.5px;
+      }
+
   .card_image_wrapper {
     height: 530px; /* Reduce the height for small screens */
     width: 250px; /* Reduce the width for small screens */
@@ -258,13 +276,32 @@
 
   .name {
     font-size: 6px; /* Adjust font size for smaller screens */
+    text-shadow: 
+    -1px 1px 0px rgb(110, 110, 110), 
+    -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(0, 0, 0),
+    -4px 4px 0px rgb(0, 0, 0);
+    z-index: 4;
   }
 
   .week {
     font-size: 20px; /* Adjust font size for smaller screens */
+    text-shadow: 
+    -1px 1px 0px rgb(110, 110, 110), 
+    -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(110, 110, 110),
+    -4px 4px 0px rgb(0, 0, 0),
+    -5px 5px 0px rgb(0, 0, 0),
+     -6px 6px 0px rgb(0, 0, 0),
   }
 
   .dob {
     font-size: 12px; /* Adjust font size for smaller screens */
+    text-shadow: 
+    -1px 1px 0px rgb(110, 110, 110), 
+    -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(0, 0, 0),
+    -4px 4px 0px rgb(0, 0, 0);
+    z-index: 4;
   }
 }

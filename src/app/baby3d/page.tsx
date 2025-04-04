@@ -21,7 +21,7 @@ export default function About() {
         <li>Exclusive packaging options available</li>
         <div className={styles.card_image_wrapper}>
           <Image
-            src="/baby1.png"
+            src="/baby2.png"
             alt="baby"
             className={styles.card_image}
             width={500}
@@ -48,15 +48,15 @@ export default function About() {
             className={styles.base_polygon_top}
             style={{ backgroundColor: baseColor }}
           ></div>
-                    <div
+          <div
             className={styles.base_polygon_topL}
             style={{ backgroundColor: baseColor }}
           ></div>
-                              <div
+          <div
             className={styles.base_polygon_topS}
             style={{ backgroundColor: baseColor }}
           ></div>
-                              <div
+          <div
             className={styles.base_polygon_topT}
             style={{ backgroundColor: baseColor }}
           ></div>
