@@ -85,7 +85,7 @@
   transform: translate(-50%, -50%);
 
   position: absolute; /* Position relative to the parent */
-  bottom: 42px; /* Position 10px from the top */
+  bottom: 43px; /* Position 10px from the top */
   right: 7px; /* Position 10px from the right */
 
   transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
