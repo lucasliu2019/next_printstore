@@ -37,10 +37,29 @@ export default function About() {
             <span className={styles.dob}>{dob}</span>
           </div>
           <div
-            className={styles.base_polygon}
+            className={styles.base_polygon_front}
             style={{ backgroundColor: baseColor }}
           ></div>
-          <div></div>
+          <div
+            className={styles.base_polygon_side}
+            style={{ backgroundColor: baseColor }}
+          ></div>
+          <div
+            className={styles.base_polygon_top}
+            style={{ backgroundColor: baseColor }}
+          ></div>
+                    <div
+            className={styles.base_polygon_topL}
+            style={{ backgroundColor: baseColor }}
+          ></div>
+                              <div
+            className={styles.base_polygon_topS}
+            style={{ backgroundColor: baseColor }}
+          ></div>
+                              <div
+            className={styles.base_polygon_topT}
+            style={{ backgroundColor: baseColor }}
+          ></div>
         </div>
 
         <form>

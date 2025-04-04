@@ -108,7 +108,7 @@
     z-index: 4;
 }
 
-.base_polygon {
+.base_polygon_front {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -117,16 +117,112 @@
   width: 100%;
   aspect-ratio: 0.866;
   clip-path: polygon(
-    22% 97%, 
-    23% 99%, 
-    99% 87%, 
-    91% 61.5%, 
-    57.5% 66%,
-    57.5% 71%,
-    16.5% 77%
+    /* 22% 97%,  */
+    24% 99%, 
+    98% 86.5%, 
+    90.5% 62%, 
+    58% 66.5%,
+    60% 73%,
+    19.5% 79%
     );
     z-index: 3;
-    opacity: 40%;
+    filter: brightness(80%);
+}
+
+.base_polygon_side {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    /* background-color: rgba(255, 0, 0, 0.236); */
+  width: 100%;
+  aspect-ratio: 0.866;
+  clip-path: polygon(
+    /* 22% 97%,  */
+    17% 77%,
+    19.5% 79%,
+    24% 99%, 
+    21.5% 96.5%
+    );
+    z-index: 3;
+    filter: brightness(70%);
+}
+
+.base_polygon_top {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    /* background-color: rgba(255, 0, 0, 0.236); */
+  width: 100%;
+  aspect-ratio: 0.866;
+  clip-path: polygon(
+    /* 22% 97%,  */
+    17% 77%,
+    19.5% 79%,
+    60% 73%,
+    58% 71%
+    );
+    z-index: 3;
+    filter: brightness(90%);
+}
+
+.base_polygon_topL {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    /* background-color: rgba(255, 0, 0, 0.236); */
+  width: 100%;
+  aspect-ratio: 0.866;
+  clip-path: polygon(
+    /* 22% 97%,  */
+    57.5% 66%,
+    58% 66.5%,
+    60% 73%,
+    57.5% 71%
+    );
+    z-index: 3;
+    filter: brightness(60%);
+}
+
+.base_polygon_topS {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    /* background-color: rgba(255, 0, 0, 0.236); */
+  width: 100%;
+  aspect-ratio: 0.866;
+  clip-path: polygon(
+    53% 72%,
+    60% 73%,
+    57.5% 71%
+    );
+    z-index: 3;
+    filter: brightness(60%);
+}
+
+.base_polygon_topT {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    /* background-color: rgba(255, 0, 0, 0.236); */
+  width: 100%;
+  aspect-ratio: 0.866;
+  clip-path: polygon(
+    /* 22% 97%,  */
+    57.5% 66%,
+    90% 61.5%,
+    90.5% 62%,
+    58% 66.5%
+
+    /* 98% 86.5%,  */
+    /* 90.5% 62%,  */
+    );
+    z-index: 3;
+    filter: brightness(90%);
 }
 
 /* Media query for small screens */
