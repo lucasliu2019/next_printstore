@@ -234,11 +234,6 @@
 /* Media query for small screens */
 @media (max-width: 768px) {
 
-    :root {
-        --base-bottom: 0px;
-        --base-left: 3.5px;
-      }
-
   .card_image_wrapper {
     height: 530px; /* Reduce the height for small screens */
     width: 250px; /* Reduce the width for small screens */

@@ -7,6 +7,15 @@
   --base-left: 4.5px;
 }
 
+
+@media (max-width: 768px) {
+
+  :root {
+      --base-bottom: 0px;
+      --base-left: 3.5px;
+    }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #000000;
