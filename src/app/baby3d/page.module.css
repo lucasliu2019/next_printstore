@@ -23,10 +23,10 @@
     transform: translate(-50%, -50%);
     position: absolute; /* Position relative to the parent */
     bottom: 148px; /* Position 10px from the bottom */
-    right: 40px; /* Position 10px from the left */
+    right: 38px; /* Position 10px from the left */
 
     transform-origin: center; /* Set the origin to the center of the div */
-    transform: rotate(-8deg); /* Rotate the text counterclockwise by 5 degrees */
+    transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
 
     width: 140px;
     height: 30px;
@@ -128,7 +128,7 @@
 
     .name_wrapper {
         bottom: 89px; /* Position 10px from the bottom */
-        right: 21px; /* Position 10px from the left */
+        right: 20px; /* Position 10px from the left */
 
         width: 85px;
         height: 15px;
