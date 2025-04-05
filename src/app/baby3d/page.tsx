@@ -108,33 +108,36 @@ export default function About() {
       </div>
 
       <form className={styles.product_form}>
-        <label>Name:</label>
-        <input
-          type="text"
-          className={styles.product_input}
-          value={name}
-          onChange={(e) => setName(e.target.value)} // Update name state
-          maxLength={30} // Restrict name to 30 characters
-        />
-        <br />
-        <label>Week:</label>
-        <input
-          type="text"
-          className={styles.product_input}
-          value={week}
-          onChange={(e) => setWeek(e.target.value)} // Update week state
-          maxLength={14} // Restrict name to 30 characters
-        />
-        <br />
-        <label>DOB:</label>
-        <input
-          type="text"
-          className={styles.product_input}
-          value={dob}
-          onChange={(e) => setDob(e.target.value)} // Update dob state
-          maxLength={20} // Restrict name to 30 characters
-        />
-
+        <div className={styles.input_group}>
+          <label className={styles.product_input_label}>Name:</label>
+          <input
+            type="text"
+            className={styles.product_input}
+            value={name}
+            onChange={(e) => setName(e.target.value)} // Update name state
+            maxLength={30} // Restrict name to 30 characters
+          />
+        </div>
+        <div className={styles.input_group}>
+          <label className={styles.product_input_label}>Week:</label>
+          <input
+            type="text"
+            className={styles.product_input}
+            value={week}
+            onChange={(e) => setWeek(e.target.value)} // Update week state
+            maxLength={14} // Restrict name to 30 characters
+          />
+        </div>
+        <div className={styles.input_group}>
+          <label className={styles.product_input_label} >DOB:</label>
+          <input
+            type="text"
+            className={styles.product_input}
+            value={dob}
+            onChange={(e) => setDob(e.target.value)} // Update dob state
+            maxLength={20} // Restrict name to 30 characters
+          />
+        </div>
         <label>Base Color:</label>
         <p>{colorName}</p>
         <div className={styles.color_selection}>

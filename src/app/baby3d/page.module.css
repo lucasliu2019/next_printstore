@@ -253,10 +253,22 @@
     justify-content: center;
 }
 
-.product_input{
-    width: 100%;
-    max-width: 300px;
-    box-sizing: border-box; /* Include padding and borders in the width */
+.input_group {
+    display: flex; /* Use Flexbox to align items side by side */
+    align-items: center; /* Vertically align the label and input */
+    gap: 10px; /* Add spacing between the label and input */
+    margin-bottom: 10px; /* Add spacing between input groups */
+  }
+
+  .product_input {
+    flex: 1; /* Allow the input to take up the remaining space */
+    max-width: 300px; /* Optional: Limit the maximum width of the input */
+    padding: 5px; /* Add padding for better appearance */
+  }
+
+.styles.product_input_label{
+    flex: 0 0 100px; /* Set a fixed width for the label */
+    text-align: right; /* Align the label text to the right */
 }
 
 .color_selection {
@@ -369,4 +381,11 @@
 
     box-shadow: -1px 1px 1px black;
 }
+}
+
+
+@media (max-width: 400px) {
+.input_group {
+    flex-direction: column;
+  }
 }
