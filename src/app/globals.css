@@ -1,20 +1,9 @@
 :root {
   --background: #000000;
   --foreground: #e8e8e8;
-
-/* Define variables in the :root selector */
-  --base-bottom: 2px;
-  --base-left: 4.5px;
 }
 
 
-@media (max-width: 768px) {
-
-  :root {
-      --base-bottom: 0px;
-      --base-left: 2px;
-    }
-}
 
 @media (prefers-color-scheme: dark) {
   :root {
