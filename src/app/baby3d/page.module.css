@@ -130,7 +130,7 @@
 
 .base_polygon_front, .base_polygon_side, .base_polygon_top, .base_polygon_topS, .base_polygon_topL, .base_polygon_topT, .base_part {
     position: absolute;
-    bottom: 2;
+    bottom: 1px;
     left: 0;
 }
 
