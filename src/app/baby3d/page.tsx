@@ -12,7 +12,7 @@ export default function About() {
   const [colorName, setColorName] = useState(
     "PLA Glow Variant Glow Green (15500)"
   ); // Default color for base_polygon
-  const [selectedImage, setSelectedImage] = useState("/baby2.png"); // Default image
+  // const [selectedImage, setSelectedImage] = useState("/baby2.png"); // Default image
 
   const colors = [
     {
@@ -66,7 +66,8 @@ export default function About() {
       </ul>
       <div className={styles.card_image_wrapper}>
         <Image
-          src={selectedImage}
+          // src={selectedImage}
+          src="/baby2.png"
           alt="baby"
           className={styles.card_image}
           width={500}
@@ -184,10 +185,10 @@ export default function About() {
       <form className={styles.product_form}>
 
       {/* Buttons to select images */}
-      <div className={styles.image_selector}>
+      {/* <div className={styles.image_selector}>
         <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby2.png")}>Image 1</button>
         <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby1.png")}>Image 2</button>
-      </div>
+      </div> */}
 
 
         <div className={styles.input_group}>
