@@ -12,7 +12,7 @@ export default function About() {
   const [colorName, setColorName] = useState(
     "PLA Glow Variant Glow Green (15500)"
   ); // Default color for base_polygon
-  // const [selectedImage, setSelectedImage] = useState("/baby2.png"); // Default image
+  const [selectedImage, setSelectedImage] = useState("/baby2.png"); // Default image
 
   const colors = [
     {
@@ -66,8 +66,8 @@ export default function About() {
       </ul>
       <div className={styles.card_image_wrapper}>
         <Image
-          // src={selectedImage}
-          src="/baby2.png"
+          src={selectedImage}
+          // src="/baby3.png"
           alt="baby"
           className={styles.card_image}
           width={500}
@@ -83,10 +83,6 @@ export default function About() {
           <span className={styles.dob}>{dob}</span>
         </div>
         <div className={styles.bar}></div>
-        {/* <div
-          className={styles.base_polygon_front}
-          style={{ backgroundColor: baseColor }}
-        ></div> */}
 
         <div className="base_polygon_front" >
           <svg className={styles.base_part}
@@ -182,15 +178,13 @@ export default function About() {
 
       </div>
 
-      <form className={styles.product_form}>
-
       {/* Buttons to select images */}
-      {/* <div className={styles.image_selector}>
-        <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby2.png")}>Image 1</button>
-        <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby1.png")}>Image 2</button>
-      </div> */}
+      <div className={styles.image_selector}>
+        <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby2.png")}>Demo 1</button>
+        <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby3.png")}>Demo 2</button>
+      </div>
 
-
+      <form className={styles.product_form}>
         <div className={styles.input_group}>
           <label className={styles.product_input_label}>Name:</label>
           <input
