@@ -244,8 +244,26 @@
     filter: brightness(90%);
 }
 
-.color_selection {
+.product_form{
+    width: 100%;
+    max-width: 800px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product_input{
+    width: 100%;
+    max-width: 300px;
+    box-sizing: border-box; /* Include padding and borders in the width */
+}
+
+.color_selection {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    
     gap: 10px; /* Add spacing between buttons */
     margin-top: 10px;
   }
