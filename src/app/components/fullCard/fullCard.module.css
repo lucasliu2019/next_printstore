@@ -8,7 +8,7 @@
     0px 0px 35px 0 rgba(0, 0, 0, 0.855);
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
-    border: 1px solid rgba(255, 255, 255, 0.482);
+    /* border: 1px solid rgba(255, 255, 255, 0.482); */
     padding: 0; /* Remove padding to ensure proper alignment */
     border-radius: 0; /* Remove border radius for a clean edge-to-edge look */
 
