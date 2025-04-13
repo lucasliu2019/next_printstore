@@ -232,7 +232,7 @@
     text-align: right; /* Align the label text to the right */
 }
 
-.color_selection {
+.image_selector, .color_selection {
     width: 100%;
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap to the next line */
