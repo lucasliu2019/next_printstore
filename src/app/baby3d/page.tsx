@@ -2,8 +2,6 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
-import path from "path";
-import { pathToFileURL } from "url";
 
 const baseImages = [
   {
