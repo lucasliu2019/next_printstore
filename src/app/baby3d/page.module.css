@@ -95,6 +95,8 @@
   -3px 3px 0px rgb(110, 110, 110), -4px 4px 0px rgb(0, 0, 0),
   -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0),
   -7px 7px 0px rgb(0, 0, 0), -8px 8px 0px rgb(0, 0, 0);
+  width: 310px;
+  height: 50px;
 }
 
 .week_wrapper_b1{
@@ -108,6 +110,8 @@
   text-shadow: 1px -1px 0px rgb(222, 222, 222),
   -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0),
   -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0);
+  width: 310px;
+  height: 50px;
 }
 
 .week_wrapper {
@@ -121,8 +125,7 @@
   transform-origin: center; /* Set the origin to the center of the div */
 
   /* background-color: rgba(240, 248, 255, 0.458); */
-  width: 310px;
-  height: 50px;
+
 
   display: flex;
   align-items: center;
@@ -288,31 +291,24 @@
     width: 250px; /* Reduce the width for small screens */
   }
 
-  .name_wrapper {
+
+  .week_wrapper_b1{
+    bottom: 43px; /* Position 10px from the bottom */
+    right: 18px; /* Position 10px from the left */
+    font-size: 17px;
+    font-weight: 30;
+  
+    width: 155px;
+    height: 18px;
+  }
+
+  .name_wrapper_b3 {
     bottom: 89px; /* Position 10px from the bottom */
-    right: 20px; /* Position 10px from the left */
+    right: 18px; /* Position 10px from the left */
 
     width: 85px;
     height: 15px;
-  }
 
-  .week_wrapper {
-    bottom: 42px; /* Position 10px from the top */
-    right: 13px; /* Position 10px from the right */
-
-    width: 170px;
-    height: 40px;
-  }
-
-  .dob_wrapper {
-    bottom: 23px; /* Position 10px from the top */
-    right: 7px; /* Position 10px from the right */
-
-    width: 170px;
-    height: 25px;
-  }
-
-  .name {
     font-size: 6px; /* Adjust font size for smaller screens */
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
@@ -322,7 +318,23 @@
     z-index: 4;
   }
 
-  .week {
+  .name_wrapper_b1{
+    bottom: 20px; /* Position 10px from the top */
+    right: 18px; /* Position 10px from the right */
+  
+    font-size: 11px;
+
+    width: 150px;
+    height: 18px;
+    /* background-color: #005bb566; */
+}
+
+  .week_wrapper_b3 {
+    bottom: 42px; /* Position 10px from the top */
+    right: 13px; /* Position 10px from the right */
+
+    width: 170px;
+    height: 40px;
     font-size: 20px; /* Adjust font size for smaller screens */
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
@@ -333,7 +345,13 @@
      -6px 6px 1px rgb(0, 0, 0),
   }
 
-  .dob {
+  .dob_wrapper_b3 {
+    bottom: 16px; /* Position 10px from the top */
+    right: 7px; /* Position 10px from the right */
+
+    width: 170px;
+    height: 25px;
+
     font-size: 12px; /* Adjust font size for smaller screens */
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
