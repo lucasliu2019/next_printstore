@@ -540,6 +540,21 @@ export default function About() {
                 />
               </svg>
             </div>
+            <div className="base_polygon_top">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(60%)",
+                }}
+              >
+                <polygon
+                  points=" 456,671 456,706 458,704 458,670  "
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
           </>
         )}
       </div>
