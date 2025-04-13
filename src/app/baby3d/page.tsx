@@ -2,6 +2,62 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
+import path from "path";
+import { pathToFileURL } from "url";
+
+const baseImages = [
+  {
+    name: "Two-level",
+    path: "/base_rect.png",
+  },
+  {
+    name: "Round",
+    path: "/base_round.png",
+  },
+  {
+    name: "Trapezoidal",
+    path: "/base_trapz.png",
+  },
+];
+
+const figureImages = [
+  {
+    name: "Book",
+    path: "/figure_book.png",
+  },
+  {
+    name: "Chair",
+    path: "/figure_chair.png",
+  },
+  {
+    name: "Egg Type1",
+    path: "/figure_egg1.png",
+  },
+  {
+    name: "Egg Type2",
+    path: "/figure_egg2.png",
+  },
+  {
+    name: "Hand",
+    path: "/figure_hand.png",
+  },
+  {
+    name: "Lotus",
+    path: "/figure_lotus.png",
+  },
+  {
+    name: "moon",
+    path: "/figure_moon.png",
+  },
+  {
+    name: "Nest",
+    path: "/figure_nest.png",
+  },
+  {
+    name: "Shell",
+    path: "/figure_shell.png",
+  },
+];
 
 export default function About() {
   // State for the input fields
@@ -12,7 +68,12 @@ export default function About() {
   const [colorName, setColorName] = useState(
     "PLA Glow Variant Glow Green (15500)"
   ); // Default color for base_polygon
-  const [selectedImage, setSelectedImage] = useState("/baby2.png"); // Default image
+  const [selectedBaseImage, setSelectedBaseImage] = useState(
+    baseImages[0].path
+  ); // Default image
+  const [selectedFigureImage, setSelectedFigureImage] = useState(
+    figureImages[0].path
+  ); // Default image
 
   const colors = [
     {
@@ -66,122 +127,447 @@ export default function About() {
       </ul>
       <div className={styles.card_image_wrapper}>
         <Image
-          src={selectedImage}
+          src={selectedFigureImage}
           // src="/baby3.png"
           alt="baby"
-          className={styles.card_image}
+          className={styles.card_image_figure}
           width={500}
           height={500}
         />
-        <div className={styles.name_wrapper}>
+        <Image
+          src={selectedBaseImage}
+          // src="/baby3.png"
+          alt="baby"
+          className={styles.card_image_base}
+          width={500}
+          height={500}
+        />
+
+        <div
+          className={`${styles.name_wrapper} ${
+            selectedBaseImage === baseImages[0].path
+              ? styles.name_wrapper_b1
+              : selectedBaseImage === baseImages[1].path
+              ? styles.name_wrapper_b2
+              : selectedBaseImage === baseImages[2].path
+              ? styles.name_wrapper_b3
+              : ""
+          } `}
+        >
           <span className={styles.name}>{name}</span>
         </div>
-        <div className={styles.week_wrapper}>
+
+        <div
+          className={`${styles.week_wrapper}
+        ${
+          selectedBaseImage === baseImages[0].path
+            ? styles.week_wrapper_b1
+            : selectedBaseImage === baseImages[1].path
+            ? styles.week_wrapper_b2
+            : selectedBaseImage === baseImages[2].path
+            ? styles.week_wrapper_b3
+            : ""
+        }
+        `}
+        >
           <span className={styles.week}>{week}</span>
         </div>
-        <div className={styles.dob_wrapper}>
-          <span className={styles.dob}>{dob}</span>
-        </div>
-        <div className={styles.bar}></div>
 
-        <div className="base_polygon_front" >
-          <svg className={styles.base_part}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 484 1022"
-            style={{
-              filter: "brightness(80%)",
-            }}
-          >
-            <polygon
-              points="96,908 295,873 285,836 444,810 481,950 118,1018"
-              fill={baseColor}
-            />
-          </svg>
-        </div>
-
-        <div className="base_polygon_side">
-          <svg className={styles.base_part}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 484 1022"
-            style={{
-              filter: "brightness(70%)",
-            }}
-          >
-            <polygon
-              points="96,908 118,1018 107.5,1006 86,896"
-              fill={baseColor}
-            />
-          </svg>
+        <div
+          className={`${styles.dob_wrapper}
+                ${
+                  selectedBaseImage === baseImages[0].path
+                    ? styles.dob_wrapper_b1
+                    : selectedBaseImage === baseImages[1].path
+                    ? styles.dob_wrapper_b2
+                    : selectedBaseImage === baseImages[2].path
+                    ? styles.dob_wrapper_b3
+                    : ""
+                }
+        
+        `}
+        >
+          {selectedBaseImage !== baseImages[0].path && (
+            <span className={styles.dob}>{dob}</span>
+          )}
         </div>
 
+        {selectedBaseImage === baseImages[2].path && (
+          <div className={styles.bar}></div>
+        )}
 
-        <div className="base_polygon_top" >
-          <svg className={styles.base_part}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 484 1022"
-            style={{
-              filter: "brightness(90%)",
-            }}
-          >
-            <polygon
-              points="96,908 86,896 262,868 296,873"
-              fill={baseColor}
-            />
-          </svg>
-        </div>
+        {selectedBaseImage === baseImages[2].path && (
+          <>
+            <div className="base_polygon_front">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(80%)",
+                }}
+              >
+                <polygon
+                  points="93,703 295,670 286,637 443,610 480,746 118,816"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_side">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(70%)",
+                }}
+              >
+                <polygon
+                  points="93,703 118,816 106,803 83,693"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_top">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(90%)",
+                }}
+              >
+                <polygon
+                  points="93,703 83,693 259,666 295,670"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_topS">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(50%)",
+                }}
+              >
+                <polygon points="259,666 295,670 283,661" fill={baseColor} />
+              </svg>
+            </div>
+
+            <div className="base_polygon_topL">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(50%)",
+                }}
+              >
+                <polygon
+                  points="295,670 283,661 281,635 286,637"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_topT">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(90%)",
+                }}
+              >
+                <polygon
+                  points="281,635 286,637 443,610 438,607"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+          </>
+        )}
+
+        {selectedBaseImage === baseImages[0].path && (
+          <>
+            <div className="base_polygon_front">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(40%)",
+                }}
+              >
+                <polygon
+                  points="144,726 451,672 451,707 144,766"
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="144,771.5 451,717 451,753 144,811.5"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_side">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(60%)",
+                }}
+              >
+                <polygon
+                  points="18,610 126,724 126,762 20,644"
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="19,654 126,771 126,807 19,686"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow1">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(58%)",
+                }}
+              >
+                <polygon
+                  points="126,724 126,762 130,764 130,726 "
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="126,771 126,807 130,810 130,773"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow2">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(55%)",
+                }}
+              >
+                <polygon
+                  points="130,764 130,726 133,726 133,765 "
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="130,810 130,773 133,774 133,811 "
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow3">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(52%)",
+                }}
+              >
+                <polygon
+                  points="136,765 136,726 133,726 133,765 "
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="136,812 136,774 133,774 133,811 "
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow4">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(48%)",
+                }}
+              >
+                <polygon
+                  points="136,765 136,726 139,726.5 139,765.5 "
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="136,812 136,774 139,773.5 139,812 "
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow5">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(45%)",
+                }}
+              >
+                <polygon
+                  points="139,726.5 139,765.5  140,765 140,726.5 "
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points=" 139,773.5 139,812 140,812 140,773 "
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadowR1">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(43%)",
+                }}
+              >
+                <polygon
+                  points="140,726.5 140,765 144,766 144,726"
+                  fill={baseColor}
+                />
+                <polygon
+                  points="140,773 140,812 144,812 144,772"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
 
 
-        <div className="base_polygon_topS">
-          <svg className={styles.base_part}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 484 1022"
-            style={{
-              filter: "brightness(50%)",
-            }}
-          >
-            <polygon
-              points="262,868 296,873 283,863"
-              fill={baseColor}
-            />
-          </svg>
-        </div>
+            <div className="base_polygon_shadowR2">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(45%)",
+                }}
+              >
+                <polygon
+                  points="451,672 451,707 452,707 454,671.5  "
+                  fill={baseColor}
+                />
+                <polygon
+                  points="451,717 451,753  452,752 454,716"
+                  fill={baseColor}
+                />
+              </svg>
+              </div>
 
-        <div className="base_polygon_topL">
-          <svg className={styles.base_part}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 484 1022"
-            style={{
-              filter: "brightness(50%)",
-            }}
-          >
-            <polygon
-              points="296,873 283,863 282,833 285,836"
-              fill={baseColor}
-            />
-          </svg>
-        </div>
+              <div className="base_polygon_shadowR3">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(50%)",
+                }}
+              >
+                <polygon
+                  points="452,672 451,707 454,707 454,671.5  "
+                  fill={baseColor}
+                />
+                <polygon
+                  points="452,717 451,753  454,752 454,716"
+                  fill={baseColor}
+                />
+              </svg>
+              </div>
 
-        <div className="base_polygon_topT">
-          <svg className={styles.base_part}
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 484 1022"
-            style={{
-              filter: "brightness(90%)",
-            }}
-          >
-            <polygon
-              points="282,833 285,836 444,810 439,808"
-              fill={baseColor}
-            />
-          </svg>
-        </div>
+              <div className="base_polygon_shadowR4">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(55%)",
+                }}
+              >
+                <polygon
+                  points=" 454,707 454,671.5  456,671 456,706  "
+                  fill={baseColor}
+                />
+                <polygon
+                  points=" 454,752 454,716 456,715 456,750 "
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
 
+            <div className="base_polygon_shadowR5">
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(60%)",
+                }}
+              >
+                <polygon
+                  points=" 456,671 456,706 458,704 458,670  "
+                  fill={baseColor}
+                />
+                <polygon
+                  points="456,715 456,750 458,745 458,712 "
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+          </>
+        )}
       </div>
 
-      {/* Buttons to select images */}
       <div className={styles.image_selector}>
-        <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby2.png")}>Demo 1</button>
-        <button className={styles.image_selector_btn} onClick={() => setSelectedImage("/baby3.png")}>Demo 2</button>
+        {baseImages.map((image) => (
+          <button
+            key={image.name}
+            className={styles.image_selector_btn}
+            onClick={() => setSelectedBaseImage(image.path)} // Update selected image
+          >
+            {image.name}
+          </button>
+        ))}
+      </div>
+
+      <div className={styles.image_selector}>
+        {figureImages.map((image) => (
+          <button
+            key={image.name}
+            className={styles.image_selector_btn}
+            onClick={() => setSelectedFigureImage(image.path)} // Update selected image
+          >
+            {image.name}
+          </button>
+        ))}
       </div>
 
       <form className={styles.product_form}>
@@ -215,7 +601,6 @@ export default function About() {
             maxLength={20} // Restrict name to 30 characters
           />
         </div>
-
 
         <label>Base Color:</label>
         <p>{colorName}</p>

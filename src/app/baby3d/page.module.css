@@ -6,30 +6,76 @@
 }
 
 .card_image_wrapper {
-  height: 918px;
-  width: 434px;
+  height: 817px;
+  width: 480px;
   margin: auto;
   position: relative;
+
 }
 
-.card_image {
-  height: 100%;
+.card_image_base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: auto;
   width: 100%;
   object-fit: contain; /* Ensure the image fits within its container while maintaining aspect ratio */
+  z-index: -1;
+}
+
+.card_image_figure {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  object-fit: contain; /* Ensure the image fits within its container while maintaining aspect ratio */
+  z-index: 3;
+}
+
+.name_wrapper_b3{
+  bottom: 163px; /* Position 10px from the bottom */
+  right: 32px; /* Position 10px from the left */
+
+  color: white; /* Text color */
+  font-size: 13px;
+  text-shadow: -1px 1px 0px rgb(110, 110, 110), -2px 2px 0px rgb(110, 110, 110),
+    -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0),
+    -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0);
+    z-index: 4;
+
+    width: 140px;
+    height: 30px;
+}
+
+.name_wrapper_b1{
+    bottom: 44px; /* Position 10px from the top */
+    right: 20px; /* Position 10px from the right */
+  
+    color: rgb(150, 150, 150);
+    font-size: 20px;
+    font-weight: 30;
+  
+    text-shadow: 1px -1px 0px rgb(222, 222, 222),
+    -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0),
+    -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0);
+
+    width: 310px;
+    height: 30px;
+
+    font-style: italic;
 }
 
 .name_wrapper {
   text-align: center;
   transform: translate(-50%, -50%);
   position: absolute; /* Position relative to the parent */
-  bottom: 150px; /* Position 10px from the bottom */
-  right: 32px; /* Position 10px from the left */
+
 
   transform-origin: center; /* Set the origin to the center of the div */
-  transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
+  transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
 
-  width: 140px;
-  height: 30px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,13 +84,30 @@
   z-index: 4;
 }
 
-.name {
-  color: white; /* Text color */
-  font-size: 13px;
+.week_wrapper_b3{
+  color: white;
+  bottom: 87px; /* Position 10px from the bottom */
+  right: 32px; /* Position 10px from the left */
+  font-size: 40px;
+  font-weight: 30;
+
   text-shadow: -1px 1px 0px rgb(110, 110, 110), -2px 2px 0px rgb(110, 110, 110),
-    -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0),
-    -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0);
-    z-index: 4;
+  -3px 3px 0px rgb(110, 110, 110), -4px 4px 0px rgb(0, 0, 0),
+  -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0),
+  -7px 7px 0px rgb(0, 0, 0), -8px 8px 0px rgb(0, 0, 0);
+}
+
+.week_wrapper_b1{
+  color: rgb(150, 150, 150);
+  bottom: 72px; /* Position 10px from the bottom */
+  right: 32px; /* Position 10px from the left */
+  font-size: 30px;
+  font-weight: 30;
+  font-style: italic;
+
+  text-shadow: 1px -1px 0px rgb(222, 222, 222),
+  -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0),
+  -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0);
 }
 
 .week_wrapper {
@@ -52,11 +115,9 @@
   transform: translate(-50%, -50%);
 
   position: absolute; /* Position relative to the parent */
-  bottom: 80px; /* Position 10px from the top */
-  right: 20px; /* Position 10px from the right */
 
   /* background-color: rgba(0, 0, 0, 0.5); */
-  transform: rotate(-9deg); /* Rotate the text counterclockwise by 5 degrees */
+  transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
   transform-origin: center; /* Set the origin to the center of the div */
 
   /* background-color: rgba(240, 248, 255, 0.458); */
@@ -70,14 +131,34 @@
 }
 
 .week {
-  font-size: 40px;
+    z-index: 4;
+}
+
+.dob_wrapper_b3{
+  bottom: 52px; /* Position 10px from the top */
+  right: 7px; /* Position 10px from the right */
+
+  font-size: 25px;
   font-weight: 30;
   color: white;
   text-shadow: -1px 1px 0px rgb(110, 110, 110), -2px 2px 0px rgb(110, 110, 110),
     -3px 3px 0px rgb(110, 110, 110), -4px 4px 0px rgb(0, 0, 0),
     -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0),
-    -7px 7px 0px rgb(0, 0, 0), -8px 8px 0px rgb(0, 0, 0);
-    z-index: 4;
+    -7px 7px 0px rgb(0, 0, 0);
+    z-index: 4;  
+}
+
+.dob_wrapper_b1{
+  bottom: 52px; /* Position 10px from the top */
+  right: 7px; /* Position 10px from the right */
+
+  color: rgb(150, 150, 150);
+  font-size: 30px;
+  font-weight: 30;
+
+  text-shadow: 1px -1px 0px rgb(222, 222, 222),
+  -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0),
+  -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0);
 }
 
 .dob_wrapper {
@@ -85,8 +166,7 @@
   transform: translate(-50%, -50%);
 
   position: absolute; /* Position relative to the parent */
-  bottom: 43px; /* Position 10px from the top */
-  right: 7px; /* Position 10px from the right */
+
 
   transform: rotate(-10deg); /* Rotate the text counterclockwise by 5 degrees */
   transform-origin: center; /* Set the origin to the center of the div */
@@ -97,22 +177,12 @@
   z-index: 4;
 }
 
-.dob {
-  font-size: 25px;
-  font-weight: 30;
-  color: white;
-  text-shadow: -1px 1px 0px rgb(110, 110, 110), -2px 2px 0px rgb(110, 110, 110),
-    -3px 3px 0px rgb(110, 110, 110), -4px 4px 0px rgb(0, 0, 0),
-    -5px 5px 0px rgb(0, 0, 0), -6px 6px 0px rgb(0, 0, 0),
-    -7px 7px 0px rgb(0, 0, 0);
-    z-index: 4;
-}
 
 .bar{
     transform: translate(-50%, -50%);
   
     position: absolute; /* Position relative to the parent */
-    bottom: 74px; /* Position 10px from the top */
+    bottom: 84px; /* Position 10px from the top */
     right: 105px; /* Position 10px from the right */
   
     /* background-color: rgba(0, 0, 0, 0.5); */
@@ -132,6 +202,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 3;
 }
 
 .product_form{
