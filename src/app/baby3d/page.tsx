@@ -20,6 +20,10 @@ const baseImages = [
 
 const figureImages = [
   {
+    name: "Hand",
+    path: "/figure_hand.png",
+  },
+  {
     name: "Book",
     path: "/figure_book.png",
   },
@@ -35,10 +39,7 @@ const figureImages = [
     name: "Egg Type2",
     path: "/figure_egg2.png",
   },
-  {
-    name: "Hand",
-    path: "/figure_hand.png",
-  },
+
   {
     name: "Lotus",
     path: "/figure_lotus.png",
