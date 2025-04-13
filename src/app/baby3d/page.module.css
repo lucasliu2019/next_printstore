@@ -112,6 +112,7 @@
   -3px 3px 0px rgb(0, 0, 0), -4px 4px 0px rgb(0, 0, 0);
   width: 310px;
   height: 50px;
+  z-index: 5;
 }
 
 .week_wrapper {
@@ -354,7 +355,6 @@
     -2px 2px 1px rgb(110, 110, 110),
     -3px 3px 1px rgb(0, 0, 0),
     -4px 4px 1px rgb(0, 0, 0);
-    z-index: 4;
   }
 
 
@@ -372,7 +372,6 @@
     background-color: rgba(240, 248, 255, 0.608);
     width: 75px;
     height: 1px;
-    z-index: 4;
     border-radius: 15px;
 
     box-shadow: -1px 1px 1px black;
