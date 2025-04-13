@@ -441,7 +441,7 @@ export default function About() {
               </svg>
             </div>
 
-            <div className="base_polygon_shadowR1">
+            <div className="base_polygon_shadow6">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
@@ -461,8 +461,7 @@ export default function About() {
               </svg>
             </div>
 
-
-            <div className="base_polygon_shadowR2">
+            <div className="base_polygon_shadowR1">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
@@ -480,9 +479,9 @@ export default function About() {
                   fill={baseColor}
                 />
               </svg>
-              </div>
+            </div>
 
-              <div className="base_polygon_shadowR3">
+            <div className="base_polygon_shadowR2">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
@@ -500,9 +499,9 @@ export default function About() {
                   fill={baseColor}
                 />
               </svg>
-              </div>
+            </div>
 
-              <div className="base_polygon_shadowR4">
+            <div className="base_polygon_shadowR3">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
@@ -522,7 +521,7 @@ export default function About() {
               </svg>
             </div>
 
-            <div className="base_polygon_shadowR5">
+            <div className="base_polygon_shadowR4">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
@@ -547,11 +546,78 @@ export default function About() {
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 480 817"
                 style={{
-                  filter: "brightness(60%)",
+                  filter: "brightness(100%)",
                 }}
               >
                 <polygon
-                  points=" 456,671 456,706 458,704 458,670  "
+                  points="124,722 130,726 133,726 136,726 139,726.5 140,726.5 144,726
+                  451,672 454,671.5 456,671 458,670 459,668 455,664"
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="126,724 18,610 19,607 23,606 26,605 144,725"
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="455,664 439,667 440,666 442,663 304,564 310,564 315,565"
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="304,564 310,564 315,565 33,605 22,606 32,612 32,607 33,606"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow_side1" >
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(30%)",
+                  zIndex: 1, // Set z-index to 2
+                }}
+              >
+                <polygon
+                  points="24,648 20,649 19,651 19,653 23,659 130,778 138,772 127,763"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow_side2" >
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(30%)",
+                  zIndex: 1, // Set z-index to 2
+                }}
+              >
+                <polygon
+                  points="136,770 131,777  443,719 447,715 450,714 450,712 447,713"
+                  fill={baseColor}
+                />
+              </svg>
+            </div>
+
+            <div className="base_polygon_shadow_side3" >
+              <svg
+                className={styles.base_part}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 480 817"
+                style={{
+                  filter: "brightness(80%)",
+                  zIndex: 2, // Set z-index to 2
+                }}
+              >
+                <polygon
+                  points="448,707 454,707 457,711 457,714 456,715 451,717 445,717 446,716 450,714 450,711"
                   fill={baseColor}
                 />
               </svg>
