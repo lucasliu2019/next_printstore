@@ -226,6 +226,8 @@ export default function About() {
                   points="93,703 118,816 106,803 83,693"
                   fill={baseColor}
                 />
+
+                <polygon points="24,631 8,688 0,680 16,622" fill={baseColor} />
               </svg>
             </div>
 
@@ -236,10 +238,16 @@ export default function About() {
                 viewBox="0 0 480 817"
                 style={{
                   filter: "brightness(90%)",
+                  zIndex: 2, // Set z-index to 2
                 }}
               >
                 <polygon
                   points="93,703 83,693 259,666 295,670"
+                  fill={baseColor}
+                />
+
+                <polygon
+                  points="24,631 16,622 347,571 357,579"
                   fill={baseColor}
                 />
               </svg>
@@ -547,6 +555,7 @@ export default function About() {
                 viewBox="0 0 480 817"
                 style={{
                   filter: "brightness(100%)",
+                  zIndex: 2, // Set z-index to 2
                 }}
               >
                 <polygon
@@ -572,7 +581,7 @@ export default function About() {
               </svg>
             </div>
 
-            <div className="base_polygon_shadow_side1" >
+            <div className="base_polygon_shadow_side1">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
@@ -589,7 +598,7 @@ export default function About() {
               </svg>
             </div>
 
-            <div className="base_polygon_shadow_side2" >
+            <div className="base_polygon_shadow_side2">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
@@ -606,7 +615,7 @@ export default function About() {
               </svg>
             </div>
 
-            <div className="base_polygon_shadow_side3" >
+            <div className="base_polygon_shadow_side3">
               <svg
                 className={styles.base_part}
                 xmlns="http://www.w3.org/2000/svg"
