@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 
@@ -113,6 +113,17 @@ export default function About() {
   const [selectedFigureImage, setSelectedFigureImage] = useState(
     figureImages[0].path
   ); // Default image
+  
+
+  useEffect(() => {
+    // Add a specific class to the body
+    document.body.classList.add(styles.baby3dBody);
+
+    // Cleanup: Remove the class when the component unmounts
+    return () => {
+      document.body.classList.remove(styles.baby3dBody);
+    };
+  }, []);
 
   return (
     <div className={styles.page}>
