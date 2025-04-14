@@ -81,6 +81,7 @@
 .name_wrapper_b2{
   display: none;
   visibility: hidden;
+  opacity: 0;
 }
 
 .name_wrapper {
@@ -119,6 +120,7 @@
 .week_wrapper_b2{
   display: none;
   visibility: hidden;
+  opacity: 0;
 }
 
 .week_wrapper_b1{
@@ -173,6 +175,7 @@
 .dob_wrapper_b2{
   display: none;
   visibility: hidden;
+  opacity: 0;
 }
 
 .dob_wrapper_b1{
@@ -324,11 +327,6 @@
   
     width: 155px;
     height: 18px;
-  }
-
-  .name_wrapper_b2{
-    display: none;
-    visibility: hidden;
   }
 
   .name_wrapper_b3 {
