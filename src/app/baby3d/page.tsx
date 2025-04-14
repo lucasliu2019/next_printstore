@@ -114,8 +114,6 @@ export default function About() {
     figureImages[0].path
   ); // Default image
 
-
-
   return (
     <div className={styles.page}>
       <h2>3D Print Baby</h2>
@@ -143,6 +141,83 @@ export default function About() {
           width={500}
           height={500}
         />
+
+        {selectedBaseImage == baseImages[1].path && (
+          <div>
+            <svg
+              className={styles.base_part}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 817"
+              style={{
+                filter: "brightness(80%)",
+                zIndex: 2, // Set z-index to 2
+              }}
+            >
+              <defs>
+                <path id="circlePath" d="M 0 0 q 110 100 293 50" />
+              </defs>
+
+              <text
+                fill="rgb(209, 209, 209)"
+                fontSize="15"
+                fontFamily="Arial"
+                textAnchor="middle"
+                transform="scale(1, 0.7) translate(48 778)" /* Scale text vertically */
+                style={{
+                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                  textShadow:
+                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
+                }}
+              >
+                <textPath href="#circlePath" startOffset="50%">
+                  {name}
+                </textPath>
+              </text>
+
+              <defs>
+                <path id="circlePath1" d="M 0 0 q 23 -41 -60 -80" />
+              </defs>
+              <text
+                fill="rgb(209, 209, 209)"
+                fontSize="15"
+                fontFamily="Arial"
+                textAnchor="middle"
+                transform="scale(1, 0.7) translate(390 758)" /* Scale text vertically */
+                style={{
+                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                  textShadow:
+                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
+                  zIndex: 1, // Set z-index to 2
+                }}
+              >
+                <textPath href="#circlePath1" startOffset="50%">
+                  {dob}
+                </textPath>
+              </text>
+
+              <defs>
+                <path id="circlePath2" d="M 0 0 q -63 -7 -80 47" />
+              </defs>
+              <text
+                fill="rgb(209, 209, 209)"
+                fontSize="15"
+                fontFamily="Arial"
+                textAnchor="middle"
+                transform="scale(1, 0.7) translate(150 690)" /* Scale text vertically */
+                style={{
+                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                  textShadow:
+                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
+                  zIndex: 1, // Set z-index to 2
+                }}
+              >
+                <textPath href="#circlePath2" startOffset="50%">
+                  {week}
+                </textPath>
+              </text>
+            </svg>
+          </div>
+        )}
 
         <div
           className={`${styles.name_wrapper} ${
@@ -229,7 +304,10 @@ export default function About() {
                   fill={colors[baseColor].value}
                 />
 
-                <polygon points="24,631 8,688 0,680 16,622" fill={colors[baseColor].value} />
+                <polygon
+                  points="24,631 8,688 0,680 16,622"
+                  fill={colors[baseColor].value}
+                />
               </svg>
             </div>
 
@@ -264,7 +342,10 @@ export default function About() {
                   filter: "brightness(50%)",
                 }}
               >
-                <polygon points="259,666 295,670 283,661" fill={colors[baseColor].value} />
+                <polygon
+                  points="259,666 295,670 283,661"
+                  fill={colors[baseColor].value}
+                />
               </svg>
             </div>
 
@@ -333,6 +414,121 @@ export default function About() {
               </svg>
             </div>
           </>
+        )}
+
+        {selectedBaseImage === baseImages[1].path && (
+          <div className="base_1">
+            <svg
+              className={styles.base_part}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 817"
+              style={{
+                filter: "brightness(80%)",
+                zIndex: 1, // Set z-index to 2
+              }}
+            >
+              <defs>
+                {/* Define the linear gradient */}
+                <linearGradient
+                  id="gradient1"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="0%"
+                    stopColor={colors[baseColor1].value}
+                    stopOpacity="0.7"
+                  />
+                  <stop
+                    offset="100%"
+                    stopColor={colors[baseColor1].value}
+                    stopOpacity="1"
+                  />
+                </linearGradient>
+
+                <linearGradient
+                  id="gradient2"
+                  x1="0%"
+                  y1="0%"
+                  x2="100%"
+                  y2="0%"
+                >
+                  <stop
+                    offset="0%"
+                    stopColor={colors[baseColor].value}
+                    stopOpacity="0.7"
+                  />
+                  <stop
+                    offset="100%"
+                    stopColor={colors[baseColor].value}
+                    stopOpacity="1"
+                  />
+                </linearGradient>
+              </defs>
+
+              <ellipse rx="185" ry="73" cx="232" cy="720" fill="black" />
+
+              <ellipse
+                rx="185"
+                ry="73"
+                cx="232"
+                cy="720"
+                fill="url(#gradient2)"
+              />
+
+              <rect width="371" height="71" x="46" y="651" fill="black" stroke="none" />
+              <rect
+                width="371"
+                height="71"
+                x="46"
+                y="651"
+                fill="url(#gradient2)"
+                stroke="none"
+              />
+
+              <ellipse
+                rx="185"
+                ry="70"
+                cx="232"
+                cy="654"
+                fill={colors[baseColor].value}
+              />
+
+              <ellipse rx="143" ry="52" cx="232" cy="648" fill="black" />
+
+              <ellipse
+                rx="143"
+                ry="52"
+                cx="232"
+                cy="648"
+                fill="url(#gradient1)"
+                style={{
+                  filter: `brightness(70%) drop-shadow(-5px 2px rgba(0, 0, 0, 0.38))`,
+                }}
+              />
+            </svg>
+
+            <svg
+              className={styles.base_part}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 817"
+              style={{
+                filter: "brightness(80%)",
+                zIndex: 2, // Set z-index to 2
+              }}
+            >
+              <ellipse
+                rx="143"
+                ry="52"
+                cx="232"
+                cy="638"
+                fill={colors[baseColor1].value}
+                style={{ filter: "brightness(90%)" }}
+              />
+            </svg>
+          </div>
         )}
 
         {selectedBaseImage === baseImages[0].path && (
@@ -735,7 +931,6 @@ export default function About() {
               </svg>
             </div>
 
-
             <div className="base_polygon_shadow_side3">
               <svg
                 className={styles.base_part}
@@ -817,7 +1012,7 @@ export default function About() {
             className={styles.product_input}
             value={week}
             onChange={(e) => setWeek(e.target.value)} // Update week state
-            maxLength={14} // Restrict name to 30 characters
+            maxLength={10} // Restrict name to 30 characters
           />
         </div>
         <div className={styles.input_group}>
@@ -834,7 +1029,7 @@ export default function About() {
         <label>Base Side Color:</label>
         <p>{colorName}</p>
         <div className={styles.color_selection}>
-          {colors.map((color,index) => (
+          {colors.map((color, index) => (
             <button
               key={index}
               type="button"
@@ -853,7 +1048,6 @@ export default function About() {
             </button>
           ))}
         </div>
-
 
         <label>Base Color:</label>
         <p>{colorName1}</p>
