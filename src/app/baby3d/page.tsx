@@ -110,9 +110,7 @@ export default function About() {
   const [selectedBaseImage, setSelectedBaseImage] = useState(
     0
   ); // Default image
-  const [selectedFigureImage, setSelectedFigureImage] = useState(
-    figureImages[0].path
-  ); // Default image
+  const [selectedFigureImage, setSelectedFigureImage] = useState(0); // Default image
   
 
   useEffect(() => {
@@ -137,7 +135,7 @@ export default function About() {
       </ul>
       <div className={styles.card_image_wrapper}>
         <Image
-          src={selectedFigureImage}
+          src={figureImages[selectedFigureImage].path}
           // src="/baby3.png"
           alt="baby"
           className={styles.card_image_figure}
@@ -992,11 +990,11 @@ export default function About() {
 
       <label>Chose your figure:</label>
       <div className={styles.image_selector}>
-        {figureImages.map((image) => (
+        {figureImages.map((image,index) => (
           <button
-            key={image.name}
+            key={index}
             className={styles.image_selector_btn}
-            onClick={() => setSelectedFigureImage(image.path)} // Update selected image
+            onClick={() => setSelectedFigureImage(index)} // Update selected image
           >
             {image.name}
           </button>
