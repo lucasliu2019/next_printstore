@@ -239,7 +239,7 @@ export default function About() {
               : ""
           } `}
         >
-          <span className={styles.name}>{name}</span>
+          {selectedBaseImage != baseImages[1].path &&<span className={styles.name}>{name}</span>}
         </div>
 
         <div
@@ -255,7 +255,7 @@ export default function About() {
         }
         `}
         >
-          <span className={styles.week}>{week}</span>
+          {selectedBaseImage != baseImages[1].path && <span className={styles.week}>{week}</span>}
         </div>
 
         <div
