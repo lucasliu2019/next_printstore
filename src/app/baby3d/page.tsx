@@ -144,14 +144,14 @@ export default function About() {
           width={500}
           height={500}
         />
-        <Image
+        {/* <Image
           src={selectedBaseImage}
           // src="/baby3.png"
           alt="baby"
           className={styles.card_image_base}
           width={500}
           height={500}
-        />
+        /> */}
 
         {selectedBaseImage == baseImages[1].path && (
           <div>
