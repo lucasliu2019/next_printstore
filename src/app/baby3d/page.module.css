@@ -326,6 +326,11 @@
     height: 18px;
   }
 
+  .name_wrapper_b2{
+    display: none;
+    visibility: hidden;
+  }
+
   .name_wrapper_b3 {
     bottom: 89px; /* Position 10px from the bottom */
     right: 18px; /* Position 10px from the left */
