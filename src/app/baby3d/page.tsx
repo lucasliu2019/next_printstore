@@ -156,8 +156,6 @@ export default function About() {
         {selectedBaseImage == baseImages[1].path && (
           <div>
             <svg
-              width="100%" /* Ensure responsive scaling */
-              height="auto"
               className={styles.base_part}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 480 817"
@@ -167,7 +165,7 @@ export default function About() {
               }}
             >
               <defs>
-                <path id="circlePath" d="M 0 0 q 110 100 293 50" />
+                <path id="circlePath" d="M 48 778 q 110 100 293 50" />
               </defs>
 
               <text
@@ -175,7 +173,7 @@ export default function About() {
                 fontSize="15"
                 fontFamily="Arial"
                 textAnchor="middle"
-                transform="scale(1, 0.7) translate(48 778)" /* Scale text vertically */
+                transform="scale(1, 0.7)" /* Scale text vertically */
                 style={{
                   transformOrigin: "50% 50%" /* Adjust the scaling origin */,
                   textShadow:
@@ -188,14 +186,14 @@ export default function About() {
               </text>
 
               <defs>
-                <path id="circlePath1" d="M 0 0 q 23 -41 -60 -80" />
+                <path id="circlePath1" d="M 390 758 q 23 -41 -60 -80" />
               </defs>
               <text
                 fill="rgb(209, 209, 209)"
                 fontSize="15"
                 fontFamily="Arial"
                 textAnchor="middle"
-                transform="scale(1, 0.7) translate(390 758)" /* Scale text vertically */
+                transform="scale(1, 0.7)" /* Scale text vertically */
                 style={{
                   transformOrigin: "50% 50%" /* Adjust the scaling origin */,
                   textShadow:
@@ -209,14 +207,14 @@ export default function About() {
               </text>
 
               <defs>
-                <path id="circlePath2" d="M 0 0 q -63 -7 -80 47" />
+                <path id="circlePath2" d="M 150 690 q -63 -7 -80 47" />
               </defs>
               <text
                 fill="rgb(209, 209, 209)"
                 fontSize="15"
                 fontFamily="Arial"
                 textAnchor="middle"
-                transform="scale(1, 0.7) translate(150 690)" /* Scale text vertically */
+                transform="scale(1, 0.7)" /* Scale text vertically */
                 style={{
                   transformOrigin: "50% 50%" /* Adjust the scaling origin */,
                   textShadow:
