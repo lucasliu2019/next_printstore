@@ -156,6 +156,8 @@ export default function About() {
         {selectedBaseImage == baseImages[1].path && (
           <div>
             <svg
+              width="100%" /* Ensure responsive scaling */
+              height="auto"
               className={styles.base_part}
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 480 817"
