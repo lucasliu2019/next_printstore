@@ -108,7 +108,7 @@ export default function About() {
   const [colorName, setColorName] = useState(colors[baseColor].name); // Default color for base_polygon
   const [colorName1, setColorName1] = useState(colors[baseColor1].name);
   const [selectedBaseImage, setSelectedBaseImage] = useState(
-    baseImages[0].path
+    0
   ); // Default image
   const [selectedFigureImage, setSelectedFigureImage] = useState(
     figureImages[0].path
@@ -153,7 +153,7 @@ export default function About() {
           height={500}
         /> */}
 
-        {selectedBaseImage == baseImages[1].path && (
+        {selectedBaseImage == 1 && (
             <svg
               className={styles.base_part}
               xmlns="http://www.w3.org/2000/svg"
@@ -230,58 +230,58 @@ export default function About() {
 
         <div
           className={`${styles.name_wrapper} ${
-            selectedBaseImage === baseImages[0].path
+            selectedBaseImage === 0
               ? styles.name_wrapper_b1
-              : selectedBaseImage === baseImages[1].path
+              : selectedBaseImage === 1
               ? styles.name_wrapper_b2
-              : selectedBaseImage === baseImages[2].path
+              : selectedBaseImage === 2
               ? styles.name_wrapper_b3
               : ""
           } `}
         >
-          {selectedBaseImage != baseImages[1].path &&<span className={styles.name}>{name}</span>}
+          {selectedBaseImage != 1 &&<span className={styles.name}>{name}</span>}
         </div>
 
         <div
           className={`${styles.week_wrapper}
         ${
-          selectedBaseImage === baseImages[0].path
+          selectedBaseImage === 0
             ? styles.week_wrapper_b1
-            : selectedBaseImage === baseImages[1].path
+            : selectedBaseImage === 1
             ? styles.week_wrapper_b2
-            : selectedBaseImage === baseImages[2].path
+            : selectedBaseImage === 2
             ? styles.week_wrapper_b3
             : ""
         }
         `}
         >
-          {selectedBaseImage != baseImages[1].path && <span className={styles.week}>{week}</span>}
+          {selectedBaseImage != 1 && <span className={styles.week}>{week}</span>}
         </div>
 
         <div
           className={`${styles.dob_wrapper}
                 ${
-                  selectedBaseImage === baseImages[0].path
+                  selectedBaseImage === 0
                     ? styles.dob_wrapper_b1
-                    : selectedBaseImage === baseImages[1].path
+                    : selectedBaseImage === 1
                     ? styles.dob_wrapper_b2
-                    : selectedBaseImage === baseImages[2].path
+                    : selectedBaseImage === 2
                     ? styles.dob_wrapper_b3
                     : ""
                 }
         
         `}
         >
-          {selectedBaseImage !== baseImages[0].path && (
+          {selectedBaseImage !== 0 && (
             <span className={styles.dob}>{dob}</span>
           )}
         </div>
 
-        {selectedBaseImage === baseImages[2].path && (
+        {selectedBaseImage === 2 && (
           <div className={styles.bar}></div>
         )}
 
-        {selectedBaseImage === baseImages[2].path && (
+        {selectedBaseImage ===2 && (
           <>
             <div className="base_polygon_front">
               <svg
@@ -425,7 +425,7 @@ export default function About() {
           </>
         )}
 
-        {selectedBaseImage === baseImages[1].path && (
+        {selectedBaseImage === 1 && (
           <div className="base_1">
             <svg
               className={styles.base_part}
@@ -540,7 +540,7 @@ export default function About() {
           </div>
         )}
 
-        {selectedBaseImage === baseImages[0].path && (
+        {selectedBaseImage === 0 && (
           <>
             <div className="base_polygon_front">
               <svg
@@ -979,11 +979,11 @@ export default function About() {
 
       <label>Chose your base:</label>
       <div className={styles.image_selector}>
-        {baseImages.map((image) => (
+        {baseImages.map((image,index) => (
           <button
-            key={image.name}
+            key={index}
             className={styles.image_selector_btn}
-            onClick={() => setSelectedBaseImage(image.path)} // Update selected image
+            onClick={() => setSelectedBaseImage(index)} // Update selected image
           >
             {image.name}
           </button>
