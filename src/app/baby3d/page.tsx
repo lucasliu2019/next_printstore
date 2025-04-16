@@ -287,6 +287,7 @@ export default function About() {
                   }
                 }}
                 menuPlacement="top" // Open the dropdown menu upward
+                isSearchable={false} // Disable typing in the dropdown
                 styles={{
                   option: (provided, state) => ({
                     ...provided,
@@ -348,6 +349,7 @@ export default function About() {
                   }
                 }}
                 menuPlacement="top" // Open the dropdown menu upward
+                isSearchable={false} // Disable typing in the dropdown
                 styles={{
                   option: (provided, state) => ({
                     ...provided,
