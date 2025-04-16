@@ -20,7 +20,7 @@
 .card_container {
   display: flex; /* Use Flexbox for side-by-side layout */
   justify-content: space-between; /* Add space between the two elements */
-  align-items: flex-start; /* Align items at the top */
+  align-items: center; /* Align items at the top */
   gap: 20px; /* Optional: Add spacing between the elements */
 }
 
