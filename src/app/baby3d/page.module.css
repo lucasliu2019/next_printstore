@@ -270,6 +270,7 @@
     flex: 1; /* Allow the input to take up the remaining space */
     max-width: 300px; /* Optional: Limit the maximum width of the input */
     padding: 5px; /* Add padding for better appearance */
+    font-size: 16px; /* Prevent zoom-in on iPhone */
   }
 
 .styles.product_input_label{
