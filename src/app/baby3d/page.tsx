@@ -294,6 +294,8 @@ export default function About() {
                     backgroundColor: state.data.color,
                     color: "black",
                     whiteSpace: "nowrap", // Prevent text wrapping
+                    overflow: "hidden", // Hide overflowing content
+                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
                   }),
                   singleValue: (provided, state) => ({
                     ...provided,
@@ -357,6 +359,8 @@ export default function About() {
                     backgroundColor: state.data.color,
                     color: "black",
                     whiteSpace: "nowrap", // Prevent text wrapping
+                    overflow: "hidden", // Hide overflowing content
+                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
                   }),
                   singleValue: (provided, state) => ({
                     ...provided,
