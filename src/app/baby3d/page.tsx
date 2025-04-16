@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 
+import Select from "react-select";
+
 const baseImages = [
   {
     name: "Two-level",
@@ -58,6 +60,7 @@ const figureImages = [
   },
 ];
 
+
 const colors = [
   {
     name: "PLA Glow Variant Glow Green (15500)",
@@ -98,6 +101,12 @@ const colors = [
   { name: "TPU for AMS Variant Red (53200)", value: "rgb(204, 115, 91)" },
 ];
 
+const colorOptions = colors.map((color, index) => ({
+  value: index,
+  label: color.name,
+  color: color.value,
+}));
+
 export default function About() {
   // State for the input fields
   const [name, setName] = useState("Firstname Lastname");
@@ -110,6 +119,17 @@ export default function About() {
   const [selectedBaseImage, setSelectedBaseImage] = useState(0); // Default image
   const [selectedFigureImage, setSelectedFigureImage] = useState(0); // Default image
 
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth <= 768); // Check if the screen width is <= 768px
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // const [scale, setScale] = useState(1);
 
@@ -123,25 +143,23 @@ export default function About() {
     };
   }, []);
 
-
   // useEffect(() => {
   //   const handleResize = () => {
   //     const container = document.querySelector(`.${styles.card_image_wrapper}`);
   //     if (container instanceof HTMLElement) {
   //       const containerWidth = container.offsetWidth;
   //       // Base width is 480px
-  //       const scaleFactor = containerWidth / 480; 
+  //       const scaleFactor = containerWidth / 480;
   //       setScale(scaleFactor);
   //     }
   //   };
-  
+
   //   window.addEventListener("resize", handleResize);
   //   // Initial call
-  //   handleResize(); 
-  
+  //   handleResize();
+
   //   return () => window.removeEventListener("resize", handleResize);
   // }, []);
-
 
   return (
     <div className={styles.page}>
@@ -156,120 +174,222 @@ export default function About() {
         </ul>
       </div>
 
-
-
       <div className={styles.card_container}>
+        <div className={styles.choice}>
+          <div className={styles.selector_container}>
+            <label>Choose your base:</label>
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <select
+                className={styles.selector}
+                onChange={(e) => setSelectedBaseImage(Number(e.target.value))}
+                value={selectedBaseImage}
+              >
+                {baseImages.map((image, index) => (
+                  <option key={index} value={index}>
+                    {image.name}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              // Render buttons for larger screens
+              <div className={styles.image_selector}>
+                {baseImages.map((image, index) => (
+                  <button
+                    key={index}
+                    className={styles.image_selector_btn}
+                    onClick={() => setSelectedBaseImage(index)}
+                  >
+                    {image.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
+          <div className={styles.selector_container}>
+            <label>Choose your figure:</label>
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <select
+                className={styles.selector}
+                onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
+                value={selectedFigureImage}
+              >
+                {figureImages.map((image, index) => (
+                  <option key={index} value={index}>
+                    {image.name}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              // Render buttons for larger screens
+              <div className={styles.image_selector}>
+                {figureImages.map((image, index) => (
+                  <button
+                    key={index}
+                    className={styles.image_selector_btn}
+                    onClick={() => setSelectedFigureImage(index)} // Update selected image
+                  >
+                    {image.name}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
 
-      <div className={styles.choice}>
-        <label>Choose your base:</label>
-        <div className={styles.image_selector}>
-          {baseImages.map((image, index) => (
-            <button
-              key={index}
-              className={styles.image_selector_btn}
-              onClick={() => setSelectedBaseImage(index)} // Update selected image
-            >
-              {image.name}
-            </button>
-          ))}
+          <form className={styles.product_form}>
+            <div className={styles.input_group}>
+              <label className={styles.product_input_label}>Name:</label>
+              <input
+                type="text"
+                className={styles.product_input}
+                value={name}
+                onChange={(e) => setName(e.target.value)} // Update name state
+                maxLength={30} // Restrict name to 30 characters
+              />
+            </div>
+            <div className={styles.input_group}>
+              <label className={styles.product_input_label}>Week:</label>
+              <input
+                type="text"
+                className={styles.product_input}
+                value={week}
+                onChange={(e) => setWeek(e.target.value)} // Update week state
+                maxLength={10} // Restrict name to 30 characters
+              />
+            </div>
+            <div className={styles.input_group}>
+              <label className={styles.product_input_label}>DOB:</label>
+              <input
+                type="text"
+                className={styles.product_input}
+                value={dob}
+                onChange={(e) => setDob(e.target.value)} // Update dob state
+                maxLength={20} // Restrict name to 30 characters
+              />
+            </div>
+
+            <label>Base Side Color:</label>
+            <p>{colorName}</p>
+
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <Select
+                options={colorOptions}
+                value={colorOptions[baseColor]}
+                onChange={(selectedOption) => {
+                  setBaseColor(selectedOption.value);
+                  setColorName(selectedOption.label);
+                }}
+                styles={{
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: "black",
+                  }),
+                  singleValue: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: state.data.color,
+                  }),
+                  control: (provided) => ({
+                    ...provided,
+                    width: "200px", // Set the width of the dropdown
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    width: "200px", // Ensure the dropdown menu matches the control width
+                  }),
+                }}
+              />):(
+            <div className={styles.color_selection}>
+              {colors.map((color, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className={styles.color_button}
+                  style={{
+                    backgroundColor: color.value,
+                    border: baseColor === index ? "2px solid white" : "none",
+                  }}
+                  onClick={() => {
+                    setBaseColor(index);
+                    setColorName(colors[index].name);
+                  }} // Update base_polygon color
+                  title={color.name} // Tooltip with the color name
+                >
+                  {/* {color.name} */}
+                </button>
+              ))}
+            </div>)}
+
+            <label>Base Color:</label>
+            <p>{colorName1}</p>
+
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <Select
+                options={colorOptions}
+                value={colorOptions[baseColor1]}
+                onChange={(selectedOption) => {
+                  setBaseColor1(selectedOption.value);
+                  setColorName1(selectedOption.label);
+                }}
+                styles={{
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: "black",
+                  }),
+                  singleValue: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: state.data.color,
+                  }),
+                  control: (provided) => ({
+                    ...provided,
+                    width: "200px", // Set the width of the dropdown
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    width: "200px", // Ensure the dropdown menu matches the control width
+                  }),
+                }}
+              />
+            ) : (
+              // Render buttons for larger screens
+              <div className={styles.color_selection}>
+                {colors.map((color, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={styles.color_button}
+                    style={{
+                      backgroundColor: color.value,
+                      border: baseColor1 === index ? "2px solid white" : "none",
+                    }}
+                    onClick={() => {
+                      setBaseColor1(index);
+                      setColorName1(colors[index].name);
+                    }} // Update base_polygon color
+                    title={color.name} // Tooltip with the color name
+                  >
+                    {/* {color.name} */}
+                  </button>
+                ))}
+              </div>
+            )}
+          </form>
         </div>
 
-        <label>Chose your figure:</label>
-        <div className={styles.image_selector}>
-          {figureImages.map((image, index) => (
-            <button
-              key={index}
-              className={styles.image_selector_btn}
-              onClick={() => setSelectedFigureImage(index)} // Update selected image
-            >
-              {image.name}
-            </button>
-          ))}
-        </div>
-
-        <form className={styles.product_form}>
-          <div className={styles.input_group}>
-            <label className={styles.product_input_label}>Name:</label>
-            <input
-              type="text"
-              className={styles.product_input}
-              value={name}
-              onChange={(e) => setName(e.target.value)} // Update name state
-              maxLength={30} // Restrict name to 30 characters
-            />
-          </div>
-          <div className={styles.input_group}>
-            <label className={styles.product_input_label}>Week:</label>
-            <input
-              type="text"
-              className={styles.product_input}
-              value={week}
-              onChange={(e) => setWeek(e.target.value)} // Update week state
-              maxLength={10} // Restrict name to 30 characters
-            />
-          </div>
-          <div className={styles.input_group}>
-            <label className={styles.product_input_label}>DOB:</label>
-            <input
-              type="text"
-              className={styles.product_input}
-              value={dob}
-              onChange={(e) => setDob(e.target.value)} // Update dob state
-              maxLength={20} // Restrict name to 30 characters
-            />
-          </div>
-
-          <label>Base Side Color:</label>
-          <p>{colorName}</p>
-          <div className={styles.color_selection}>
-            {colors.map((color, index) => (
-              <button
-                key={index}
-                type="button"
-                className={styles.color_button}
-                style={{
-                  backgroundColor: color.value,
-                  border: baseColor === index ? "2px solid white" : "none",
-                }}
-                onClick={() => {
-                  setBaseColor(index);
-                  setColorName(colors[index].name);
-                }} // Update base_polygon color
-                title={color.name} // Tooltip with the color name
-              >
-                {/* {color.name} */}
-              </button>
-            ))}
-          </div>
-
-          <label>Base Color:</label>
-          <p>{colorName1}</p>
-          <div className={styles.color_selection}>
-            {colors.map((color, index) => (
-              <button
-                key={index}
-                type="button"
-                className={styles.color_button}
-                style={{
-                  backgroundColor: color.value,
-                  border: baseColor1 === index ? "2px solid white" : "none",
-                }}
-                onClick={() => {
-                  setBaseColor1(index);
-                  setColorName1(colors[index].name);
-                }} // Update base_polygon color
-                title={color.name} // Tooltip with the color name
-              >
-                {/* {color.name} */}
-              </button>
-            ))}
-          </div>
-        </form>
-      </div>
-
-        <div className={styles.card_image_wrapper}  
-        // style={{ transform: `scale(${scale})` }}
+        <div
+          className={styles.card_image_wrapper}
+          // style={{ transform: `scale(${scale})` }}
         >
           <Image
             src={figureImages[selectedFigureImage].path}
@@ -388,7 +508,8 @@ export default function About() {
               : selectedBaseImage === 2
               ? styles.week_wrapper_b3
               : ""
-          }`} >
+          }`}
+          >
             {selectedBaseImage != 1 && (
               <span className={styles.week}>{week}</span>
             )}
@@ -404,7 +525,8 @@ export default function About() {
                     : selectedBaseImage === 2
                     ? styles.dob_wrapper_b3
                     : ""
-                }`}>
+                }`}
+          >
             {selectedBaseImage !== 0 && (
               <span className={styles.dob}>{dob}</span>
             )}
@@ -1115,8 +1237,6 @@ export default function About() {
             </>
           )}
         </div>
-
-      
       </div>
     </div>
   );
