@@ -17,12 +17,21 @@
 
 }
 
+.card_container {
+  display: flex; /* Use Flexbox for side-by-side layout */
+  justify-content: space-between; /* Add space between the two elements */
+  align-items: flex-start; /* Align items at the top */
+  gap: 20px; /* Optional: Add spacing between the elements */
+}
+
 .card_image_wrapper {
   height: 817px;
   width: 480px;
   margin: auto;
   position: relative;
 
+  transform-origin: center; /* Scale from the center */
+  transition: transform 0.3s ease; /* Optional: Smooth scaling */
 }
 
 .card_image_base {
@@ -314,55 +323,55 @@
 @media (max-width: 768px) {
 
   .card_image_wrapper {
-    height: 530px; /* Reduce the height for small screens */
-    width: 250px; /* Reduce the width for small screens */
+    transform: scale(0.5); /* Default scale */
+  }
+
+  .card_container{
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
   }
 
 
-  .week_wrapper_b1{
-    bottom: 43px; /* Position 10px from the bottom */
-    right: 18px; /* Position 10px from the left */
+  /* .week_wrapper_b1{
+    bottom: 43px;
+    right: 18px;
     font-size: 17px;
     font-weight: 30;
   
     width: 155px;
     height: 18px;
-  }
-
+  } */
+/* 
   .name_wrapper_b3 {
-    bottom: 89px; /* Position 10px from the bottom */
-    right: 18px; /* Position 10px from the left */
-
+    bottom: 89px;
+    right: 18px;
     width: 85px;
     height: 15px;
-
-    font-size: 6px; /* Adjust font size for smaller screens */
+    font-size: 6px;
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
     -2px 2px 1px rgb(110, 110, 110),
     -3px 3px 1px rgb(0, 0, 0),
     -4px 4px 1px rgb(0, 0, 0);
     z-index: 4;
-  }
-
+  } */
+/* 
   .name_wrapper_b1{
-    bottom: 20px; /* Position 10px from the top */
-    right: 18px; /* Position 10px from the right */
-  
+    bottom: 20px;
+    right: 18px;
     font-size: 11px;
 
     width: 150px;
     height: 18px;
-    /* background-color: #005bb566; */
-}
+} */
 
-  .week_wrapper_b3 {
-    bottom: 42px; /* Position 10px from the top */
-    right: 13px; /* Position 10px from the right */
+  /* .week_wrapper_b3 {
+    bottom: 42px;
+    right: 13px;
 
     width: 170px;
     height: 40px;
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 20px;
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
     -2px 2px 1px rgb(110, 110, 110),
@@ -370,42 +379,37 @@
     -4px 4px 1px rgb(0, 0, 0),
     -5px 5px 1px rgb(0, 0, 0),
      -6px 6px 1px rgb(0, 0, 0),
-  }
+  } */
 
-  .dob_wrapper_b3 {
-    bottom: 16px; /* Position 10px from the top */
-    right: 7px; /* Position 10px from the right */
+  /* .dob_wrapper_b3 {
+    bottom: 16px;
+    right: 7px;
 
     width: 170px;
     height: 25px;
 
-    font-size: 12px; /* Adjust font size for smaller screens */
+    font-size: 12px;
     text-shadow: 
     -1px 1px 0px rgb(110, 110, 110), 
     -2px 2px 1px rgb(110, 110, 110),
     -3px 3px 1px rgb(0, 0, 0),
     -4px 4px 1px rgb(0, 0, 0);
-  }
+  } */
 
 
-.bar{
+/* .bar{
     transform: translate(-50%, -50%);
-  
-    position: absolute; /* Position relative to the parent */
-    bottom: 43px; /* Position 10px from the top */
-    right: 60px; /* Position 10px from the right */
-  
-    /* background-color: rgba(0, 0, 0, 0.5); */
-    transform: rotate(-10.5deg); /* Rotate the text counterclockwise by 5 degrees */
-    transform-origin: center; /* Set the origin to the center of the div */
-  
+    position: absolute;
+    bottom: 43px; 
+    right: 60px;
+    transform: rotate(-10.5deg);
+    transform-origin: center;
     background-color: rgba(240, 248, 255, 0.608);
     width: 75px;
     height: 1px;
     border-radius: 15px;
-
     box-shadow: -1px 1px 1px black;
-}
+} */
 }
 
 
