@@ -9,3 +9,35 @@
 .heading{
   font-size: 3rem;
 }
+
+.contactContainer{
+  width: clamp(450px, 100% ,700px);
+  position: relative;
+}
+
+.envBlue{
+  width: 200px;
+  height: auto; /* Automatically adjust height to retain aspect ratio */
+  position: absolute;
+  top: 200px;
+  left: -200px;
+}
+
+.envPink{
+  width: 150px;
+  height: auto; /* Automatically adjust height to retain aspect ratio */
+  position: absolute;
+  bottom: 0;
+  right: -200px;
+}
+
+.envYellow{
+  width: 100%;
+  max-width: 200px;
+  height: auto; /* Automatically adjust height to retain aspect ratio */
+  position: absolute;
+  top: -20px;
+  right: -200px;
+}
+
+
