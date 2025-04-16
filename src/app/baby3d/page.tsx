@@ -286,6 +286,7 @@ export default function About() {
                     setColorName(selectedOption.label);
                   }
                 }}
+                menuPlacement="top" // Open the dropdown menu upward
                 styles={{
                   option: (provided, state) => ({
                     ...provided,
@@ -346,6 +347,7 @@ export default function About() {
                     setColorName1(selectedOption.label);
                   }
                 }}
+                menuPlacement="top" // Open the dropdown menu upward
                 styles={{
                   option: (provided, state) => ({
                     ...provided,
