@@ -433,7 +433,7 @@ export default function About() {
               style={{
                 filter: "brightness(80%)",
                 zIndex: 2, // Set z-index to 2
-                border: "1px solid black",
+                // border: "1px solid black",
               }}
             >
               <defs>
