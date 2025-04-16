@@ -29,9 +29,13 @@
   width: 480px;
   margin: auto;
   position: relative;
-
+  flex: 0 0 auto; /* Prevent the second child from growing or shrinking */
   transform-origin: center; /* Scale from the center */
   transition: transform 0.3s ease; /* Optional: Smooth scaling */
+}
+.choice{
+  flex: 1; /* Allow the first child to take as much space as possible */
+  width: auto; /* Width adjusts based on content */
 }
 
 .card_image_base {
@@ -50,7 +54,8 @@
   left: 0;
   height: auto;
   width: 100%;
-  object-fit: contain; /* Ensure the image fits within its container while maintaining aspect ratio */
+  /* Ensure the image fits within its container while maintaining aspect ratio */
+  object-fit: contain; 
   z-index: 3;
 }
 
@@ -322,13 +327,21 @@
 /* Media query for small screens */
 @media (max-width: 768px) {
 
-  .card_image_wrapper {
-    transform: scale(0.3); /* Default scale */
-  }
+  /* .card_image_wrapper {
+    transform: scale(0.3);
+  } */
 
   .card_container{
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items */
+  }
+
+  .card_image_wrapper {
+    order: 1; /* Move the first child to the bottom */
+  }
+
+  .choice {
+    order: 2; /* Move the second child to the top */
   }
 
 

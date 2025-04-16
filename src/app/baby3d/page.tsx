@@ -153,8 +153,122 @@ export default function About() {
           <li>Exclusive packaging options available</li>
         </ul>
       </div>
+
+
+
       <div className={styles.card_container}>
-        <div className={styles.card_image_wrapper}  style={{ transform: `scale(${scale})` }}>
+
+
+      <div className={styles.choice}>
+        <label>Choose your base:</label>
+        <div className={styles.image_selector}>
+          {baseImages.map((image, index) => (
+            <button
+              key={index}
+              className={styles.image_selector_btn}
+              onClick={() => setSelectedBaseImage(index)} // Update selected image
+            >
+              {image.name}
+            </button>
+          ))}
+        </div>
+
+        <label>Chose your figure:</label>
+        <div className={styles.image_selector}>
+          {figureImages.map((image, index) => (
+            <button
+              key={index}
+              className={styles.image_selector_btn}
+              onClick={() => setSelectedFigureImage(index)} // Update selected image
+            >
+              {image.name}
+            </button>
+          ))}
+        </div>
+
+        <form className={styles.product_form}>
+          <div className={styles.input_group}>
+            <label className={styles.product_input_label}>Name:</label>
+            <input
+              type="text"
+              className={styles.product_input}
+              value={name}
+              onChange={(e) => setName(e.target.value)} // Update name state
+              maxLength={30} // Restrict name to 30 characters
+            />
+          </div>
+          <div className={styles.input_group}>
+            <label className={styles.product_input_label}>Week:</label>
+            <input
+              type="text"
+              className={styles.product_input}
+              value={week}
+              onChange={(e) => setWeek(e.target.value)} // Update week state
+              maxLength={10} // Restrict name to 30 characters
+            />
+          </div>
+          <div className={styles.input_group}>
+            <label className={styles.product_input_label}>DOB:</label>
+            <input
+              type="text"
+              className={styles.product_input}
+              value={dob}
+              onChange={(e) => setDob(e.target.value)} // Update dob state
+              maxLength={20} // Restrict name to 30 characters
+            />
+          </div>
+
+          <label>Base Side Color:</label>
+          <p>{colorName}</p>
+          <div className={styles.color_selection}>
+            {colors.map((color, index) => (
+              <button
+                key={index}
+                type="button"
+                className={styles.color_button}
+                style={{
+                  backgroundColor: color.value,
+                  border: baseColor === index ? "2px solid white" : "none",
+                }}
+                onClick={() => {
+                  setBaseColor(index);
+                  setColorName(colors[index].name);
+                }} // Update base_polygon color
+                title={color.name} // Tooltip with the color name
+              >
+                {/* {color.name} */}
+              </button>
+            ))}
+          </div>
+
+          <label>Base Color:</label>
+          <p>{colorName1}</p>
+          <div className={styles.color_selection}>
+            {colors.map((color, index) => (
+              <button
+                key={index}
+                type="button"
+                className={styles.color_button}
+                style={{
+                  backgroundColor: color.value,
+                  border: baseColor1 === index ? "2px solid white" : "none",
+                }}
+                onClick={() => {
+                  setBaseColor1(index);
+                  setColorName1(colors[index].name);
+                }} // Update base_polygon color
+                title={color.name} // Tooltip with the color name
+              >
+                {/* {color.name} */}
+              </button>
+            ))}
+          </div>
+        </form>
+      </div>
+
+        <div className={styles.card_image_wrapper}  
+        // style={{ transform: `scale(${scale})` }}
+        >
           <Image
             src={figureImages[selectedFigureImage].path}
             // src="/baby3.png"
@@ -999,112 +1113,7 @@ export default function About() {
           )}
         </div>
 
-      <div className={styles.choice}>
-        <label>Choose your base:</label>
-        <div className={styles.image_selector}>
-          {baseImages.map((image, index) => (
-            <button
-              key={index}
-              className={styles.image_selector_btn}
-              onClick={() => setSelectedBaseImage(index)} // Update selected image
-            >
-              {image.name}
-            </button>
-          ))}
-        </div>
-
-        <label>Chose your figure:</label>
-        <div className={styles.image_selector}>
-          {figureImages.map((image, index) => (
-            <button
-              key={index}
-              className={styles.image_selector_btn}
-              onClick={() => setSelectedFigureImage(index)} // Update selected image
-            >
-              {image.name}
-            </button>
-          ))}
-        </div>
-
-        <form className={styles.product_form}>
-          <div className={styles.input_group}>
-            <label className={styles.product_input_label}>Name:</label>
-            <input
-              type="text"
-              className={styles.product_input}
-              value={name}
-              onChange={(e) => setName(e.target.value)} // Update name state
-              maxLength={30} // Restrict name to 30 characters
-            />
-          </div>
-          <div className={styles.input_group}>
-            <label className={styles.product_input_label}>Week:</label>
-            <input
-              type="text"
-              className={styles.product_input}
-              value={week}
-              onChange={(e) => setWeek(e.target.value)} // Update week state
-              maxLength={10} // Restrict name to 30 characters
-            />
-          </div>
-          <div className={styles.input_group}>
-            <label className={styles.product_input_label}>DOB:</label>
-            <input
-              type="text"
-              className={styles.product_input}
-              value={dob}
-              onChange={(e) => setDob(e.target.value)} // Update dob state
-              maxLength={20} // Restrict name to 30 characters
-            />
-          </div>
-
-          <label>Base Side Color:</label>
-          <p>{colorName}</p>
-          <div className={styles.color_selection}>
-            {colors.map((color, index) => (
-              <button
-                key={index}
-                type="button"
-                className={styles.color_button}
-                style={{
-                  backgroundColor: color.value,
-                  border: baseColor === index ? "2px solid white" : "none",
-                }}
-                onClick={() => {
-                  setBaseColor(index);
-                  setColorName(colors[index].name);
-                }} // Update base_polygon color
-                title={color.name} // Tooltip with the color name
-              >
-                {/* {color.name} */}
-              </button>
-            ))}
-          </div>
-
-          <label>Base Color:</label>
-          <p>{colorName1}</p>
-          <div className={styles.color_selection}>
-            {colors.map((color, index) => (
-              <button
-                key={index}
-                type="button"
-                className={styles.color_button}
-                style={{
-                  backgroundColor: color.value,
-                  border: baseColor1 === index ? "2px solid white" : "none",
-                }}
-                onClick={() => {
-                  setBaseColor1(index);
-                  setColorName1(colors[index].name);
-                }} // Update base_polygon color
-                title={color.name} // Tooltip with the color name
-              >
-                {/* {color.name} */}
-              </button>
-            ))}
-          </div>
-        </form>
-      </div>
+      
       </div>
     </div>
   );
