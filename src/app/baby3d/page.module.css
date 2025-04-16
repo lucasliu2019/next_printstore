@@ -323,7 +323,7 @@
 @media (max-width: 768px) {
 
   .card_image_wrapper {
-    transform: scale(0.5); /* Default scale */
+    transform: scale(0.3); /* Default scale */
   }
 
   .card_container{
