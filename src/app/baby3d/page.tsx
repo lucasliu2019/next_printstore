@@ -560,6 +560,7 @@ export default function About() {
             <div className="base_1">
               <svg
                 className={styles.base_part}
+                preserveAspectRatio="xMidYMid meet"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 480 817"
                 style={{

@@ -31,8 +31,9 @@
   position: relative;
   flex: 0 0 auto; /* Prevent the second child from growing or shrinking */
   transform-origin: center; /* Scale from the center */
-  transition: transform 0.3s ease; /* Optional: Smooth scaling */
+  transition: transform 0.3s ease;
 }
+
 .choice{
   flex: 1; /* Allow the first child to take as much space as possible */
   width: auto; /* Width adjusts based on content */
