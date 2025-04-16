@@ -356,6 +356,13 @@
     background-color: #005bb5;
   }
 
+
+  @media (max-width: 1000px) {
+    .selectors{
+      justify-content: center;
+    }
+  }
+
 /* Media query for small screens */
 @media (max-width: 768px) {
 
