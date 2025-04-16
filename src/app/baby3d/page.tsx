@@ -293,6 +293,7 @@ export default function About() {
                     ...provided,
                     backgroundColor: state.data.color,
                     color: "black",
+                    whiteSpace: "nowrap", // Prevent text wrapping
                   }),
                   singleValue: (provided, state) => ({
                     ...provided,
@@ -355,6 +356,7 @@ export default function About() {
                     ...provided,
                     backgroundColor: state.data.color,
                     color: "black",
+                    whiteSpace: "nowrap", // Prevent text wrapping
                   }),
                   singleValue: (provided, state) => ({
                     ...provided,
