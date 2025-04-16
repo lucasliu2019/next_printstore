@@ -425,9 +425,80 @@ export default function About() {
           width={500}
           height={500} /> */}
 
-          {/* {selectedBaseImage == 1 && (
+          {selectedBaseImage == 1 && (
+            <svg
+              className={styles.base_part}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 480 817"
+              style={{
+                filter: "brightness(80%)",
+                zIndex: 2, // Set z-index to 2
+              }}
+            >
+              <defs>
+                <path id="circlePath" d="M 48 778 q 110 100 293 50" />
+              </defs>
 
-          )} */}
+              <text
+                fill="rgb(209, 209, 209)"
+                fontSize="15"
+                fontFamily="Arial"
+                textAnchor="middle"
+                transform="scale(1, 0.7)" /* Scale text vertically */
+                style={{
+                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                  textShadow:
+                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
+                }}
+              >
+                <textPath href="#circlePath" startOffset="50%">
+                  {name}
+                </textPath>
+              </text>
+
+              <defs>
+                <path id="circlePath1" d="M 390 758 q 23 -41 -60 -80" />
+              </defs>
+              <text
+                fill="rgb(209, 209, 209)"
+                fontSize="15"
+                fontFamily="Arial"
+                textAnchor="middle"
+                transform="scale(1, 0.7)" /* Scale text vertically */
+                style={{
+                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                  textShadow:
+                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
+                  zIndex: 1, // Set z-index to 2
+                }}
+              >
+                <textPath href="#circlePath1" startOffset="50%">
+                  {dob}
+                </textPath>
+              </text>
+
+              <defs>
+                <path id="circlePath2" d="M 150 690 q -63 -7 -80 47" />
+              </defs>
+              <text
+                fill="rgb(209, 209, 209)"
+                fontSize="15"
+                fontFamily="Arial"
+                textAnchor="middle"
+                transform="scale(1, 0.7)" /* Scale text vertically */
+                style={{
+                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                  textShadow:
+                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
+                  zIndex: 1, // Set z-index to 2
+                }}
+              >
+                <textPath href="#circlePath2" startOffset="50%">
+                  {week}
+                </textPath>
+              </text>
+            </svg>
+          )}
 
           <div
             className={`${styles.name_wrapper} ${
@@ -745,79 +816,6 @@ export default function About() {
                   style={{ filter: "brightness(90%)" }}
                 />
               </svg>
-              <svg
-              className={styles.base_part}
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 480 817"
-              style={{
-                filter: "brightness(80%)",
-                zIndex: 2, // Set z-index to 2
-              }}
-            >
-              <defs>
-                <path id="circlePath" d="M 48 778 q 110 100 293 50" />
-              </defs>
-
-              <text
-                fill="rgb(209, 209, 209)"
-                fontSize="15"
-                fontFamily="Arial"
-                textAnchor="middle"
-                transform="scale(1, 0.7)" /* Scale text vertically */
-                style={{
-                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  textShadow:
-                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
-                }}
-              >
-                <textPath href="#circlePath" startOffset="50%">
-                  {name}
-                </textPath>
-              </text>
-
-              <defs>
-                <path id="circlePath1" d="M 390 758 q 23 -41 -60 -80" />
-              </defs>
-              <text
-                fill="rgb(209, 209, 209)"
-                fontSize="15"
-                fontFamily="Arial"
-                textAnchor="middle"
-                transform="scale(1, 0.7)" /* Scale text vertically */
-                style={{
-                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  textShadow:
-                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
-                  zIndex: 1, // Set z-index to 2
-                }}
-              >
-                <textPath href="#circlePath1" startOffset="50%">
-                  {dob}
-                </textPath>
-              </text>
-
-              <defs>
-                <path id="circlePath2" d="M 150 690 q -63 -7 -80 47" />
-              </defs>
-              <text
-                fill="rgb(209, 209, 209)"
-                fontSize="15"
-                fontFamily="Arial"
-                textAnchor="middle"
-                transform="scale(1, 0.7)" /* Scale text vertically */
-                style={{
-                  transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  textShadow:
-                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
-                  zIndex: 1, // Set z-index to 2
-                }}
-              >
-                <textPath href="#circlePath2" startOffset="50%">
-                  {week}
-                </textPath>
-              </text>
-            </svg>
-
             </div>
           )}
 
