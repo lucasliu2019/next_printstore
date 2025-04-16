@@ -45,7 +45,7 @@ const figureImages = [
     path: "/figure_lotus.png",
   },
   {
-    name: "moon",
+    name: "Moon",
     path: "/figure_moon.png",
   },
   {
@@ -111,7 +111,7 @@ export default function About() {
   const [selectedFigureImage, setSelectedFigureImage] = useState(0); // Default image
 
 
-  const [scale, setScale] = useState(1);
+  // const [scale, setScale] = useState(1);
 
   useEffect(() => {
     // Add a specific class to the body
@@ -124,21 +124,23 @@ export default function About() {
   }, []);
 
 
-  useEffect(() => {
-    const handleResize = () => {
-      const container = document.querySelector(`.${styles.card_image_wrapper}`);
-      if (container instanceof HTMLElement) {
-        const containerWidth = container.offsetWidth;
-        const scaleFactor = containerWidth / 480; // Base width is 480px
-        setScale(scaleFactor);
-      }
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     const container = document.querySelector(`.${styles.card_image_wrapper}`);
+  //     if (container instanceof HTMLElement) {
+  //       const containerWidth = container.offsetWidth;
+  //       // Base width is 480px
+  //       const scaleFactor = containerWidth / 480; 
+  //       setScale(scaleFactor);
+  //     }
+  //   };
   
-    window.addEventListener("resize", handleResize);
-    handleResize(); // Initial call
+  //   window.addEventListener("resize", handleResize);
+  //   // Initial call
+  //   handleResize(); 
   
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
 
   return (
