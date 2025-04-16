@@ -60,7 +60,6 @@ const figureImages = [
   },
 ];
 
-
 const colors = [
   {
     name: "PLA Glow Variant Glow Green (15500)",
@@ -179,21 +178,21 @@ export default function About() {
           <div className={styles.selector_container}>
             <label>Choose your base:</label>
             <div className={styles.selectors}>
-            {isSmallScreen ? (
-              // Render a dropdown selector for small screens
-              <select
-                className={styles.selector}
-                onChange={(e) => setSelectedBaseImage(Number(e.target.value))}
-                value={selectedBaseImage}
-              >
-                {baseImages.map((image, index) => (
-                  <option key={index} value={index}>
-                    {image.name}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              // Render buttons for larger screens
+              {isSmallScreen ? (
+                // Render a dropdown selector for small screens
+                <select
+                  className={styles.selector}
+                  onChange={(e) => setSelectedBaseImage(Number(e.target.value))}
+                  value={selectedBaseImage}
+                >
+                  {baseImages.map((image, index) => (
+                    <option key={index} value={index}>
+                      {image.name}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                // Render buttons for larger screens
                 baseImages.map((image, index) => (
                   <button
                     key={index}
@@ -203,28 +202,30 @@ export default function About() {
                     {image.name}
                   </button>
                 ))
-            )}
+              )}
             </div>
           </div>
 
           <div className={styles.selector_container}>
             <label>Choose your figure:</label>
             <div className={styles.selectors}>
-            {isSmallScreen ? (
-              // Render a dropdown selector for small screens
-              <select
-                className={styles.selector}
-                onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
-                value={selectedFigureImage}
-              >
-                {figureImages.map((image, index) => (
-                  <option key={index} value={index}>
-                    {image.name}
-                  </option>
-                ))}
-              </select>
-            ) : (
-              // Render buttons for larger screens
+              {isSmallScreen ? (
+                // Render a dropdown selector for small screens
+                <select
+                  className={styles.selector}
+                  onChange={(e) =>
+                    setSelectedFigureImage(Number(e.target.value))
+                  }
+                  value={selectedFigureImage}
+                >
+                  {figureImages.map((image, index) => (
+                    <option key={index} value={index}>
+                      {image.name}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                // Render buttons for larger screens
                 figureImages.map((image, index) => (
                   <button
                     key={index}
@@ -234,7 +235,7 @@ export default function About() {
                     {image.name}
                   </button>
                 ))
-            )}
+              )}
             </div>
           </div>
 
@@ -313,27 +314,29 @@ export default function About() {
                     width: "200px", // Ensure the dropdown menu matches the control width
                   }),
                 }}
-              />):(
-            <div className={styles.color_selection}>
-              {colors.map((color, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className={styles.color_button}
-                  style={{
-                    backgroundColor: color.value,
-                    border: baseColor === index ? "2px solid white" : "none",
-                  }}
-                  onClick={() => {
-                    setBaseColor(index);
-                    setColorName(colors[index].name);
-                  }} // Update base_polygon color
-                  title={color.name} // Tooltip with the color name
-                >
-                  {/* {color.name} */}
-                </button>
-              ))}
-            </div>)}
+              />
+            ) : (
+              <div className={styles.color_selection}>
+                {colors.map((color, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={styles.color_button}
+                    style={{
+                      backgroundColor: color.value,
+                      border: baseColor === index ? "2px solid white" : "none",
+                    }}
+                    onClick={() => {
+                      setBaseColor(index);
+                      setColorName(colors[index].name);
+                    }} // Update base_polygon color
+                    title={color.name} // Tooltip with the color name
+                  >
+                    {/* {color.name} */}
+                  </button>
+                ))}
+              </div>
+            )}
 
             <label>Base Color:</label>
             <p>{colorName1}</p>
@@ -438,6 +441,32 @@ export default function About() {
             >
               <defs>
                 <path id="circlePath" d="M 48 654 q 98 96 293 50" />
+                <filter
+                  id="svgTextShadow"
+                  x="-50%"
+                  y="-50%"
+                  width="200%"
+                  height="200%"
+                >
+                  <feDropShadow
+                    dx="1"
+                    dy="-1"
+                    stdDeviation="0"
+                    floodColor="rgb(222,222,222)"
+                  />
+                  <feDropShadow
+                    dx="-1"
+                    dy="1"
+                    stdDeviation="0"
+                    floodColor="rgb(151,151,151)"
+                  />
+                  <feDropShadow
+                    dx="-2"
+                    dy="2"
+                    stdDeviation="0"
+                    floodColor="rgb(0,0,0)"
+                  />
+                </filter>
               </defs>
 
               <text
@@ -446,10 +475,9 @@ export default function About() {
                 fontFamily="Arial"
                 textAnchor="middle"
                 // transform="scale(1, 0.7)"
+                filter="url(#svgTextShadow)"
                 style={{
                   transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  textShadow:
-                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
                 }}
               >
                 <textPath href="#circlePath" startOffset="50%">
@@ -465,11 +493,10 @@ export default function About() {
                 fontSize="15"
                 fontFamily="Arial"
                 textAnchor="middle"
+                filter="url(#svgTextShadow)"
                 // transform="scale(1, 0.7)"
                 style={{
                   transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  textShadow:
-                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
                   zIndex: 1, // Set z-index to 2
                 }}
               >
@@ -486,11 +513,10 @@ export default function About() {
                 fontSize="15"
                 fontFamily="Arial"
                 textAnchor="middle"
+                filter="url(#svgTextShadow)"
                 // transform="scale(1, 0.7)"
                 style={{
                   transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  textShadow:
-                    "1px -1px 0px rgb(222, 222, 222), -1px 1px 0px rgb(151, 151, 151), -2px 2px 0px rgb(0, 0, 0)",
                   zIndex: 1, // Set z-index to 2
                 }}
               >
@@ -805,7 +831,7 @@ export default function About() {
                 viewBox="0 0 480 817"
                 style={{
                   filter: "brightness(80%)",
-                  zIndex: 2, 
+                  zIndex: 2,
                 }}
               >
                 <ellipse
