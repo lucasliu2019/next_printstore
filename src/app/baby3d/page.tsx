@@ -122,7 +122,7 @@ export default function About() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768); // Check if the screen width is <= 768px
+      setIsSmallScreen(window.innerWidth <= 1000); // Check if the screen width is <= 900px
     };
 
     window.addEventListener("resize", handleResize);
