@@ -313,15 +313,20 @@
     margin-bottom: 20px; /* Add spacing below the selector */
   }
 
+  .selectors{
+    width: 100%; /* Ensure the container takes up full width */
+    display: flex;
+    align-items: center; /* Vertically center the buttons */
+    /* Horizontally center the buttons */
+    /* justify-content: center;  */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+    gap: 5px; /* Add spacing between buttons */
+  }
+
+
   .selector{
     width: 100%; /* Full width for small screens */
     max-width: 200px;
-  }
-
-  .image_selector {
-    display: flex;
-    gap: 10px; /* Add spacing between buttons */
-    margin-bottom: 20px;
   }
   
   .image_selector_btn {

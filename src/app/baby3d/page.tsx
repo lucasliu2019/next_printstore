@@ -178,6 +178,7 @@ export default function About() {
         <div className={styles.choice}>
           <div className={styles.selector_container}>
             <label>Choose your base:</label>
+            <div className={styles.selectors}>
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
               <select
@@ -193,8 +194,7 @@ export default function About() {
               </select>
             ) : (
               // Render buttons for larger screens
-              <div className={styles.image_selector}>
-                {baseImages.map((image, index) => (
+                baseImages.map((image, index) => (
                   <button
                     key={index}
                     className={styles.image_selector_btn}
@@ -202,13 +202,14 @@ export default function About() {
                   >
                     {image.name}
                   </button>
-                ))}
-              </div>
+                ))
             )}
+            </div>
           </div>
 
           <div className={styles.selector_container}>
             <label>Choose your figure:</label>
+            <div className={styles.selectors}>
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
               <select
@@ -224,8 +225,7 @@ export default function About() {
               </select>
             ) : (
               // Render buttons for larger screens
-              <div className={styles.image_selector}>
-                {figureImages.map((image, index) => (
+                figureImages.map((image, index) => (
                   <button
                     key={index}
                     className={styles.image_selector_btn}
@@ -233,9 +233,9 @@ export default function About() {
                   >
                     {image.name}
                   </button>
-                ))}
-              </div>
+                ))
             )}
+            </div>
           </div>
 
           <form className={styles.product_form}>
