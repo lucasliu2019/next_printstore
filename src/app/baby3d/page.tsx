@@ -279,8 +279,12 @@ export default function About() {
                 options={colorOptions}
                 value={colorOptions[baseColor]}
                 onChange={(selectedOption) => {
-                  setBaseColor(selectedOption.value);
-                  setColorName(selectedOption.label);
+                  if (selectedOption) {
+                    setBaseColor(selectedOption.value);
+                  }
+                  if (selectedOption) {
+                    setColorName(selectedOption.label);
+                  }
                 }}
                 styles={{
                   option: (provided, state) => ({
@@ -335,8 +339,12 @@ export default function About() {
                 options={colorOptions}
                 value={colorOptions[baseColor1]}
                 onChange={(selectedOption) => {
-                  setBaseColor1(selectedOption.value);
-                  setColorName1(selectedOption.label);
+                  if (selectedOption) {
+                    setBaseColor1(selectedOption.value);
+                  }
+                  if (selectedOption) {
+                    setColorName1(selectedOption.label);
+                  }
                 }}
                 styles={{
                   option: (provided, state) => ({
