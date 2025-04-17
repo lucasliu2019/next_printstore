@@ -296,8 +296,8 @@
   font-size: 16px; /* Prevent zoom-in on iPhone */
 }
 
-.styles.product_input_label {
-  flex: 0 0 100px; /* Set a fixed width for the label */
+.product_input_label {
+  width: 100px;           /* Adjust to fit your content nicely */  
   text-align: right; /* Align the label text to the right */
 }
 
