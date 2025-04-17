@@ -248,8 +248,11 @@
     justify-content: center;
     padding: 5px; /* Add padding inside the fieldset */
     gap: 20px;
-    border: 2px solid #d2ddff; /* Light gray border */
-    border-radius: 10px;
+    /* Light gray border */
+    /* border: 2px solid #d2ddff; 
+    border-radius: 10px; */
+    border:none;
+
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
