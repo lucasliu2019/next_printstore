@@ -32,9 +32,12 @@
   transition: transform 0.3s ease;
 }
 
-.choice {
+.left_container {
   flex: 1; /* Allow the first child to take as much space as possible */
   width: auto; /* Width adjusts based on content */
+  display: flex;
+  gap: 20px; /* Optional: Add spacing between the elements */
+  flex-direction: column;
 }
 
 .card_image_base {
@@ -257,7 +260,7 @@
 
 .product_form {
   width: 100%;
-  max-width: 800px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -268,7 +271,6 @@
   display: flex; /* Use Flexbox to align items side by side */
   align-items: center; /* Vertically align the label and input */
   gap: 10px; /* Add spacing between the label and input */
-  margin-bottom: 10px; /* Add spacing between input groups */
 }
 
 .product_input {
@@ -283,14 +285,11 @@
   text-align: right; /* Align the label text to the right */
 }
 
-.image_selector,
 .color_selection {
   width: 100%;
   display: flex;
   flex-wrap: wrap; /* Allow items to wrap to the next line */
-
   gap: 10px; /* Add spacing between buttons */
-  margin-top: 10px;
 }
 
 .color_button {
@@ -313,6 +312,7 @@
 
 .fieldset {
   width: 100%; /* Ensure the container takes up full width */
+  max-width: 850px;
   display: flex;
   align-items: center; /* Vertically center the buttons */
   /* Horizontally center the buttons */
@@ -320,10 +320,11 @@
   flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
   gap: 5px; /* Add spacing between buttons */
   border: none;
-  margin-bottom: 20px; /* Add spacing below the fieldset */
 }
 
 .fieldset_center {
+  width: 100%; /* Ensure the container takes up full width */
+  max-width: 850px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -336,12 +337,10 @@
   border: none;
   /* Subtle shadow for depth */
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
-  margin-bottom: 20px; /* Add spacing below the fieldset */
 }
 
 .fiedset_legend {
   text-align: center; /* Center the text inside the legend */
-  margin-bottom: 10px; /* Optional: Add spacing below the legend */
   font-size: 1rem; /* Optional: Adjust font size */
 }
 
@@ -382,6 +381,10 @@
   background-color: #005bb5;
 }
 
+.fieldset_info {
+  order: 0; /* Default order for larger screens */
+}
+
 @media (max-width: 1000px) {
   .fieldset {
     justify-content: center;
@@ -399,12 +402,13 @@
     align-items: center; /* Center items */
   }
 
-  .card_image_wrapper {
-    order: 1; /* Move the first child to the bottom */
+  .left_container {
+    order: 2; /* Move the second child to the top */
+    width: 100%; /* Full width for small screens */
   }
 
-  .choice {
-    order: 2; /* Move the second child to the top */
+  .fieldset_info{
+    order: -1;
   }
 
   /* .week_wrapper_b1{
@@ -487,6 +491,8 @@
 }
 
 @media (max-width: 400px) {
+
+
   .input_group {
     flex-direction: column;
   }

@@ -177,7 +177,7 @@ export default function About() {
 
       <div className={styles.card_container}>
         {/**************************  Left Card ******************************/}
-        <div className={styles.choice}>
+        <div className={styles.left_container}>
           <fieldset className={styles.fieldset}>
             <legend className={styles.fiedset_legend}>Choose your base:</legend>
             {isSmallScreen ? (
@@ -238,57 +238,58 @@ export default function About() {
             )}
           </fieldset>
 
-          <form className={styles.product_form}>
-            <fieldset className={styles.fieldset_center}>
-              <legend className={styles.fiedset_legend}>
-                Personalized info:
-              </legend>
-              <div className={styles.input_group}>
-                <label className={styles.product_input_label}>Name:</label>
-                <input
-                  type="text"
-                  className={styles.product_input}
-                  value={name}
-                  onChange={(e) => setName(e.target.value)} // Update name state
-                  maxLength={30} // Restrict name to 30 characters
-                />
-              </div>
-              <div className={styles.input_group}>
-                <label className={styles.product_input_label}>Week:</label>
-                <input
-                  type="text"
-                  className={styles.product_input}
-                  value={week}
-                  onChange={(e) => setWeek(e.target.value)} // Update week state
-                  maxLength={10} // Restrict name to 30 characters
-                />
-              </div>
-              <div className={styles.input_group}>
-                <label className={styles.product_input_label}>DOB:</label>
-                <input
-                  type="text"
-                  className={styles.product_input}
-                  value={dob}
-                  onChange={(e) => setDob(e.target.value)} // Update dob state
-                  maxLength={20} // Restrict name to 30 characters
-                />
-              </div>
-              <div className={styles.input_group}>
-                <label className={styles.product_input_label}>Back text:</label>
-                <input
-                  type="text"
-                  className={styles.product_input}
-                  value={msg}
-                  onChange={(e) => setMsg(e.target.value)} // Update dob state
-                  maxLength={20} // Restrict name to 30 characters
-                />
-              </div>
-            </fieldset>
+          <fieldset
+            className={`${styles.fieldset_center} ${styles.fieldset_info}`}
+          >
+            <legend className={styles.fiedset_legend}>
+              Personalized info:
+            </legend>
+            <div className={styles.input_group}>
+              <label className={styles.product_input_label}>Name:</label>
+              <input
+                type="text"
+                className={styles.product_input}
+                value={name}
+                onChange={(e) => setName(e.target.value)} // Update name state
+                maxLength={30} // Restrict name to 30 characters
+              />
+            </div>
+            <div className={styles.input_group}>
+              <label className={styles.product_input_label}>Week:</label>
+              <input
+                type="text"
+                className={styles.product_input}
+                value={week}
+                onChange={(e) => setWeek(e.target.value)} // Update week state
+                maxLength={10} // Restrict name to 30 characters
+              />
+            </div>
+            <div className={styles.input_group}>
+              <label className={styles.product_input_label}>DOB:</label>
+              <input
+                type="text"
+                className={styles.product_input}
+                value={dob}
+                onChange={(e) => setDob(e.target.value)} // Update dob state
+                maxLength={20} // Restrict name to 30 characters
+              />
+            </div>
+            <div className={styles.input_group}>
+              <label className={styles.product_input_label}>Back text:</label>
+              <input
+                type="text"
+                className={styles.product_input}
+                value={msg}
+                onChange={(e) => setMsg(e.target.value)} // Update dob state
+                maxLength={20} // Restrict name to 30 characters
+              />
+            </div>
+          </fieldset>
 
-
-
-            <fieldset className={styles.fieldset}>
-            <legend className={styles.fiedset_legend} >Select font color:</legend>
+          <fieldset className={styles.fieldset}>
+            <legend className={styles.fiedset_legend}>
+              Select font color:
+            </legend>
             <p className={styles.fieldset_display}>{colors[fontColor].name}</p>
 
             {isSmallScreen ? (
@@ -345,16 +346,14 @@ export default function About() {
                       setFontColor(index);
                     }} // Update base_polygon color
                     title={color.name} // Tooltip with the color name
-                  >
-                  </button>
+                  ></button>
                 ))}
               </div>
             )}
-            </fieldset>
+          </fieldset>
 
-
-            <fieldset className={styles.fieldset}>
-            <legend className={styles.fiedset_legend} >Slect base Color:</legend>
+          <fieldset className={styles.fieldset}>
+            <legend className={styles.fiedset_legend}>Slect base Color:</legend>
             <p className={styles.fieldset_display}>{colors[baseColor].name}</p>
 
             {isSmallScreen ? (
@@ -411,88 +410,80 @@ export default function About() {
                       setBaseColor(index);
                     }} // Update base_polygon color
                     title={color.name} // Tooltip with the color name
-                  >
-                  </button>
+                  ></button>
                 ))}
               </div>
             )}
-            </fieldset>
+          </fieldset>
 
+          <fieldset className={styles.fieldset}>
+            <legend className={styles.fiedset_legend}>
+              Select base side color:
+            </legend>
+            <p className={styles.fieldset_display}>{colors[sideColor].name}</p>
 
-            <fieldset className={styles.fieldset}>
-              <legend className={styles.fiedset_legend}>
-                Select base side color:
-              </legend>
-              <p className={styles.fieldset_display}>{colors[sideColor].name}</p>
-
-              {isSmallScreen ? (
-                // Render a dropdown selector for small screens
-                <Select
-                  options={colorOptions}
-                  value={colorOptions[sideColor]}
-                  onChange={(selectedOption) => {
-                    if (selectedOption) {
-                      setSideColor(selectedOption.value);
-                    }
-                  }}
-                  menuPlacement="top" // Open the dropdown menu upward
-                  isSearchable={false} // Disable typing in the dropdown
-                  styles={{
-                    option: (provided, state) => ({
-                      ...provided,
-                      backgroundColor: state.data.color,
-                      color: "black",
-                      whiteSpace: "nowrap", // Prevent text wrapping
-                      overflow: "hidden", // Hide overflowing content
-                      textOverflow: "ellipsis", // Add ellipsis for overflowing text
-                    }),
-                    singleValue: (provided, state) => ({
-                      ...provided,
-                      backgroundColor: state.data.color,
-                      color: state.data.color,
-                    }),
-                    control: (provided) => ({
-                      ...provided,
-                      width: "200px", // Set the width of the dropdown
-                      border: "1px solid #ccc",
-                      borderRadius: "5px",
-                    }),
-                    menu: (provided) => ({
-                      ...provided,
-                      width: "200px", // Ensure the dropdown menu matches the control width
-                    }),
-                  }}
-                />
-              ) : (
-                <div className={styles.color_selection}>
-                  {colors.map((color, index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      className={styles.color_button}
-                      style={{
-                        backgroundColor: color.value,
-                        border:
-                          sideColor === index ? "2px solid white" : "none",
-                      }}
-                      onClick={() => {
-                        setSideColor(index);
-                      }} // Update base_polygon color
-                      title={color.name} // Tooltip with the color name
-                    >
-                    </button>
-                  ))}
-                </div>
-              )}
-            </fieldset>
-
-
-
-          </form>
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <Select
+                options={colorOptions}
+                value={colorOptions[sideColor]}
+                onChange={(selectedOption) => {
+                  if (selectedOption) {
+                    setSideColor(selectedOption.value);
+                  }
+                }}
+                menuPlacement="top" // Open the dropdown menu upward
+                isSearchable={false} // Disable typing in the dropdown
+                styles={{
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: "black",
+                    whiteSpace: "nowrap", // Prevent text wrapping
+                    overflow: "hidden", // Hide overflowing content
+                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                  }),
+                  singleValue: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: state.data.color,
+                  }),
+                  control: (provided) => ({
+                    ...provided,
+                    width: "200px", // Set the width of the dropdown
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    width: "200px", // Ensure the dropdown menu matches the control width
+                  }),
+                }}
+              />
+            ) : (
+              <div className={styles.color_selection}>
+                {colors.map((color, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={styles.color_button}
+                    style={{
+                      backgroundColor: color.value,
+                      border: sideColor === index ? "2px solid white" : "none",
+                    }}
+                    onClick={() => {
+                      setSideColor(index);
+                    }} // Update base_polygon color
+                    title={color.name} // Tooltip with the color name
+                  ></button>
+                ))}
+              </div>
+            )}
+          </fieldset>
         </div>
 
         {/**************************  Right Card ******************************/}
-        <div className={styles.card_right}>
+        <div className={styles.right_container}>
           <div
             className={styles.card_image_wrapper}
             // style={{ transform: `scale(${scale})` }}
