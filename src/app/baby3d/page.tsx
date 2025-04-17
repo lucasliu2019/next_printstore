@@ -176,101 +176,112 @@ export default function About() {
       <div className={styles.card_container}>
         {/**************************  Left Card ******************************/}
         <div className={styles.choice}>
-          <div className={styles.selector_container}>
-            <label>Choose your base:</label>
-            <div className={styles.selectors}>
-              {isSmallScreen ? (
-                // Render a dropdown selector for small screens
-                <select
-                  className={styles.selector}
-                  onChange={(e) => setSelectedBaseImage(Number(e.target.value))}
-                  value={selectedBaseImage}
-                >
-                  {baseImages.map((image, index) => (
-                    <option key={index} value={index}>
-                      {image.name}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                // Render buttons for larger screens
-                baseImages.map((image, index) => (
-                  <button
-                    key={index}
-                    className={styles.image_selector_btn}
-                    onClick={() => setSelectedBaseImage(index)}
-                  >
+          <fieldset className={styles.selectors}>
+            <legend className={styles.fiedset_legend}>Choose your base:</legend>
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <select
+                className={styles.selector}
+                onChange={(e) => setSelectedBaseImage(Number(e.target.value))}
+                value={selectedBaseImage}
+              >
+                {baseImages.map((image, index) => (
+                  <option key={index} value={index}>
                     {image.name}
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
+                  </option>
+                ))}
+              </select>
+            ) : (
+              // Render buttons for larger screens
+              baseImages.map((image, index) => (
+                <button
+                  key={index}
+                  className={styles.image_selector_btn}
+                  onClick={() => setSelectedBaseImage(index)}
+                >
+                  {image.name}
+                </button>
+              ))
+            )}
+          </fieldset>
 
-          <div className={styles.selector_container}>
-            <label>Choose your figure:</label>
-            <div className={styles.selectors}>
-              {isSmallScreen ? (
-                // Render a dropdown selector for small screens
-                <select
-                  className={styles.selector}
-                  onChange={(e) =>
-                    setSelectedFigureImage(Number(e.target.value))
-                  }
-                  value={selectedFigureImage}
-                >
-                  {figureImages.map((image, index) => (
-                    <option key={index} value={index}>
-                      {image.name}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                // Render buttons for larger screens
-                figureImages.map((image, index) => (
-                  <button
-                    key={index}
-                    className={styles.image_selector_btn}
-                    onClick={() => setSelectedFigureImage(index)} // Update selected image
-                  >
+          <fieldset className={styles.selectors}>
+            <legend className={styles.fiedset_legend}>
+              Choose your figure:
+            </legend>
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <select
+                className={styles.selector}
+                onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
+                value={selectedFigureImage}
+              >
+                {figureImages.map((image, index) => (
+                  <option key={index} value={index}>
                     {image.name}
-                  </button>
-                ))
-              )}
-            </div>
-          </div>
+                  </option>
+                ))}
+              </select>
+            ) : (
+              // Render buttons for larger screens
+              figureImages.map((image, index) => (
+                <button
+                  key={index}
+                  className={styles.image_selector_btn}
+                  onClick={() => setSelectedFigureImage(index)} // Update selected image
+                >
+                  {image.name}
+                </button>
+              ))
+            )}
+          </fieldset>
 
           <form className={styles.product_form}>
-            <div className={styles.input_group}>
-              <label className={styles.product_input_label}>Name:</label>
-              <input
-                type="text"
-                className={styles.product_input}
-                value={name}
-                onChange={(e) => setName(e.target.value)} // Update name state
-                maxLength={30} // Restrict name to 30 characters
-              />
-            </div>
-            <div className={styles.input_group}>
-              <label className={styles.product_input_label}>Week:</label>
-              <input
-                type="text"
-                className={styles.product_input}
-                value={week}
-                onChange={(e) => setWeek(e.target.value)} // Update week state
-                maxLength={10} // Restrict name to 30 characters
-              />
-            </div>
-            <div className={styles.input_group}>
-              <label className={styles.product_input_label}>DOB:</label>
-              <input
-                type="text"
-                className={styles.product_input}
-                value={dob}
-                onChange={(e) => setDob(e.target.value)} // Update dob state
-                maxLength={20} // Restrict name to 30 characters
-              />
-            </div>
+            <fieldset className={styles.selectors}>
+              <legend className={styles.fiedset_legend}>
+                Personalized info:
+              </legend>
+              <div className={styles.input_group}>
+                <label className={styles.product_input_label}>Name:</label>
+                <input
+                  type="text"
+                  className={styles.product_input}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)} // Update name state
+                  maxLength={30} // Restrict name to 30 characters
+                />
+              </div>
+              <div className={styles.input_group}>
+                <label className={styles.product_input_label}>Week:</label>
+                <input
+                  type="text"
+                  className={styles.product_input}
+                  value={week}
+                  onChange={(e) => setWeek(e.target.value)} // Update week state
+                  maxLength={10} // Restrict name to 30 characters
+                />
+              </div>
+              <div className={styles.input_group}>
+                <label className={styles.product_input_label}>DOB:</label>
+                <input
+                  type="text"
+                  className={styles.product_input}
+                  value={dob}
+                  onChange={(e) => setDob(e.target.value)} // Update dob state
+                  maxLength={20} // Restrict name to 30 characters
+                />
+              </div>
+              <div className={styles.input_group}>
+                <label className={styles.product_input_label}>Back text:</label>
+                <input
+                  type="Your message!"
+                  className={styles.product_input}
+                  value={dob}
+                  onChange={(e) => setDob(e.target.value)} // Update dob state
+                  maxLength={20} // Restrict name to 30 characters
+                />
+              </div>
+            </fieldset>
 
             <label>Base Side Color:</label>
             <p>{colorName}</p>
@@ -1286,13 +1297,9 @@ export default function About() {
             )}
           </div>
           <fieldset className={styles.fiedset_container}>
-            <legend className={styles.fiedset_legend}>Choose your view</legend>
-            <button className={styles.image_selector_btn} >
-              Front
-            </button>
-            <button className={styles.image_selector_btn} >
-              Back
-            </button>
+            <legend className={styles.fiedset_legend}>Choose your view:</legend>
+            <button className={styles.image_selector_btn}>Front</button>
+            <button className={styles.image_selector_btn}>Back</button>
           </fieldset>
         </div>
       </div>
