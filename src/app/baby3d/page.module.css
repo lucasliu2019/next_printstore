@@ -242,7 +242,7 @@
     box-shadow: -1px 1px 1px black;
 }
 
-.control_view{
+.fiedset_container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -251,12 +251,15 @@
     border: 2px solid #d2ddff; /* Light gray border */
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    legend {
-      text-align: center; /* Center the text inside the legend */
-      margin-bottom: 10px; /* Optional: Add spacing below the legend */
-      font-size: 1rem; /* Optional: Adjust font size */
-    }
 }
+
+.fiedset_legend {
+  text-align: center; /* Center the text inside the legend */
+  margin-bottom: 10px; /* Optional: Add spacing below the legend */
+  font-size: 1rem; /* Optional: Adjust font size */
+}
+
+
 
 .base_polygon_front, .base_polygon_side, .base_polygon_top, .base_polygon_topS, .base_polygon_topL, .base_polygon_topT, .base_part {
     position: absolute;

@@ -1285,8 +1285,8 @@ export default function About() {
               </>
             )}
           </div>
-          <fieldset className={styles.control_view}>
-            <legend>Choose your view</legend>
+          <fieldset className={styles.fiedset_container}>
+            <legend className={styles.fiedset_legend}>Choose your view</legend>
             <button className={styles.image_selector_btn} >
               Front
             </button>
