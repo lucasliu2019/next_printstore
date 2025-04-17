@@ -238,25 +238,7 @@
   box-shadow: -1px 1px 1px black;
 }
 
-.fiedset_container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px; /* Add padding inside the fieldset */
-  gap: 20px;
-  /* Light gray border */
-  /* border: 2px solid #d2ddff; 
-    border-radius: 10px; */
-  border: none;
-  /* Subtle shadow for depth */
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
-}
 
-.fiedset_legend {
-  text-align: center; /* Center the text inside the legend */
-  margin-bottom: 10px; /* Optional: Add spacing below the legend */
-  font-size: 1rem; /* Optional: Adjust font size */
-}
 
 .base_polygon_front,
 .base_polygon_side,
@@ -329,7 +311,7 @@
   outline: 2px solid black; /* Add focus outline for accessibility */
 }
 
-.selectors {
+.fieldset {
   width: 100%; /* Ensure the container takes up full width */
   display: flex;
   align-items: center; /* Vertically center the buttons */
@@ -338,7 +320,31 @@
   flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
   gap: 5px; /* Add spacing between buttons */
   border: none;
+  margin-bottom: 20px; /* Add spacing below the fieldset */
 }
+
+.fieldset_center {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px; /* Add padding inside the fieldset */
+  gap: 0 20px;
+  /* Light gray border */
+  /* border: 2px solid #d2ddff; 
+    border-radius: 10px; */
+  border: none;
+  /* Subtle shadow for depth */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+  margin-bottom: 20px; /* Add spacing below the fieldset */
+}
+
+.fiedset_legend {
+  text-align: center; /* Center the text inside the legend */
+  margin-bottom: 10px; /* Optional: Add spacing below the legend */
+  font-size: 1rem; /* Optional: Adjust font size */
+}
+
 
 .selector {
   width: 100%; /* Full width for small screens */
@@ -372,7 +378,7 @@
 }
 
 @media (max-width: 1000px) {
-  .selectors {
+  .fieldset {
     justify-content: center;
   }
 }

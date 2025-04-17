@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
 
@@ -111,6 +111,8 @@ export default function About() {
   const [name, setName] = useState("Firstname Lastname");
   const [week, setWeek] = useState("20 weeks");
   const [dob, setDob] = useState("09.30.2025");
+  const [msg, setMsg]=useState("Your message");
+
   const [baseColor, setBaseColor] = useState(4); // Default color for base_polygon
   const [baseColor1, setBaseColor1] = useState(0); // Default color for base_polygon
   const [colorName, setColorName] = useState(colors[baseColor].name); // Default color for base_polygon
@@ -176,7 +178,7 @@ export default function About() {
       <div className={styles.card_container}>
         {/**************************  Left Card ******************************/}
         <div className={styles.choice}>
-          <fieldset className={styles.selectors}>
+          <fieldset className={styles.fieldset}>
             <legend className={styles.fiedset_legend}>Choose your base:</legend>
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
@@ -205,7 +207,7 @@ export default function About() {
             )}
           </fieldset>
 
-          <fieldset className={styles.selectors}>
+          <fieldset className={styles.fieldset}>
             <legend className={styles.fiedset_legend}>
               Choose your figure:
             </legend>
@@ -237,7 +239,7 @@ export default function About() {
           </fieldset>
 
           <form className={styles.product_form}>
-            <fieldset className={styles.selectors}>
+            <fieldset className={styles.fieldset_center}>
               <legend className={styles.fiedset_legend}>
                 Personalized info:
               </legend>
@@ -274,10 +276,10 @@ export default function About() {
               <div className={styles.input_group}>
                 <label className={styles.product_input_label}>Back text:</label>
                 <input
-                  type="Your message!"
+                  type="text"
                   className={styles.product_input}
-                  value={dob}
-                  onChange={(e) => setDob(e.target.value)} // Update dob state
+                  value={msg}
+                  onChange={(e) => setMsg(e.target.value)} // Update dob state
                   maxLength={20} // Restrict name to 30 characters
                 />
               </div>
@@ -1296,7 +1298,7 @@ export default function About() {
               </>
             )}
           </div>
-          <fieldset className={styles.fiedset_container}>
+          <fieldset className={styles.fieldset_center}>
             <legend className={styles.fiedset_legend}>Choose your view:</legend>
             <button className={styles.image_selector_btn}>Front</button>
             <button className={styles.image_selector_btn}>Back</button>
