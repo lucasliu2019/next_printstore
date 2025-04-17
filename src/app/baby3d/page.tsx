@@ -111,12 +111,12 @@ export default function About() {
   const [name, setName] = useState("Firstname Lastname");
   const [week, setWeek] = useState("20 weeks");
   const [dob, setDob] = useState("09.30.2025");
-  const [msg, setMsg]=useState("Your message");
+  const [msg, setMsg] = useState("Your message");
 
-  const [baseColor, setBaseColor] = useState(4); // Default color for base_polygon
-  const [baseColor1, setBaseColor1] = useState(0); // Default color for base_polygon
-  const [colorName, setColorName] = useState(colors[baseColor].name); // Default color for base_polygon
-  const [colorName1, setColorName1] = useState(colors[baseColor1].name);
+  const [baseColor, setBaseColor] = useState(4);
+  const [sideColor, setSideColor] = useState(0); // Default color for base_polygon
+  const [fontColor, setFontColor] = useState(11);
+
   const [selectedBaseImage, setSelectedBaseImage] = useState(0); // Default image
   const [selectedFigureImage, setSelectedFigureImage] = useState(0); // Default image
 
@@ -285,87 +285,20 @@ export default function About() {
               </div>
             </fieldset>
 
-            <label>Base Side Color:</label>
-            <p>{colorName}</p>
+
+
+            <fieldset className={styles.fieldset}>
+            <legend className={styles.fiedset_legend} >Select font color:</legend>
+            <p className={styles.fieldset_display}>{colors[fontColor].name}</p>
 
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
               <Select
                 options={colorOptions}
-                value={colorOptions[baseColor]}
+                value={colorOptions[fontColor]}
                 onChange={(selectedOption) => {
                   if (selectedOption) {
-                    setBaseColor(selectedOption.value);
-                  }
-                  if (selectedOption) {
-                    setColorName(selectedOption.label);
-                  }
-                }}
-                menuPlacement="top" // Open the dropdown menu upward
-                isSearchable={false} // Disable typing in the dropdown
-                styles={{
-                  option: (provided, state) => ({
-                    ...provided,
-                    backgroundColor: state.data.color,
-                    color: "black",
-                    whiteSpace: "nowrap", // Prevent text wrapping
-                    overflow: "hidden", // Hide overflowing content
-                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
-                  }),
-                  singleValue: (provided, state) => ({
-                    ...provided,
-                    backgroundColor: state.data.color,
-                    color: state.data.color,
-                  }),
-                  control: (provided) => ({
-                    ...provided,
-                    width: "200px", // Set the width of the dropdown
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                  }),
-                  menu: (provided) => ({
-                    ...provided,
-                    width: "200px", // Ensure the dropdown menu matches the control width
-                  }),
-                }}
-              />
-            ) : (
-              <div className={styles.color_selection}>
-                {colors.map((color, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    className={styles.color_button}
-                    style={{
-                      backgroundColor: color.value,
-                      border: baseColor === index ? "2px solid white" : "none",
-                    }}
-                    onClick={() => {
-                      setBaseColor(index);
-                      setColorName(colors[index].name);
-                    }} // Update base_polygon color
-                    title={color.name} // Tooltip with the color name
-                  >
-                    {/* {color.name} */}
-                  </button>
-                ))}
-              </div>
-            )}
-
-            <label>Base Color:</label>
-            <p>{colorName1}</p>
-
-            {isSmallScreen ? (
-              // Render a dropdown selector for small screens
-              <Select
-                options={colorOptions}
-                value={colorOptions[baseColor1]}
-                onChange={(selectedOption) => {
-                  if (selectedOption) {
-                    setBaseColor1(selectedOption.value);
-                  }
-                  if (selectedOption) {
-                    setColorName1(selectedOption.label);
+                    setFontColor(selectedOption.value);
                   }
                 }}
                 menuPlacement="top" // Open the dropdown menu upward
@@ -406,19 +339,155 @@ export default function About() {
                     className={styles.color_button}
                     style={{
                       backgroundColor: color.value,
-                      border: baseColor1 === index ? "2px solid white" : "none",
+                      border: fontColor === index ? "2px solid white" : "none",
                     }}
                     onClick={() => {
-                      setBaseColor1(index);
-                      setColorName1(colors[index].name);
+                      setFontColor(index);
                     }} // Update base_polygon color
                     title={color.name} // Tooltip with the color name
                   >
-                    {/* {color.name} */}
                   </button>
                 ))}
               </div>
             )}
+            </fieldset>
+
+
+            <fieldset className={styles.fieldset}>
+            <legend className={styles.fiedset_legend} >Slect base Color:</legend>
+            <p className={styles.fieldset_display}>{colors[baseColor].name}</p>
+
+            {isSmallScreen ? (
+              // Render a dropdown selector for small screens
+              <Select
+                options={colorOptions}
+                value={colorOptions[baseColor]}
+                onChange={(selectedOption) => {
+                  if (selectedOption) {
+                    setBaseColor(selectedOption.value);
+                  }
+                }}
+                menuPlacement="top" // Open the dropdown menu upward
+                isSearchable={false} // Disable typing in the dropdown
+                styles={{
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: "black",
+                    whiteSpace: "nowrap", // Prevent text wrapping
+                    overflow: "hidden", // Hide overflowing content
+                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                  }),
+                  singleValue: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: state.data.color,
+                  }),
+                  control: (provided) => ({
+                    ...provided,
+                    width: "200px", // Set the width of the dropdown
+                    border: "1px solid #ccc",
+                    borderRadius: "5px",
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    width: "200px", // Ensure the dropdown menu matches the control width
+                  }),
+                }}
+              />
+            ) : (
+              // Render buttons for larger screens
+              <div className={styles.color_selection}>
+                {colors.map((color, index) => (
+                  <button
+                    key={index}
+                    type="button"
+                    className={styles.color_button}
+                    style={{
+                      backgroundColor: color.value,
+                      border: baseColor === index ? "2px solid white" : "none",
+                    }}
+                    onClick={() => {
+                      setBaseColor(index);
+                    }} // Update base_polygon color
+                    title={color.name} // Tooltip with the color name
+                  >
+                  </button>
+                ))}
+              </div>
+            )}
+            </fieldset>
+
+
+            <fieldset className={styles.fieldset}>
+              <legend className={styles.fiedset_legend}>
+                Select base side color:
+              </legend>
+              <p className={styles.fieldset_display}>{colors[sideColor].name}</p>
+
+              {isSmallScreen ? (
+                // Render a dropdown selector for small screens
+                <Select
+                  options={colorOptions}
+                  value={colorOptions[sideColor]}
+                  onChange={(selectedOption) => {
+                    if (selectedOption) {
+                      setSideColor(selectedOption.value);
+                    }
+                  }}
+                  menuPlacement="top" // Open the dropdown menu upward
+                  isSearchable={false} // Disable typing in the dropdown
+                  styles={{
+                    option: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.data.color,
+                      color: "black",
+                      whiteSpace: "nowrap", // Prevent text wrapping
+                      overflow: "hidden", // Hide overflowing content
+                      textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                    }),
+                    singleValue: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.data.color,
+                      color: state.data.color,
+                    }),
+                    control: (provided) => ({
+                      ...provided,
+                      width: "200px", // Set the width of the dropdown
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                    }),
+                    menu: (provided) => ({
+                      ...provided,
+                      width: "200px", // Ensure the dropdown menu matches the control width
+                    }),
+                  }}
+                />
+              ) : (
+                <div className={styles.color_selection}>
+                  {colors.map((color, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      className={styles.color_button}
+                      style={{
+                        backgroundColor: color.value,
+                        border:
+                          sideColor === index ? "2px solid white" : "none",
+                      }}
+                      onClick={() => {
+                        setSideColor(index);
+                      }} // Update base_polygon color
+                      title={color.name} // Tooltip with the color name
+                    >
+                    </button>
+                  ))}
+                </div>
+              )}
+            </fieldset>
+
+
+
           </form>
         </div>
 
@@ -608,7 +677,7 @@ export default function About() {
                   >
                     <polygon
                       points="93,703 295,670 286,637 443,610 480,746 118,816"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -624,12 +693,12 @@ export default function About() {
                   >
                     <polygon
                       points="93,703 118,816 106,803 83,693"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="24,631 8,688 0,680 16,622"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -646,12 +715,12 @@ export default function About() {
                   >
                     <polygon
                       points="93,703 83,693 259,666 295,670"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="24,631 16,622 347,571 357,579"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -667,7 +736,7 @@ export default function About() {
                   >
                     <polygon
                       points="259,666 295,670 283,661"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -683,7 +752,7 @@ export default function About() {
                   >
                     <polygon
                       points="295,670 283,661 281,635 286,637"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -699,7 +768,7 @@ export default function About() {
                   >
                     <polygon
                       points="281,635 286,637 443,610 438,607"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -715,7 +784,7 @@ export default function About() {
                   >
                     <polygon
                       points="8,689 24,630 84,694 107,804"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>
@@ -732,7 +801,7 @@ export default function About() {
                   >
                     <polygon
                       points="24,630 84,694 443,636 358,579"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>
@@ -762,12 +831,12 @@ export default function About() {
                     >
                       <stop
                         offset="0%"
-                        stopColor={colors[baseColor1].value}
+                        stopColor={colors[baseColor].value}
                         stopOpacity="0.7"
                       />
                       <stop
                         offset="100%"
-                        stopColor={colors[baseColor1].value}
+                        stopColor={colors[baseColor].value}
                         stopOpacity="1"
                       />
                     </linearGradient>
@@ -781,12 +850,12 @@ export default function About() {
                     >
                       <stop
                         offset="0%"
-                        stopColor={colors[baseColor].value}
+                        stopColor={colors[sideColor].value}
                         stopOpacity="0.7"
                       />
                       <stop
                         offset="100%"
-                        stopColor={colors[baseColor].value}
+                        stopColor={colors[sideColor].value}
                         stopOpacity="1"
                       />
                     </linearGradient>
@@ -824,7 +893,7 @@ export default function About() {
                     ry="70"
                     cx="232"
                     cy="654"
-                    fill={colors[baseColor].value}
+                    fill={colors[sideColor].value}
                   />
 
                   <ellipse rx="143" ry="52" cx="232" cy="648" fill="black" />
@@ -855,7 +924,7 @@ export default function About() {
                     ry="52"
                     cx="232"
                     cy="638"
-                    fill={colors[baseColor1].value}
+                    fill={colors[baseColor].value}
                     style={{ filter: "brightness(90%)" }}
                   />
                 </svg>
@@ -875,12 +944,12 @@ export default function About() {
                   >
                     <polygon
                       points="144,726 451,672 451,707 144,766"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="144,771.5 451,717 451,753 144,811.5"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -896,12 +965,12 @@ export default function About() {
                   >
                     <polygon
                       points="18,610 126,724 126,762 20,644"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="19,654 126,771 126,807 19,686"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -917,12 +986,12 @@ export default function About() {
                   >
                     <polygon
                       points="126,724 126,762 130,764 130,726 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="126,771 126,807 130,810 130,773"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -938,12 +1007,12 @@ export default function About() {
                   >
                     <polygon
                       points="130,764 130,726 133,726 133,765 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="130,810 130,773 133,774 133,811 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -959,12 +1028,12 @@ export default function About() {
                   >
                     <polygon
                       points="136,765 136,726 133,726 133,765 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="136,812 136,774 133,774 133,811 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -980,12 +1049,12 @@ export default function About() {
                   >
                     <polygon
                       points="136,765 136,726 139,726.5 139,765.5 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="136,812 136,774 139,773.5 139,812 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1001,12 +1070,12 @@ export default function About() {
                   >
                     <polygon
                       points="139,726.5 139,765.5  140,765 140,726.5 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points=" 139,773.5 139,812 140,812 140,773 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1022,11 +1091,11 @@ export default function About() {
                   >
                     <polygon
                       points="140,726.5 140,765 144,766 144,726"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                     <polygon
                       points="140,773 140,812 144,812 144,772"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1042,11 +1111,11 @@ export default function About() {
                   >
                     <polygon
                       points="451,672 451,707 452,707 454,671.5  "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                     <polygon
                       points="451,717 451,753  452,752 454,716"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1062,11 +1131,11 @@ export default function About() {
                   >
                     <polygon
                       points="452,672 451,707 454,707 454,671.5  "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                     <polygon
                       points="452,717 451,753  454,752 454,716"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1082,11 +1151,11 @@ export default function About() {
                   >
                     <polygon
                       points=" 454,707 454,671.5  456,671 456,706  "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                     <polygon
                       points=" 454,752 454,716 456,715 456,750 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1102,11 +1171,11 @@ export default function About() {
                   >
                     <polygon
                       points=" 456,671 456,706 458,704 458,670  "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                     <polygon
                       points="456,715 456,750 458,745 458,712 "
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1123,22 +1192,22 @@ export default function About() {
                     <polygon
                       points="124,722 130,726 133,726 136,726 139,726.5 140,726.5 144,726
                   451,672 454,671.5 456,671 458,670 459,668 455,664"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="126,724 18,610 19,607 23,606 26,605 144,725"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="455,664 439,667 440,666 442,663 304,564 310,564 315,565"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
 
                     <polygon
                       points="304,564 310,564 315,565 33,605 22,606 32,612 32,607 33,606"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1155,7 +1224,7 @@ export default function About() {
                   >
                     <polygon
                       points="24,648 20,649 19,651 19,653 23,659 130,778 138,772 127,763"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1172,7 +1241,7 @@ export default function About() {
                   >
                     <polygon
                       points="136,770 131,777  443,719 447,715 450,714 450,712 447,713"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1189,7 +1258,7 @@ export default function About() {
                   >
                     <polygon
                       points="448,707 454,707 457,711 457,714 456,715 451,717 445,717 446,716 450,714 450,711"
-                      fill={colors[baseColor].value}
+                      fill={colors[sideColor].value}
                     />
                   </svg>
                 </div>
@@ -1206,7 +1275,7 @@ export default function About() {
                   >
                     <polygon
                       points="122,757 134,763 147,762 449,707 450,711 447,714 140,770 134,769 131,766"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>
@@ -1223,7 +1292,7 @@ export default function About() {
                   >
                     <polygon
                       points="31,610 32,609 140,717 139,720"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>
@@ -1240,7 +1309,7 @@ export default function About() {
                   >
                     <polygon
                       points="33,607 32,609 140,717 141,712"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>
@@ -1257,7 +1326,7 @@ export default function About() {
                   >
                     <polygon
                       points="33,607 35,606 142,712 141,712"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>
@@ -1274,7 +1343,7 @@ export default function About() {
                   >
                     <polygon
                       points="139,720 140,716 440,662.5 443,666"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>
@@ -1291,7 +1360,7 @@ export default function About() {
                   >
                     <polygon
                       points="141,717 444,664 305,565 34,606"
-                      fill={colors[baseColor1].value}
+                      fill={colors[baseColor].value}
                     />
                   </svg>
                 </div>

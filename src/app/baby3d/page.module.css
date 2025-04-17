@@ -346,6 +346,11 @@
 }
 
 
+.fieldset_display{
+  width: 100%; /* Ensure the container takes up full width */
+  text-align: center; /* Center the text inside the fieldset */
+}
+
 .selector {
   width: 100%; /* Full width for small screens */
   max-width: 200px;
