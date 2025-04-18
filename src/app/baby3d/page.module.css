@@ -60,7 +60,16 @@
   width: 100%;
   /* Ensure the image fits within its container while maintaining aspect ratio */
   object-fit: contain;
-  z-index: 3;
+  z-index: 4;
+}
+
+.base_wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  z-index: 2;
 }
 
 .base_part {
