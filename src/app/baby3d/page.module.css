@@ -42,6 +42,15 @@
   flex-direction: column;
 }
 
+.right_container {
+  flex: 1; /* Allow the second child to take as much space as possible */
+  width: auto; /* Width adjusts based on content */
+  max-width: 480px;
+  display: flex;
+  gap: 20px; /* Optional: Add spacing between the elements */
+  flex-direction: column;
+}
+
 .card_image_base {
   position: absolute;
   bottom: 0;
@@ -233,6 +242,16 @@
   /* .card_image_wrapper {
     transform: scale(0.3);
   } */
+   .right_container {
+    order: 1; /* Move the second child to the top */
+    width: 100%; /* Full width for small screens */
+    margin: 0 auto; /* Center the right container */
+    padding: 0 20px; /* Add padding for small screens */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
+    gap: 10px; /* Optional: Add spacing between the elements */
+    height: fit-content;
+  }
 
   .card_image_wrapper {
     width: 90%;
