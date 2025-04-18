@@ -607,57 +607,6 @@ export default function About() {
                 </text>
               </svg>
             )}
-
-            {/* <div
-              className={`${styles.name_wrapper} ${
-                selectedBaseImage === 0
-                  ? styles.name_wrapper_b1
-                  : selectedBaseImage === 1
-                  ? styles.name_wrapper_b2
-                  : selectedBaseImage === 2
-                  ? styles.name_wrapper_b3
-                  : ""
-              } `}
-            >
-              {selectedBaseImage != 1 && (
-                <span className={styles.name}>{name}</span>
-              )}
-            </div>
-
-            <div
-              className={`${styles.week_wrapper}
-          ${
-            selectedBaseImage === 0
-              ? styles.week_wrapper_b1
-              : selectedBaseImage === 1
-              ? styles.week_wrapper_b2
-              : selectedBaseImage === 2
-              ? styles.week_wrapper_b3
-              : ""
-          }`}
-            >
-              {selectedBaseImage != 1 && (
-                <span className={styles.week}>{week}</span>
-              )}
-            </div>
-
-            <div
-              className={`${styles.dob_wrapper}
-                ${
-                  selectedBaseImage === 0
-                    ? styles.dob_wrapper_b1
-                    : selectedBaseImage === 1
-                    ? styles.dob_wrapper_b2
-                    : selectedBaseImage === 2
-                    ? styles.dob_wrapper_b3
-                    : ""
-                }`}
-            >
-              {selectedBaseImage !== 0 && (
-                <span className={styles.dob}>{dob}</span>
-              )}
-            </div> */}
-
             {/** Base 2 **/}
             {selectedBaseImage === 2 && (
               <>
