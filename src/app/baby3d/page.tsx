@@ -268,9 +268,26 @@ export default function About() {
             </div>
           </fieldset>
 
+          <fieldset className={styles.fieldset_center}>
+            <legend className={styles.fieldset_legend}>
+              Font family:
+            </legend>
+              <select
+                className={styles.selector}
+                onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
+                value={selectedFigureImage}
+              >
+                {figureImages.map((image, index) => (
+                  <option key={index} value={index}>
+                    {image.name}
+                  </option>
+                ))}
+              </select>
+          </fieldset>
+
           <fieldset className={styles.fieldset}>
             <legend className={styles.fieldset_legend}>
-              Select font color:
+              Font color:
             </legend>
             <p className={styles.fieldset_display}>{colors[fontColor].name}</p>
 
@@ -336,7 +353,7 @@ export default function About() {
 
           <fieldset className={styles.fieldset}>
             <legend className={styles.fieldset_legend}>
-              Slect base Color:
+              Base Color:
             </legend>
             <p className={styles.fieldset_display}>{colors[baseColor].name}</p>
 
@@ -402,7 +419,7 @@ export default function About() {
 
           <fieldset className={styles.fieldset}>
             <legend className={styles.fieldset_legend}>
-              Select base side color:
+              Base side color:
             </legend>
             <p className={styles.fieldset_display}>{colors[sideColor].name}</p>
 

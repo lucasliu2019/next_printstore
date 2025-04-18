@@ -31,7 +31,6 @@
   position: relative;
   flex: 0 0 auto; /* Prevent the second child from growing or shrinking */
   transform-origin: center; /* Scale from the center */
-  transition: transform 0.3s ease;
 }
 
 .left_container {
@@ -221,6 +220,9 @@
 
 @media (max-width: 1000px) {
 
+  .fieldset_info{
+    order: -1;
+  }
 
   
   .fieldset {
@@ -244,17 +246,13 @@
   } */
    .right_container {
     order: 1; /* Move the second child to the top */
-    width: 100%; /* Full width for small screens */
+    width: 100%; /* Full width for small screens */;
     margin: 0 auto; /* Center the right container */
-    padding: 0 20px; /* Add padding for small screens */
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center items */
-    gap: 10px; /* Optional: Add spacing between the elements */
-    height: fit-content;
+    height: auto; /* Allow height to adjust based on content */
   }
 
   .card_image_wrapper {
-    width: 90%;
+    width: 100%;
   }
 
   .input_group {
@@ -272,9 +270,7 @@
     width: 100%; /* Full width for small screens */
   }
 
-  .fieldset_info{
-    order: -1;
-  }
+
 
   .input_group{
     width: 100%;
