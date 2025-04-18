@@ -269,26 +269,22 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset_center}>
-            <legend className={styles.fieldset_legend}>
-              Font family:
-            </legend>
-              <select
-                className={styles.selector}
-                onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
-                value={selectedFigureImage}
-              >
-                {figureImages.map((image, index) => (
-                  <option key={index} value={index}>
-                    {image.name}
-                  </option>
-                ))}
-              </select>
+            <legend className={styles.fieldset_legend}>Font family:</legend>
+            <select
+              className={styles.selector}
+              onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
+              value={selectedFigureImage}
+            >
+              {figureImages.map((image, index) => (
+                <option key={index} value={index}>
+                  {image.name}
+                </option>
+              ))}
+            </select>
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fieldset_legend}>
-              Font color:
-            </legend>
+            <legend className={styles.fieldset_legend}>Font color:</legend>
             <p className={styles.fieldset_display}>{colors[fontColor].name}</p>
 
             {isSmallScreen ? (
@@ -352,9 +348,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fieldset_legend}>
-              Base Color:
-            </legend>
+            <legend className={styles.fieldset_legend}>Base Color:</legend>
             <p className={styles.fieldset_display}>{colors[baseColor].name}</p>
 
             {isSmallScreen ? (
@@ -418,9 +412,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fieldset_legend}>
-              Base side color:
-            </legend>
+            <legend className={styles.fieldset_legend}>Base side color:</legend>
             <p className={styles.fieldset_display}>{colors[sideColor].name}</p>
 
             {isSmallScreen ? (
