@@ -9,6 +9,8 @@
 }
 
 .page {
+  width: 100%;
+  padding: 0 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -275,9 +277,11 @@
 
 .product_input {
   flex: 1; /* Allow the input to take up the remaining space */
-  max-width: 300px; /* Optional: Limit the maximum width of the input */
+  width: 100%; /* Full width for small screens */
+  max-width: 600px; /* Optional: Limit the maximum width of the input */
   padding: 5px; /* Add padding for better appearance */
   font-size: 16px; /* Prevent zoom-in on iPhone */
+  border-radius: 5px; /* Rounded corners */
 }
 
 .product_input_label {
@@ -339,7 +343,7 @@
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
 }
 
-.fiedset_legend {
+.fieldset_legend {
   text-align: center; /* Center the text inside the legend */
   font-size: 1rem; /* Optional: Adjust font size */
 }
@@ -389,6 +393,11 @@
   .fieldset {
     justify-content: center;
   }
+
+  /* Color display OFF */
+  .fieldset_display{
+    display: none;
+  }
 }
 
 /* Media query for small screens */
@@ -396,6 +405,14 @@
   /* .card_image_wrapper {
     transform: scale(0.3);
   } */
+
+
+
+  .input_group {
+    width: 100%;  /* Full width for small screens */
+    align-items: stretch; /* Ensure inputs take full width */
+  }
+
 
   .card_container {
     flex-direction: column; /* Stack elements vertically */
@@ -409,6 +426,10 @@
 
   .fieldset_info{
     order: -1;
+  }
+
+  .input_group{
+    width: 100%;
   }
 
   /* .week_wrapper_b1{
@@ -492,8 +513,7 @@
 
 @media (max-width: 400px) {
 
-
-  .input_group {
+  /* .input_group {
     flex-direction: column;
-  }
+  } */
 }

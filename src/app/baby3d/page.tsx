@@ -179,7 +179,7 @@ export default function About() {
         {/**************************  Left Card ******************************/}
         <div className={styles.left_container}>
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fiedset_legend}>Choose your base:</legend>
+            <legend className={styles.fieldset_legend}>Choose your base:</legend>
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
               <select
@@ -208,7 +208,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fiedset_legend}>
+            <legend className={styles.fieldset_legend}>
               Choose your figure:
             </legend>
             {isSmallScreen ? (
@@ -241,7 +241,7 @@ export default function About() {
           <fieldset
             className={`${styles.fieldset_center} ${styles.fieldset_info}`}
           >
-            <legend className={styles.fiedset_legend}>
+            <legend className={styles.fieldset_legend}>
               Personalized info:
             </legend>
             <div className={styles.input_group}>
@@ -287,7 +287,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fiedset_legend}>
+            <legend className={styles.fieldset_legend}>
               Select font color:
             </legend>
             <p className={styles.fieldset_display}>{colors[fontColor].name}</p>
@@ -353,7 +353,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fiedset_legend}>Slect base Color:</legend>
+            <legend className={styles.fieldset_legend}>Slect base Color:</legend>
             <p className={styles.fieldset_display}>{colors[baseColor].name}</p>
 
             {isSmallScreen ? (
@@ -417,7 +417,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fiedset_legend}>
+            <legend className={styles.fieldset_legend}>
               Select base side color:
             </legend>
             <p className={styles.fieldset_display}>{colors[sideColor].name}</p>
@@ -1359,7 +1359,7 @@ export default function About() {
             )}
           </div>
           <fieldset className={styles.fieldset_center}>
-            <legend className={styles.fiedset_legend}>Choose your view:</legend>
+            <legend className={styles.fieldset_legend}>Choose your view:</legend>
             <button className={styles.image_selector_btn}>Front</button>
             <button className={styles.image_selector_btn}>Back</button>
           </fieldset>
