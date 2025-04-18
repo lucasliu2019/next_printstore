@@ -179,7 +179,9 @@ export default function About() {
         {/**************************  Left Card ******************************/}
         <div className={styles.left_container}>
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fieldset_legend}>Choose your base:</legend>
+            <legend className={styles.fieldset_legend}>
+              Choose your base:
+            </legend>
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
               <select
@@ -353,7 +355,9 @@ export default function About() {
           </fieldset>
 
           <fieldset className={styles.fieldset}>
-            <legend className={styles.fieldset_legend}>Slect base Color:</legend>
+            <legend className={styles.fieldset_legend}>
+              Slect base Color:
+            </legend>
             <p className={styles.fieldset_display}>{colors[baseColor].name}</p>
 
             {isSmallScreen ? (
@@ -504,6 +508,7 @@ export default function About() {
           width={500}
           height={500} /> */}
 
+            {/** Base 1 **/}
             {selectedBaseImage == 1 && (
               <svg
                 className={styles.base_part}
@@ -546,7 +551,7 @@ export default function About() {
                 </defs>
 
                 <text
-                  fill="rgb(209, 209, 209)"
+                  fill={colors[fontColor].value}
                   fontSize="15"
                   fontFamily="Arial"
                   textAnchor="middle"
@@ -565,7 +570,7 @@ export default function About() {
                   <path id="circlePath1" d="M 390 674 q 23 -41 -60 -80" />
                 </defs>
                 <text
-                  fill="rgb(209, 209, 209)"
+                  fill={colors[fontColor].value}
                   fontSize="15"
                   fontFamily="Arial"
                   textAnchor="middle"
@@ -585,7 +590,7 @@ export default function About() {
                   <path id="circlePath2" d="M 150 605 q -63 -7 -80 47" />
                 </defs>
                 <text
-                  fill="rgb(209, 209, 209)"
+                  fill={colors[fontColor].value}
                   fontSize="15"
                   fontFamily="Arial"
                   textAnchor="middle"
@@ -603,7 +608,7 @@ export default function About() {
               </svg>
             )}
 
-            <div
+            {/* <div
               className={`${styles.name_wrapper} ${
                 selectedBaseImage === 0
                   ? styles.name_wrapper_b1
@@ -651,13 +656,97 @@ export default function About() {
               {selectedBaseImage !== 0 && (
                 <span className={styles.dob}>{dob}</span>
               )}
-            </div>
+            </div> */}
 
-            {selectedBaseImage === 2 && <div className={styles.bar}></div>}
-
+            {/** Base 2 **/}
             {selectedBaseImage === 2 && (
               <>
-                <div className="base_polygon_front">
+                <div className="base_polygon">
+                  {/* text */}
+                  <svg
+                    className={styles.base_part}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 480 817"
+                    style={{
+                      filter: "brightness(80%)",
+                      zIndex: 5,
+                    }}
+                  >
+                    <defs>
+                      <path id="namePath" d="M 107 764 L 463 695" />
+                      <path id="dobPath" d="M 120 801 L 476 730" />
+                      <filter
+                        id="svgTextShadow"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                      >
+                        <feDropShadow
+                          dx="1"
+                          dy="-1"
+                          stdDeviation="0"
+                          floodColor="rgba(222, 222, 222, 0.8)"
+                        />
+                        <feDropShadow
+                          dx="-1"
+                          dy="1"
+                          stdDeviation="0"
+                          floodColor="rgba(151, 151, 151, 0.65)"
+                        />
+                        <feDropShadow
+                          dx="-2"
+                          dy="2"
+                          stdDeviation="0"
+                          floodColor="rgba(0, 0, 0, 0.59)"
+                        />
+                      </filter>
+                    </defs>
+                    <text
+                      fill={colors[fontColor].value}
+                      fontSize="50"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#svgTextShadow)"
+                      style={{
+                        transformOrigin:
+                          "50% 50%" /* Adjust the scaling origin */,
+                      }}
+                    >
+                      <textPath href="#namePath" startOffset="50%">
+                        {week}
+                      </textPath>
+                    </text>
+
+                    <text
+                      fill={colors[fontColor].value}
+                      fontSize="25"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#svgTextShadow)"
+                      style={{
+                        transformOrigin:
+                          "50% 50%" /* Adjust the scaling origin */,
+                      }}
+                    >
+                      <textPath href="#dobPath" startOffset="50%">
+                        {dob}
+                      </textPath>
+                    </text>
+
+                    {/* bar */}
+                    <line
+                      x1="222"
+                      y1="753"
+                      x2="366"
+                      y2="725"
+                      stroke={colors[fontColor].value}
+                      strokeWidth="3"
+                      filter="url(#svgTextShadow)"
+                    />
+                  </svg>
+
+                  {/* base_polygon_front */}
                   <svg
                     className={styles.base_part}
                     xmlns="http://www.w3.org/2000/svg"
@@ -671,9 +760,7 @@ export default function About() {
                       fill={colors[sideColor].value}
                     />
                   </svg>
-                </div>
-
-                <div className="base_polygon_side">
+                  {/* base_polygon_side */}
                   <svg
                     className={styles.base_part}
                     xmlns="http://www.w3.org/2000/svg"
@@ -692,9 +779,7 @@ export default function About() {
                       fill={colors[sideColor].value}
                     />
                   </svg>
-                </div>
-
-                <div className="base_polygon_top">
+                  {/* base_polygon_top */}
                   <svg
                     className={styles.base_part}
                     xmlns="http://www.w3.org/2000/svg"
@@ -713,10 +798,14 @@ export default function About() {
                       points="24,631 16,622 347,571 357,579"
                       fill={colors[sideColor].value}
                     />
-                  </svg>
-                </div>
 
-                <div className="base_polygon_topS">
+                    {/* base_polygon_topT */}
+                    <polygon
+                      points="24,630 84,694 443,636 358,579"
+                      fill={colors[baseColor].value}
+                    />
+                  </svg>
+                  {/* base_polygon_topS */}
                   <svg
                     className={styles.base_part}
                     xmlns="http://www.w3.org/2000/svg"
@@ -729,26 +818,14 @@ export default function About() {
                       points="259,666 295,670 283,661"
                       fill={colors[sideColor].value}
                     />
-                  </svg>
-                </div>
 
-                <div className="base_polygon_topL">
-                  <svg
-                    className={styles.base_part}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 817"
-                    style={{
-                      filter: "brightness(50%)",
-                    }}
-                  >
+                    {/* base_polygon_topL */}
                     <polygon
                       points="295,670 283,661 281,635 286,637"
                       fill={colors[sideColor].value}
                     />
                   </svg>
-                </div>
-
-                <div className="base_polygon_topT">
+                  {/* base_polygon_topT */}
                   <svg
                     className={styles.base_part}
                     xmlns="http://www.w3.org/2000/svg"
@@ -762,9 +839,8 @@ export default function About() {
                       fill={colors[sideColor].value}
                     />
                   </svg>
-                </div>
 
-                <div className="base_polygon_topT">
+                  {/* base_polygon_topT */}
                   <svg
                     className={styles.base_part}
                     xmlns="http://www.w3.org/2000/svg"
@@ -779,26 +855,10 @@ export default function About() {
                     />
                   </svg>
                 </div>
-
-                <div className="base_polygon_topT">
-                  <svg
-                    className={styles.base_part}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 480 817"
-                    style={{
-                      filter: "brightness(90%)",
-                      zIndex: 2, // Set z-index to 2
-                    }}
-                  >
-                    <polygon
-                      points="24,630 84,694 443,636 358,579"
-                      fill={colors[baseColor].value}
-                    />
-                  </svg>
-                </div>
               </>
             )}
 
+            {/** Base 1 **/}
             {selectedBaseImage === 1 && (
               <div className="base_1">
                 <svg
@@ -925,6 +985,80 @@ export default function About() {
             {selectedBaseImage === 0 && (
               <>
                 <div className="base_polygon_front">
+                  <svg
+                    className={styles.base_part}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 480 817"
+                    style={{
+                      filter: "brightness(70%)",
+                      zIndex: 5,
+                    }}
+                  >
+                    <defs>
+                      <path id="weekPath" d="M 107 764 L 463 695" />
+                      <path id="namePath" d="M 142 798 L 453 739" />
+                      <filter
+                        id="svgTextShadow"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                      >
+                        <feDropShadow
+                          dx="1"
+                          dy="-1"
+                          stdDeviation="0"
+                          floodColor="rgba(222, 222, 222, 0.8)"
+                        />
+                        <feDropShadow
+                          dx="-1"
+                          dy="1"
+                          stdDeviation="0"
+                          floodColor="rgba(151, 151, 151, 0.65)"
+                        />
+                        <feDropShadow
+                          dx="-2"
+                          dy="2"
+                          stdDeviation="0"
+                          floodColor="rgba(0, 0, 0, 0.59)"
+                        />
+                      </filter>
+                    </defs>
+                    <text
+                      fill={colors[fontColor].value}
+                      fontStyle="italic"
+                      fontSize="30"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#svgTextShadow)"
+                      style={{
+                        transformOrigin:
+                          "50% 50%" /* Adjust the scaling origin */,
+                      }}
+                    >
+                      <textPath href="#weekPath" startOffset="50%">
+                        {week}
+                      </textPath>
+                    </text>
+
+                    <text
+                      fill={colors[fontColor].value}
+                      fontStyle="italic"
+                      fontSize="20"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#svgTextShadow)"
+                      style={{
+                        transformOrigin:
+                          "50% 50%" /* Adjust the scaling origin */,
+                      }}
+                    >
+                      <textPath href="#namePath" startOffset="50%">
+                        {name}
+                      </textPath>
+                    </text>
+                  </svg>
+
                   <svg
                     className={styles.base_part}
                     xmlns="http://www.w3.org/2000/svg"
@@ -1359,7 +1493,9 @@ export default function About() {
             )}
           </div>
           <fieldset className={styles.fieldset_center}>
-            <legend className={styles.fieldset_legend}>Choose your view:</legend>
+            <legend className={styles.fieldset_legend}>
+              Choose your view:
+            </legend>
             <button className={styles.image_selector_btn}>Front</button>
             <button className={styles.image_selector_btn}>Back</button>
           </fieldset>

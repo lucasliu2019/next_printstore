@@ -390,8 +390,15 @@
 }
 
 @media (max-width: 1000px) {
+
+
+  
   .fieldset {
     justify-content: center;
+  }
+
+  .fieldset_center {
+    width: 100%; /* Ensure the container takes up full width */
   }
 
   /* Color display OFF */
@@ -406,11 +413,12 @@
     transform: scale(0.3);
   } */
 
-
+  .card_image_wrapper {
+    width: 90%;
+  }
 
   .input_group {
     width: 100%;  /* Full width for small screens */
-    align-items: stretch; /* Ensure inputs take full width */
   }
 
 
