@@ -218,20 +218,22 @@
 
   .fieldset_info{
     order: -1;
+    width: 100%; /* Take full width of the parent */
+    flex: 0 0 100%; /* Ensure it spans the full row */
   }
 
   
-  .fieldset {
+  .fieldset:not(.fieldset_info) {
     justify-content: center;
     flex: 1; /* Allow fieldsets to grow and take equal space */
     min-width: 45%; /* Ensure fieldsets don't shrink too much */
-    max-width: 100%; /* Prevent fieldsets from exceeding the container width */
+    max-width: 48%; /* Prevent fieldsets from exceeding the container width */
   }
 
-  .fieldset_center {
+  .fieldset_center:not(.fieldset_info) {
     flex: 1; /* Allow fieldsets to grow and take equal space */
     min-width: 45%; /* Ensure fieldsets don't shrink too much */
-    max-width: 100%; /* Prevent fieldsets from exceeding the container width */
+    max-width: 48%; /* Prevent fieldsets from exceeding the container width */
   }
 
   /* Color display OFF */
