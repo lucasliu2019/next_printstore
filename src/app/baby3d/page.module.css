@@ -279,6 +279,10 @@
     order: 5;
   }
 
+  .fieldset_view{
+    order: 6;
+  }
+
 
 
   .fieldset:not(.fieldset_info) {
@@ -340,6 +344,7 @@
 
   .left_container {
     order: 2; /* Move the second child to the top */
+    margin-bottom: 20px; /* Add margin for spacing */
   }
 }
 

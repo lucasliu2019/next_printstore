@@ -106,6 +106,8 @@ const colorOptions = colors.map((color, index) => ({
   color: color.value,
 }));
 
+
+
 export default function About() {
   // State for the input fields
   const [name, setName] = useState("Firstname Lastname");
@@ -113,7 +115,7 @@ export default function About() {
   const [dob, setDob] = useState("09.30.2025");
   const [msg, setMsg] = useState("Your message");
 
-  const [front,setFront] = useState(true);
+  const [front, setFront] = useState(true);
 
   const [baseColor, setBaseColor] = useState(4);
   const [sideColor, setSideColor] = useState(0); // Default color for base_polygon
@@ -123,9 +125,11 @@ export default function About() {
   const [selectedFigureImage, setSelectedFigureImage] = useState(0); // Default image
 
   const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [isExSmallScreen, setIsExSmallScreen] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 1000); // Check if the screen width is <= 900px
+      setIsExSmallScreen(window.innerWidth <= 768); // Check if the screen width is <= 900px
     };
 
     window.addEventListener("resize", handleResize);
@@ -143,6 +147,18 @@ export default function About() {
       document.body.classList.remove(styles.baby3dBody);
     };
   }, []);
+
+  const renderViewFieldset = () => {
+    return (
+    <fieldset className={styles.fieldset_view}>
+      <legend className={styles.fieldset_legend}>
+        Choose your view:
+      </legend>
+      <button className={styles.image_selector_btn} onClick={() => setFront(true)}>Front</button>
+      <button className={styles.image_selector_btn} onClick={() => setFront(false)}>Back</button>
+    </fieldset>
+    );
+  }
 
   return (
     <div className={styles.page}>
@@ -482,13 +498,15 @@ export default function About() {
               </div>
             )}
           </fieldset>
+
+          {isExSmallScreen && renderViewFieldset()}
         </div>
 
         {/**************************  Right Card ******************************/}
         <div className={styles.right_container}>
           <div
             className={styles.card_image_wrapper}
-            // style={{ transform: `scale(${scale})` }}
+          // style={{ transform: `scale(${scale})` }}
           >
             <Image
               src={figureImages[selectedFigureImage].path}
@@ -973,7 +991,7 @@ export default function About() {
                   <text
                     fill={colors[fontColor].value}
                     fontStyle="italic"
-                    fontSize={front ? "30": "20"}
+                    fontSize={front ? "30" : "20"}
                     fontFamily="Arial"
                     textAnchor="middle"
                     filter="url(#svgTextShadow)"
@@ -983,7 +1001,7 @@ export default function About() {
                     }}
                   >
                     <textPath href="#weekPath" startOffset="50%">
-                      {front? week : msg}
+                      {front ? week : msg}
                     </textPath>
                   </text>
 
@@ -1000,7 +1018,7 @@ export default function About() {
                     }}
                   >
                     <textPath href="#namePath" startOffset="50%">
-                      { front? name : dob}
+                      {front ? name : dob}
                     </textPath>
                   </text>
                 </svg>
@@ -1368,13 +1386,7 @@ export default function About() {
               </>
             )}
           </div>
-          <fieldset className={styles.fieldset_view}>
-            <legend className={styles.fieldset_legend}>
-              Choose your view:
-            </legend>
-            <button className={styles.image_selector_btn} onClick={()=>setFront(true)}>Front</button>
-            <button className={styles.image_selector_btn} onClick={()=>setFront(false)}>Back</button>
-          </fieldset>
+          {!isExSmallScreen && renderViewFieldset()}
         </div>
       </div>
     </div>
