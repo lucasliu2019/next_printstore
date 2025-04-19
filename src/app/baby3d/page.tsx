@@ -150,13 +150,13 @@ export default function About() {
 
   const renderViewFieldset = () => {
     return (
-    <fieldset className={styles.fieldset_view}>
-      <legend className={styles.fieldset_legend}>
-        Choose your view:
-      </legend>
-      <button className={styles.image_selector_btn} onClick={() => setFront(true)}>Front</button>
-      <button className={styles.image_selector_btn} onClick={() => setFront(false)}>Back</button>
-    </fieldset>
+      <fieldset className={styles.fieldset_view}>
+        <legend className={styles.fieldset_legend}>
+          Choose your view:
+        </legend>
+        <button className={styles.image_selector_btn} onClick={() => setFront(true)}>Front</button>
+        <button className={styles.image_selector_btn} onClick={() => setFront(false)}>Back</button>
+      </fieldset>
     );
   }
 
@@ -197,7 +197,7 @@ export default function About() {
               baseImages.map((image, index) => (
                 <button
                   key={index}
-                  className={`${styles.image_selector_btn} ${selectedBaseImage === index? styles.image_selector_btn_active : ""}`}
+                  className={`${styles.image_selector_btn} ${selectedBaseImage === index ? styles.image_selector_btn_active : ""}`}
                   onClick={() => setSelectedBaseImage(index)}
                 >
                   {image.name}
@@ -227,7 +227,7 @@ export default function About() {
               figureImages.map((image, index) => (
                 <button
                   key={index}
-                  className={`${styles.image_selector_btn} ${selectedFigureImage === index? styles.image_selector_btn_active : ""}`}
+                  className={`${styles.image_selector_btn} ${selectedFigureImage === index ? styles.image_selector_btn_active : ""}`}
                   onClick={() => setSelectedFigureImage(index)} // Update selected image
                 >
                   {image.name}
@@ -527,208 +527,22 @@ export default function About() {
             {/** Base 1 Round **/}
             {selectedBaseImage == 1 && (
               front ? (
-              <svg
-                className={styles.base_part}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 480 817"
-                style={{
-                  filter: "brightness(80%)",
-                  zIndex: 2, // Set z-index to 2
-                  // border: "1px solid black",
-                }}
-              >
-                <defs>
-                  <path id="namePath" d="M 48 654 q 98 90 293 50" />
-                  <path id="dobPath" d="M 390 674 q 23 -41 -60 -80" />
-                  <path id="weekPath" d="M 150 605 q -63 -7 -80 47" />
-                  <filter
-                    id="shadow"
-                    x="-50%"
-                    y="-50%"
-                    width="200%"
-                    height="200%"
-                  >
-                    <feDropShadow
-                      dx="1"
-                      dy="-1"
-                      stdDeviation="0"
-                      floodColor="rgb(222,222,222)"
-                    />
-                    <feDropShadow
-                      dx="-1"
-                      dy="1"
-                      stdDeviation="0"
-                      floodColor="rgb(151,151,151)"
-                    />
-                    <feDropShadow
-                      dx="-2"
-                      dy="2"
-                      stdDeviation="0"
-                      floodColor="rgb(0,0,0)"
-                    />
-                  </filter>
-                </defs>
-
-                <text
-                  fill={colors[fontColor].value}
-                  fontSize="15"
-                  fontFamily="Arial"
-                  textAnchor="middle"
-                  // transform="scale(1, 0.7)"
-                  filter="url(#shadow)"
-                  style={{
-                    transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  }}
-                >
-                  <textPath href="#namePath" startOffset="50%">
-                    {name}
-                  </textPath>
-                </text>
-
-                <text
-                  fill={colors[fontColor].value}
-                  fontSize="15"
-                  fontFamily="Arial"
-                  textAnchor="middle"
-                  filter="url(#shadow)"
-                  style={{
-                    transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                    zIndex: 1, // Set z-index to 2
-                  }}
-                >
-                  <textPath href="#dobPath" startOffset="50%">
-                    {dob}
-                  </textPath>
-                </text>
-
-                <text
-                  fill={colors[fontColor].value}
-                  fontSize="15"
-                  fontFamily="Arial"
-                  textAnchor="middle"
-                  filter="url(#shadow)"
-                  style={{
-                    transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                    zIndex: 1, // Set z-index to 2
-                  }}
-                >
-                  <textPath href="#weekPath" startOffset="50%">
-                    {week}
-                  </textPath>
-                </text>
-              </svg>)
-              // Back view
-              :(
                 <svg
-                className={styles.base_part}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 480 817"
-                style={{
-                  filter: "brightness(80%)",
-                  zIndex: 2, // Set z-index to 2
-                  // border: "1px solid black",
-                }}
-              >
-                <defs>
-                  <path id="namePath" d="M 450 693 q -97 -130 -273 -111" />
-                  <path id="dobPath" d="M 110 571 q -90 117 48 136" />
-                  <path id="weekPath" d="M 200 690 q 182 57 249 -99" />
-                  <filter
-                    id="shadow"
-                    x="-50%"
-                    y="-50%"
-                    width="200%"
-                    height="200%"
-                  >
-                    <feDropShadow
-                      dx="1"
-                      dy="-1"
-                      stdDeviation="0"
-                      floodColor="rgb(222,222,222)"
-                    />
-                    <feDropShadow
-                      dx="-1"
-                      dy="1"
-                      stdDeviation="0"
-                      floodColor="rgb(151,151,151)"
-                    />
-                    <feDropShadow
-                      dx="-2"
-                      dy="2"
-                      stdDeviation="0"
-                      floodColor="rgb(0,0,0)"
-                    />
-                  </filter>
-                </defs>
-
-                <text
-                  fill={colors[fontColor].value}
-                  fontSize="15"
-                  fontFamily="Arial"
-                  textAnchor="middle"
-                  // transform="scale(1, 0.7)"
-                  filter="url(#shadow)"
-                  style={{
-                    transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                  }}
-                >
-                  <textPath href="#namePath" startOffset="50%">
-                    {name}
-                  </textPath>
-                </text>
-
-                <text
-                  fill={colors[fontColor].value}
-                  fontSize="15"
-                  fontFamily="Arial"
-                  textAnchor="middle"
-                  filter="url(#shadow)"
-                  style={{
-                    transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                    zIndex: 1, // Set z-index to 2
-                  }}
-                >
-                  <textPath href="#dobPath" startOffset="50%">
-                    {dob}
-                  </textPath>
-                </text>
-
-                <text
-                  fill={colors[fontColor].value}
-                  fontSize="15"
-                  fontFamily="Arial"
-                  textAnchor="middle"
-                  filter="url(#shadow)"
-                  style={{
-                    transformOrigin: "50% 50%" /* Adjust the scaling origin */,
-                    zIndex: 1, // Set z-index to 2
-                  }}
-                >
-                  <textPath href="#weekPath" startOffset="50%">
-                    {week}
-                  </textPath>
-                </text>
-              </svg>)
-            )}
-            {/** Base 2 Trapezoid **/}
-            {selectedBaseImage === 2 && (
-              <div className="base_wrapper">
-                {/* text */}
-                {front? 
-                (<svg
                   className={styles.base_part}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 480 817"
                   style={{
                     filter: "brightness(80%)",
-                    zIndex: 5,
+                    zIndex: 2, // Set z-index to 2
+                    // border: "1px solid black",
                   }}
                 >
                   <defs>
-                    <path id="namePath" d="M 107 764 L 463 695" />
-                    <path id="dobPath" d="M 120 801 L 476 730" />
+                    <path id="namePath" d="M 48 654 q 98 90 293 50" />
+                    <path id="dobPath" d="M 390 674 q 23 -41 -60 -80" />
+                    <path id="weekPath" d="M 150 605 q -63 -7 -80 47" />
                     <filter
-                      id="svgTextShadow"
+                      id="shadow"
                       x="-50%"
                       y="-50%"
                       width="200%"
@@ -738,47 +552,48 @@ export default function About() {
                         dx="1"
                         dy="-1"
                         stdDeviation="0"
-                        floodColor="rgba(222, 222, 222, 0.8)"
+                        floodColor="rgb(222,222,222)"
                       />
                       <feDropShadow
                         dx="-1"
                         dy="1"
                         stdDeviation="0"
-                        floodColor="rgba(151, 151, 151, 0.65)"
+                        floodColor="rgb(151,151,151)"
                       />
                       <feDropShadow
                         dx="-2"
                         dy="2"
                         stdDeviation="0"
-                        floodColor="rgba(0, 0, 0, 0.59)"
+                        floodColor="rgb(0,0,0)"
                       />
                     </filter>
                   </defs>
+
                   <text
                     fill={colors[fontColor].value}
-                    fontSize="50"
+                    fontSize="15"
                     fontFamily="Arial"
                     textAnchor="middle"
-                    filter="url(#svgTextShadow)"
+                    // transform="scale(1, 0.7)"
+                    filter="url(#shadow)"
                     style={{
-                      transformOrigin:
-                        "50% 50%" /* Adjust the scaling origin */,
+                      transformOrigin: "50% 50%" /* Adjust the scaling origin */,
                     }}
                   >
                     <textPath href="#namePath" startOffset="50%">
-                      {week}
+                      {name}
                     </textPath>
                   </text>
 
                   <text
                     fill={colors[fontColor].value}
-                    fontSize="25"
+                    fontSize="15"
                     fontFamily="Arial"
                     textAnchor="middle"
-                    filter="url(#svgTextShadow)"
+                    filter="url(#shadow)"
                     style={{
-                      transformOrigin:
-                        "50% 50%" /* Adjust the scaling origin */,
+                      transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                      zIndex: 1, // Set z-index to 2
                     }}
                   >
                     <textPath href="#dobPath" startOffset="50%">
@@ -786,73 +601,258 @@ export default function About() {
                     </textPath>
                   </text>
 
-                  {/* bar */}
-                  <line
-                    x1="222"
-                    y1="753"
-                    x2="366"
-                    y2="725"
-                    stroke={colors[fontColor].value}
-                    strokeWidth="3"
-                    filter="url(#svgTextShadow)"
-                  />
-                </svg>):
-                (
-                  <svg
-                  className={styles.base_part}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 480 817"
-                  style={{
-                    filter: "brightness(80%)",
-                    zIndex: 5,
-                  }}>
-                                      <defs>
-                    <path id="msgPath" d="M 107 764 L 463 695" />
-                    <filter
-                      id="svgTextShadow"
-                      x="-50%"
-                      y="-50%"
-                      width="200%"
-                      height="200%"
-                    >
-                      <feDropShadow
-                        dx="1"
-                        dy="-1"
-                        stdDeviation="0"
-                        floodColor="rgba(222, 222, 222, 0.8)"
-                      />
-                      <feDropShadow
-                        dx="-1"
-                        dy="1"
-                        stdDeviation="0"
-                        floodColor="rgba(151, 151, 151, 0.65)"
-                      />
-                      <feDropShadow
-                        dx="-2"
-                        dy="2"
-                        stdDeviation="0"
-                        floodColor="rgba(0, 0, 0, 0.59)"
-                      />
-                    </filter>
-                  </defs>
                   <text
                     fill={colors[fontColor].value}
-                    fontSize="20"
+                    fontSize="15"
                     fontFamily="Arial"
                     textAnchor="middle"
-                    filter="url(#svgTextShadow)"
+                    filter="url(#shadow)"
                     style={{
-                      transformOrigin:
-                        "50% 50%" /* Adjust the scaling origin */,
+                      transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                      zIndex: 1, // Set z-index to 2
                     }}
                   >
-                    <textPath href="#msgPath" startOffset="50%">
-                      {msg}
+                    <textPath href="#weekPath" startOffset="50%">
+                      {week}
                     </textPath>
                   </text>
-                  </svg>
-                )
-                  }
+                </svg>)
+                // Back view
+                : (
+                  <svg
+                    className={styles.base_part}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 480 817"
+                    style={{
+                      filter: "brightness(80%)",
+                      zIndex: 2, // Set z-index to 2
+                      // border: "1px solid black",
+                    }}
+                  >
+                    <defs>
+                      <path id="namePath" d="M 450 693 q -97 -130 -273 -111" />
+                      <path id="dobPath" d="M 110 571 q -90 117 48 136" />
+                      <path id="weekPath" d="M 200 690 q 182 57 249 -99" />
+                      <filter
+                        id="shadow"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                      >
+                        <feDropShadow
+                          dx="1"
+                          dy="-1"
+                          stdDeviation="0"
+                          floodColor="rgb(222,222,222)"
+                        />
+                        <feDropShadow
+                          dx="-1"
+                          dy="1"
+                          stdDeviation="0"
+                          floodColor="rgb(151,151,151)"
+                        />
+                        <feDropShadow
+                          dx="-2"
+                          dy="2"
+                          stdDeviation="0"
+                          floodColor="rgb(0,0,0)"
+                        />
+                      </filter>
+                    </defs>
+
+                    <text
+                      fill={colors[fontColor].value}
+                      fontSize="15"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      // transform="scale(1, 0.7)"
+                      filter="url(#shadow)"
+                      style={{
+                        transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                      }}
+                    >
+                      <textPath href="#namePath" startOffset="50%">
+                        {name}
+                      </textPath>
+                    </text>
+
+                    <text
+                      fill={colors[fontColor].value}
+                      fontSize="15"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#shadow)"
+                      style={{
+                        transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                        zIndex: 1, // Set z-index to 2
+                      }}
+                    >
+                      <textPath href="#dobPath" startOffset="50%">
+                        {dob}
+                      </textPath>
+                    </text>
+
+                    <text
+                      fill={colors[fontColor].value}
+                      fontSize="15"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#shadow)"
+                      style={{
+                        transformOrigin: "50% 50%" /* Adjust the scaling origin */,
+                        zIndex: 1, // Set z-index to 2
+                      }}
+                    >
+                      <textPath href="#weekPath" startOffset="50%">
+                        {week}
+                      </textPath>
+                    </text>
+                  </svg>)
+            )}
+            {/** Base 2 Trapezoid **/}
+            {selectedBaseImage === 2 && (
+              <div className="base_wrapper">
+                {/* text */}
+                {front ?
+                  (<svg
+                    className={styles.base_part}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 480 817"
+                    style={{
+                      filter: "brightness(80%)",
+                      zIndex: 5,
+                    }}
+                  >
+                    <defs>
+                      <path id="namePath" d="M 107 764 L 463 695" />
+                      <path id="dobPath" d="M 120 801 L 476 730" />
+                      <filter
+                        id="svgTextShadow"
+                        x="-50%"
+                        y="-50%"
+                        width="200%"
+                        height="200%"
+                      >
+                        <feDropShadow
+                          dx="1"
+                          dy="-1"
+                          stdDeviation="0"
+                          floodColor="rgba(222, 222, 222, 0.8)"
+                        />
+                        <feDropShadow
+                          dx="-1"
+                          dy="1"
+                          stdDeviation="0"
+                          floodColor="rgba(151, 151, 151, 0.65)"
+                        />
+                        <feDropShadow
+                          dx="-2"
+                          dy="2"
+                          stdDeviation="0"
+                          floodColor="rgba(0, 0, 0, 0.59)"
+                        />
+                      </filter>
+                    </defs>
+                    <text
+                      fill={colors[fontColor].value}
+                      fontSize="50"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#svgTextShadow)"
+                      style={{
+                        transformOrigin:
+                          "50% 50%" /* Adjust the scaling origin */,
+                      }}
+                    >
+                      <textPath href="#namePath" startOffset="50%">
+                        {week}
+                      </textPath>
+                    </text>
+
+                    <text
+                      fill={colors[fontColor].value}
+                      fontSize="25"
+                      fontFamily="Arial"
+                      textAnchor="middle"
+                      filter="url(#svgTextShadow)"
+                      style={{
+                        transformOrigin:
+                          "50% 50%" /* Adjust the scaling origin */,
+                      }}
+                    >
+                      <textPath href="#dobPath" startOffset="50%">
+                        {dob}
+                      </textPath>
+                    </text>
+
+                    {/* bar */}
+                    <line
+                      x1="222"
+                      y1="753"
+                      x2="366"
+                      y2="725"
+                      stroke={colors[fontColor].value}
+                      strokeWidth="3"
+                      filter="url(#svgTextShadow)"
+                    />
+                  </svg>) :
+                  (
+                    <svg
+                      className={styles.base_part}
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 480 817"
+                      style={{
+                        filter: "brightness(80%)",
+                        zIndex: 5,
+                      }}>
+                      <defs>
+                        <path id="msgPath" d="M 107 764 L 463 695" />
+                        <filter
+                          id="svgTextShadow"
+                          x="-50%"
+                          y="-50%"
+                          width="200%"
+                          height="200%"
+                        >
+                          <feDropShadow
+                            dx="1"
+                            dy="-1"
+                            stdDeviation="0"
+                            floodColor="rgba(222, 222, 222, 0.8)"
+                          />
+                          <feDropShadow
+                            dx="-1"
+                            dy="1"
+                            stdDeviation="0"
+                            floodColor="rgba(151, 151, 151, 0.65)"
+                          />
+                          <feDropShadow
+                            dx="-2"
+                            dy="2"
+                            stdDeviation="0"
+                            floodColor="rgba(0, 0, 0, 0.59)"
+                          />
+                        </filter>
+                      </defs>
+                      <text
+                        fill={colors[fontColor].value}
+                        fontSize="20"
+                        fontFamily="Arial"
+                        textAnchor="middle"
+                        filter="url(#svgTextShadow)"
+                        style={{
+                          transformOrigin:
+                            "50% 50%" /* Adjust the scaling origin */,
+                        }}
+                      >
+                        <textPath href="#msgPath" startOffset="50%">
+                          {msg}
+                        </textPath>
+                      </text>
+                    </svg>
+                  )
+                }
 
                 {/* base_polygon_front */}
                 <svg
@@ -863,30 +863,33 @@ export default function About() {
                     filter: "brightness(80%)",
                   }}
                 >
-                  <polygon
-                    points="93,703 295,670 286,637 443,610 480,746 118,816"
-                    fill={colors[sideColor].value}
-                  />
+                  {front ? (
+                    <polygon
+                      points="93,703 295,670 286,637 443,610 480,746 118,816"
+                      fill={colors[sideColor].value}
+                    />) : (
+
+                    <polygon
+                      points="93,703 295,670 450,645 480,746 118,816"
+                      fill={colors[sideColor].value}
+                    />)}
+
                 </svg>
-                {/* base_polygon_side */}
-                <svg
+
+
+                {!front && (<svg
                   className={styles.base_part}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 480 817"
                   style={{
                     filter: "brightness(70%)",
-                  }}
-                >
+                  }}>
                   <polygon
-                    points="93,703 118,816 106,803 83,693"
+                    points="24,630 182,606 182,579 21,602"
                     fill={colors[sideColor].value}
                   />
-
-                  <polygon
-                    points="24,631 8,688 0,680 16,622"
-                    fill={colors[sideColor].value}
-                  />
-                </svg>
+                </svg>)
+                }
                 {/* base_polygon_top */}
                 <svg
                   className={styles.base_part}
@@ -897,10 +900,17 @@ export default function About() {
                     zIndex: 2, // Set z-index to 2
                   }}
                 >
-                  <polygon
-                    points="93,703 83,693 259,666 295,670"
-                    fill={colors[sideColor].value}
-                  />
+                  {front ? (
+                    <polygon
+                      points="93,703 83,693 259,666 295,670"
+                      fill={colors[sideColor].value}
+                    />) : (
+                    <polygon
+                      points="93,703 83,693 443,636 450,645"
+                      fill={colors[sideColor].value}
+                    />)}
+
+                  {/* base_polygon_topL */}
 
                   <polygon
                     points="24,631 16,622 347,571 357,579"
@@ -913,6 +923,34 @@ export default function About() {
                     fill={colors[baseColor].value}
                   />
                 </svg>
+
+                {/* base_polygon_side */}
+                <svg
+                  className={styles.base_part}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 480 817"
+                  style={{
+                    filter: "brightness(60%)",
+                    zIndex: 2, // Set z-index to 2
+                  }}
+                >
+                  <polygon
+                    points="93,703 118,816 106,803 83,693"
+                    fill={colors[sideColor].value}
+                  />
+
+                  {front ? (
+                    <polygon
+                      points="24,630 8,688 0,680 16,622"
+                      fill={colors[sideColor].value}
+                    />
+                  ) : (
+                    <polygon
+                      points="24,630 8,688 0,680 21,602"
+                      fill={colors[sideColor].value}
+                    />)}
+                </svg>
+
                 {/* base_polygon_topS */}
                 <svg
                   className={styles.base_part}
@@ -922,31 +960,37 @@ export default function About() {
                     filter: "brightness(50%)",
                   }}
                 >
-                  <polygon
-                    points="259,666 295,670 283,661"
-                    fill={colors[sideColor].value}
-                  />
 
                   {/* base_polygon_topL */}
-                  <polygon
-                    points="295,670 283,661 281,635 286,637"
-                    fill={colors[sideColor].value}
-                  />
+                  {front && (
+                    <>
+                      <polygon
+                        points="259,666 295,670 283,661"
+                        fill={colors[sideColor].value}
+                      />
+                      <polygon
+                        points="295,670 283,661 281,635 286,637"
+                        fill={colors[sideColor].value}
+                      />
+                    </>
+                  )}
                 </svg>
                 {/* base_polygon_topT */}
-                <svg
-                  className={styles.base_part}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 480 817"
-                  style={{
-                    filter: "brightness(90%)",
-                  }}
-                >
-                  <polygon
-                    points="281,635 286,637 443,610 438,607"
-                    fill={colors[sideColor].value}
-                  />
-                </svg>
+                {front && (
+                  <svg
+                    className={styles.base_part}
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 480 817"
+                    style={{
+                      filter: "brightness(90%)",
+                    }}
+                  >
+                    <polygon
+                      points="281,635 286,637 443,610 438,607"
+                      fill={colors[sideColor].value}
+                    />
+                  </svg>
+                )}
 
                 {/* base_polygon_topT */}
                 <svg
