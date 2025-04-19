@@ -875,13 +875,38 @@ export default function About() {
                     />)}
 
                 </svg>
+                {/* base_polygon_side */}
+                <svg
+                  className={styles.base_part}
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 480 817"
+                  style={{
+                    filter: "brightness(60%)",
+                  }}
+                >
+                  <polygon
+                    points="93,703 118,816 106,803 83,693"
+                    fill={colors[sideColor].value}
+                  />
 
+                  {front ? (
+                    <polygon
+                      points="24,630 8,688 0,680 16,622"
+                      fill={colors[sideColor].value}
+                    />
+                  ) : (
+                    <polygon
+                      points="24,630 8,688 0,680 21,602"
+                      fill={colors[sideColor].value}
+                    />)}
+                </svg>
 
                 {!front && (<svg
                   className={styles.base_part}
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 480 817"
                   style={{
+                    zIndex: 3, // Set z-index to 2
                     filter: "brightness(70%)",
                   }}>
                   <polygon
@@ -923,34 +948,6 @@ export default function About() {
                     fill={colors[baseColor].value}
                   />
                 </svg>
-
-                {/* base_polygon_side */}
-                <svg
-                  className={styles.base_part}
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 480 817"
-                  style={{
-                    filter: "brightness(60%)",
-                    zIndex: 2, // Set z-index to 2
-                  }}
-                >
-                  <polygon
-                    points="93,703 118,816 106,803 83,693"
-                    fill={colors[sideColor].value}
-                  />
-
-                  {front ? (
-                    <polygon
-                      points="24,630 8,688 0,680 16,622"
-                      fill={colors[sideColor].value}
-                    />
-                  ) : (
-                    <polygon
-                      points="24,630 8,688 0,680 21,602"
-                      fill={colors[sideColor].value}
-                    />)}
-                </svg>
-
                 {/* base_polygon_topS */}
                 <svg
                   className={styles.base_part}
