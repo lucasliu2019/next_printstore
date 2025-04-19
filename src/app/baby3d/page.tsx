@@ -113,6 +113,8 @@ export default function About() {
   const [dob, setDob] = useState("09.30.2025");
   const [msg, setMsg] = useState("Your message");
 
+  const [front,setFront] = useState(true);
+
   const [baseColor, setBaseColor] = useState(4);
   const [sideColor, setSideColor] = useState(0); // Default color for base_polygon
   const [fontColor, setFontColor] = useState(11);
@@ -504,7 +506,7 @@ export default function About() {
               width={500}
               height={500} /> */}
 
-            {/** Base 1 **/}
+            {/** Base 1 Round **/}
             {selectedBaseImage == 1 && (
               <svg
                 className={styles.base_part}
@@ -603,7 +605,7 @@ export default function About() {
                 </text>
               </svg>
             )}
-            {/** Base 2 **/}
+            {/** Base 2 Trapezoid **/}
             {selectedBaseImage === 2 && (
               <div className="base_wrapper">
                 {/* text */}
@@ -801,7 +803,7 @@ export default function About() {
               </div>
             )}
 
-            {/** Base 1 **/}
+            {/** Base 1 Round Base **/}
             {selectedBaseImage === 1 && (
               <div className="base_wrapper">
                 <svg
@@ -925,6 +927,7 @@ export default function About() {
               </div>
             )}
 
+            {/** Base 0 Two Level **/}
             {selectedBaseImage === 0 && (
               <>
                 {/* base_polygon_front */}
@@ -970,7 +973,7 @@ export default function About() {
                   <text
                     fill={colors[fontColor].value}
                     fontStyle="italic"
-                    fontSize="30"
+                    fontSize={front ? "30": "20"}
                     fontFamily="Arial"
                     textAnchor="middle"
                     filter="url(#svgTextShadow)"
@@ -980,7 +983,7 @@ export default function About() {
                     }}
                   >
                     <textPath href="#weekPath" startOffset="50%">
-                      {week}
+                      {front? week : msg}
                     </textPath>
                   </text>
 
@@ -997,7 +1000,7 @@ export default function About() {
                     }}
                   >
                     <textPath href="#namePath" startOffset="50%">
-                      {name}
+                      { front? name : dob}
                     </textPath>
                   </text>
                 </svg>
@@ -1369,8 +1372,8 @@ export default function About() {
             <legend className={styles.fieldset_legend}>
               Choose your view:
             </legend>
-            <button className={styles.image_selector_btn}>Front</button>
-            <button className={styles.image_selector_btn}>Back</button>
+            <button className={styles.image_selector_btn} onClick={()=>setFront(true)}>Front</button>
+            <button className={styles.image_selector_btn} onClick={()=>setFront(false)}>Back</button>
           </fieldset>
         </div>
       </div>
