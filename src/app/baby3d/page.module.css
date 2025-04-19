@@ -207,7 +207,11 @@
   cursor: pointer;
 }
 
-.image_selector_btn:hover {
+.image_selector_btn_active{
+  background-color: #001b36;
+}
+
+.image_selector_btn:hover:not(.image_selector_btn_active) {
   background-color: #005bb5;
 }
 

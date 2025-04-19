@@ -197,7 +197,7 @@ export default function About() {
               baseImages.map((image, index) => (
                 <button
                   key={index}
-                  className={styles.image_selector_btn}
+                  className={`${styles.image_selector_btn} ${selectedBaseImage === index? styles.image_selector_btn_active : ""}`}
                   onClick={() => setSelectedBaseImage(index)}
                 >
                   {image.name}
@@ -227,7 +227,7 @@ export default function About() {
               figureImages.map((image, index) => (
                 <button
                   key={index}
-                  className={styles.image_selector_btn}
+                  className={`${styles.image_selector_btn} ${selectedFigureImage === index? styles.image_selector_btn_active : ""}`}
                   onClick={() => setSelectedFigureImage(index)} // Update selected image
                 >
                   {image.name}
