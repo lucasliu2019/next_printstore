@@ -516,8 +516,12 @@ export default function About() {
           <div
             className={styles.card_image_wrapper}
             style={{
-            height: selectedFigureImage === 0 ? "817px" : "500px", // Set height conditionally
-           }}
+              height: !isExSmallScreen
+                ? selectedFigureImage === 0
+                  ? "817px"
+                  : "500px"
+                : "auto", // Default height for extra small screens
+            }}
           >
             <Image
               src={ front ? figureImages[selectedFigureImage].front : figureImages[selectedFigureImage].back}

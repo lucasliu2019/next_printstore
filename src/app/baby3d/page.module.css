@@ -333,9 +333,13 @@
     width: 100%; /* Full width for small screens */;
     margin: 0 auto; /* Center the right container */
     height: auto; /* Allow height to adjust based on content */
+    position: relative;
   }
 
   .card_image_wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     width: 100%;
   }
 
