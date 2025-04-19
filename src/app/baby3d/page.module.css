@@ -156,7 +156,7 @@
   border: none;
 }
 
-.fieldset_center {
+.fieldset_center, .fieldset_view {
   width: 100%; /* Ensure the container takes up full width */
   max-width: 850px;
   display: flex;

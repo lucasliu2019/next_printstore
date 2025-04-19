@@ -321,6 +321,7 @@ export default function About() {
                   }),
                   menu: (provided) => ({
                     ...provided,
+                    zIndex: 9999, // Ensure the dropdown menu is on top
                     width: "100%", // Ensure the dropdown menu matches the control width
                   }),
                 }}
@@ -387,6 +388,7 @@ export default function About() {
                   }),
                   menu: (provided) => ({
                     ...provided,
+                    zIndex: 9999, // Ensure the dropdown menu is on top
                     width: "100%", // Ensure the dropdown menu matches the control width
                   }),
                 }}
@@ -453,6 +455,7 @@ export default function About() {
                   }),
                   menu: (provided) => ({
                     ...provided,
+                    zIndex: 9999, // Ensure the dropdown menu is on top
                     width: "100%", // Ensure the dropdown menu matches the control width
                   }),
                 }}
@@ -1362,7 +1365,7 @@ export default function About() {
               </>
             )}
           </div>
-          <fieldset className={styles.fieldset_center}>
+          <fieldset className={styles.fieldset_view}>
             <legend className={styles.fieldset_legend}>
               Choose your view:
             </legend>
