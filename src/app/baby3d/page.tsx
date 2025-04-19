@@ -158,7 +158,7 @@ export default function About() {
       <div className={styles.card_container}>
         {/**************************  Left Card ******************************/}
         <div className={styles.left_container}>
-          <fieldset className={styles.fieldset}>
+          <fieldset className={`${styles.fieldset} ${styles.fieldset_baseT}`}>
             <legend className={styles.fieldset_legend}>
               Choose your base:
             </legend>
@@ -189,7 +189,7 @@ export default function About() {
             )}
           </fieldset>
 
-          <fieldset className={styles.fieldset}>
+          <fieldset className={`${styles.fieldset} ${styles.fieldset_figureT}`}>
             <legend className={styles.fieldset_legend}>
               Choose your figure:
             </legend>
@@ -268,7 +268,7 @@ export default function About() {
             </div>
           </fieldset>
 
-          <fieldset className={styles.fieldset_center}>
+          <fieldset className={`${styles.fieldset_center} ${styles.fieldset_fontT}`}>
             <legend className={styles.fieldset_legend}>Font family:</legend>
             <select
               className={styles.selector}
@@ -283,7 +283,7 @@ export default function About() {
             </select>
           </fieldset>
 
-          <fieldset className={styles.fieldset}>
+          <fieldset className={`${styles.fieldset} ${styles.fieldset_fontC}`}>
             <legend className={styles.fieldset_legend}>Font color:</legend>
             <p className={styles.fieldset_display}>{colors[fontColor].name}</p>
 
@@ -347,7 +347,7 @@ export default function About() {
             )}
           </fieldset>
 
-          <fieldset className={styles.fieldset}>
+          <fieldset className={`${styles.fieldset} ${styles.fieldset_baseC}`}>
             <legend className={styles.fieldset_legend}>Base Color:</legend>
             <p className={styles.fieldset_display}>{colors[baseColor].name}</p>
 
@@ -411,7 +411,7 @@ export default function About() {
             )}
           </fieldset>
 
-          <fieldset className={styles.fieldset}>
+          <fieldset className={`${styles.fieldset} ${styles.fieldset_sideC}`}>
             <legend className={styles.fieldset_legend}>Base side color:</legend>
             <p className={styles.fieldset_display}>{colors[sideColor].name}</p>
 

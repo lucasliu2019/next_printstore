@@ -162,7 +162,6 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5px; /* Add padding inside the fieldset */
   gap: 0 20px;
   /* Light gray border */
   /* border: 2px solid #d2ddff; 
@@ -222,7 +221,32 @@
     flex: 0 0 100%; /* Ensure it spans the full row */
   }
 
-  
+  .fieldset_baseT{
+    order: 0;
+  }
+
+  .fieldset_baseC{
+    order: 1;
+  }
+
+  .fieldset_figureT{
+    order: 2;
+  }
+
+  .fieldset_sideC{
+    order: 3;
+  }
+
+  .fieldset_fontT{
+    order: 4;
+  }
+
+  .fieldset_fontC{
+    order: 5;
+  }
+
+
+
   .fieldset:not(.fieldset_info) {
     justify-content: center;
     flex: 1; /* Allow fieldsets to grow and take equal space */
