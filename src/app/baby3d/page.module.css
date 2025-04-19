@@ -100,6 +100,7 @@
 
 .input_group {
   display: flex; /* Use Flexbox to align items side by side */
+  justify-content: center; /* Center the items horizontally */
   align-items: center; /* Vertically align the label and input */
   gap: 10px; /* Add spacing between the label and input */
 }
@@ -107,7 +108,7 @@
 .product_input {
   flex: 1; /* Allow the input to take up the remaining space */
   width: 100%; /* Full width for small screens */
-  max-width: 600px; /* Optional: Limit the maximum width of the input */
+  max-width: 300px; /* Optional: Limit the maximum width of the input */
   padding: 5px; /* Add padding for better appearance */
   font-size: 16px; /* Prevent zoom-in on iPhone */
   border-radius: 5px; /* Rounded corners */
