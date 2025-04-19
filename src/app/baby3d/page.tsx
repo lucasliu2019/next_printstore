@@ -159,8 +159,7 @@ export default function About() {
         {/**************************  Left Card ******************************/}
         <div className={styles.left_container}>
           <fieldset className={`${styles.fieldset} ${styles.fieldset_baseT}`}>
-            <legend className={styles.fieldset_legend}>
-              Choose your base:
+            <legend className={`${styles.fieldset_legend} ${styles.fieldset_legend_base}`}>
             </legend>
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
@@ -190,8 +189,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={`${styles.fieldset} ${styles.fieldset_figureT}`}>
-            <legend className={styles.fieldset_legend}>
-              Choose your figure:
+            <legend className={`${styles.fieldset_legend} ${styles.fieldset_legend_figure}`}>
             </legend>
             {isSmallScreen ? (
               // Render a dropdown selector for small screens
@@ -269,7 +267,7 @@ export default function About() {
           </fieldset>
 
           <fieldset className={`${styles.fieldset_center} ${styles.fieldset_fontT}`}>
-            <legend className={styles.fieldset_legend}>Font family:</legend>
+            <legend className={`${styles.fieldset_legend} ${styles.fieldset_legend_font}`}></legend>
             <select
               className={styles.selector}
               onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
@@ -310,11 +308,13 @@ export default function About() {
                   }),
                   singleValue: (provided, state) => ({
                     ...provided,
+                    height: "22px", /* Set the height */
                     backgroundColor: state.data.color,
                     color: state.data.color,
                   }),
                   control: (provided) => ({
                     ...provided,
+                    height: "40px", /* Set the height */
                     width: "100%", // Set the width of the dropdown
                     border: "1px solid #ccc",
                     borderRadius: "5px",
@@ -374,11 +374,13 @@ export default function About() {
                   }),
                   singleValue: (provided, state) => ({
                     ...provided,
+                    height: "22px", /* Set the height */
                     backgroundColor: state.data.color,
                     color: state.data.color,
                   }),
                   control: (provided) => ({
                     ...provided,
+                    height: "40px", /* Set the height */
                     width: "100%", // Set the width of the dropdown
                     border: "1px solid #ccc",
                     borderRadius: "5px",
@@ -438,11 +440,13 @@ export default function About() {
                   }),
                   singleValue: (provided, state) => ({
                     ...provided,
+                    height: "22px", /* Set the height */
                     backgroundColor: state.data.color,
                     color: state.data.color,
                   }),
                   control: (provided) => ({
                     ...provided,
+                    height: "40px", /* Set the height */
                     width: "100%", // Set the width of the dropdown
                     border: "1px solid #ccc",
                     borderRadius: "5px",

@@ -197,6 +197,7 @@
 .selector {
   width: 80%; /* Full width for small screens */
   max-width: 200px;
+  height: 40px; /* Set the height */
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
@@ -214,7 +215,39 @@
   order: 0; /* Default order for larger screens */
 }
 
+
+/* Default legend text */
+.fieldset_legend_figure::before {
+  content: "Choose your figure:"; /* Default text for larger screens */
+}
+
+/* Default legend text */
+.fieldset_legend_base::before {
+  content: "Choose your base:"; /* Default text for larger screens */
+}
+
+/* Default legend text */
+.fieldset_legend_font::before {
+  content: "Choose your font:"; /* Default text for larger screens */
+}
+
 @media (max-width: 1000px) {
+
+  /* Default legend text */
+  .fieldset_legend_figure::before {
+    content: "Figure:"; /* Default text for larger screens */
+  }
+  
+  /* Default legend text */
+  .fieldset_legend_base::before {
+    content: "Base:"; /* Default text for larger screens */
+  }
+  
+  /* Default legend text */
+  .fieldset_legend_font::before {
+    content: "Font:"; /* Default text for larger screens */
+  }
+  
 
   .fieldset_info{
     order: -1;
@@ -275,8 +308,12 @@
   }
 }
 
+
+
 /* Media query for small screens */
 @media (max-width: 768px) {
+
+
   /* .card_image_wrapper {
     transform: scale(0.3);
   } */
