@@ -315,13 +315,13 @@ export default function About() {
                   }),
                   control: (provided) => ({
                     ...provided,
-                    width: "200px", // Set the width of the dropdown
+                    width: "100%", // Set the width of the dropdown
                     border: "1px solid #ccc",
                     borderRadius: "5px",
                   }),
                   menu: (provided) => ({
                     ...provided,
-                    width: "200px", // Ensure the dropdown menu matches the control width
+                    width: "100%", // Ensure the dropdown menu matches the control width
                   }),
                 }}
               />
@@ -379,13 +379,13 @@ export default function About() {
                   }),
                   control: (provided) => ({
                     ...provided,
-                    width: "200px", // Set the width of the dropdown
+                    width: "100%", // Set the width of the dropdown
                     border: "1px solid #ccc",
                     borderRadius: "5px",
                   }),
                   menu: (provided) => ({
                     ...provided,
-                    width: "200px", // Ensure the dropdown menu matches the control width
+                    width: "100%", // Ensure the dropdown menu matches the control width
                   }),
                 }}
               />
@@ -443,13 +443,13 @@ export default function About() {
                   }),
                   control: (provided) => ({
                     ...provided,
-                    width: "200px", // Set the width of the dropdown
+                    width: "100%", // Set the width of the dropdown
                     border: "1px solid #ccc",
                     borderRadius: "5px",
                   }),
                   menu: (provided) => ({
                     ...provided,
-                    width: "200px", // Ensure the dropdown menu matches the control width
+                    width: "100%", // Ensure the dropdown menu matches the control width
                   }),
                 }}
               />
