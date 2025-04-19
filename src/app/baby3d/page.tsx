@@ -23,40 +23,49 @@ const baseImages = [
 const figureImages = [
   {
     name: "Hand",
-    path: "/figure_hand.png",
+    front: "/figure_hand.png",
+    back: "/figure_hand_b.png",
   },
   {
     name: "Book",
-    path: "/figure_book.png",
+    front: "/figure_book.png",
+    back: "/figure_book_b.png",
   },
   {
     name: "Chair",
-    path: "/figure_chair.png",
+    front: "/figure_chair.png",
+    back: "/figure_chair_b.png",
   },
   {
     name: "Egg Type1",
-    path: "/figure_egg1.png",
+    front: "/figure_egg1.png",
+    back: "/figure_egg1_b.png",
   },
   {
     name: "Egg Type2",
-    path: "/figure_egg2.png",
+    front: "/figure_egg2.png",
+    back: "/figure_egg2_b.png",
   },
 
   {
     name: "Lotus",
-    path: "/figure_lotus.png",
+    front: "/figure_lotus.png",
+    back: "/figure_lotus_b.png",
   },
   {
     name: "Moon",
-    path: "/figure_moon.png",
+    front: "/figure_moon.png",
+    back: "/figure_moon_b.png",
   },
   {
     name: "Nest",
-    path: "/figure_nest.png",
+    front: "/figure_nest.png",
+    back: "/figure_nest_b.png",
   },
   {
     name: "Shell",
-    path: "/figure_shell.png",
+    front: "/figure_shell.png",
+    back: "/figure_shell_b.png",
   },
 ];
 
@@ -509,7 +518,7 @@ export default function About() {
           // style={{ transform: `scale(${scale})` }}
           >
             <Image
-              src={figureImages[selectedFigureImage].path}
+              src={ front ? figureImages[selectedFigureImage].front : figureImages[selectedFigureImage].back}
               // src="/baby3.png"
               alt="baby"
               className={styles.card_image_figure}
