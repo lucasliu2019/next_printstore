@@ -44,10 +44,13 @@
 .right_container {
   flex: 1; /* Allow the second child to take as much space as possible */
   width: auto; /* Width adjusts based on content */
+  height: auto;
+  min-height: 817px;
   max-width: 480px;
   display: flex;
   gap: 20px; /* Optional: Add spacing between the elements */
   flex-direction: column;
+  padding: 20px 0;
 }
 
 .card_image_base {

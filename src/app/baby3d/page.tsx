@@ -515,7 +515,9 @@ export default function About() {
         <div className={styles.right_container}>
           <div
             className={styles.card_image_wrapper}
-          // style={{ transform: `scale(${scale})` }}
+            style={{
+            height: selectedFigureImage === 0 ? "817px" : "500px", // Set height conditionally
+           }}
           >
             <Image
               src={ front ? figureImages[selectedFigureImage].front : figureImages[selectedFigureImage].back}
@@ -816,7 +818,7 @@ export default function About() {
                         zIndex: 5,
                       }}>
                       <defs>
-                        <path id="msgPath" d="M 107 764 L 463 695" />
+                        <path id="msgPath" d="M 107 764 L 463 699" />
                         <filter
                           id="svgTextShadow"
                           x="-50%"
