@@ -337,7 +337,7 @@ export default function About() {
                 className={styles.product_input}
                 value={msg}
                 onChange={(e) => setMsg(e.target.value)} // Update dob state
-                maxLength={20} // Restrict name to 30 characters
+                maxLength={28} // Restrict name to 30 characters
               />
             </div>
           </fieldset>
