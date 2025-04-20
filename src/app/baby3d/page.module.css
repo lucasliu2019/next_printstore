@@ -320,6 +320,79 @@
 }
 
 
+/* Slider container */
+.slider_toggle {
+  position: relative;
+  width: 100px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+}
+
+/* Hidden checkbox input */
+.slider_input {
+  display: none;
+}
+
+/* Slider label (the toggle switch) */
+.slider_label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Slider circle */
+.slider_label::before {
+  content: "";
+  position: absolute;
+  width: 33px; /* Adjust size of the circle */
+  height: 33px;
+  background-color: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 4px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* When the toggle is checked, move the circle */
+.slider_input:checked + .slider_label::before {
+  transform: translateX(58px); /* Adjust based on the width of the slider */
+}
+
+/* Change background color when checked */
+.slider_input:checked + .slider_label {
+  background-color: #007bff;
+}
+
+/* Text inside the slider */
+.slider_text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-weight: bold;
+  pointer-events: none;
+  display: flex;
+  align-items: center; /* Vertically center the text */
+  padding: 0 10px; /* Add padding for spacing */
+  color: white;
+  transition: justify-content 0.3s ease; /* Smooth transition for alignment */
+}
+
+/* Align text to the left */
+.align_left {
+  justify-content: flex-start; /* Align text to the left */
+}
+
+/* Align text to the right */
+.align_right {
+  justify-content: flex-end; /* Align text to the right */
+}
+
+
 
 /* Media query for small screens */
 @media (max-width: 768px) {

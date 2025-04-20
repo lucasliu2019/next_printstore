@@ -69,6 +69,39 @@ const figureImages = [
   },
 ];
 
+const fontFamily = [
+  {
+    name: "Arial",
+  },
+  {
+    name: "Times New Roman",
+  },
+  {
+    name: "Courier New",
+  },
+  {
+    name: "Georgia",
+  },
+  {
+    name: "Verdana",
+  },
+  {
+    name: "Tahoma",
+  },
+  {
+    name: "Trebuchet MS",
+  },
+  {
+    name: "Comic Sans MS",
+  },
+  {
+    name: "Impact",
+  },
+  {
+    name: "Lucida Console",
+  },
+];
+
 const colors = [
   {
     name: "PLA Glow Variant Glow Green (15500)",
@@ -129,6 +162,7 @@ export default function About() {
   const [baseColor, setBaseColor] = useState(4);
   const [sideColor, setSideColor] = useState(0); // Default color for base_polygon
   const [fontColor, setFontColor] = useState(11);
+  const [font, setFont] = useState(0);
 
   const [selectedBaseImage, setSelectedBaseImage] = useState(0); // Default image
   const [selectedFigureImage, setSelectedFigureImage] = useState(0); // Default image
@@ -163,8 +197,23 @@ export default function About() {
         <legend className={styles.fieldset_legend}>
           Choose your view:
         </legend>
-        <button className={styles.image_selector_btn} onClick={() => setFront(true)}>Front</button>
-        <button className={styles.image_selector_btn} onClick={() => setFront(false)}>Back</button>
+        <div className={styles.slider_toggle}>
+          <input
+            type="checkbox"
+            id="toggle"
+            className={styles.slider_input}
+            checked={front} // Bind to the `front` state
+            onChange={() => setFront((prev) => !prev)} // Toggle the `front` state
+          />
+          <label htmlFor="toggle" className={styles.slider_label}>
+            <span
+              className={`${styles.slider_text} ${front ? styles.align_left : styles.align_right
+                }`}
+            >
+              {front ? "Front" : "Back"} {/* Show only one text */}
+            </span>
+          </label>
+        </div>
       </fieldset>
     );
   }
@@ -297,12 +346,12 @@ export default function About() {
             <legend className={`${styles.fieldset_legend} ${styles.fieldset_legend_font}`}></legend>
             <select
               className={styles.selector}
-              onChange={(e) => setSelectedFigureImage(Number(e.target.value))}
+              onChange={(e) => setFont(Number(e.target.value))}
               value={selectedFigureImage}
             >
-              {figureImages.map((image, index) => (
+              {fontFamily.map((font, index) => (
                 <option key={index} value={index}>
-                  {image.name}
+                  {font.name}
                 </option>
               ))}
             </select>
@@ -524,7 +573,7 @@ export default function About() {
             }}
           >
             <Image
-              src={ front ? figureImages[selectedFigureImage].front : figureImages[selectedFigureImage].back}
+              src={front ? figureImages[selectedFigureImage].front : figureImages[selectedFigureImage].back}
               // src="/baby3.png"
               alt="baby"
               className={styles.card_image_figure}
@@ -587,7 +636,7 @@ export default function About() {
                   <text
                     fill={colors[fontColor].value}
                     fontSize="15"
-                    fontFamily="Arial"
+                    fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                     textAnchor="middle"
                     // transform="scale(1, 0.7)"
                     filter="url(#shadow)"
@@ -603,7 +652,7 @@ export default function About() {
                   <text
                     fill={colors[fontColor].value}
                     fontSize="15"
-                    fontFamily="Arial"
+                    fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                     textAnchor="middle"
                     filter="url(#shadow)"
                     style={{
@@ -619,7 +668,7 @@ export default function About() {
                   <text
                     fill={colors[fontColor].value}
                     fontSize="15"
-                    fontFamily="Arial"
+                    fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                     textAnchor="middle"
                     filter="url(#shadow)"
                     style={{
@@ -679,7 +728,7 @@ export default function About() {
                     <text
                       fill={colors[fontColor].value}
                       fontSize="15"
-                      fontFamily="Arial"
+                      fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                       textAnchor="middle"
                       // transform="scale(1, 0.7)"
                       filter="url(#shadow)"
@@ -695,7 +744,7 @@ export default function About() {
                     <text
                       fill={colors[fontColor].value}
                       fontSize="15"
-                      fontFamily="Arial"
+                      fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                       textAnchor="middle"
                       filter="url(#shadow)"
                       style={{
@@ -711,7 +760,7 @@ export default function About() {
                     <text
                       fill={colors[fontColor].value}
                       fontSize="15"
-                      fontFamily="Arial"
+                      fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                       textAnchor="middle"
                       filter="url(#shadow)"
                       style={{
@@ -772,7 +821,7 @@ export default function About() {
                     <text
                       fill={colors[fontColor].value}
                       fontSize="50"
-                      fontFamily="Arial"
+                      fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                       textAnchor="middle"
                       filter="url(#svgTextShadow)"
                       style={{
@@ -788,7 +837,7 @@ export default function About() {
                     <text
                       fill={colors[fontColor].value}
                       fontSize="25"
-                      fontFamily="Arial"
+                      fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                       textAnchor="middle"
                       filter="url(#svgTextShadow)"
                       style={{
@@ -853,7 +902,7 @@ export default function About() {
                       <text
                         fill={colors[fontColor].value}
                         fontSize="20"
-                        fontFamily="Arial"
+                        fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                         textAnchor="middle"
                         filter="url(#svgTextShadow)"
                         style={{
@@ -1192,7 +1241,7 @@ export default function About() {
                     fill={colors[fontColor].value}
                     fontStyle="italic"
                     fontSize={front ? "30" : "20"}
-                    fontFamily="Arial"
+                    fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                     textAnchor="middle"
                     filter="url(#svgTextShadow)"
                     style={{
@@ -1209,7 +1258,7 @@ export default function About() {
                     fill={colors[fontColor].value}
                     fontStyle="italic"
                     fontSize="20"
-                    fontFamily="Arial"
+                    fontFamily={fontFamily[font]?.name || "Arial"} // Dynamically set the font
                     textAnchor="middle"
                     filter="url(#svgTextShadow)"
                     style={{
