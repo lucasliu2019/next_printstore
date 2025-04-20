@@ -347,7 +347,7 @@ export default function About() {
             <select
               className={styles.selector}
               onChange={(e) => setFont(Number(e.target.value))}
-              value={selectedFigureImage}
+              value={font}
             >
               {fontFamily.map((font, index) => (
                 <option key={index} value={index}>
