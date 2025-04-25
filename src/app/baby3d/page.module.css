@@ -366,7 +366,7 @@
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  -webkit-transform: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
 }
 
 /* Slider circle */
@@ -379,7 +379,7 @@
   border-radius: 50%;
   top: 3px;
   left: 4px;
-  -webkit-transform: transform 0.3s ease;
+  -webkit-transition: transform 0.3s ease;
   transition: transform 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -387,6 +387,7 @@
 /* When the toggle is checked, move the circle */
 .slider_input:checked + .slider_label::before {
   transform: translateX(58px); /* Adjust based on the width of the slider */
+  -webkit-transform: translateX(58px); /* Needed for Safari */
 }
 
 /* Change background color when checked */
