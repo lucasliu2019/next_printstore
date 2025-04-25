@@ -158,14 +158,13 @@
   width: 100%;
   display: flex; /* Use flexbox for horizontal alignment */
   flex-wrap: wrap; /* Allow fieldsets to wrap to the next line if needed */
-  gap: 15px; /* Add spacing between fieldsets */
+  gap: 20px; /* Add spacing between fieldsets */
   margin-top: 20px; /* Add spacing above the container */
+  align-items: center; /* or center, baseline, stretch depending on your goal */
+  justify-content: center; /* or center, space-between, etc. */
 }
 
 .fieldset_color {
-  flex: 1; /* Allow fieldsets to grow and take equal space */
-  min-width: 200px; /* Set a minimum width for smaller screens */
-  max-width: 300px; /* Optional: Limit the maximum width of the fieldset */
   display: flex;
   align-items: center; /* Vertically center the buttons */
   justify-content: center; /* Horizontally center the buttons */
