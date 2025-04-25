@@ -352,12 +352,10 @@ export default function About() {
             </select>
           </fieldset>
 
+{ isSmallScreen && (
+  <>
           <fieldset className={`${styles.fieldset} ${styles.fieldset_fontC}`}>
             <legend className={styles.fieldset_legend}>Font color:</legend>
-            {/* <p className={styles.fieldset_display}>{colors[fontColor].name}</p> */}
-
-            {isSmallScreen ? (/*  */
-              // Render a dropdown selector for small screens
               <Select
                 options={colorOptions}
                 value={colorOptions[fontColor]}
@@ -397,78 +395,11 @@ export default function About() {
                   }),
                 }}
               />
-            ) : (
-              // Render buttons for larger screens
-              <Select
-                options={colorOptions}
-                value={colorOptions[fontColor]} // Display the selected color
-                onChange={(selectedOption) => {
-                  if (selectedOption) {
-                    setFontColor(selectedOption.value); // Update the selected color
-                  }
-                }}
-                menuPlacement="top" // Open the dropdown menu upward
-                isSearchable={false} // Disable typing in the dropdown
-                styles={{
-                  control: (provided) => ({
-                    ...provided,
-                    height: "80px", // Set the height of the dropdown
-                    width: "100%", // Set the width of the dropdown
-                    borderRadius: "10px", // Add rounded corners
-                    display: "flex",
-                    alignItems: "center", // Center align the content
-                    backgroundColor: colorOptions[fontColor].color, // Set the background color to the selected color
-                    color: "white", // Set the text color
-                    fontWeight: "bold", // Make the text bold
-                  }),
-                  singleValue: (provided) => ({
-                    ...provided,
-                    color: "white", // Set the text color for the selected value
-                  }),
-                  option: (provided, state) => ({
-                    ...provided,
-                    backgroundColor: state.data.color, // Set the background color for each option
-                    color: "black", // Set the text color
-                    whiteSpace: "nowrap", // Prevent text wrapping
-                    overflow: "hidden", // Hide overflowing content
-                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
-                  }),
-                  menu: (provided) => ({
-                    ...provided,
-                    zIndex: 9999, // Ensure the dropdown menu is on top
-                    width: "100%", // Ensure the dropdown menu matches the control width
-                  }),
-                }}
-              />
-
-              // <>
-              //   <div className={styles.color_selection}>
-              //     {colors.map((color, index) => (
-              //       <button
-              //         key={index}
-              //         type="button"
-              //         className={styles.color_button}
-              //         style={{
-              //           backgroundColor: color.value,
-              //           border: fontColor === index ? "2px solid white" : "none",
-              //         }}
-              //         onClick={() => {
-              //           setFontColor(index);
-              //         }} // Update base_polygon color
-              //         title={color.name} // Tooltip with the color name
-              //       ></button>
-              //     ))}
-              //   </div>
-              // </>
-            )}
           </fieldset>
 
           <fieldset className={`${styles.fieldset} ${styles.fieldset_baseC}`}>
             <legend className={styles.fieldset_legend}>Base Color:</legend>
             {/* <p className={styles.fieldset_display}>{colors[baseColor].name}</p> */}
-
-            {isSmallScreen ? (
-              // Render a dropdown selector for small screens
               <Select
                 options={colorOptions}
                 value={colorOptions[baseColor]}
@@ -508,75 +439,11 @@ export default function About() {
                   }),
                 }}
               />
-            ) : (
-              // Render buttons for larger screens
-              <Select
-                options={colorOptions}
-                value={colorOptions[baseColor]} // Display the selected color
-                onChange={(selectedOption) => {
-                  if (selectedOption) {
-                    setBaseColor(selectedOption.value); // Update the selected color
-                  }
-                }}
-                menuPlacement="top" // Open the dropdown menu upward
-                isSearchable={false} // Disable typing in the dropdown
-                styles={{
-                  control: (provided) => ({
-                    ...provided,
-                    height: "80px", // Set the height of the dropdown
-                    width: "100%", // Set the width of the dropdown
-                    borderRadius: "10px", // Add rounded corners
-                    display: "flex",
-                    alignItems: "center", // Center align the content
-                    backgroundColor: colorOptions[baseColor].color, // Set the background color to the selected color
-                    color: "white", // Set the text color
-                    fontWeight: "bold", // Make the text bold
-                  }),
-                  singleValue: (provided) => ({
-                    ...provided,
-                    color: "white", // Set the text color for the selected value
-                  }),
-                  option: (provided, state) => ({
-                    ...provided,
-                    backgroundColor: state.data.color, // Set the background color for each option
-                    color: "black", // Set the text color
-                    whiteSpace: "nowrap", // Prevent text wrapping
-                    overflow: "hidden", // Hide overflowing content
-                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
-                  }),
-                  menu: (provided) => ({
-                    ...provided,
-                    zIndex: 9999, // Ensure the dropdown menu is on top
-                    width: "100%", // Ensure the dropdown menu matches the control width
-                  }),
-                }}
-                />
-              // <div className={styles.color_selection}>
-              //   {colors.map((color, index) => (
-              //     <button
-              //       key={index}
-              //       type="button"
-              //       className={styles.color_button}
-              //       style={{
-              //         backgroundColor: color.value,
-              //         border: baseColor === index ? "2px solid white" : "none",
-              //       }}
-              //       onClick={() => {
-              //         setBaseColor(index);
-              //       }} // Update base_polygon color
-              //       title={color.name} // Tooltip with the color name
-              //     ></button>
-              //   ))}
-              // </div>
-            )}
           </fieldset>
 
           <fieldset className={`${styles.fieldset} ${styles.fieldset_sideC}`}>
             <legend className={styles.fieldset_legend}>Base side color:</legend>
             {/* <p className={styles.fieldset_display}>{colors[sideColor].name}</p> */}
-
-            {isSmallScreen ? (
-              // Render a dropdown selector for small screens
               <Select
                 options={colorOptions}
                 value={colorOptions[sideColor]}
@@ -616,14 +483,19 @@ export default function About() {
                   }),
                 }}
               />
-            ) : (
+          </fieldset>
+            </>
+)}
 
+          {!isSmallScreen && (<div className={styles.color_fieldsets}>
+            <fieldset className={styles.fieldset_color}>
+              <legend className={styles.fieldset_legend}>Font Color:</legend>
               <Select
                 options={colorOptions}
-                value={colorOptions[sideColor]} // Display the selected color
+                value={colorOptions[fontColor]} // Display the selected color
                 onChange={(selectedOption) => {
                   if (selectedOption) {
-                    setSideColor(selectedOption.value); // Update the selected color
+                    setFontColor(selectedOption.value); // Update the selected color
                   }
                 }}
                 menuPlacement="top" // Open the dropdown menu upward
@@ -632,17 +504,19 @@ export default function About() {
                   control: (provided) => ({
                     ...provided,
                     height: "80px", // Set the height of the dropdown
-                    width: "100%", // Set the width of the dropdown
+                    width: "200px", // Set the width of the dropdown
                     borderRadius: "10px", // Add rounded corners
                     display: "flex",
                     alignItems: "center", // Center align the content
-                    backgroundColor: colorOptions[sideColor].color, // Set the background color to the selected color
+                    backgroundColor: colorOptions[fontColor].color, // Set the background color to the selected color
                     color: "white", // Set the text color
                     fontWeight: "bold", // Make the text bold
                   }),
                   singleValue: (provided) => ({
                     ...provided,
                     color: "white", // Set the text color for the selected value
+                    whiteSpace: "normal", // Allow text wrapping
+                    wordWrap: "break-word", // Break long words if necessary
                   }),
                   option: (provided, state) => ({
                     ...provided,
@@ -658,30 +532,109 @@ export default function About() {
                     width: "100%", // Ensure the dropdown menu matches the control width
                   }),
                 }}
-                />
+              />
+            </fieldset>
 
-              // <div className={styles.color_selection}>
-              //   {colors.map((color, index) => (
-              //     <button
-              //       key={index}
-              //       type="button"
-              //       className={styles.color_button}
-              //       style={{
-              //         backgroundColor: color.value,
-              //         border: sideColor === index ? "2px solid white" : "none",
-              //       }}
-              //       onClick={() => {
-              //         setSideColor(index);
-              //       }} // Update base_polygon color
-              //       title={color.name} // Tooltip with the color name
-              //     ></button>
-              //   ))}
-              // </div>
-            )}
-          </fieldset>
+            <fieldset className={styles.fieldset_color}>
+              <legend className={styles.fieldset_legend}>Base Color:</legend>
+              <Select
+                options={colorOptions}
+                value={colorOptions[baseColor]} // Display the selected color
+                onChange={(selectedOption) => {
+                  if (selectedOption) {
+                    setBaseColor(selectedOption.value); // Update the selected color
+                  }
+                }}
+                menuPlacement="top" // Open the dropdown menu upward
+                isSearchable={false} // Disable typing in the dropdown
+                styles={{
+                  control: (provided) => ({
+                    ...provided,
+                    height: "80px", // Set the height of the dropdown
+                    width: "200px", // Set the width of the dropdown
+                    borderRadius: "10px", // Add rounded corners
+                    display: "flex",
+                    alignItems: "center", // Center align the content
+                    backgroundColor: colorOptions[baseColor].color, // Set the background color to the selected color
+                    color: "white", // Set the text color
+                    fontWeight: "bold", // Make the text bold
+                  }),
+                  singleValue: (provided) => ({
+                    ...provided,
+                    color: "white", // Set the text color for the selected value
+                    whiteSpace: "normal", // Allow text wrapping
+                    wordWrap: "break-word", // Break long words if necessary
+                  }),
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color, // Set the background color for each option
+                    color: "black", // Set the text color
+                    whiteSpace: "nowrap", // Prevent text wrapping
+                    overflow: "hidden", // Hide overflowing content
+                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    zIndex: 9999, // Ensure the dropdown menu is on top
+                    width: "100%", // Ensure the dropdown menu matches the control width
+                  }),
+                }}
+              />
+            </fieldset>
+
+            <fieldset className={styles.fieldset_color}>
+              <legend className={styles.fieldset_legend}>Side Color:</legend>
+              <Select
+                options={colorOptions}
+                value={colorOptions[sideColor]} // Display the selected color
+                onChange={(selectedOption) => {
+                  if (selectedOption) {
+                    setSideColor(selectedOption.value); // Update the selected color
+                  }
+                }}
+                menuPlacement="top" // Open the dropdown menu upward
+                isSearchable={false} // Disable typing in the dropdown
+                styles={{
+                  control: (provided) => ({
+                    ...provided,
+                    height: "80px", // Set the height of the dropdown
+                    width: "200px", // Set the width of the dropdown
+                    borderRadius: "10px", // Add rounded corners
+                    display: "flex",
+                    alignItems: "center", // Center align the content
+                    backgroundColor: colorOptions[sideColor].color, // Set the background color to the selected color
+                    color: "white", // Set the text color
+                    fontWeight: "bold", // Make the text bold
+                  }),
+                  singleValue: (provided) => ({
+                    ...provided,
+                    color: "white", // Set the text color for the selected value
+                    whiteSpace: "normal", // Allow text wrapping
+                    wordWrap: "break-word", // Break long words if necessary
+                  }),
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color, // Set the background color for each option
+                    color: "black", // Set the text color
+                    whiteSpace: "nowrap", // Prevent text wrapping
+                    overflow: "hidden", // Hide overflowing content
+                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    zIndex: 9999, // Ensure the dropdown menu is on top
+                    width: "100%", // Ensure the dropdown menu matches the control width
+                  }),
+                }}
+              />
+            </fieldset>
+          </div>
+          )}
 
           {isExSmallScreen && renderViewFieldset()}
         </div>
+
+
 
         {/**************************  Right Card ******************************/}
         <div className={styles.right_container}>

@@ -154,6 +154,24 @@
   outline: 2px solid black; /* Add focus outline for accessibility */
 }
 
+.color_fieldsets {
+  width: 100%;
+  display: flex; /* Use flexbox for horizontal alignment */
+  gap: 15px; /* Add spacing between fieldsets */
+  margin-top: 20px; /* Add spacing above the container */
+}
+
+.fieldset_color {
+  flex: 1; /* Allow fieldsets to grow and take equal space */
+  min-width: 200px; /* Set a minimum width for smaller screens */
+  max-width: 300px; /* Optional: Limit the maximum width of the fieldset */
+  display: flex;
+  align-items: center; /* Vertically center the buttons */
+  justify-content: center; /* Horizontally center the buttons */
+  gap: 5px; /* Add spacing between buttons */
+  border: none;
+}
+
 .fieldset {
   width: 100%; /* Ensure the container takes up full width */
   max-width: 850px;
