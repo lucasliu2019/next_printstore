@@ -203,6 +203,7 @@
 .fieldset_legend {
   text-align: center; /* Center the text inside the legend */
   font-size: 1rem; /* Optional: Adjust font size */
+  margin-bottom: 5px;;
 }
 
 
