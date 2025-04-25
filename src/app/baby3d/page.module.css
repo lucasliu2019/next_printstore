@@ -17,6 +17,13 @@
   justify-self: center;
 }
 
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+}
+
 .card_container {
   display: flex; /* Use Flexbox for side-by-side layout */
   justify-content: space-between; /* Add space between the two elements */

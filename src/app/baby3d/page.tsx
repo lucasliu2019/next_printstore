@@ -220,15 +220,10 @@ export default function About() {
 
   return (
     <div className={styles.page}>
-      <div>
+      <div className={styles.heading}>
         <h2>3D Print Baby</h2>
         <div className={styles.slide}></div>
         <p>Unique service creating 3D sculptures of your baby</p>
-        <ul>
-          <li>Personal inscriptions </li>
-          <li>Bespoke stands </li>
-          <li>Exclusive packaging options available</li>
-        </ul>
       </div>
 
       <div className={styles.card_container}>
@@ -404,23 +399,71 @@ export default function About() {
               />
             ) : (
               // Render buttons for larger screens
-              <div className={styles.color_selection}>
-                {colors.map((color, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    className={styles.color_button}
-                    style={{
-                      backgroundColor: color.value,
-                      border: fontColor === index ? "2px solid white" : "none",
-                    }}
-                    onClick={() => {
-                      setFontColor(index);
-                    }} // Update base_polygon color
-                    title={color.name} // Tooltip with the color name
-                  ></button>
-                ))}
-              </div>
+              <Select
+                options={colorOptions}
+                value={colorOptions[fontColor]}
+                onChange={(selectedOption) => {
+                  if (selectedOption) {
+                    setFontColor(selectedOption.value);
+                  }
+                }}
+                menuPlacement="top" // Open the dropdown menu upward
+                isSearchable={false} // Disable typing in the dropdown
+                styles={{
+                  option: (provided, state) => ({
+                    ...provided,
+                    backgroundColor: state.data.color,
+                    color: "black",
+                    whiteSpace: "nowrap", // Prevent text wrapping
+                    overflow: "hidden", // Hide overflowing content
+                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                  }),
+                  singleValue: (provided, state) => ({
+                    ...provided,
+                    display: "flex", // Use flexbox for alignment
+                    alignItems: "center", // Center align the content
+                    backgroundColor: state.data.color, // Set the background color
+                    color: "rgb(240, 240, 240)", // Set the text color
+                    borderRadius: "5px", // Add rounded corners
+                    height: "80px", /* Set the height */
+                    padding: "0px", // Remove padding for better alignment
+                    margin: "0px", // Remove margin for better alignment
+                  }),
+                  control: (provided) => ({
+                    ...provided,
+                    height: "80px", /* Set the height */
+                    width: "100%", // Set the width of the dropdown
+                    borderRadius: "5px",
+                    padding: "0px", // Remove padding for better alignment
+                    margin: "0px", // Remove margin for better alignment
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    zIndex: 9999, // Ensure the dropdown menu is on top
+                    width: "100%", // Ensure the dropdown menu matches the control width
+                  }),
+                }}
+              />
+
+              // <>
+              //   <div className={styles.color_selection}>
+              //     {colors.map((color, index) => (
+              //       <button
+              //         key={index}
+              //         type="button"
+              //         className={styles.color_button}
+              //         style={{
+              //           backgroundColor: color.value,
+              //           border: fontColor === index ? "2px solid white" : "none",
+              //         }}
+              //         onClick={() => {
+              //           setFontColor(index);
+              //         }} // Update base_polygon color
+              //         title={color.name} // Tooltip with the color name
+              //       ></button>
+              //     ))}
+              //   </div>
+              // </>
             )}
           </fieldset>
 
