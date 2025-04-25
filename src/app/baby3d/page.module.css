@@ -157,6 +157,7 @@
 .color_fieldsets {
   width: 100%;
   display: flex; /* Use flexbox for horizontal alignment */
+  flex-wrap: wrap; /* Allow fieldsets to wrap to the next line if needed */
   gap: 15px; /* Add spacing between fieldsets */
   margin-top: 20px; /* Add spacing above the container */
 }
