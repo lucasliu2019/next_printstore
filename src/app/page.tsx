@@ -1,13 +1,8 @@
-// "use client";
+"use client";
 
 import styles from "./page.module.css";
-// import Slideshow from "./components/slideshow/slideshow";
 import Card from "./components/fullCard/fullCard";
-// import { BiFontColor } from "react-icons/bi";
-// import Heading from "./components/heading/heading";
-// import Slideshow from "@/components/slideshow/slideshow";
-
-// import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const cardData = [
   {
@@ -132,14 +127,14 @@ const cardData = [
 
 export default function Home() {
 
-    // const [isSmall, setIsSmall] = useState(false);
-  
-    // useEffect(() => {
-    //   const checkScreen = () => setIsSmall(window.innerWidth < 700);
-    //   checkScreen();
-    //   window.addEventListener("resize", checkScreen);
-    //   return () => window.removeEventListener("resize", checkScreen);
-    // }, []);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => setIsSmallScreen(window.innerWidth < 700);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
   
 
   return (
@@ -153,7 +148,7 @@ export default function Home() {
           {cardData.map((card, index) => (
             <Card
               key={index} // Use index as a unique key
-              title={card.title}
+              title={isSmallScreen ? card.smallTitle || card.title : card.title} // <-- Choose title
               subtitle={card.subtitle}
               subsubtitle={card.subsubtitle}
               src={card.src}
