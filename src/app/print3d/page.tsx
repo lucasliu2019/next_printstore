@@ -8,7 +8,7 @@ export default function Page() {
       <section className={styles.hero}>
         <h1 className={styles.heading}>3D Printing & Scanning</h1>
         <p className={styles.subheading}>
-          All you need to do is go through a quick scanning procedure — we'll take care of the rest
+          All you need to do is go through a quick scanning procedure — we&apos;ll take care of the rest
         </p>
       </section>
 
