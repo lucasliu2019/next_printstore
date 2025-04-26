@@ -62,7 +62,7 @@ export default function Page() {
 
         <div className={styles.car_container}>
           <div className={styles.car_wrapper}>
-            <Image src="/print_car_baby.png" alt="Car 2" fill className={styles.image} />
+            <Image src="/print_car_baby.png" alt="Car 2" fill className={styles.imgCar} />
           </div>
         </div>
       </section>
