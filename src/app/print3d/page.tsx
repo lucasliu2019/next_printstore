@@ -90,8 +90,9 @@ export default function Page() {
             <p className={styles.smallText}>Scan and print your car</p>
             <p className={styles.smallText}>Possibility to modify the model to suit your needs</p>
           </div>
-          <div className={styles.carImage_warpper}>
+          <div className={styles.carImage_wrapper}>
             <Image src="/print_car.png" alt="Car 1" fill className={styles.image} />
+            <div className={styles.scanLine}></div>
           </div>
         </div>
 
