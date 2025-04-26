@@ -1,7 +1,35 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+
+
 import Image from "next/image";
 import styles from "./page.module.css";
 
 export default function Page() {
+
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [transformStyle, setTransformStyle] = useState("scale(1) translateY(0px)");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!imageRef.current) return;
+
+      const rect = imageRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      const visibleRatio = 1 - Math.min(Math.max(rect.top / windowHeight, 0), 1);
+
+      const scale = 0.6+ visibleRatio*0.6; // max scale 1.1
+      const translateX = -visibleRatio * 500+ 400; // max translateY -20px
+
+      setTransformStyle(`scale(${scale}) translateX(${translateX}px)`);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
   return (
     <main className={styles.main}>
       {/* Title */}
@@ -67,7 +95,9 @@ export default function Page() {
         </div>
 
         <div className={styles.car_container}>
-          <div className={styles.car_wrapper}>
+          <div className={styles.car_wrapper} ref={imageRef}
+           style={{ transform: transformStyle, transition: "transform 0.2s ease-out", willChange: "transform" }}
+          >
             <Image src="/print_car_baby.png" alt="Car 2" fill className={styles.imgCar} />
           </div>
         </div>
