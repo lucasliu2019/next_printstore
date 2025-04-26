@@ -4,179 +4,214 @@
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #1f2937, #111827, #000);
+    background: linear-gradient(180deg,rgba(56, 0, 134, 0.5) 0%, rgb(6, 1, 14) 10%, rgba(9, 10, 14, 1) 72%, rgba(7, 10, 9, 1) 100%);
     color: white;
     padding: 2rem 0;
-  }
-  
-  .hero {
+}
+
+.hero {
     text-align: center;
     margin-bottom: 4rem;
-  }
-  
-  .heading {
+}
+
+.heading {
     font-size: 3rem;
     font-weight: bold;
     margin-bottom: 1rem;
-  }
-  
-  .subheading {
+}
+
+.subheading {
     font-size: 1.125rem;
     color: #d1d5db;
-  }
-  
-  .section {
+}
+
+.section {
     width: 100%;
     max-width: 1200px;
     margin-bottom: 3rem;
-  }
+}
 
-  .section_wrapper{
+.section_wrapper {
     width: 100%;
     margin-bottom: 3rem;
-  }
-  
-  .sectionTitle {
+}
+
+.sectionTitle {
     font-size: 3rem;
     font-weight: 600;
     text-align: center;
     margin-bottom: 2.5rem;
-  }
+}
 
 
-.pricing_container{
-    display:flex;
+.pricing_container {
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 4rem;
 }
 
-  .pricing_car{
+.pricing_car {
     display: flex;
     flex-direction: column;
     align-items: right;
     justify-content: center;
     text-align: right;
     gap: 1rem;
-  }
+}
 
-  .carImage_warpper{
+.carImage_warpper {
     position: relative;
     width: 100%;
     max-width: 400px;
-    aspect-ratio: 4 / 3; /* Maintain 4:5 aspect ratio (e.g., 400x500) */
-  }
+    aspect-ratio: 4 / 3;
+    /* Maintain 4:5 aspect ratio (e.g., 400x500) */
+}
 
 
-  .grid_wrapper {
-    background: linear-gradient(0deg,rgba(255, 255, 255, 0) 0%, rgba(156, 156, 156, 0.7) 20%, rgba(87, 87, 87, 0.70) 80%, rgba(255, 255, 255, 0) 100%);
+.grid_wrapper {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(156, 156, 156, 0.7) 20%, rgba(87, 87, 87, 0.70) 80%, rgba(255, 255, 255, 0) 100%);
     width: 100%;
-  }
-  
-  .grid {
+}
+
+.grid {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-  }
-  
-  @media (min-width: 768px) {
-    .grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
+}
 
-  .imgCar{
-    object-fit: contain; /* or 'cover' depending on your need */
-    filter: drop-shadow(0 10px 20px rgba(210, 0, 252, 0.3));
-    /* background: radial-gradient(circle,rgba(149, 119, 230, 1) 0%, rgba(97, 51, 222, 0) 48%, rgba(97, 51, 222, 0) 100%); */
-  }
-  
-.car_container{
+.car_container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     height: 600px;
     display: flex;
-    justify-content: flex-end; /* aligns content to the right */
-    position: relative;
-}  
-
-.car_wrapper{
-    position: relative;
-    max-width: 500px;
-    aspect-ratio: 4 / 5; /* Maintain 4:5 aspect ratio (e.g., 400x500) */
-    margin-right: 30%; /* Add some space between the image and the text */
-}  
-
-
-.image{
-    object-fit: contain; /* or 'cover' depending on your need */
+    justify-content: flex-end;
+    /* aligns content to the right */
 }
 
-  .step {
+.car_wrapper {
+    position: relative;
+    max-width: 500px;
+    aspect-ratio: 4 / 5;
+    /* Maintain 4:5 aspect ratio (e.g., 400x500) */
+    margin-right: 30%;
+    /* Add some space between the image and the text */
+}
+
+
+@media (min-width: 500px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .car_container {
+        display: block;
+        justify-content: center;
+        /* aligns content to the center */
+        margin: auto;
+        width: 100%;
+    }
+
+    .car_wrapper {
+        width: 100%;
+        display: block;
+        margin: auto;
+
+    }
+}
+
+.imgCar {
+    object-fit: contain;
+    /* or 'cover' depending on your need */
+    filter: drop-shadow(0 10px 20px rgba(210, 0, 252, 0.3));
+    /* background: radial-gradient(circle,rgba(149, 119, 230, 1) 0%, rgba(97, 51, 222, 0) 48%, rgba(97, 51, 222, 0) 100%); */
+}
+
+
+
+.image {
+    object-fit: contain;
+    /* or 'cover' depending on your need */
+}
+
+.step {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .imageDisplay {
+}
+
+.stepImage{
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 3 / 5.5;
+    /* Maintain 1:1 aspect ratio (e.g., 300x300) */
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.imageDisplay {
     border-radius: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-  }
+    transition: all 0.3s ease;
+}
 
-  .imageDisplay:hover {
-    transform: scale(1.05);
-  }
-  
-  .grayscale {
+.imageDisplay:hover {
+    transform: scale(1.05) translateY(-3px);
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.6));
+}
+
+.grayscale {
     filter: grayscale(100%);
     transition: filter 0.3s;
-  }
-  
-  .grayscale:hover {
+}
+
+.grayscale:hover {
     filter: grayscale(0%);
-  }
-  
-  .stepLabel {
+}
+
+.stepLabel {
     margin-top: 1rem;
     font-size: 1.125rem;
     font-weight: 500;
-  }
-  
-  .pricing {
+}
+
+.pricing {
     margin-top: 2.5rem;
     text-align: center;
     color: #d1d5db;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;   
+    justify-content: space-evenly;
     gap: 2.5rem;
-  }
+}
 
-  .right_text {
+.right_text {
     text-align: left;
     justify-content: left;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-  }
-  
-  .pricingTitle {
+}
+
+.pricingTitle {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
-  }
-  
-  .price {
+}
+
+.price {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-  }
-  
-  .priceDetails,
-  .smallText {
+}
+
+.priceDetails,
+.smallText {
     font-size: 0.875rem;
-  }
-  
+}

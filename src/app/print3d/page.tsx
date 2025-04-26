@@ -18,15 +18,21 @@ export default function Page() {
         <div className={styles.grid_wrapper}>
           <div className={styles.grid}>
             <div className={styles.step}>
-              <Image src="/print_scanning.png" alt="Scanning" width={300} height={500} className={styles.imageDisplay} />
+              <div className={styles.stepImage}>
+                <Image src="/print_scanning.png" alt="Scanning" fill className={styles.imageDisplay} />
+              </div>
               <p className={styles.stepLabel}>Scanning</p>
             </div>
             <div className={styles.step}>
-              <Image src="/print_modeling.png" alt="Modeling" width={300} height={500} className={styles.imageDisplay} />
+              <div className={styles.stepImage}>
+                <Image src="/print_modeling.png" alt="Modeling" fill className={styles.imageDisplay} />
+              </div>
               <p className={styles.stepLabel}>Modeling</p>
             </div>
             <div className={styles.step}>
-              <Image src="/printing.jpg" alt="Print Result" width={300} height={500} className={styles.imageDisplay} />
+              <div className={styles.stepImage}>
+                <Image src="/printing.jpg" alt="Print Result" fill className={styles.imageDisplay} />
+              </div>
               <p className={styles.stepLabel}>Print Result</p>
             </div>
           </div>
