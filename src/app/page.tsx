@@ -1,8 +1,5 @@
-"use client";
-
 import styles from "./page.module.css";
 import Card from "./components/fullCard/fullCard";
-import { useState, useEffect } from "react";
 
 const cardData = [
   {
@@ -126,16 +123,6 @@ const cardData = [
 ];
 
 export default function Home() {
-
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const checkScreen = () => setIsSmallScreen(window.innerWidth < 700);
-    checkScreen();
-    window.addEventListener("resize", checkScreen);
-    return () => window.removeEventListener("resize", checkScreen);
-  }, []);
-  
 
   return (
     <div className={styles.page}>
