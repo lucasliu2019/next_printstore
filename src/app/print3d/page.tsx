@@ -17,23 +17,25 @@ export default function Page() {
         <h2 className={styles.sectionTitle}>Creation steps</h2>
         <div className={styles.grid}>
           <div className={styles.step}>
-            <Image src="/print_scanning.png" alt="Scanning" width={300} height={400} className={styles.image} />
+            <Image src="/print_scanning.png" alt="Scanning" width={300} height={400} className={styles.imageDisplay} />
             <p className={styles.stepLabel}>Scanning</p>
           </div>
           <div className={styles.step}>
-            <Image src="/print_modeling.png" alt="Modeling" width={300} height={400} className={`${styles.image} ${styles.grayscale}`} />
+            <Image src="/print_modeling.png" alt="Modeling" width={300} height={400} className={styles.imageDisplay} />
             <p className={styles.stepLabel}>Modeling</p>
           </div>
           <div className={styles.step}>
-            <Image src="/printing.jpg" alt="Print Result" width={300} height={400} className={`${styles.image} ${styles.grayscale}`} />
+            <Image src="/printing.jpg" alt="Print Result" width={300} height={400} className={styles.imageDisplay} />
             <p className={styles.stepLabel}>Print Result</p>
           </div>
         </div>
 
         <div className={styles.pricing}>
-          <h3 className={styles.pricingTitle}>Flexible pricing</h3>
-          <p className={styles.price}>150-300$</p>
-          <div className={styles.priceDetails}>
+          <div className={styles.left_text}>
+            <h3 className={styles.pricingTitle}>Flexible pricing</h3>
+            <p className={styles.price}>150-300$</p>
+          </div>
+          <div className={`${styles.right_text} ${styles.priceDetails}`}>
             <p>- We will scan and print you or your loved ones</p>
             <p>- Prices starting from 150$ for a 10 cm model</p>
             <p>- 200$ for a 15 cm model</p>
@@ -44,18 +46,26 @@ export default function Page() {
 
       {/* Scan Your Car Section */}
       <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>Scan your car</h2>
 
-        <div className={styles.carImages}>
-          <Image src="/print_car.png" alt="Car 1" width={400} height={300} className={styles.image} />
-          <Image src="/print_car_baby.png" alt="Car 2" width={400} height={300} className={styles.image} />
-        </div>
+      <h2 className={styles.sectionTitle}>Scan your car</h2>
 
-        <div className={styles.pricing}>
+      <div className={styles.pricing_container}>
+        <div className={styles.pricing_car}>
           <h3 className={styles.pricingTitle}>400-500$</h3>
           <p className={styles.smallText}>Scan and print your car</p>
           <p className={styles.smallText}>Possibility to modify the model to suit your needs</p>
         </div>
+        <div className={styles.carImage_warp}>
+          <Image src="/print_car.png" alt="Car 1" width={400} height={300} className={styles.image} />
+        </div>
+      </div>
+
+
+        <div className={styles.carImages}>
+          <Image src="/print_car_baby.png" alt="Car 2" width={400} height={300} className={styles.image} />
+        </div>
+
+
       </section>
     </main>
   );

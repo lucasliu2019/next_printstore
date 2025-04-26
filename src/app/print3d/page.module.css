@@ -32,11 +32,29 @@
   }
   
   .sectionTitle {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 600;
     text-align: center;
     margin-bottom: 2.5rem;
   }
+
+
+.pricing_container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+  .pricing_car{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: center;
+    text-align: right;
+    gap: 1rem;
+  }
+
+
   
   .grid {
     display: grid;
@@ -60,7 +78,7 @@
     align-items: center;
   }
   
-  .image {
+  .imageDisplay {
     border-radius: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   }
@@ -84,16 +102,28 @@
     margin-top: 2.5rem;
     text-align: center;
     color: #d1d5db;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;   
+    gap: 2.5rem;
+  }
+
+  .right_text {
+    text-align: left;
+    justify-content: left;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
   .pricingTitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1rem;
   }
   
   .price {
-    font-size: 1.25rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
   }
   
@@ -101,10 +131,14 @@
   .smallText {
     font-size: 0.875rem;
   }
+
+  .image{
+
+  }
   
-  .carImages {
+  .carImage {
     display: flex;
-    flex-direction: column;
+    text-align: right;
     align-items: center;
     gap: 2.5rem;
     margin-bottom: 2.5rem;
