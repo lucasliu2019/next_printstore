@@ -72,7 +72,7 @@ export default function Page() {
             <p className={styles.price}>150-300$</p>
           </div>
           <div className={`${styles.right_text} ${styles.priceDetails}`}>
-            <p>- We will scan and print you or your loved ones</p>
+            <h3> We will scan and print you or your loved ones</h3>
             <p>- Prices starting from 150$ for a 10 cm model</p>
             <p>- 200$ for a 15 cm model</p>
             <p>- 300$ for a 20 cm model</p>
