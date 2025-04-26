@@ -1,5 +1,112 @@
-.page{
+.main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #1f2937, #111827, #000);
+    color: white;
+    padding: 2rem;
+  }
+  
+  .hero {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .heading {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .subheading {
+    font-size: 1.125rem;
+    color: #d1d5db;
+  }
+  
+  .section {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  
+    .carImages {
+      flex-direction: row;
+    }
+  }
+  
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .image {
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+  }
+  
+  .grayscale:hover {
+    filter: grayscale(0%);
+  }
+  
+  .stepLabel {
+    margin-top: 1rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+  }
+  
+  .pricing {
+    margin-top: 2.5rem;
+    text-align: center;
+    color: #d1d5db;
+  }
+  
+  .pricingTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .priceDetails,
+  .smallText {
+    font-size: 0.875rem;
+  }
+  
+  .carImages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
