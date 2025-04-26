@@ -148,7 +148,7 @@ export default function Home() {
           {cardData.map((card, index) => (
             <Card
               key={index} // Use index as a unique key
-              title={isSmallScreen ? card.smallTitle || card.title : card.title} // <-- Choose title
+              title= {card.title} // <-- Choose title
               subtitle={card.subtitle}
               subsubtitle={card.subsubtitle}
               src={card.src}
