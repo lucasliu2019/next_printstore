@@ -154,6 +154,7 @@
   .title {
     width: 100%; /* Make the text take up the full width */
     font-size: 2rem; /* Reduce font size for smaller screens */
+    text-align: left;
   }
 
   .subtitle {
