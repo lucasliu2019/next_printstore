@@ -6,7 +6,7 @@
     min-height: 100vh;
     background: linear-gradient(to bottom, #1f2937, #111827, #000);
     color: white;
-    padding: 2rem;
+    padding: 2rem 0;
   }
   
   .hero {
@@ -28,7 +28,12 @@
   .section {
     width: 100%;
     max-width: 1200px;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .section_wrapper{
+    width: 100%;
+    margin-bottom: 3rem;
   }
   
   .sectionTitle {
@@ -43,6 +48,7 @@
     display:flex;
     align-items: center;
     justify-content: center;
+    gap: 4rem;
 }
 
   .pricing_car{
@@ -54,9 +60,22 @@
     gap: 1rem;
   }
 
+  .carImage_warpper{
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 4 / 3; /* Maintain 4:5 aspect ratio (e.g., 400x500) */
+  }
 
+
+  .grid_wrapper {
+    background: linear-gradient(0deg,rgba(255, 255, 255, 0) 0%, rgba(156, 156, 156, 0.7) 20%, rgba(87, 87, 87, 0.70) 80%, rgba(255, 255, 255, 0) 100%);
+    width: 100%;
+  }
   
   .grid {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -66,12 +85,30 @@
     .grid {
       grid-template-columns: repeat(3, 1fr);
     }
-  
-    .carImages {
-      flex-direction: row;
-    }
   }
   
+.car_container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 600px;
+    display: flex;
+    justify-content: flex-end; /* aligns content to the right */
+    position: relative;
+}  
+
+.car_wrapper{
+    position: relative;
+    max-width: 500px;
+    aspect-ratio: 4 / 5; /* Maintain 4:5 aspect ratio (e.g., 400x500) */
+    margin-right: 30%; /* Add some space between the image and the text */
+}  
+
+
+.image{
+    object-fit: contain; /* or 'cover' depending on your need */
+}
+
   .step {
     display: flex;
     flex-direction: column;
@@ -81,6 +118,11 @@
   .imageDisplay {
     border-radius: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+
+  .imageDisplay:hover {
+    transform: scale(1.05);
   }
   
   .grayscale {
@@ -130,17 +172,5 @@
   .priceDetails,
   .smallText {
     font-size: 0.875rem;
-  }
-
-  .image{
-
-  }
-  
-  .carImage {
-    display: flex;
-    text-align: right;
-    align-items: center;
-    gap: 2.5rem;
-    margin-bottom: 2.5rem;
   }
   
