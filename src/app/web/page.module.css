@@ -1,5 +1,69 @@
-.page{
+.main {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    background:
+        url('/main_web.png'),
+        linear-gradient(to top right, #1751af, #71a6f9);
+    /* Correct background image syntax */
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, center;
+    background-size: 300px auto, cover; /* first layer (gradient) is 'cover', image is 300px wide */
+    min-height: 100vh;
+    padding: 2rem;
+    color: white;
+    font-family: "Georgia", serif;
+}
+
+.container {
+    max-width: 800px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    color: #fffacd;
+}
+
+.section {
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.list {
+    padding-left: 1.2rem;
+    line-height: 1.6;
+}
+
+.pricing {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pricingTitle {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
 }
