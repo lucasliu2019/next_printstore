@@ -9,6 +9,31 @@
     font-family: "Georgia", serif;
 }
 
+.imageWrapper{
+    position: relative;
+    width: 100%;
+    aspect-ratio: 5/7;
+    max-height: 300px;
+}
+
+.image{
+    object-fit: contain;
+}
+
+.textPricing{
+    color: black;
+}
+
+.left,
+.right {
+  flex: 1;
+  min-width: 100px; /* Prevents collapsing on narrow screens */
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
 .container {
     max-width: 800px;
     text-align: left;
@@ -55,7 +80,7 @@
 }
 
 .text {
-    color: #030303;
+    color: #ffffff;
     font-size: 1rem;
     line-height: 1.5;
 }
@@ -80,4 +105,42 @@
 
 .highlight {
     color: #000000;
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .container {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .reverse {
+        flex-direction: column;
+    }
+
+    .imageWrapper{
+        max-height: 200px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .section{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.2rem;
+    }
+    
 }
