@@ -1,5 +1,83 @@
-.page{
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to top right, #7e36d3, #a883f3);
+    min-height: 100vh;
+    padding: 2rem;
+    color: white;
+    font-family: "Georgia", serif;
+}
+
+.container {
+    max-width: 800px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    background-image: url('/print_web.png');
+    background-repeat: no-repeat;
+    background-size: 300px;
+    background-position: top right;
+}
+
+.title {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: #fffacd;
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+
+.section {
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.sectionTitle {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+.text {
+    color: #030303;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.text ul,
+.section ul {
+    padding-left: 1.5rem;
+    margin: 0.5rem 0 1rem 0;
+    line-height: 1.6;
+}
+
+.text li,
+.section li {
+    margin-bottom: 0.5rem;
+}
+
+.priceList {
+    margin-top: 0.5rem;
+    font-weight: bold;
+    color: #fffacd;
+}
+
+.highlight {
+    color: #000000;
 }
