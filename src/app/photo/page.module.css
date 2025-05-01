@@ -18,6 +18,7 @@
 
 .image{
     object-fit: contain;
+    filter: drop-shadow(2px 2px 15px rgba(255, 255, 255, 0.795));
 }
 
 .textPricing{
@@ -35,17 +36,53 @@
 }
 
 .container {
-    max-width: 800px;
+    /* max-width: 800px; */
+    width: 100%;
     text-align: left;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-    background-image: url('/print_web.png');
-    background-repeat: no-repeat;
-    background-size: 300px;
-    background-position: top right;
+    /* background: rgba(255, 255, 255, 0.05); */
+    /* padding: 2rem; */
+    /* border-radius: 12px; */
+    /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); */
 }
+
+.one, .two, .three{
+    height: fit-content;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.one{
+    padding-left: 30px;
+    background: linear-gradient(90deg,rgba(148, 187, 233, 0) 0%, rgb(66, 126, 194) 10%, rgb(34, 95, 165) 100%);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.two{
+    background: linear-gradient(-90deg,rgba(148, 187, 233, 0) 0%, rgb(122, 69, 20) 10%, rgb(138, 68, 3) 100%);
+}
+
+.three{
+    padding-left: 30px;
+    background: linear-gradient(90deg,rgba(148, 187, 233, 0) 0%, rgb(111, 178, 255) 10%, rgb(76, 141, 216) 100%);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.imgOne, .imgThree{
+    object-position: 10% 0; /* <-- align image to top-left */
+}
+
+.imgTwo{
+    object-position: 90% 0;
+}
+
+.textWrapper{
+    max-width: 400px;
+}
+
+
 
 .title {
     display: flex;
@@ -108,14 +145,16 @@
 }
 
 @media screen and (max-width: 768px) {
-    .main {
-        flex-direction: column;
-        padding: 1rem;
+    .right{
+        width: 100%;
     }
 
-    .container {
-        width: 100%;
-        padding: 1rem;
+    .imgOne, .imgTwo, .imgThree{
+        object-position: 50% 50%;
+    }
+
+    .main {
+        flex-direction: column;
     }
 
     .reverse {
@@ -123,7 +162,7 @@
     }
 
     .imageWrapper{
-        max-height: 200px;
+        max-height: 300px;
     }
 
     .title {
@@ -133,6 +172,7 @@
     .section{
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
     }
 
     .subtitle {
