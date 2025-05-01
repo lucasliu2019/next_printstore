@@ -163,6 +163,9 @@
 }
 
 @media screen and (max-width: 768px) {
+    .main {
+        padding: 0.5rem;
+    }
     .right{
         width: 100%;
     }
