@@ -7,7 +7,7 @@
         linear-gradient(to top right, #1751af, #71a6f9);
     /* Correct background image syntax */
     background-repeat: no-repeat, no-repeat;
-    background-position: top right, center;
+    background-position: 70% 10%, center;
     background-size: 300px auto, cover; /* first layer (gradient) is 'cover', image is 300px wide */
     min-height: 100vh;
     padding: 2rem;
@@ -68,5 +68,20 @@
     font-size: 1.6rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
+}
+
+@media screen and (max-width: 1500px) {
+    .main {
+    background-position:80% 10%, center;
+    background-size: 200px auto, cover; /* first layer (gradient) is 'cover', image is 300px wide */
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .main {
+    background-position:90% 10%, center;
+    background-size: 200px auto, cover; /* first layer (gradient) is 'cover', image is 300px wide */
+    }
 }
 
