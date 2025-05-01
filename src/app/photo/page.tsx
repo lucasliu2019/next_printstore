@@ -23,10 +23,10 @@ export default function PrintPage() {
                 We create custom calendars designed just for you with your photos, logo, branding, or special dates.<br />
                 <br />
               </p>
-              <p className={styles.textPricing}>
-                <strong>Wall calendar</strong> (Letter, 12 months)<br />
-                <strong>$50 – $100</strong>
-              </p>
+              <div className={styles.textPricing}>
+                <h3>Wall calendar (Letter, 12 months)</h3>
+                <h3>$50 – $100</h3>
+              </div>
             </div>
           </div>
           <div className={styles.right}>
@@ -46,17 +46,17 @@ export default function PrintPage() {
             <div className={styles.textWrapper}>
               <h2 className={styles.sectionTitle}>Passport & ID Photos</h2>
               <h2 className={styles.sectionTitle}>Fast and Professional</h2>
-              <ul>
+              <ul className={styles.customList}>
                 <li>Passport photos</li>
                 <li>Visa, ID, driver’s license photos</li>
                 <li>Digital photos for online applications</li>
                 <li>Printed copies in standard formats</li>
                 <li>Fast service — ready in minutes!</li>
               </ul>
-              <p className={styles.textPricing}>
-                <strong>Passport photo (print + digital)</strong> – 20$<br />
-                <strong>Extra printed copies</strong> – 3$
-              </p>
+              <div className={styles.textPricing}>
+                <h3>Passport photo (print + digital) – 20$</h3>
+                <h3>Extra printed copies – 3$</h3>
+              </div>
             </div>
           </div>
           <div className={styles.right}>
@@ -76,18 +76,18 @@ export default function PrintPage() {
           <div className={`${styles.left} ${styles.three}`}>
             <div className={styles.textWrapper}>
               <h2 className={styles.sectionTitle}>Custom Brochure Design & Printing</h2>
-              <ul>
+              <ul className={styles.customList}>
                 <li>Tri-fold, bi-fold, and multi-page brochures</li>
                 <li>Custom design with your text, images, and branding</li>
                 <li>High-resolution printing on premium paper</li>
                 <li>Glossy or matte finishes</li>
                 <li>Fast turnaround and affordable prices</li>
               </ul>
-              <p className={styles.textPricing}>
-                Basic design using a template – <strong>20 – 50$</strong><br />
-                Custom design (1–2 pages) – <strong>40 – 60$</strong><br />
-                Full custom tri-fold brochure (6 panels) – <strong>70 – 150$</strong>
-              </p>
+              <div className={styles.textPricing}>
+                <h4>Basic design using a template – 20 – 50$</h4>
+                <h4>Custom design (1–2 pages) – 40 – 60$</h4>
+                <h4>Full custom tri-fold brochure (6 panels) – 70 – 150$</h4>
+              </div>
             </div>
           </div>
 
