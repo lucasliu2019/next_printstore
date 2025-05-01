@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className={styles.title}>Web Development<br />Web Design</h1>
         <p className={styles.tagline}>
           I Create Modern Websites<br />
-          <span className={styles.highlight}>Fast, and Professional!</span>
+          Fast, and Professional!
         </p>
 
         <section className={styles.section}>
