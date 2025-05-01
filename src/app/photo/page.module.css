@@ -57,7 +57,7 @@
 
 .one{
     padding-left: 30px;
-    background: linear-gradient(90deg,rgba(148, 187, 233, 0) 0%, rgb(66, 126, 194) 10%, rgb(34, 95, 165) 100%);
+    background: linear-gradient(90deg,rgba(148, 187, 233, 0) 0%, rgb(66, 75, 194) 10%, rgb(69, 34, 165) 100%);
     display: flex;
     justify-content: flex-end;
 }
