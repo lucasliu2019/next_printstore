@@ -60,9 +60,9 @@ export default function CartPage() {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
-  const getTotal = () => {
-    return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  };
+  // const getTotal = () => {
+  //   return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  // };
 
   return (
     <>
