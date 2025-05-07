@@ -75,12 +75,12 @@ const Header = () => {
             id="menu-toggle"
             className={styles.menu_toggle}
             checked={menuOpen}
-            onChange={() => { 
+            onChange={() => {
               setMenuOpen(!menuOpen);
             }}
           />
           {/* Attach ref to the hamburger menu */}
-          <label htmlFor="menu-toggle" className={styles.hamburger} ref={hamburgerRef} > 
+          <label htmlFor="menu-toggle" className={styles.hamburger} ref={hamburgerRef} >
             <span></span>
             <span></span>
             <span></span>
@@ -90,9 +90,8 @@ const Header = () => {
             <ul className={styles.nav_list}>
               <li className={styles.nav_item}>
                 <Link
-                  className={`${styles.nav_link} ${
-                    pathname === "/" ? styles.active : ""
-                  }`}
+                  className={`${styles.nav_link} ${pathname === "/" ? styles.active : ""
+                    }`}
                   href="/"
                   onClick={handleLinkClick} // Close menu on link click
                 >
@@ -153,20 +152,31 @@ const Header = () => {
               </li>
               <li className={styles.nav_item}>
                 <Link
-                  className={`${styles.nav_link} ${
-                    pathname === "/contact" ? styles.active : ""
-                  }`}
+                  className={`${styles.nav_link} ${pathname === "/contact" ? styles.active : ""
+                    }`}
                   href="/contact"
                   onClick={handleLinkClick} // Close menu on link click
                 >
                   Contact
                 </Link>
               </li>
+              <li className={styles.nav_item}>
+                <Link
+                  className={`${styles.nav_link} ${pathname === "/cart" ? styles.active : ""
+                    }`}
+                  href="/cart"
+                  onClick={handleLinkClick} // Close menu on link click
+                >
+                🛒 View Cart
+                </Link>
+              </li>
             </ul>
+
+
           </nav>
         </div>
       </div>
-    </header>
+    </header >
   );
 };
 export default Header;

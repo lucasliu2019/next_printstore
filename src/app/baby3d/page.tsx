@@ -151,6 +151,38 @@ const colorOptions = colors.map((color, index) => ({
 
 
 export default function About() {
+
+  const [showPopup, setShowPopup] = useState(false);
+
+
+  type CartItem = {
+    id: string | number;
+    name: string;
+    price: string;
+    quantity: number;
+    description?: string;
+  };
+
+  const addToCart = (item: Omit<CartItem, "quantity">) => {
+    // Get existing cart or initialize an empty array
+    const cart: CartItem[] = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    // Check if item already exists in the cart
+    const existingItem = cart.find((cartItem) => cartItem.id === item.id);
+
+    if (existingItem) {
+      existingItem.quantity += 1;
+    } else {
+      cart.push({ ...item, quantity: 1 });
+    }
+
+    // Save updated cart back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    setShowPopup(true);
+    setTimeout(() => setShowPopup(false), 2000); // hide after 2s
+  };
+
   // State for the input fields
   const [name, setName] = useState("Firstname Lastname");
   const [week, setWeek] = useState("20 weeks");
@@ -352,140 +384,140 @@ export default function About() {
             </select>
           </fieldset>
 
-{ isSmallScreen && (
-  <>
-          <fieldset className={`${styles.fieldset} ${styles.fieldset_fontC}`}>
-            <legend className={styles.fieldset_legend}>Font color:</legend>
-              <Select
-                options={colorOptions}
-                value={colorOptions[fontColor]}
-                onChange={(selectedOption) => {
-                  if (selectedOption) {
-                    setFontColor(selectedOption.value);
-                  }
-                }}
-                menuPlacement="top" // Open the dropdown menu upward
-                isSearchable={false} // Disable typing in the dropdown
-                styles={{
-                  option: (provided, state) => ({
-                    ...provided,
-                    backgroundColor: state.data.color,
-                    color: "black",
-                    whiteSpace: "nowrap", // Prevent text wrapping
-                    overflow: "hidden", // Hide overflowing content
-                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
-                  }),
-                  singleValue: (provided, state) => ({
-                    ...provided,
-                    height: "22px", /* Set the height */
-                    backgroundColor: state.data.color,
-                    color: state.data.color,
-                  }),
-                  control: (provided) => ({
-                    ...provided,
-                    height: "40px", /* Set the height */
-                    width: "100%", // Set the width of the dropdown
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                  }),
-                  menu: (provided) => ({
-                    ...provided,
-                    zIndex: 9999, // Ensure the dropdown menu is on top
-                    width: "100%", // Ensure the dropdown menu matches the control width
-                  }),
-                }}
-              />
-          </fieldset>
+          {isSmallScreen && (
+            <>
+              <fieldset className={`${styles.fieldset} ${styles.fieldset_fontC}`}>
+                <legend className={styles.fieldset_legend}>Font color:</legend>
+                <Select
+                  options={colorOptions}
+                  value={colorOptions[fontColor]}
+                  onChange={(selectedOption) => {
+                    if (selectedOption) {
+                      setFontColor(selectedOption.value);
+                    }
+                  }}
+                  menuPlacement="top" // Open the dropdown menu upward
+                  isSearchable={false} // Disable typing in the dropdown
+                  styles={{
+                    option: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.data.color,
+                      color: "black",
+                      whiteSpace: "nowrap", // Prevent text wrapping
+                      overflow: "hidden", // Hide overflowing content
+                      textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                    }),
+                    singleValue: (provided, state) => ({
+                      ...provided,
+                      height: "22px", /* Set the height */
+                      backgroundColor: state.data.color,
+                      color: state.data.color,
+                    }),
+                    control: (provided) => ({
+                      ...provided,
+                      height: "40px", /* Set the height */
+                      width: "100%", // Set the width of the dropdown
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                    }),
+                    menu: (provided) => ({
+                      ...provided,
+                      zIndex: 9999, // Ensure the dropdown menu is on top
+                      width: "100%", // Ensure the dropdown menu matches the control width
+                    }),
+                  }}
+                />
+              </fieldset>
 
-          <fieldset className={`${styles.fieldset} ${styles.fieldset_baseC}`}>
-            <legend className={styles.fieldset_legend}>Base Color:</legend>
-            {/* <p className={styles.fieldset_display}>{colors[baseColor].name}</p> */}
-              <Select
-                options={colorOptions}
-                value={colorOptions[baseColor]}
-                onChange={(selectedOption) => {
-                  if (selectedOption) {
-                    setBaseColor(selectedOption.value);
-                  }
-                }}
-                menuPlacement="top" // Open the dropdown menu upward
-                isSearchable={false} // Disable typing in the dropdown
-                styles={{
-                  option: (provided, state) => ({
-                    ...provided,
-                    backgroundColor: state.data.color,
-                    color: "black",
-                    whiteSpace: "nowrap", // Prevent text wrapping
-                    overflow: "hidden", // Hide overflowing content
-                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
-                  }),
-                  singleValue: (provided, state) => ({
-                    ...provided,
-                    height: "22px", /* Set the height */
-                    backgroundColor: state.data.color,
-                    color: state.data.color,
-                  }),
-                  control: (provided) => ({
-                    ...provided,
-                    height: "40px", /* Set the height */
-                    width: "100%", // Set the width of the dropdown
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                  }),
-                  menu: (provided) => ({
-                    ...provided,
-                    zIndex: 9999, // Ensure the dropdown menu is on top
-                    width: "100%", // Ensure the dropdown menu matches the control width
-                  }),
-                }}
-              />
-          </fieldset>
+              <fieldset className={`${styles.fieldset} ${styles.fieldset_baseC}`}>
+                <legend className={styles.fieldset_legend}>Base Color:</legend>
+                {/* <p className={styles.fieldset_display}>{colors[baseColor].name}</p> */}
+                <Select
+                  options={colorOptions}
+                  value={colorOptions[baseColor]}
+                  onChange={(selectedOption) => {
+                    if (selectedOption) {
+                      setBaseColor(selectedOption.value);
+                    }
+                  }}
+                  menuPlacement="top" // Open the dropdown menu upward
+                  isSearchable={false} // Disable typing in the dropdown
+                  styles={{
+                    option: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.data.color,
+                      color: "black",
+                      whiteSpace: "nowrap", // Prevent text wrapping
+                      overflow: "hidden", // Hide overflowing content
+                      textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                    }),
+                    singleValue: (provided, state) => ({
+                      ...provided,
+                      height: "22px", /* Set the height */
+                      backgroundColor: state.data.color,
+                      color: state.data.color,
+                    }),
+                    control: (provided) => ({
+                      ...provided,
+                      height: "40px", /* Set the height */
+                      width: "100%", // Set the width of the dropdown
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                    }),
+                    menu: (provided) => ({
+                      ...provided,
+                      zIndex: 9999, // Ensure the dropdown menu is on top
+                      width: "100%", // Ensure the dropdown menu matches the control width
+                    }),
+                  }}
+                />
+              </fieldset>
 
-          <fieldset className={`${styles.fieldset} ${styles.fieldset_sideC}`}>
-            <legend className={styles.fieldset_legend}>Base side color:</legend>
-            {/* <p className={styles.fieldset_display}>{colors[sideColor].name}</p> */}
-              <Select
-                options={colorOptions}
-                value={colorOptions[sideColor]}
-                onChange={(selectedOption) => {
-                  if (selectedOption) {
-                    setSideColor(selectedOption.value);
-                  }
-                }}
-                menuPlacement="top" // Open the dropdown menu upward
-                isSearchable={false} // Disable typing in the dropdown
-                styles={{
-                  option: (provided, state) => ({
-                    ...provided,
-                    backgroundColor: state.data.color,
-                    color: "black",
-                    whiteSpace: "nowrap", // Prevent text wrapping
-                    overflow: "hidden", // Hide overflowing content
-                    textOverflow: "ellipsis", // Add ellipsis for overflowing text
-                  }),
-                  singleValue: (provided, state) => ({
-                    ...provided,
-                    height: "22px", /* Set the height */
-                    backgroundColor: state.data.color,
-                    color: state.data.color,
-                  }),
-                  control: (provided) => ({
-                    ...provided,
-                    height: "40px", /* Set the height */
-                    width: "100%", // Set the width of the dropdown
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                  }),
-                  menu: (provided) => ({
-                    ...provided,
-                    zIndex: 9999, // Ensure the dropdown menu is on top
-                    width: "100%", // Ensure the dropdown menu matches the control width
-                  }),
-                }}
-              />
-          </fieldset>
+              <fieldset className={`${styles.fieldset} ${styles.fieldset_sideC}`}>
+                <legend className={styles.fieldset_legend}>Base side color:</legend>
+                {/* <p className={styles.fieldset_display}>{colors[sideColor].name}</p> */}
+                <Select
+                  options={colorOptions}
+                  value={colorOptions[sideColor]}
+                  onChange={(selectedOption) => {
+                    if (selectedOption) {
+                      setSideColor(selectedOption.value);
+                    }
+                  }}
+                  menuPlacement="top" // Open the dropdown menu upward
+                  isSearchable={false} // Disable typing in the dropdown
+                  styles={{
+                    option: (provided, state) => ({
+                      ...provided,
+                      backgroundColor: state.data.color,
+                      color: "black",
+                      whiteSpace: "nowrap", // Prevent text wrapping
+                      overflow: "hidden", // Hide overflowing content
+                      textOverflow: "ellipsis", // Add ellipsis for overflowing text
+                    }),
+                    singleValue: (provided, state) => ({
+                      ...provided,
+                      height: "22px", /* Set the height */
+                      backgroundColor: state.data.color,
+                      color: state.data.color,
+                    }),
+                    control: (provided) => ({
+                      ...provided,
+                      height: "40px", /* Set the height */
+                      width: "100%", // Set the width of the dropdown
+                      border: "1px solid #ccc",
+                      borderRadius: "5px",
+                    }),
+                    menu: (provided) => ({
+                      ...provided,
+                      zIndex: 9999, // Ensure the dropdown menu is on top
+                      width: "100%", // Ensure the dropdown menu matches the control width
+                    }),
+                  }}
+                />
+              </fieldset>
             </>
-)}
+          )}
 
           {!isSmallScreen && (<div className={styles.color_fieldsets}>
             <fieldset className={styles.fieldset_color}>
@@ -632,12 +664,26 @@ export default function About() {
           )}
 
           {isExSmallScreen && renderViewFieldset()}
+
+          <button className={styles.grayButton} onClick={() =>
+            addToCart({
+              id: Date.now(),
+              name: "3D Baby",
+              price: "?",
+              description: `Figure: ${figureImages[selectedFigureImage].name}, Base: ${baseImages[selectedBaseImage].name}, Name: ${name}, Week: ${week}, DOB: ${dob}, Message: ${msg}, font: ${fontFamily[font].name}, font color: ${colors[fontColor].name}, base color: ${colors[baseColor].name}, side color: ${colors[sideColor].name}`,
+            })
+          }>Order</button>
         </div>
 
 
 
         {/**************************  Right Card ******************************/}
         <div className={styles.right_container}>
+          {showPopup && (
+            <div className={styles.popup}>
+              ✅ Added to cart!
+            </div>
+          )}
           <div
             className={styles.card_image_wrapper}
             style={{

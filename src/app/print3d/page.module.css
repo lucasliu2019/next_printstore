@@ -22,6 +22,7 @@
 
 .subheading {
     font-size: 1.125rem;
+    font-weight: bold;
     color: #d1d5db;
 }
 
@@ -54,7 +55,7 @@
 .pricing_car {
     display: flex;
     flex-direction: column;
-    align-items: right;
+    align-items: center;
     justify-content: center;
     text-align: right;
     gap: 1rem;
@@ -249,9 +250,10 @@
 }
 
 .pricingTitle {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .price {
@@ -262,5 +264,72 @@
 
 .priceDetails,
 .smallText {
+    font-weight: bold;
     font-size: 0.875rem;
 }
+
+.sectionSubtitle{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.huamScanPrice{
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+/* styles.css */
+.grayButton {
+    background-color: #ccc; /* light gray */
+    color: #000;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* subtle shadow */
+  }
+  
+  .grayButton:hover {
+    background-color: #aaa; /* darker on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* deeper shadow */
+  }
+
+  .grayButton:active {
+    transform: scale(0.96) translateY(0); /* shrink slightly on click */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+
+  /* styles.module.css */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 8px;
+    z-index: 1000;
+    opacity: 0.95;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    animation: slideIn 0.3s ease-out;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 0.95;
+    }
+  }

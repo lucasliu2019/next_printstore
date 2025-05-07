@@ -6,6 +6,8 @@
     width: 100%;
     position: relative;
     z-index: 1000;
+    background-color: #000000;
+    padding-bottom: 10px;
     /* box-shadow: 0px 5px 50px 0 rgba(255, 238, 128, 0.133); */
 }
 
@@ -16,7 +18,6 @@
     align-items: center;
     justify-content: flex-end;
     gap:15px;
-    background-color: #000000;
     color: rgb(112, 120, 142);
 
     font-size: small;
@@ -68,6 +69,7 @@
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
     list-style: none;
     gap: 5px;
 }
