@@ -145,7 +145,7 @@ export default function CartPage() {
 
       <div style={{ marginTop: '2rem', margin: 'auto', alignItems: 'center', display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2rem' }}>
         <h2>📄 Request a Quote</h2>
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px' }}>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%', maxWidth: '500px', padding: '1rem', margin: '0.5rem', border: '1px solid #ccc', borderRadius: '8px' }}>
           <input
             type="text"
             name="name"
