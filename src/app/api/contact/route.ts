@@ -14,7 +14,6 @@ export async function POST(req: Request) {
     let cartText = "Cart is empty.";
     if (Array.isArray(cart) && cart.length > 0) {
       cartText = cart.map((item) => {
-        const itemTotal = item.quantity * item.price;
         return `- ${item.name} (x${item.quantity}) - $${item.price} - Description: ${item.description}`;
       }).join("\n");
 
