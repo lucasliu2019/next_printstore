@@ -44,7 +44,7 @@ export default function CartPage() {
             name: item.name,
             quantity: item.quantity,
             price: item.price,
-            total: item.quantity * item.price,
+            description: item.description,
           })),
           formType: "quoteRequest",
         }),
@@ -195,7 +195,7 @@ export default function CartPage() {
           <input
             type="tel"
             name="phone"
-            placeholder="Optinal: Your Phone Number"
+            placeholder="Your Phone Number"
             value={formData.phone}
             onChange={handleChange}
             required
@@ -206,7 +206,6 @@ export default function CartPage() {
             rows={4}
             value={formData.message}
             onChange={handleChange}
-            required
           />
           <button type="submit" className="quoteButton" disabled={isLoading}>
             {isLoading ? 'Sending...' : 'Send Quote Request'}
