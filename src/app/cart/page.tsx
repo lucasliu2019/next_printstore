@@ -46,6 +46,7 @@ export default function CartPage() {
             price: item.price,
             total: item.quantity * item.price,
           })),
+          formType: "quoteRequest",
         }),
       });
 
