@@ -15,10 +15,10 @@ export async function POST(req: Request) {
     if (Array.isArray(cart) && cart.length > 0) {
       cartText = cart.map((item) => {
         const itemTotal = item.quantity * item.price;
-        return `- ${item.name} (x${item.quantity}) - $${item.price} each = $${itemTotal}`;
+        return `- ${item.name} (x${item.quantity}) - $${item.price} - Description: ${item.description}`;
       }).join("\n");
-      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      cartText += `\n\nCart Total: $${total}`;
+
+      cartText += `Data: ${new Date().toLocaleString()}\n`;
     }
 
     // Configure the email transporter
