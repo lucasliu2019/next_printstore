@@ -54,11 +54,11 @@ const Header = () => {
     <header className={styles.header}>
       <div className={styles.top_bar}>
         <a className={styles.top_bar_link}>
-          <FaEnvelope /> info@3dprintstore.com
+          <FaEnvelope /> mr.nervipistolog.ca@gmail.com
         </a>
-        <a className={styles.top_bar_link}>
+        {/* <a className={styles.top_bar_link}>
           <FaPhoneAlt /> 204-000-0000
-        </a>
+        </a> */}
       </div>
 
       {/* <p><TbHexagon3D /> 3D Print</p> */}

@@ -2,37 +2,50 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-
-  // console.log("EMAIL_USER:", process.env.EMAIL_USER);
-  // console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "Loaded" : "Missing");
-  // console.log("EMAIL_TO:", process.env.EMAIL_TO);
-
   try {
     const body = await req.json();
-    const { name, email, message } = body;
+    const { name, email, message, phone, cart } = body;
 
-    if (!name || !email || !message) {
+    if (!email ) {
       return NextResponse.json({ error: "All fields are required." }, { status: 400 });
+    }
+
+    // Format cart items
+    let cartText = "Cart is empty.";
+    if (Array.isArray(cart) && cart.length > 0) {
+      cartText = cart.map((item) => {
+        const itemTotal = item.quantity * item.price;
+        return `- ${item.name} (x${item.quantity}) - $${item.price} each = $${itemTotal}`;
+      }).join("\n");
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      cartText += `\n\nCart Total: $${total}`;
     }
 
     // Configure the email transporter
     const transporter = nodemailer.createTransport({
-      service: "gmail", // Use your email provider (e.g., Gmail, Outlook)
+      service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // Your email address
-        pass: process.env.EMAIL_PASS, // Your email password or app-specific password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     // Email options
     const mailOptions = {
-      from: email, // Sender's email
-      to: process.env.EMAIL_TO, // Your personal email
-      subject: `New Contact Form Submission from ${name}`,
-      text: `Hi,\nEmail: ${email}\nMessage: ${message}\nName: ${name}`,
+      from: email,
+      to: process.env.EMAIL_TO,
+      subject: `New Quote Request from ${name}`,
+      text: `You have a new message!\n
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+Message: ${message}
+
+--- Cart Details ---
+${cartText}
+      `,
     };
 
-    // Send the email
     await transporter.sendMail(mailOptions);
 
     return NextResponse.json({ success: "Message sent successfully!" }, { status: 200 });

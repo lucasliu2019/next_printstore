@@ -13,7 +13,10 @@ type CartItem = {
 
 export default function CartPage() {
 
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [successMessage, setSuccessMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false); // Add loading state
+
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
 
   const [cart, setCart] = useState<CartItem[]>([]);
 
@@ -26,14 +29,38 @@ export default function CartPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
-    // Here you would send to backend or email service
-    console.log("Quote requested:", formData);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          cart: cart.map(item => ({
+            id: item.id,
+            name: item.name,
+            quantity: item.quantity,
+            price: item.price,
+            total: item.quantity * item.price,
+          })),
+        }),
+      });
 
-    alert("Quote request sent!");
-    setFormData({ name: '', email: '', message: '' });
+      if (response.ok) {
+        setSuccessMessage("✅ Quote request sent successfully!");
+        setFormData({ name: '', email: '', message: '', phone: '' }); // Reset form data
+      } else {
+        setSuccessMessage("❌ Failed to send quote request.");
+      }
+    } catch (error) {
+      console.error(error);
+      setSuccessMessage("❌ An error occurred while sending the request.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const removeFromCart = (id: string | number) => {
@@ -59,6 +86,10 @@ export default function CartPage() {
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
+
+
+
+
 
   // const getTotal = () => {
   //   return cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
@@ -121,10 +152,6 @@ export default function CartPage() {
               >
                 ➕
               </button>
-            </div>
-
-            {/* Remove Button */}
-            <div>
               <button
                 onClick={() => removeFromCart(item.id)}
                 style={{
@@ -162,6 +189,14 @@ export default function CartPage() {
             onChange={handleChange}
             required
           />
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Optinal: Your Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+          />
           <textarea
             name="message"
             placeholder="Your Special Requests or Questions"
@@ -170,7 +205,9 @@ export default function CartPage() {
             onChange={handleChange}
             required
           />
-          <button type="submit" className="quoteButton">Send Quote Request</button>
+          <button type="submit" className="quoteButton" disabled={isLoading}>
+            {isLoading ? 'Sending...' : 'Send Quote Request'}
+          </button>
         </form>
       </div>
     </>
