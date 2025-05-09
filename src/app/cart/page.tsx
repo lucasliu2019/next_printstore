@@ -52,6 +52,8 @@ export default function CartPage() {
       if (response.ok) {
         setSuccessMessage("✅ Quote request sent successfully!");
         setFormData({ name: '', email: '', message: '', phone: '' }); // Reset form data
+        setCart([]);
+        localStorage.removeItem("cart");
       } else {
         setSuccessMessage("❌ Failed to send quote request.");
       }
@@ -209,6 +211,19 @@ export default function CartPage() {
             {isLoading ? 'Sending...' : 'Send Quote Request'}
           </button>
         </form>
+        {successMessage && (
+          <div style={{
+            marginTop: '1rem',
+            padding: '0.75rem 1rem',
+            borderRadius: '6px',
+            backgroundColor: successMessage.startsWith('✅') ? '#d4edda' : '#f8d7da',
+            color: successMessage.startsWith('✅') ? '#155724' : '#721c24',
+            border: successMessage.startsWith('✅') ? '1px solid #c3e6cb' : '1px solid #f5c6cb',
+            textAlign: 'center',
+          }}>
+            {successMessage}
+          </div>
+        )}
       </div>
     </>
   );
