@@ -14,7 +14,8 @@ export async function POST(req: Request) {
     let cartText = "Cart is empty.";
     if (formType === "quoteRequest" && Array.isArray(cart) && cart.length > 0) {
       cartText = cart.map((item) => {
-        return `- ${item.name} (x${item.quantity}) - $${item.price} - Description: ${item.description}`;
+        const descriptionText = item.description ? ` - Description: ${item.description}` : ''
+        return `- ${item.name} (x${item.quantity}) - $${item.price} - ${descriptionText}`;
       }).join("\n");
 
       cartText += `\nData: ${new Date().toLocaleString()}`;
