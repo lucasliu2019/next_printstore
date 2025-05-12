@@ -94,7 +94,7 @@ export default function Page() {
             </div>
             <div className={styles.step}>
               <div className={styles.stepImage}>
-                <Image src="/printing.jpg" alt="Print Result" fill className={styles.imageDisplay} />
+                <Image src="/print_final.jpg" alt="Print Result" fill className={styles.imageDisplay} />
               </div>
               <p className={styles.stepLabel}>Print Result</p>
             </div>
